@@ -1,8 +1,5 @@
 ネットワーク更新
 
-＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/myalice/master/
-
 ＊OnUpdatedataCreating
 ：(updates2.dau作成中)
 
