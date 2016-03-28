@@ -15,7 +15,7 @@
 ）
 
 ＊リスト開く
-\![open,file,コミュ対応リスト.txt]
+\![open,file,commulist.txt]
 
 ＊ユーザ「　アリス
 ＄選択ＩＤ	アリスに
