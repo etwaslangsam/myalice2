@@ -1,7 +1,7 @@
 オーナードローメニュー
 
 ＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/myalice/master/
+https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 
 ＠menu.background.bitmap.filename
 bgm2.png

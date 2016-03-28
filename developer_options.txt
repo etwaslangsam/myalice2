@@ -1,2 +1,3 @@
 ghost/master/satori_savedata.txt,nonar,noupdate
 ghost/master/satori_savebackup.txt,nonar,noupdate
+.git/,nonar,noupdate
