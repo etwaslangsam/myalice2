@@ -1,8 +1,13 @@
 コミュニケート
 
 ＊話しかける
-：\s[105]なんでしょう？
-\![open,communicatebox]
+：\s[105]なんでしょう？\![open,communicatebox]
+\_q
+\__q[リスト開く]（だいや）コミュ対応リストを開く\__q
+\_q
+
+＊リスト開く
+\![open,file,commulist.txt]
 
 ＊COMMUNICATE該当なし
 ：\s[104]すいません、よく聞こえませんでした。

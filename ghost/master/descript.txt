@@ -3,6 +3,7 @@ name,僕のアリス2nd
 type,ghost
 craftman,牧野信次
 craftmanurl,http://ghosthacking.x.fc2.com/index.html
+homeurl,https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 readme,readme.txt
 sakura.name,アリス
 kero.name,ありす
