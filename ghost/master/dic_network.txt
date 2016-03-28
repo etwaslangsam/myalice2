@@ -10,16 +10,16 @@ https://raw.githubusercontent.com/etwaslangsam/myalice/master/
 ：(完了)
 
 ＊OnUpdateBegin
-：\s[11]ねっとわーく更新ね！\w6まっかせときなさい！\w9
-：\s[230]それでは、開始しますね。\w9
+：\s[26]ねっとわーく更新ね！\w6まっかせときなさい！\w9
+：\s[105]それでは、開始しますね。\w9
 
 ＊OnUpdateReady
 ：\s[5]（Ｒ０）件の新着ね。\w9
-：\s[206]（Ｒ０）件・・・ですか。\w9
+：\s[100]（Ｒ０）件・・・ですか。\w9
 
 ＊OnUpdate.OnDownloadBegin
 ：（（乱数０～９））\_q（Ｒ０）\_qをチェッーク！\w9
-：\s[202]間違ってなければいいのですが。\w6
+：\s[103]間違ってなければいいのですが。\w6
 
 
 ＊OnUpdate.OnMD5CompareFailure
@@ -29,9 +29,10 @@ https://raw.githubusercontent.com/etwaslangsam/myalice/master/
 ＊OnUpdateComplete
 ：（whenlist、（Ｒ０）==
 、none、\h\s[0]更新はないみたい。
-、changed、\h\s[11]更新おしまーい！\u\s[205]アリスさんお疲れ様でした。
+、changed、\h\s[5]更新おしまーい！\u\s[105]アリスさんお疲れ様でした。
 ）
 
 ＊OnUpdateFailure
-：\s[1]むー！\w6失敗だってぇ～！
-：\s[204]理由は『（Ｒ０）』のようです。
+：\s[24]むー！\w6失敗だってぇ～！
+：\s[100]理由は『（Ｒ０）』のようです。
+
