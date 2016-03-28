@@ -1,0 +1,5 @@
+charset,Shift_JIS
+name,–l‚ÌƒAƒŠƒX2nd
+type,ghost
+directory,myalice2nd
+refresh,0
