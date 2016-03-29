@@ -1,3 +1,5 @@
 /shell/master/profile/*.bak
 /ghost/master/profile
 /shell/master/profile
+/ghost/master/satori_savebackup.txt
+/ghost/master/satori_savedata.txt
