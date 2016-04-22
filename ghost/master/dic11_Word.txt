@@ -90,9 +90,15 @@
 誕生日
 祝日
 
+＠吐息
+は――――――（はーと）\w9　は――――――（はーと）
+ふ――――――っ（はーと）\w9　ふ――――――っ（はーと）
+
 ＠重要
 \f[color,red]\f[bold,1]φ！\f[bold,0]\f[color,default]
 
 ＠めにゅー
 \f[cursorstyle,underline]\f[cursorpencolor,red]\f[cursorfontcolor,red]
 
+＠痙攣
+（times、5、\![move,3,fix,30,me]\![move,-3,fix,30,me]）

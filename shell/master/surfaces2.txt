@@ -61,9 +61,9 @@ element1,overlay,eye102.png,0,0
 surface107
 {
 element0,base,surface100.png,0,0
-element1,overlay,eye105.png,0,0
-element2,overlay,mayu101.png,0,0
-element3,overlay,mouth104.png,0,0
+element1,overlay,eye101.png,0,0
+element2,overlay,mayu102.png,0,0
+element3,overlay,mouth102.png,0,0
 }
 
 surface108
