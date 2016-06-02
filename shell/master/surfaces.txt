@@ -81,6 +81,7 @@ element0,base,surface00.png,0,0
 element1,overlay,eye2.png,0,0
 element2,overlay,mayu3.png,0,0
 element3,overlay,mouth3.png,0,0
+element4,overlay,sekimen2.png,0,0
 }
 
 surface24
@@ -134,9 +135,5 @@ element3,overlay,mouth6.png,0,0
 surface.append0-29
 {
 collision0,59,38,136,72,Head
-collision1,32,258,67,291,Hand
-collision2,144,245,176,278,Hand
 collision3,84,154,133,187,Bust
-collision4,57,334,103,448,Leg
-collision5,115,336,160,440,Leg
 }

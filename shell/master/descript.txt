@@ -13,5 +13,8 @@ seriko.alignmenttodesktop,bottom
 sakura.bindgroup3.name,カルピス,カルピス,calpis
 sakura.bindgroup3.default,0
 
+sakura.bindgroup4.name,ハート,ハート,Heart
+sakura.bindgroup4.default,0
+
 kero.bindgroup3.name,カルピス,カルピス,calpis
 kero.bindgroup3.default,0

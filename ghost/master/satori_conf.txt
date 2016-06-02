@@ -19,6 +19,8 @@
 ＄パンツ濡れ	0
 ＄パンツ汚れ	0
 ＄興奮度	0
+＄さくらスクリプトによるスコープ切り換え時	\n\n[half]
+＄話しかけ	アリスに
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
