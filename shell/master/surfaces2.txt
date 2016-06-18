@@ -166,6 +166,42 @@ element4,overlay,mouth102.png,0,0
 element5,overlay,sekimen.png,0,0
 }
 
+surface134
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye103.png,0,0
+element2,overlay,mayu101.png,0,0
+element3,overlay,mouth102.png,0,0
+element4,overlay,sekimen.png,0,0
+}
+
+surface135
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye104.png,0,0
+element2,overlay,mayu102.png,0,0
+element3,overlay,mouth104.png,0,0
+element4,overlay,sekimen.png,0,0
+}
+
+surface136
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye102.png,0,0
+element2,overlay,mayu101.png,0,0
+element3,overlay,mouth105.png,0,0
+element4,overlay,sekimen.png,0,0
+}
+
+surface137
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye106.png,0,0
+element3,overlay,mayu101.png,0,0
+element4,overlay,mouth104.png,0,0
+element5,overlay,sekimen.png,0,0
+}
+
 surface500
 {
 
@@ -178,7 +214,7 @@ surface501
 
 ””””G‚è”½‰”””””””””””””””””””””””S
 
-surface.append100-133
+surface.append100-137
 {
 animation3.interval,bind
 animation3.pattern0,overlay,500,0,0,0

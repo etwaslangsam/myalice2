@@ -58,6 +58,12 @@
 ＠voiceB
 \n\n（rx3）（喘ぎ声２）\n\n[half]（rx1）（喘ぎ声２）
 
+＠voiceA2
+（choice、（鳴き声）、（喘ぎ声２））\n\n[half]（rx2）（choice、（鳴き声）、（喘ぎ声２））\n\n[half]
+
+＠voiceB2
+\n\n（rx3）（choice、（鳴き声）、（喘ぎ声２））\n\n[half]（rx1）（choice、（鳴き声）、（喘ぎ声２））
+
 ＠rx1
 \_l[（calc、（乱数１０～３０））]
 
@@ -115,10 +121,8 @@
 
 
 ＠射精音
-(……っ！ﾄﾞｸ……ﾄﾞｸ……)
-(ﾋﾞｭﾙｯ……ﾋﾞｭﾙﾙﾙ……ﾋﾟｭｯ)
-(ﾄﾞﾋﾟｭｯ…ﾋﾟｭｯﾋﾟｭｯ…ﾋﾟｸﾝ…)
-(ﾋﾞｸﾝｯ……ﾄﾞｸ……ﾄﾞｸ……)
+ﾋﾞｭﾙｯ（はーと）　ﾋﾞｭﾙﾙﾙ（はーと）（はーと）（はーと）　ﾋﾞｭﾙ（はーと）
+ﾋﾞｭ（はーと）　ﾋﾞｭﾋﾞｭ～～～（はーと）（はーと）（はーと）　ﾋﾞｭｰｯ（はーと）　ﾋﾞｭｰｯ（はーと）
 
 ＠痙攣
 （times、5、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
@@ -177,6 +181,9 @@
 
 ＠めにゅー
 \f[cursorstyle,underline]\f[cursorpencolor,red]\f[cursorfontcolor,red]
+
+＠めにゅー２
+\f[cursornotselectfontcolor,default.anchor]
 
 ＠ぶっかけ
 \![bind,カルピス,カルピス,1]（set,顔射,1）
