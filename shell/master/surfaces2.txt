@@ -202,6 +202,25 @@ element4,overlay,mouth104.png,0,0
 element5,overlay,sekimen.png,0,0
 }
 
+surface138
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye101.png,0,0
+element2,overlay,mayu101.png,0,0
+element3,overlay,mouth101.png,0,0
+element4,overlay,sekimen.png,0,0
+}
+
+
+surface139
+{
+element0,base,surface100.png,0,0
+element1,overlay,eye102.png,0,0
+element2,overlay,mayu101.png,0,0
+element3,overlay,mouth103.png,0,0
+element4,overlay,sekimen.png,0,0
+}
+
 surface500
 {
 
@@ -214,7 +233,7 @@ surface501
 
 ””””G‚è”½‰”””””””””””””””””””””””S
 
-surface.append100-137
+surface.append100-139
 {
 animation3.interval,bind
 animation3.pattern0,overlay,500,0,0,0
@@ -222,6 +241,9 @@ animation3.pattern0,overlay,500,0,0,0
 animation4.interval,bind
 animation4.pattern0,overlay,501,0,0,0
 
-collision0,84,45,151,74,Head
-collision3,82,153,139,189,Bust
+collisionex0,Head,ellipse,63,41,170,84
+collisionex1,nipple,circle,96,169,4
+collisionex2,nipple,circle,124,170,4
+collision3,83,151,135,183,Bust
+
 }
