@@ -6,7 +6,7 @@
 \n[half]\![*]\__q[OnCommunicate,user,好き]好き\__q　　　\![*]\__q[OnCommunicate,user,結婚]結婚しよう\__q
 \![*]\__q[OnCommunicate,user,愛してる]愛してる\__q　\![*]\__q[OnCommunicate,user,おっぱい]おっぱい\__q
 \![*]\__q[OnCommunicate,user,脱いで]脱いで\__q　　\![*]\__q[OnCommunicate,user,えっち]えっちしたい\__q
-\![*]\__q[OnCommunicate,user,甘えて]甘えて\__q　　\![*]\__q[OnCommunicate,userお風呂]お風呂に入ろう\__q
+\![*]\__q[OnCommunicate,user,甘えて]甘えて\__q　　\![*]\__q[OnCommunicate,user,風呂]お風呂に入ろう\__q
 \![*]\__q[OnCommunicate,user,抱きたい]抱きたい\__q　\![*]\__q[OnCommunicate,user,寝よう]一緒に眠ろう\__q
 \f[default]
 \![*]\q[戻る,メニュー]
