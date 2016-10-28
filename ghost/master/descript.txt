@@ -2,7 +2,7 @@ charset,Shift_JIS
 name,僕のアリス2nd
 type,ghost
 craftman,牧野信次
-craftmanurl,http://ghosthacking.x.fc2.com/index.html
+craftmanurl,https://sites.google.com/site/p5zxftwc/
 homeurl,https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 readme,readme.txt
 sakura.name,アリス
@@ -23,8 +23,8 @@ don't need onmousemove,0
 don't need bind,0
 don't need seriko talk,0
 balloon.dontmove,False
-shiori,satori.dll
 icon,myalice.ico
+shiori,satori.dll
 
 
 

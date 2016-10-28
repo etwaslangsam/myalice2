@@ -1,15 +1,14 @@
 コミュニケート
 
 ＊話しかける
-\h\c\s[100]……？\w9
-\_q（めにゅー２）\![*]\q[直接入力する,ボックス開く]
-\n[half]\![*]\__q[OnCommunicate,user,好き]好き\__q　　　\![*]\__q[OnCommunicate,user,結婚]結婚しよう\__q
-\![*]\__q[OnCommunicate,user,愛してる]愛してる\__q　\![*]\__q[OnCommunicate,user,おっぱい]おっぱい\__q
-\![*]\__q[OnCommunicate,user,脱いで]脱いで\__q　　\![*]\__q[OnCommunicate,user,えっち]えっちしたい\__q
-\![*]\__q[OnCommunicate,user,甘えて]甘えて\__q　　\![*]\__q[OnCommunicate,user,風呂]お風呂に入ろう\__q
-\![*]\__q[OnCommunicate,user,抱きたい]抱きたい\__q　\![*]\__q[OnCommunicate,user,寝よう]一緒に眠ろう\__q
-\f[default]
-\![*]\q[戻る,メニュー]
+：\s[100]……？\w9
+\_q\![*]\_a[ボックス開く]直接入力する\_a
+\n[half]\![*]\_a[OnCommunicate,user,好き]好き\_a　　　\![*]\_a[OnCommunicate,user,結婚]結婚しよう\_a
+\![*]\_a[OnCommunicate,user,愛してる]愛してる\_a　\![*]\_a[OnCommunicate,user,おっぱい]おっぱい\_a
+\![*]\_a[OnCommunicate,user,脱いで]脱いで\_a　　\![*]\_a[OnCommunicate,user,えっち]えっちしたい\_a
+\![*]\_a[OnCommunicate,user,甘えて]甘えて\_a　　\![*]\_a[OnCommunicate,user,風呂]お風呂に入ろう\_a
+\![*]\_a[OnCommunicate,user,抱きたい]抱きたい\_a　\![*]\_a[OnCommunicate,user,寝よう]一緒に眠ろう\_a
+\n \![*]\q[なんでもない,なんでもない]
 \_q
 
 ＊ボックス開く
@@ -59,7 +58,7 @@
 
 ＊ユーザ「　風呂　ふろ
 ：\s[105]お風呂ですね、分かりました。
-＞お風呂プレイ
+＞一緒に入る
 
 ＊ユーザ「　寝よう　ねよう　寝る　眠ろう　眠る　ねむ　ねる
 ＞就寝

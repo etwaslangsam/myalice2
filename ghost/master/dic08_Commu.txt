@@ -12,15 +12,15 @@
 
 ＊話しかける
 \h\b[2]\c\_q\![*]\q[入力ボックスを開く,ボックス開く]
+（めにゅー）
+\![*]\_a[OnCommunicate,user,アリス]アリス\_a
+\![*]\_a[OnCommunicate,user,ありす]ありす\_a
 
-\![*]\__q[OnCommunicate,user,アリス]アリス\__q
-\![*]\__q[OnCommunicate,user,ありす]ありす\__q
-
-\![*]\__q[OnCommunicate,user,好き]好き\__q
-\![*]\__q[OnCommunicate,user,かわいい]かわいい\__q
-\![*]\__q[OnCommunicate,user,愛してる]愛してる\__q
-\![*]\__q[OnCommunicate,user,膝枕]膝枕\__q
-\![*]\__q[OnCommunicate,user,肩車]肩車\__q
+\![*]\_a[OnCommunicate,user,好き]好き\_a
+\![*]\_a[OnCommunicate,user,かわいい]かわいい\_a
+\![*]\_a[OnCommunicate,user,愛してる]愛してる\_a
+\![*]\_a[OnCommunicate,user,膝枕]膝枕\_a
+\![*]\_a[OnCommunicate,user,肩車]肩車\_a
 
 \![*]\q[戻る,メニュー]　\![*]\q[閉じる,script:\e]
 \_q

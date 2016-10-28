@@ -102,9 +102,9 @@
 ふ――――――っ（はーと）\w9　ふ――――――っ（はーと）
 
 ＠絶頂
-っ～～～～～～～～～～～～（はーと） 
-んっ～～～～～～～～～～～（はーと） 
-ぅ～～～～～～～～～～～～（はーと） 
+っ～～～～～～～～～～～～（はーと）（はーと）（はーと） 
+んっ～～～～～～～～～～～（はーと）（はーと）（はーと） 
+ぅ～～～～～～～～～～～～（はーと）（はーと）（はーと） 
 
 
 ＠射精音
@@ -169,10 +169,10 @@
 \f[color,red]\f[bold,1]φ！\f[bold,0]\f[color,default]
 
 ＠めにゅー
-\f[cursorstyle,underline]\f[cursorpencolor,#e34174]\f[cursorfontcolor,#e34174]
+\f[anchorfontcolor,#ff3366]\f[anchorpencolor,#ff3366]\f[cursorstyle,underline]
 
 ＠めにゅー２
-\f[cursornotselectfontcolor,default.anchor]
+\f[cursorstyle,underline]\f[cursornotselectfontcolor,#ff3366]\f[cursornotselectfontcolor,#ff3366]\f[cursorfontcolor,#ff3366]\f[cursorpencolor,#ff3366]
 
 ＠ぶっかけ
 \![bind,カルピス,カルピス,1]（set,顔射,1）
