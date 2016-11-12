@@ -6,6 +6,11 @@ descript
 version,1
 }
 
+surface0-9,24-35
+{
+element0,base,surface00.png,0,0
+}
+
 surface0 
 {
 
@@ -16,7 +21,6 @@ animation0.pattern1,base,-1,80,0,0
 
 surface1
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye1.png,0,0
 element2,overlay,mayu2.png,0,0
 element4,overlay,sekimen2.png,0,0
@@ -24,7 +28,6 @@ element4,overlay,sekimen2.png,0,0
 
 surface2
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye5.png,0,0
 element2,overlay,mayu4.png,0,0
 element3,overlay,mouth6.png,0,0
@@ -32,14 +35,12 @@ element3,overlay,mouth6.png,0,0
 
 surface3
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye2.png,0,0
 element2,overlay,mouth3.png,0,0
 }
 
 surface4
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye1.png,0,0
 element2,overlay,mayu2.png,0,0
 element3,overlay,mouth3.png,0,0
@@ -47,7 +48,6 @@ element3,overlay,mouth3.png,0,0
 
 surface5
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye3.png,0,0
 element2,overlay,mayu4.png,0,0
 element3,overlay,mouth7.png,0,0
@@ -55,13 +55,11 @@ element3,overlay,mouth7.png,0,0
 
 surface6
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye1.png,0,0
 }
 
 surface7
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye2.png,0,0
 element2,overlay,mayu1.png,0,0
 element3,overlay,mouth2.png,0,0
@@ -69,7 +67,6 @@ element3,overlay,mouth2.png,0,0
 
 surface8
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye2.png,0,0
 element2,overlay,mayu2.png,0,0
 element3,overlay,mouth7.png,0,0
@@ -77,7 +74,6 @@ element3,overlay,mouth7.png,0,0
 
 surface9
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye2.png,0,0
 element2,overlay,mayu3.png,0,0
 element3,overlay,mouth3.png,0,0
@@ -86,14 +82,12 @@ element4,overlay,sekimen2.png,0,0
 
 surface24
 {
-element0,base,surface00.png,0,0
 element1,overlay,mayu3.png,0,0
 element2,overlay,mouth1.png,0,0
 }
 
 surface25
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye4.png,0,0
 element2,overlay,mayu2.png,0,0
 element3,overlay,mouth4.png,0,0
@@ -101,7 +95,6 @@ element3,overlay,mouth4.png,0,0
 
 surface26
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye4.png,0,0
 element2,overlay,mayu3.png,0,0
 element3,overlay,mouth5.png,0,0
@@ -109,7 +102,6 @@ element3,overlay,mouth5.png,0,0
 
 surface27
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye1.png,0,0
 element2,overlay,mayu4.png,0,0
 element3,overlay,mouth6.png,0,0
@@ -117,22 +109,65 @@ element3,overlay,mouth6.png,0,0
 
 surface28
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye3.png,0,0
 element2,overlay,mayu1.png,0,0
 }
 
 surface29
 {
-element0,base,surface00.png,0,0
 element1,overlay,eye4.png,0,0
 element2,overlay,mayu4.png,0,0
 element3,overlay,mouth6.png,0,0
 }
 
+surface30
+{
+element1,overlay,eye3.png,0,0
+element2,overlay,mayu3.png,0,0
+element3,overlay,mouth4.png,0,0
+}
+
+surface31
+{
+element1,overlay,eye2.png,0,0
+element2,overlay,mayu2.png,0,0
+element3,overlay,mouth6.png,0,0
+}
+
+surface32
+{
+element1,overlay,eye2.png,0,0
+element2,overlay,mayu2.png,0,0
+element3,overlay,sekimen2.png,0,0
+}
+
+surface33
+{
+element1,overlay,eye1.png,0,0
+element2,overlay,mayu4.png,0,0
+element3,overlay,mouth5.png,0,0
+element4,overlay,sekimen2.png,0,0
+}
+
+surface34
+{
+element1,overlay,eye2.png,0,0
+element2,overlay,mayu4.png,0,0
+element3,overlay,mouth6.png,0,0
+element4,overlay,sekimen2.png,0,0
+}
+
+surface35
+{
+element1,overlay,eye3.png,0,0
+element2,overlay,mayu2.png,0,0
+element3,overlay,mouth6.png,0,0
+element4,overlay,sekimen2.png,0,0
+}
+
 ””””G‚è”½‰”””””””””””””””””””””””S
 
-surface.append0-29
+surface.append0-35
 {
 collisionex0,Head,polygon,126,41,99,41,74,48,56,81,61,98,131,84,148,81,141,61
 collisionex1,Bust,polygon,103,143,88,156,83,166,83,178,133,181,130,169,130,151
