@@ -1,16 +1,16 @@
 さわり反応
 
 ＊OnMouseDoubleClick
-＞（Ｒ３）（Ｒ４）つつかれ
+＞（Reference3）（Reference4）つつかれ
 
 ＊OnMouseDownEx
-＞（Ｒ３）（Ｒ４）ころクリ	（Ｒ５）==middle
+＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
 
 ＊OnMouseHover
-＄（Ｒ４）見つめタイマ	３
+＄（Reference4）見つめタイマ	３
 
 ＊OnMouseLeave
-＄（Ｒ４）見つめタイマ	
+＄（Reference4）見つめタイマ	
 
 ＃＃＃抱きしめ反応＃＃＃
 
@@ -67,6 +67,7 @@
 ＄頭なでカウント	
 
 ＃＃＃顔反応＃＃＃
+
 ＊0Faceなでられ
 ＄Face見つめタイマ	
 ：（顔なでられ）
@@ -135,7 +136,7 @@
 ＄射精カウント=（射精カウント）+1
 \h（胸こすり）
 （when、（射精カウント）>=10、
-\u\_q\*（めにゅー）\f[cursornotselectfontcolor,#e34174]
+\u\_q\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
 \![*]\q[射精す,胸ぶっかけ]
 \f[default]
 \_q）
@@ -220,13 +221,15 @@
 \s[129]乳首……舌で転がされて……（はーと）
 
 ＃＃＃スカート＃＃＃
+
 ＊0Skirtころころ
-＞ステータス確認
+＞PantsCheck
 
 ＊0Skirtつつかれ
-＞ステータス確認
+＞PantsCheck
 
 ＃＃＃XXX＃＃＃
+
 ＊0xxxなでられ
 ＄賢者タイマ	３０
 ＞前戯開始	（興奮度）==0

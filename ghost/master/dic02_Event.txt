@@ -1,73 +1,84 @@
 汎用イベント
 
+＃最小化復帰──────────────────────────
+
 ＊OnWindowStateRestore
+＞最小化解除
+
+＊最小化解除
 \s[100]
 ：\s[5]（ユーザ名）、何してたの～？
 
-＊OnWindowStateRestore
+＊最小化解除
 \s[103]（ユーザ名C）、大丈夫？
 
-＊OnShellChanging
-＞suwariモード	（Ｒ０）==suwari
+＃シェル変更──────────────────────────
 
-＊OnShellChanged
+＊OnShellChanging
+（when,（Reference0）==suwari,（suwariモード））
 
 ＊suwariモード
-＄現在シェル	suwari
+（set,現在シェル,suwari）
 ：\s[5]ちょっとあたし遊びに行ってくるねー！
-：\s[105]分かりました、気をつけてくださいね。
+：\c\s[105]分かりました、気をつけてくださいね。
 \h\s[-1]\u\s[-1]\w9
-＄辞書フォルダ	Bmode
-＄デフォルトサーフェス0	100
-＄デフォルトサーフェス1	10
-＄会話時サーフェス戻し	無効
+（set,辞書フォルダ,Bmode）（set,デフォルトサーフェス0,100）（set,デフォルトサーフェス1,10）（set,会話時サーフェス戻し,無効）
 \u\s[10]\b[-1]
 
+＊OnShellChanged
+＞脱いだ	（Reference0）==suwari
+
+＊脱いだ
+（set,現在シェル,suwari）（set,今日のパンツ,）
+\h\s[126]お待たせしました。\w6
+……\s[101]あまりジロジロ見られると恥ずかしいです。\e
+
+＃インストール──────────────────────────
+
 ＊OnInstallBegin
-\s[100]それでは、インストールします。
+\s[100]それでは、インストールします。\e
 
 ＊OnInstallComplete
-：\s[5]『（Ｒ１）』だって！
-：\s[100]【（Ｒ０）】ですね。
+\h\s[5]『（Reference1）』だって！\u\s[100]【（Reference0）】ですね。\e
 
 ＊OnInstallFailure
-：\s[2]あれ？\w9なんか失敗したみたいよ？
-：\s[102]『（Ｒ０）』で失敗みたいですね。
+\h\s[2]あれ？\w6　なんか失敗したみたいよ？\u\s[102]『（Reference0）』で失敗みたいですね。\e
 
 ＊OnInstallRefuse
-\s[104]これは私達のモノじゃありませんね。
-：\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Ｒ０））』のだって。
+\u\s[104]これは私達のモノじゃありませんね。
+\h\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Reference0））』のだって。\e
 
+＃RSS──────────────────────────
 
 ＊OnHeadlinesenseBegin
-：(「（Ｒ０）」のヘッドラインを取得中)
+：(「（Reference0）」のヘッドラインを取得中)
 
 ＊OnHeadlinesense.OnFind
 ＞読み上げフェーズ（Ｒ２）
 
 ＊読み上げフェーズFirst
-：\b[2](「（Ｒ０）」ヘッドラインです)
+：\b[2](「（Reference0）」ヘッドラインです)
 （Ｒ３）
 ＿続きを読む		
-＿サイトを開く		（Ｒ１）
+＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 ＊読み上げフェーズFirst and Last
-：\b[2](「（Ｒ０）」ヘッドラインです)
+：\b[2](「（Reference0）」ヘッドラインです)
 （Ｒ３）
-＿サイトを開く		（Ｒ１）
+＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 ＊読み上げフェーズLast
 ：\b[2]（Ｒ３）
-＿サイトを開く		（Ｒ１）
+＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 
 ＊読み上げフェーズNext
 ：\b[2]（Ｒ３）
 ＿続きを読む		
-＿サイトを開く		（Ｒ１）
+＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 
@@ -82,8 +93,8 @@
 
 ＊OnHeadlinesenseFailure
 ：(ヘッドラインセンス失敗)
-＞（Ｒ０）によりヘッドラインセンス失敗
-(理由は（Ｒ０）)
+＞（Reference0）によりヘッドラインセンス失敗
+(理由は（Reference0）)
 
 ＊can't downloadによりヘッドラインセンス失敗
 ：(ダウンロードできませんでした。
@@ -96,27 +107,36 @@
 ＊OnSSTPBreak
 ：(SSTPがブレイクされたようです)
 
+＃更新ファイル作成──────────────────────────
+
+＊OnUpdatedataCreating
+\h(updates2.dau作成中)\e
+
+＊OnUpdatedataCreated
+\h(完了)\e
+
 ＊OnNarCreating
-：\s[5]おっけー！
-『（Ｒ０）』をnarにすればいいのね！\w9
+\h\s[28]おっけー！\n『（Reference0）』をnarにすればいいのね！\e
 
 ＊OnNarCreated
-：\s[5]でーきた！
-：\s[100]『（Ｒ１）』を作成しました。
+\h\s[5]でーきた！\u\s[100]『（Reference1）』を作成しました。\e
+
+＃ダウンロード──────────────────────────
 
 ＊OnURLDropping
-：\s[5]\_q（Ｒ０）\_qからダウンロードするね！
+\h\s[5]\_q（Reference0）\_qからダウンロードするね！\e
 
 ＊OnURLDropped
-：\s[5]ダウンロードおしまいっ！
-：\s[100]ファイルは\_q（Ｒ０）\_qにあります。
+\h\s[5]ダウンロードおしまいっ！\u\s[100]ファイルは\_q（Reference0）\_qにあります。\e
+
+＃メールチェック──────────────────────────
 
 ＊OnBIFFBegin
 ：\s[0]メールちぇっく？
 
 ＊OnBIFFComplete
-＞メールがない	（Ｒ０）==0
-：\_q（Ｒ０）通／（Ｒ１）バイト\_q
+＞メールがない	（Reference0）==0
+：\_q（Reference0）通／（Reference1）バイト\_q
 \s[0]メールが届いてるよ。
 \_q
 \![*]\_a[メーラを開く]メーラを開く\_a
@@ -124,9 +144,9 @@
 \_q
 
 ＊OnBIFF2Complete
-＞メールがない	（Ｒ０）==0
+＞メールがない	（Reference0）==0
 ＞メールが増えた	（Ｒ３）>0
-：\_q（Ｒ０）通／（Ｒ１）バイト\_q
+：\_q（Reference0）通／（Reference1）バイト\_q
 \s[0]新着メールはなかったよ。
 \_q
 \![*]\_a[メーラを開く]メーラを開く\_a
@@ -134,7 +154,7 @@
 \_q
 
 ＊メールが増えた
-：\_q（Ｒ０）通／（Ｒ１）バイト\_q\n
+：\_q（Reference0）通／（Reference1）バイト\_q\n
 \s[5]新着メールが（Ｒ３）通あるって！
 \_q
 \![*]\_a[メーラを開く]メーラを開く\_a
@@ -151,9 +171,9 @@
 ：\s[0]\cメールはなかったよ。
 
 ＊OnBIFFFailure
-＞（Ｒ０）によりメールチェック失敗
+＞（Reference0）によりメールチェック失敗
 ：\s[4]メールチェックしっぱ～い。
-：\s[104]原因は『（Ｒ０）』だそうです。
+：\s[104]原因は『（Reference0）』だそうです。
 
 ＊defectによりメールチェック失敗
 ：\s[4]メールチェックしっぱ～い。
@@ -166,36 +186,38 @@
 ：\s[3]応答なしだって～。
 ：\s[103]サーバの設定が違うか、混んでいる可能性があります。
 
+＃文字・キー入力──────────────────────────
+
 ＊OnUserInput
-＞（Ｒ０）をタイムアウト	（compare,（Ｒ１）,timeout）
-＞（Ｒ０）を空打ちされた	（is_empty,（Ｒ１））
-＄（Ｒ０）	（Ｒ１）
-＞（Ｒ０）を教えてもらった
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
-＞（Ｒ０）を空打ちされた	（compare,（Ｒ１）,close）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
 ＊OnKeyPress
-＞（Ｒ０）が押された
+（whenlist,（Reference0）==
+,t,（）
+,c,（UserCommunicate）
+）
 
-＊rが押された
-＄辞書リロード	実行
-：(リロード)
+＃選択肢──────────────────────────
 
 ＊OnChoiceSelect
-＞（Ｒ０）
-：\s[7]『（Ｒ０）』？ってなーに？
-：\s[103]選択肢エラーですね。
-バグ報告をお願いします。
+＞（Reference0）
+\h\s[7]『（Reference0）』？ってなーに？\u\s[103]選択肢エラーですね。\w6\nバグ報告をお願いします。\e
 
 ＊OnChoiceTimeout
-：\s[24]もー！\w6（ユーザ名）聞いてる～？
+\h\s[24]もー！\w6　（ユーザ名）聞いてる～？\e
 
 ＊OnAnchorSelectEx
-＄選択ラベル	（Ｒ０）
-＄選択ＩＤ	（Ｒ１）
-＞（Ｒ１）
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
 
 ＊OnAnchorSelect
-＄選択ＩＤ	（Ｒ０）
-＞（Ｒ０）
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+
