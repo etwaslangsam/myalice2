@@ -1,0 +1,223 @@
+汎用イベント
+
+＃最小化復帰──────────────────────────
+
+＊OnWindowStateRestore
+＞最小化解除
+
+＊最小化解除
+\s[100]
+：\s[5]（ユーザ名）、何してたの～？
+
+＊最小化解除
+\s[103]（ユーザ名C）、大丈夫？
+
+＃シェル変更──────────────────────────
+
+＊OnShellChanging
+（when,（Reference0）==suwari,（suwariモード））
+
+＊suwariモード
+（set,現在シェル,suwari）
+：\s[5]ちょっとあたし遊びに行ってくるねー！
+：\c\s[105]分かりました、気をつけてくださいね。
+\h\s[-1]\u\s[-1]\w9
+（set,辞書フォルダ,Bmode）（set,デフォルトサーフェス0,100）（set,デフォルトサーフェス1,10）（set,会話時サーフェス戻し,無効）
+\u\s[10]\b[-1]
+
+＊OnShellChanged
+＞脱いだ	（Reference0）==suwari
+
+＊脱いだ
+（set,現在シェル,suwari）（set,今日のパンツ,）
+\h\s[126]お待たせしました。\w6
+……\s[101]あまりジロジロ見られると恥ずかしいです。\e
+
+＃インストール──────────────────────────
+
+＊OnInstallBegin
+\s[100]それでは、インストールします。\e
+
+＊OnInstallComplete
+\h\s[5]『（Reference1）』だって！\u\s[100]【（Reference0）】ですね。\e
+
+＊OnInstallFailure
+\h\s[2]あれ？\w6　なんか失敗したみたいよ？\u\s[102]『（Reference0）』で失敗みたいですね。\e
+
+＊OnInstallRefuse
+\u\s[104]これは私達のモノじゃありませんね。
+\h\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Reference0））』のだって。\e
+
+＃RSS──────────────────────────
+
+＊OnHeadlinesenseBegin
+：(「（Reference0）」のヘッドラインを取得中)
+
+＊OnHeadlinesense.OnFind
+＞読み上げフェーズ（Ｒ２）
+
+＊読み上げフェーズFirst
+：\b[2](「（Reference0）」ヘッドラインです)
+（Ｒ３）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+＊読み上げフェーズFirst and Last
+：\b[2](「（Reference0）」ヘッドラインです)
+（Ｒ３）
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+＊読み上げフェーズLast
+：\b[2]（Ｒ３）
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+
+＊読み上げフェーズNext
+：\b[2]（Ｒ３）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+
+＃＊サイトを開く
+＃\![open,browzer,]
+
+＊読み上げ中止
+：\b[-1]
+
+＊OnHeadlinesenseComplete
+：(更新されていませんでした)
+
+＊OnHeadlinesenseFailure
+：(ヘッドラインセンス失敗)
+＞（Reference0）によりヘッドラインセンス失敗
+(理由は（Reference0）)
+
+＊can't downloadによりヘッドラインセンス失敗
+：(ダウンロードできませんでした。
+重すぎるか、ネットに繋がっていない可能性があります)
+
+＊can't analyzeによりヘッドラインセンス失敗
+：(解析失敗。
+最新版のヘッドラインセンサがあれば入れ替えてください)
+
+＊OnSSTPBreak
+：(SSTPがブレイクされたようです)
+
+＃更新ファイル作成──────────────────────────
+
+＊OnUpdatedataCreating
+\h(updates2.dau作成中)\e
+
+＊OnUpdatedataCreated
+\h(完了)\e
+
+＊OnNarCreating
+\h\s[28]おっけー！\n『（Reference0）』をnarにすればいいのね！\e
+
+＊OnNarCreated
+\h\s[5]でーきた！\u\s[100]『（Reference1）』を作成しました。\e
+
+＃ダウンロード──────────────────────────
+
+＊OnURLDropping
+\h\s[5]\_q（Reference0）\_qからダウンロードするね！\e
+
+＊OnURLDropped
+\h\s[5]ダウンロードおしまいっ！\u\s[100]ファイルは\_q（Reference0）\_qにあります。\e
+
+＃メールチェック──────────────────────────
+
+＊OnBIFFBegin
+：\s[0]メールちぇっく？
+
+＊OnBIFFComplete
+＞メールがない	（Reference0）==0
+：\_q（Reference0）通／（Reference1）バイト\_q
+\s[0]メールが届いてるよ。
+\_q
+\![*]\_a[メーラを開く]メーラを開く\_a
+\![*]\_a[何もしない]何もしない\_a
+\_q
+
+＊OnBIFF2Complete
+＞メールがない	（Reference0）==0
+＞メールが増えた	（Ｒ３）>0
+：\_q（Reference0）通／（Reference1）バイト\_q
+\s[0]新着メールはなかったよ。
+\_q
+\![*]\_a[メーラを開く]メーラを開く\_a
+\![*]\_a[何もしない]何もしない\_a
+\_q
+
+＊メールが増えた
+：\_q（Reference0）通／（Reference1）バイト\_q\n
+\s[5]新着メールが（Ｒ３）通あるって！
+\_q
+\![*]\_a[メーラを開く]メーラを開く\_a
+\![*]\_a[何もしない]何もしない\_a
+\_q
+
+＊メーラを開く
+\![open,mailer]
+
+＊何もしない
+\h\b[-1]\1\b[-1]
+
+＊メールがない
+：\s[0]\cメールはなかったよ。
+
+＊OnBIFFFailure
+＞（Reference0）によりメールチェック失敗
+：\s[4]メールチェックしっぱ～い。
+：\s[104]原因は『（Reference0）』だそうです。
+
+＊defectによりメールチェック失敗
+：\s[4]メールチェックしっぱ～い。
+：\s[104]一度設定を見なおしてみてください。
+
+＊kickによりメールチェック失敗
+：\s[24]ＩＤかパスワードがまちがってる～！
+
+＊timeoutによりメールチェック失敗
+：\s[3]応答なしだって～。
+：\s[103]サーバの設定が違うか、混んでいる可能性があります。
+
+＃文字・キー入力──────────────────────────
+
+＊OnUserInput
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＊OnKeyPress
+（whenlist,（Reference0）==
+,t,（）
+,c,（UserCommunicate）
+）
+
+＃選択肢──────────────────────────
+
+＊OnChoiceSelect
+＞（Reference0）
+\h\s[7]『（Reference0）』？ってなーに？\u\s[103]選択肢エラーですね。\w6\nバグ報告をお願いします。\e
+
+＊OnChoiceTimeout
+\h\s[24]もー！\w6　（ユーザ名）聞いてる～？\e
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+
