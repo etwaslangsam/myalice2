@@ -43,7 +43,6 @@ http://www.misterdonut.jp/
 http://puccho.jp/
 
 ＊kero.recommendsites
-<<<<<<< HEAD
 キッズワコール
 http://www.wacoal.jp/kids/?link=global_nav
 
@@ -64,8 +63,6 @@ http://www.lecien.co.jp/lingerie/toroppo/index.html
 http://www.cecile.co.jp/genre/g1/3/TN/
 
 ＊kero.recommendsites
-=======
->>>>>>> 5e35df99b7e2763c99279ada9b1c237b20803a6a
 アダルトショップ -NLS-
 http://www.e-nls.com/
 
