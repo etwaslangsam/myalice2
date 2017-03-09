@@ -1,5 +1,6 @@
-＃PantsuChangeSystem──────────────────────────
-
+＃─────────────────────────────
+＃PantsuChangeSystem
+＃─────────────────────────────
 ＊PantsCheck
 \h\s[101]……パンツですか？\w9
 \s[101]今は（when,（今日のパンツ）==0,はいてないです,（今日のパンツ）を穿いてます）（はーと）\w9
@@ -46,32 +47,27 @@
 （SelectPants）
 
 ＊SelectPants
-\h\_q\*（MenuColor）（はーと）\_a[PantsDecision]（パンツ種類）\_a\n
-（はーと）\_a[PantsDecision]（パンツ種類）\_a\n
-（はーと）\_a[PantsDecision]（パンツ種類）\_a\n\f[default]
+\h\_q\*（MenuColor）（times、4、（はーと）\_a[PantsDecision]（パンツ種類）\_a\n\n[half]）\f[default]
 \q[◆他を見る,SelectPants]　\q[◆適当に,RandomPants]
 \_q\e
 
 ＠パンツ種類
-（P1）ローライズ
-（P1）スキャンティー
-（P1）フルバック
-（P1）ハーフバック
-（P1）Tバック
-（P1）Gストリング
-（P1）Cストリング
-（P1）オープンショーツ
-（P1）Oバック
+Tバックショーツ
+サイドストリングショーツ
+ローライズ
+ソング
+Oバック
+Gストリング
+Cストリング
+Tフロント
+オープンショーツ
+スキャンティー
+ワンポイントショーツ
 （ユーザ名B）のトランクス
 前貼り
 褌
 しましまぱんつ
-
-＠P1
-レースの
-サテンの
-シルクの
-ポリエステルの
+アンダースコート
 
 ＊PantsDecision
 （set,パンツ汚れ,0）（set,パンツ濡れ,0）

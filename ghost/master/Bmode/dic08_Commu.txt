@@ -1,8 +1,10 @@
-
-＃コミュニケートー──────────────────────────
-
+＃─────────────────────────────
+＃コミュニケート
+＃─────────────────────────────
 ＊Communication
-\h\b[2]\![open,communicatebox]\_q（MenuColor）
+\h\b[2]\![open,communicatebox]\_q
+\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a
+（MenuColor）
 \_a[OnCommunicate,user,おはよう]（はーと）おはよう\_a
 \_a[OnCommunicate,user,おやすみ]（はーと）おやすみ\_a
 \_a[OnCommunicate,user,好き]（はーと）好き\_a
@@ -13,7 +15,7 @@
 \_a[OnCommunicate,user,脱いで]（はーと）脱いで\_a
 \_a[OnCommunicate,user,えっち]（はーと）えっちしたい\_a
 \_a[OnCommunicate,user,子供]（はーと）こども産んで\_a
-\_a[OnCommunicate,user,ママ]（はーと）ママ……\_a
+\_a[OnCommunicate,user,ママ]（はーと）ママ\_a
 \_a[OnCommunicate,user,甘えて]（はーと）甘えて\_a
 \_a[OnCommunicate,user,風呂]（はーと）お風呂に入ろう\_a
 \_a[OnCommunicate,user,抱きたい]（はーと）抱きたい\_a
@@ -21,6 +23,20 @@
 \f[default]\q[◆なんでもない,Cancel]
 \_q\e
 
+＊Communication2
+\h\b[2]\![open,communicatebox]\_q
+\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a
+（MenuColor）
+\_a[OnCommunicate,user,年齢]（はーと）何歳？\_a
+\_a[OnCommunicate,user,学年]（はーと）何年生？\_a
+\_a[OnCommunicate,user,誕生日]（はーと）誕生日は？\_a
+\_a[OnCommunicate,user,パンツ]（はーと）今のパンツは？\_a
+\_a[OnCommunicate,user,アリスについて]（はーと）アリスについて\_a
+\_a[OnCommunicate,user,体位]（はーと）好きな体位は？\_a
+\_a[OnCommunicate,user,好物]（はーと）好きなモノは？\_a
+\n
+\f[default]\q[◆なんでもない,Cancel]
+\_q\e
 ＊COMMUNICATE該当なし
 \h\s[104]すいません、よく聞こえませんでした。n\n\_q\_a[Communication]◆戻る\_a\_q\e
 
@@ -202,3 +218,30 @@
 \s[128]そんな、私でも良いのなら……\w9
 喜んで……お受けします……\s[101]（ユーザ名B）（はーと）
 
+＃─────────────────────────────
+＃質問
+＃─────────────────────────────
+＊ユーザ「　年齢　ねんれい　何歳　なんさい　とし　歳
+\h\s[103]私の年齢、ですか？\w6
+正確な年齢は分かりませんが、大体１○歳ぐらいだと思います。\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
+
+＊ユーザ「　学年　がくねん　何年生　なんねんせい
+\h\s[105]今は○学５年生です。\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
+
+＊ユーザ「　誕生日　たんじょうび　バースデー　ばーすでー　Birthday
+\h\s[104]すいません、分からないんです。\w6
+（ユーザ名B）の所に来るまで、祝ってもらったことがないので……\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
+
+＊ユーザ「　アリスについて
+\h\s[101]アリスさんは、初めて出来たお友達です。\w6
+だから、（ユーザ名B）の次に大切な人です。\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
+
+＊ユーザ「　体位　たいい　四十八手　よんじゅうはって　しじゅうはって
+\h\s[126]好きな体位……ですか。\w6
+騎乗位や後背位で奥まで突かれるのも好きですけど
+やっぱり（ユーザ名B）のお顔が見える、正常位や対面での体位が好きですね。\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
+
+＊ユーザ「　好物　こうぶつ　好きなもの　すきなもの
+\h\s[100]好きなモノ……\w6
+\s[105]色々ありますけどアイス、でしょうか。\w6
+\s[101]それともちろん、（ユーザ名B）です。\n\n\_q\_a[Communication2]◆戻る\_a\_q\e
