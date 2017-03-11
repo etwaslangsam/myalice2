@@ -231,6 +231,11 @@ surface501
 
 }
 
+surface502
+{
+
+}
+
 ””””G‚è”½‰”””””””””””””””””””””””S
 
 surface.append100-139
@@ -240,6 +245,9 @@ animation3.pattern0,overlay,500,0,0,0
 
 animation4.interval,bind
 animation4.pattern0,overlay,501,0,0,0
+
+animation5.interval,bind
+animation5.pattern0,overlay,502,0,0,0
 
 collisionex0,Head,ellipse,63,41,170,84
 collisionex9,Hair,polygon,93,81,60,61,48,83,53,98,38,123,53,141,48,153,33,163,36,191,40,208,53,203,60,173,58,163,65,148,68,131,85,138,100,128,90,113
