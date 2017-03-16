@@ -2,6 +2,7 @@
 
 ＊UserCommunicate
 \u\c\_q\h\b[2]\![open,communicatebox]\c
+\_a[UserCommunication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
 \_a[OnCommunicate,user,アリス]◆アリス\_a\n\_a[OnCommunicate,user,ありす]◆ありす\_a\n
 \_a[OnCommunicate,user,好き]◆好き\_a
 \_a[OnCommunicate,user,かわいい]◆かわいい\_a
@@ -16,6 +17,14 @@
 \_a[OnCommunicate,user,ちゅーしたい]◆ちゅーしたい\_a
 \_a[OnCommunicate,user,励まして]◆励まして\_a
 \_a[OnCommunicate,user,膝枕]◆膝枕\_a
+\n\q[◆なんでもない,CommuCancel]
+\_q\e
+
+＊Communication2
+\h\b[2]\_q
+\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\_a[自己紹介]◆自己紹介して\_a\n[half]
+※質問内容随時募集中
 \n\q[◆なんでもない,CommuCancel]
 \_q\e
 
@@ -221,3 +230,18 @@
 ＊ありすに励まして
 \u\s[105]（ユーザ名C）なら大丈夫です。\w6\n頑張ってください。\n\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
 
+＃─────────────────────────────
+＃質問
+＃─────────────────────────────
+＊自己紹介
+：\s[2]自己紹介？\w3 いまさら？
+：\s[100]どうしたんですか？
+：\s[5]ま、いいわそれくらい。いくらでもしてあげる！\w9\n
+\s[26]私アリス！\w6小学○年生！\w6
+8月18日生まれのしし座、血液型はB型！\w6
+趣味はウィンドウショッピングと自撮りとSNS！\w6
+好きなモノはありすと（ユーザ名）と、31のアイス！\w6
+スリーサイズはひ・み・つ\w3（はーと）
+：\s[102]なんだか漫画の主人公みたいですね……。
+：\_q\_a[Communication2]◆戻る\_a\_q\e
+\e
