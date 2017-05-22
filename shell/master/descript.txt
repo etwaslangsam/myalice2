@@ -10,6 +10,8 @@ seriko.use_self_alpha,1
 
 seriko.alignmenttodesktop,bottom
 
+sakura.menu,hidden
+
 sakura.bindgroup3.name,カルピス,カルピス,calpis
 sakura.bindgroup3.default,0
 

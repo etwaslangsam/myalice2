@@ -28,7 +28,7 @@ bgm1.png
 255
 
 ＠dressuprootbutton.visible
-0
+1
 
 ＃１行目がサイト名 
 ＃２行目がジャンプ先URL 
