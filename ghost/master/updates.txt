@@ -39,7 +39,6 @@ file,ghost/master/Bmode/dic12_talk.txt47909014ed1b83f79b81a5b86bed0ad8size=101
 file,ghost/master/Bmode/dic_play1.txt40fef39ecee09f35dcd96c7f1a1415c1size=20646
 file,ghost/master/Bmode/dic_play2.txt3a0e26d3f8262c9da898d673953940e0size=11596
 file,ghost/master/saori/ssu.dllb0ff7b22180178221e97b51782570f38size=89600
-file,shell/old_suwari.zip2ebdabae288e214a2c16a53050ef9960size=2868941
 file,shell/master/descript.txt55dea8eaafb3ecffaa3508af333f5bb7size=547
 file,shell/master/eye1.pngace52c30a588b008eeb0b908cf7ffceasize=4798
 file,shell/master/eye101.png0d4f37dba059cd5fb7a27eb7a98089eesize=4569
