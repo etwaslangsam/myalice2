@@ -35,9 +35,10 @@
 \h\s[101]……服を、脱ぐんですね？\w9
 
 ＊OnShellChanged
+＄現在シェル	（Reference0）
 ＞suwariアリス帰還２	（選択ラベル）==◆アリスが帰ってきた
 ＞脱いだ	（Reference0）==suwari
-（set,現在シェル,）（set,今日のパンツ,（パンツ種類））（set,パンツ残数,5）
+（set,今日のパンツ,（パンツ種類））（set,パンツ残数,5）
 \h\s[100]終わりました。\w6
 \s[126]どう、でしょうか？\w6　似合ってますか？\e
 
@@ -47,7 +48,7 @@
 ……\s[101]あまりジロジロ見られると恥ずかしいです。\e
 
 ＊suwariアリス帰還２
-（set,現在シェル,）（set,選択ラベル,◆）
+（set,選択ラベル,◆）
 （set,辞書フォルダ,.）（set,デフォルトサーフェス0,0）（set,デフォルトサーフェス1,100）（set,会話時サーフェス戻し,有効）
 \h\s[0]\c\u\s[101]\c
 ：\s[5]たっだいまー！
@@ -299,3 +300,35 @@
 （set,選択ＩＤ,（Reference0））
 ＞（Reference0）
 
+＃─────────────────────────────
+＃翻訳
+＃─────────────────────────────
+＊OnTranslate	（現在シェル）==5years_after
+＄話	（Reference0）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[100]（sprintf,%c,3）\s[200]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[101]（sprintf,%c,3）\s[201]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[102]（sprintf,%c,3）\s[202]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[103]（sprintf,%c,3）\s[203]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[104]（sprintf,%c,3）\s[204]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[105]（sprintf,%c,3）\s[205]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[106]（sprintf,%c,3）\s[206]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[107]（sprintf,%c,3）\s[207]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[108]（sprintf,%c,3）\s[208]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[109]（sprintf,%c,3）\s[209]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[124]（sprintf,%c,3）\s[224]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[125]（sprintf,%c,3）\s[225]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[126]（sprintf,%c,3）\s[226]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[127]（sprintf,%c,3）\s[227]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[128]（sprintf,%c,3）\s[228]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[129]（sprintf,%c,3）\s[229]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[130]（sprintf,%c,3）\s[230]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[131]（sprintf,%c,3）\s[231]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[132]（sprintf,%c,3）\s[232]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[133]（sprintf,%c,3）\s[233]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[134]（sprintf,%c,3）\s[234]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[135]（sprintf,%c,3）\s[235]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[136]（sprintf,%c,3）\s[236]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[137]（sprintf,%c,3）\s[237]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[138]（sprintf,%c,3）\s[238]）
+＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[139]（sprintf,%c,3）\s[239]）
+（話）

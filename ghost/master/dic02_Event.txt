@@ -26,6 +26,7 @@
 \u\s[10]\b[-1]
 
 ＊OnShellChanged
+＄現在シェル	（Reference0）
 ＞脱いだ	（Reference0）==suwari
 
 ＊脱いだ
