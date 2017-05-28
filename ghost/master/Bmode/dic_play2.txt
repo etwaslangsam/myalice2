@@ -2,13 +2,13 @@
 ＃AF
 ＃─────────────────────────────
 ＊お尻でえっち	（パンツ濡れ）>=15
-：（choice,\s[101],\s[126],\s[127]）……分かりました。
+：\s[126]……分かりました。
 どうぞ、（ユーザ名B）。もう準備は出来てます。
 私でいっぱい気持ちよくなってくださいね（はーと）\x
 ＞本番
 
 ＊お尻でえっち	（パンツ濡れ）<15
-：（choice,\s[101],\s[126],\s[127]）……分かりました。
+：\s[127]……分かりました。
 優しく……してくださいね？\x
 ＞前戯
 
@@ -35,8 +35,13 @@
 ＃─────────────────────────────
 ＃前戯
 ＃─────────────────────────────
-＊前戯
+＊前戯	（現在シェル）!=5years_after
 ：\t（times,6,\c（voiceA）（A前戯）（voiceB）\w9）
+\c（準備完了）\w9
+＞本番
+
+＊前戯	（現在シェル）==5years_after
+：\t（times,6,\c（A前戯）\w9）
 \c（準備完了）\w9
 ＞本番
 
@@ -79,8 +84,17 @@
 \s[126]……は、はい。　動いて、大丈夫です（はーと）\x
 ＞正常位前後
 
-＊正常位前後
+＊正常位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A正常位）,（A前後））（voiceB）\w9）
+\c（voiceA）\s[127]おちんちんビクビクしてきた（はーと）\w9
+もう……射精そうなんですか？
+：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+\![*]\q[射精る,正常位後]　　\![*]\q[続ける,正常位前後]
+\f[default]
+\_q
+
+＊正常位前後	（現在シェル）==5years_after
+：\c\s[129]（times,6,\c（choice,（A正常位）,（A前後））\w9）
 \c（voiceA）\s[127]おちんちんビクビクしてきた（はーと）\w9
 もう……射精そうなんですか？
 ：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
@@ -118,8 +132,15 @@
 \n（吐息）\x
 ＞後背位前後
 
-＊後背位前後
+＊後背位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A後背位）,（A前後））（voiceB）\w9）
+：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+\![*]\q[孕ませる,後背位後]　　\![*]\q[続ける,後背位前後]
+\f[default]
+\_q
+
+＊後背位前後	（現在シェル）==5years_after
+：\c\s[129]（times,6,\c（choice,（A後背位）,（A前後））\w9）
 ：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
 \![*]\q[孕ませる,後背位後]　　\![*]\q[続ける,後背位前後]
 \f[default]
@@ -152,8 +173,15 @@
 ……それじゃあ動きますね（はーと）\x
 ＞騎乗位前後
 
-＊騎乗位前後
+＊騎乗位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A騎乗位）,（A前後））（voiceB）\w9）
+：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+\![*]\q[搾り取られる,騎乗位後]　　\![*]\q[続ける,騎乗位前後]
+\f[default]
+\_q
+
+＊騎乗位前後	（現在シェル）==5years_after
+：\c\s[129]（times,6,\c（choice,（A騎乗位）,（A前後））\w9）
 ：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
 \![*]\q[搾り取られる,騎乗位後]　　\![*]\q[続ける,騎乗位前後]
 \f[default]
@@ -184,8 +212,15 @@
 \s[136]この格好だとまるで、抱っこされてるみたい（はーと）（はーと）（はーと）\x
 ＞対面座位前後
 
-＊対面座位前後
+＊対面座位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A対面座位）,（A前後））（voiceB）\w9）
+：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+\![*]\q[射ち上げる,対面座位後]　　\![*]\q[続ける,対面座位前後]
+\f[default]
+\_q
+
+＊対面座位前後	（現在シェル）==5years_after
+：\c\s[129]（times,6,\c（choice,（A対面座位）,（A前後））\w9）
 ：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
 \![*]\q[射ち上げる,対面座位後]　　\![*]\q[続ける,対面座位前後]
 \f[default]
@@ -221,8 +256,15 @@
 \s[127]アリスさんに見られちゃう所、想像したんですか？\x
 ＞背面座位前後
 
-＊背面座位前後
+＊背面座位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A背面座位）,（A前後））（voiceB）\w9）
+：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+\![*]\q[精液で満たす,背面座位後]　　\![*]\q[続ける,背面座位前後]
+\f[default]
+\_q
+
+＊背面座位前後	（現在シェル）==5years_after
+：\c\s[129]（times,6,\c（choice,（A背面座位）,（A前後））\w9）
 ：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
 \![*]\q[精液で満たす,背面座位後]　　\![*]\q[続ける,背面座位前後]
 \f[default]
@@ -233,7 +275,7 @@
 （喘ぎ声２）\w6\n\s[130]んぅっ！？\w6　\s[133]しょんな……乳首……今はダメですぅ（はーと）
 
 ＊背面座位後
-＞背面座位後２	（現在シェル）==suwari
+＞背面座位後２	（現在シェル）!=masteri
 ：\s[130]（ユーザ名B）……も、ダメです……！
 ：(ただいま～！)
 ：\s[102]！？

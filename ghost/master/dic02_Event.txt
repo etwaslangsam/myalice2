@@ -13,24 +13,19 @@
 \s[103]（ユーザ名C）、大丈夫？
 
 ＃シェル変更──────────────────────────
-
-＊OnShellChanging
-（when,（Reference0）==suwari,（suwariモード））
-
-＊suwariモード
-（set,現在シェル,suwari）
+＊OnShellChanging	（Reference0）==suwari
 ：\s[5]ちょっとあたし遊びに行ってくるねー！
 ：\c\s[105]分かりました、気をつけてくださいね。
 \h\s[-1]\u\s[-1]\w9
-（set,辞書フォルダ,Bmode）（set,デフォルトサーフェス0,100）（set,デフォルトサーフェス1,10）（set,会話時サーフェス戻し,無効）
+＄辞書フォルダ	Bmode
+＄デフォルトサーフェス0	100
+＄デフォルトサーフェス1	10
+＄会話時サーフェス戻し	無効
 \u\s[10]\b[-1]
 
-＊OnShellChanged
+＊OnShellChanged	（Reference0）==suwari
 ＄現在シェル	（Reference0）
-＞脱いだ	（Reference0）==suwari
-
-＊脱いだ
-（set,現在シェル,suwari）（set,今日のパンツ,）
+＄今日のパンツ	
 \h\s[126]お待たせしました。\w6
 ……\s[101]あまりジロジロ見られると恥ずかしいです。\e
 
