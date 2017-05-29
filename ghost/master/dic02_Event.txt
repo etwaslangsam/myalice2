@@ -13,6 +13,11 @@
 \s[103]（ユーザ名C）、大丈夫？
 
 ＃シェル変更──────────────────────────
+＊OnShellChanging	（Reference0）!=suwari
+：\s[0]なに？ 着替え？\w6
+\s[26]（ユーザ名）、覗いていいからね？
+：\s[107]ダメですからね、（ユーザ名C）。\e
+
 ＊OnShellChanging	（Reference0）==suwari
 ：\s[5]ちょっとあたし遊びに行ってくるねー！
 ：\c\s[105]分かりました、気をつけてくださいね。
@@ -22,6 +27,11 @@
 ＄デフォルトサーフェス1	10
 ＄会話時サーフェス戻し	無効
 \u\s[10]\b[-1]
+
+＊OnShellChanged	（Reference0）!=suwari
+＄現在シェル	（Reference0）
+：\s[5]ジャーン！\w3 どう似合う？
+：\s[103]似合ってると嬉しいのですが……。
 
 ＊OnShellChanged	（Reference0）==suwari
 ＄現在シェル	（Reference0）
