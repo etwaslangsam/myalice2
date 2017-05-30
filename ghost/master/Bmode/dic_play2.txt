@@ -65,10 +65,10 @@
 ＃本番
 ＃─────────────────────────────
 ＊本番
-：\c\_q（MenuColor）
-\t\*\__q[前戯]（はーと）愛撫\__q\n[half]
-\_a[正常位]（はーと）正常位\_a　　\_a[後背位]（はーと）後背位\_a　　\_a[騎乗位]（はーと）騎乗位\_a\n[half]
-\_a[対面座位]（はーと）対面座位\_a　\_a[背面座位]（はーと）背面座位\_a
+：\c\_q
+\t\*\![*]\__q[前戯]愛撫\__q\n[half]
+\![*]\_a[正常位]正常位\_a　　\![*]\_a[後背位]後背位\_a　　\![*]\_a[騎乗位]騎乗位\_a\n[half]
+\![*]\_a[対面座位]対面座位\_a　\![*]\_a[背面座位]背面座位\_a
 ＃\n[half]\__q[対面立位]（はーと）対面立位\__q　\__q[背面立位]（はーと）背面立位\__q
 \_q
 
@@ -88,18 +88,16 @@
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A正常位）,（A前後））（voiceB）\w9）
 \c（voiceA）\s[127]おちんちんビクビクしてきた（はーと）\w9
 もう……射精そうなんですか？
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[射精る,正常位後]　　\![*]\q[続ける,正常位前後]
-\f[default]
 \_q
 
 ＊正常位前後	（現在シェル）==5years_after
 ：\c\s[129]（times,6,\c（choice,（A正常位）,（A前後））\w9）
 \c（voiceA）\s[127]おちんちんビクビクしてきた（はーと）\w9
 もう……射精そうなんですか？
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[射精る,正常位後]　　\![*]\q[続ける,正常位前後]
-\f[default]
 \_q
 
 ＠A正常位
@@ -134,16 +132,14 @@
 
 ＊後背位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A後背位）,（A前後））（voiceB）\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[孕ませる,後背位後]　　\![*]\q[続ける,後背位前後]
-\f[default]
 \_q
 
 ＊後背位前後	（現在シェル）==5years_after
 ：\c\s[129]（times,6,\c（choice,（A後背位）,（A前後））\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[孕ませる,後背位後]　　\![*]\q[続ける,後背位前後]
-\f[default]
 \_q
 
 ＠A後背位
@@ -175,16 +171,14 @@
 
 ＊騎乗位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A騎乗位）,（A前後））（voiceB）\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[搾り取られる,騎乗位後]　　\![*]\q[続ける,騎乗位前後]
-\f[default]
 \_q
 
 ＊騎乗位前後	（現在シェル）==5years_after
 ：\c\s[129]（times,6,\c（choice,（A騎乗位）,（A前後））\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[搾り取られる,騎乗位後]　　\![*]\q[続ける,騎乗位前後]
-\f[default]
 \_q
 
 ＠A騎乗位
@@ -214,16 +208,14 @@
 
 ＊対面座位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A対面座位）,（A前後））（voiceB）\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[射ち上げる,対面座位後]　　\![*]\q[続ける,対面座位前後]
-\f[default]
 \_q
 
 ＊対面座位前後	（現在シェル）==5years_after
 ：\c\s[129]（times,6,\c（choice,（A対面座位）,（A前後））\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[射ち上げる,対面座位後]　　\![*]\q[続ける,対面座位前後]
-\f[default]
 \_q
 
 ＠A対面座位
@@ -258,16 +250,14 @@
 
 ＊背面座位前後	（現在シェル）!=5years_after
 ：\c\s[129]（times,6,\c（voiceA）（choice,（A背面座位）,（A前後））（voiceB）\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[精液で満たす,背面座位後]　　\![*]\q[続ける,背面座位前後]
-\f[default]
 \_q
 
 ＊背面座位前後	（現在シェル）==5years_after
 ：\c\s[129]（times,6,\c（choice,（A背面座位）,（A前後））\w9）
-：\_q\t\*（MenuColor）\f[cursornotselectfontcolor,#e34174]
+：\_q\t\*
 \![*]\q[精液で満たす,背面座位後]　　\![*]\q[続ける,背面座位前後]
-\f[default]
 \_q
 
 ＠A背面座位

@@ -4,7 +4,7 @@
 ＊0つつかれ
 ＞愛撫中止	（興奮度）>0
 ＞顔を洗う	（顔射）==1
-＞メニュー
+＞Menu
 
 ＊愛撫中止
 ：\s[103]……（ユーザ名B）？
@@ -16,17 +16,21 @@
 ＊前戯続ける
 ：\s[127]（ユーザ名B）……はやく、はやく続きを（はーと）
 
-＊メニュー
-\h\![bind,ハート,ハート,0]（MenuTalk）\w9\c（MenuColor）
-\_q\_a[えっちなお願い]（はーと）えっちなお願い\_a\n[half]
-\_a[Communication]（はーと）話しかける\_a\n[half]
-\_a[NicknameSelect]（はーと）呼び方を変えて\_a\n[half]
-\_a[TalkInterval]（はーと）喋る間隔を変えて\_a\n[half]
-\_a[OnWebClap]（はーと）バグ報告\_a\n\f[default]
-\q[◆なんでもない,Cancel]
-：\_a[アリス帰還]◆アリスが帰ってきた\_a\n
-（季節イベント）
-\_q\e
+＊Menu
+\h\![bind,ハート,ハート,0]（MenuTalk）\w9\c\_q
+\![*]\_a[えっちなお願い]えっちなお願い\_a\n[half]
+\![*]\_a[Communication]話しかける\_a\n[half]
+\![*]\_a[NicknameSelect]呼び方を変えて\_a\n[half]
+\![*]\_a[TalkInterval]喋る間隔を変えて\_a\n[half]
+\![*]\_a[OnWebClap]バグ報告\_a\n
+\q[なんでもない,Cancel]
+\u\![*]\q[アリスが帰ってきた,アリス帰還]\n
+（whenlist,（現在月）（現在日）==
+,２１４,\_a[バレンタイン]（はーと）バレンタインデー\_a
+,３１４,（when、（バレンタインフラグ）==1、\_a[ホワイトデー]（はーと）ホワイトデー\_a）
+,１０３１,\_a[ハロウィン]（はーと）ハロウィン\_a
+,１２２４,（when、（EMassager）==0、\_a[Xmasプレゼント]（はーと）プレゼントする\_a）
+）\_q\e
 
 ＠MenuTalk
 \s[105]はい、なんでしょう？
@@ -41,34 +45,17 @@
 \s[103]分かりました……
 \s[105]また何かあったらお呼びくださいね？
 
-＠季節イベント
-（whenlist,（現在月）（現在日）==
-,２１４,\_a[バレンタイン]（はーと）バレンタインデー\_a
-,３１４,（when、（バレンタインフラグ）==1、\_a[ホワイトデー]（はーと）ホワイトデー\_a）
-,１０３１,\_a[ハロウィン]（はーと）ハロウィン\_a
-,１２２４,（when、（EMassager）==0、\_a[Xmasプレゼント]（はーと）プレゼントする\_a）
-）
-
 ＃─────────────────────────────
 ＃喋り頻度
 ＃─────────────────────────────
 ＊TalkInterval
-：\s[126]おしゃべりはあまり得意じゃないのですが……\_q\n[half]（MenuColor）
-\_a[TILevel0]（TalkIntervalFlag1）喋らない\_a\n[half]
-\_a[TILevel3]（TalkIntervalFlag2）３分おき\_a\n[half]
-\_a[TILevel2]（TalkIntervalFlag3）５分おき\_a\n[half]
-\_a[TILevel1]（TalkIntervalFlag4）１０分おき\_a\n\f[default]
+：\s[126]おしゃべりはあまり得意じゃないのですが……\_q\n[half]
+\![*]\_a[TILevel0]喋らない\_a\n[half]
+\![*]\_a[TILevel3]３分おき\_a\n[half]
+\![*]\_a[TILevel2]５分おき\_a\n[half]
+\![*]\_a[TILevel1]１０分おき\_a\n
 \![*]\q[なんでもない,Cancel]
 \_q\e
-
-＠TalkIntervalFlag1
-（when,（喋り間隔）==０秒,◯,（はーと））
-＠TalkIntervalFlag2
-（when,（喋り間隔）==１８０秒,◯,（はーと））
-＠TalkIntervalFlag3
-（when,（喋り間隔）==３００秒,◯,（はーと））
-＠TalkIntervalFlag4
-（when,（喋り間隔）==６００秒,◯,（はーと））
 
 ＊TILevel0
 ＄喋り間隔	０秒
@@ -91,12 +78,12 @@
 ＃ユーザ名
 ＃─────────────────────────────
 ＊NicknameSelect
-\h\s[100]なんとお呼びしましょうか？\w9\_q\n[half]（MenuColor）
-（NicknameFlag1）\_a[Nickname]ご主人様\_a\n[half]
-（NicknameFlag2）\_a[Nickname]お父様\_a　（NicknameFlag3）\_a[Nickname]お父さん\_a　（NicknameFlag4）\_a[Nickname]パパ\_a\n[half]
-（NicknameFlag5）\_a[Nickname]お兄様\_a　（NicknameFlag6）\_a[Nickname]兄さん\_a　\_l[@12]（NicknameFlag7）\_a[Nickname]お兄ちゃん\_a\n[half]
-（はーと）\_a[NicknameInput]自分で決める\_a\n\f[default]
-\q[◆なんでもない,Cancel]
+\h\s[100]なんとお呼びしましょうか？\w9\_q\n[half]
+\![*]\_a[Nickname]ご主人様\_a\n[half]
+\![*]\_a[Nickname]お父様\_a　\![*]\_a[Nickname]お父さん\_a　\![*]\_a[Nickname]パパ\_a\n[half]
+\![*]\_a[Nickname]お兄様\_a　\![*]\_a[Nickname]兄さん\_a　\_l[@12]\![*]\_a[Nickname]お兄ちゃん\_a\n[half]
+\![*]\_a[NicknameInput]自分で決める\_a\n
+\q[なんでもない,Cancel]
 \_q\e
 
 ＊Nickname
@@ -107,48 +94,18 @@
 \![open,inputbox,ユーザ名B,-1]
 
 ＊ユーザ名Bを教えてもらった
-\h\s[105]はい、（ユーザ名B）。\w
+\h\s[105]はい、（ユーザ名B）。\e
 
 ＊ユーザ名Bを空打ちされた
 \h\s[101]では、今までどおり（ユーザ名B）とお呼びしますね。\e
 
-＠NicknameFlag1
-（when,（ユーザ名B）==ご主人様,◯,（はーと））
-＠NicknameFlag2
-（when,（ユーザ名B）==お父様,◯,（はーと））
-＠NicknameFlag3
-（when,（ユーザ名B）==お父さん,◯,（はーと））
-＠NicknameFlag4
-（when,（ユーザ名B）==パパ,◯,（はーと））
-＠NicknameFlag5
-（when,（ユーザ名B）==お兄様,◯,（はーと））
-＠NicknameFlag6
-（when,（ユーザ名B）==兄さん,◯,（はーと））
-＠NicknameFlag7
-（when,（ユーザ名B）==お兄ちゃん,◯,（はーと））
-
 ＃─────────────────────────────
 ＃モード切替
 ＃─────────────────────────────
-＊アリス帰還	（現在シェル）==master
+＊アリス帰還
 \s[-1](ただいまー！)
-：\s[101]もうおしまい、ですね……。
-\h\s[-1]\u\s[-1]\w9
-＄辞書フォルダ	.
-＄デフォルトサーフェス0	0
-＄デフォルトサーフェス1	100
-＄会話時サーフェス戻し	有効
-\h\s[0]\c\u\s[101]\c
-：\s[5]たっだいまー！
-（choice、（ユーザ名）、ありす）寂しかった？
-：おかえりなさい、アリスさん。
-：\s[2]あれ？顔赤いよ？\w6だいじょーぶ？
-：\s[126]え、あ、はい……大丈夫です。\e
-
-＊アリス帰還	（現在シェル）==5years_after
-\s[-1](ただいまー！)
-：\s[201]もうおしまい、ですね……。
-\h\s[-1]\u\s[-1]\w9
+：（when、（現在シェル）==5years_after、\s[201]、\s[101]）もうおしまい、ですね……。
+\h\s[-1]\u\s[-1]\c\w9
 ＄辞書フォルダ	.
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	100
@@ -182,15 +139,8 @@
 ＊拍手送信内容を空打ちされた
 \e
 
-＊拍手送信完了
+＊OnExecuteHTTPComplete	（Reference1）==webclap
 \h\s[124]送信しました。ありがとうございます。\e
 
-＊拍手送信失敗
+＊OnExecuteHTTPFailure	（Reference1）==webclap
 \h\s[104]「（R4）」という理由で送信に失敗しました。\e
-
-＊OnExecuteHTTPComplete
-＞拍手送信完了	（R1）==webclap
-
-＊OnExecuteHTTPFailure
-＞拍手送信失敗	（R1）==webclap
-

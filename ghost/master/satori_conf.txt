@@ -20,6 +20,7 @@
 ＄パンツ汚れ	0
 ＄興奮度	0
 ＄話しかけ	アリスに
+＄現在シェル	master
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float

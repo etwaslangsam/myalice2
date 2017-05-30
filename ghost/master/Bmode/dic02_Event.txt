@@ -14,41 +14,43 @@
 ＃─────────────────────────────
 ＊OnSurfaceRestore
 \h（whenlist,（Reference0）,>=132,\s[128]\w9\s[127],==-1,\s[100]）
-（when,（顔射）==1,（顔を洗う））
+＞顔を洗う	（顔射）==1
 \![bind,身体,精液,0]\![bind,ハート,ハート,0]\![bind,身体,おもらし,0]
 \e
 
 ＊顔を洗う
 ＄顔射	0
-\h\c\s[126]……顔を洗ってきますね。\w6\s[-1]\w9\w6
+\h\c\s[126]……顔を洗ってきますね。\w6\s[-1]\w9\w6\![bind,身体,精液,0]\![bind,ハート,ハート,0]\![bind,身体,おもらし,0]
 \![bind,カルピス,カルピス,0]\![bind,ハート,ハート,0]\s[105]お待たせしました。\e
 
 ＃─────────────────────────────
 ＃シェル変更
 ＃─────────────────────────────
-＊OnShellChanging	（Reference0）==master
+＊OnShellChanging
+＞Strip	（Reference0）!=master
 \h\s[101]ここで着替え……ですか？\w6
 \s[101]分かりました……。\w9
 
-＊OnShellChanging	（Reference0）!=master
+＊Striping
 \h\s[101]……服を、脱ぐんですね？\w9
 
-＊OnShellChanged	（Reference0）==master
+＊OnShellChanged
 ＄現在シェル	（Reference0）
-＞suwariアリス帰還２	（選択ラベル）==◆アリスが帰ってきた
+＞Striped	（Reference0）!=master
+＞suwariアリス帰還２	（選択ラベル）==アリスが帰ってきた
 ＄今日のパンツ	（パンツ種類）
 ＄パンツ残数	5
 \h\s[100]終わりました。\w6
 \s[126]どう、でしょうか？\w6　似合ってますか？\e
 
-＊OnShellChanged	（Reference0）!=master
+＊Striped
 ＄現在シェル	（Reference0）
-＄今日のパンツ	
+＄今日のパンツ	0
 \h\s[126]お待たせしました。\w6
 ……\s[101]あまりジロジロ見られると恥ずかしいです。\e
 
 ＊suwariアリス帰還２
-＄選択ラベル	◆
+＄選択ラベル	
 ＄辞書フォルダ	.
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	100
@@ -289,19 +291,32 @@
 ＃選択肢
 ＃─────────────────────────────
 ＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
 ＞（Reference0）
+（NoAnchor）
+
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+（NoAnchor）
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+（NoAnchor）
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+（NoAnchor）
+
+＠NoAnchor
 \h(選択肢「（Reference0）」は存在しませんご報告下さい)\e
 
 ＊OnChoiceTimeout
 \h\s[101]あの、（ユーザ名B）？\e
-
-＊OnAnchorSelectEx
-（set,選択ラベル,（Reference0））（set,選択ＩＤ,（Reference1））
-＞（Reference1）
-
-＊OnAnchorSelect
-（set,選択ＩＤ,（Reference0））
-＞（Reference0）
 
 ＃─────────────────────────────
 ＃翻訳
