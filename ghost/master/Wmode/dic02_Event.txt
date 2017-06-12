@@ -1,0 +1,183 @@
+汎用イベント
+＃─────────────────────────────
+＃最小化復帰
+＃─────────────────────────────
+＊OnWindowStateRestore
+\0（StateRestorTalk）\e
+
+＠StateRestorTalk
+\s[32]んもー（ユーザ名）ったら、だいたん（はーと）
+
+
+＃─────────────────────────────
+＃表情復帰
+＃─────────────────────────────
+＊OnSurfaceRestore
+\0（choice,\s[0],\s[5],\s[6],\s[26],\s[28],\s[32]）
+
+＃─────────────────────────────
+＃シェル変更
+＃─────────────────────────────
+＊OnShellChanging
+＄現在シェル	（Reference0）
+＞5ya前	（Reference0）==5years_after
+＞suwari着替える	（Reference0）==suwari
+\0\s[5]ねーねー（ユーザ名）？\w6
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＞5ya後	（Reference0）==5years_after
+＞suwari着替えた	（Reference0）==suwari
+\0\s[26]この服どう？\w3 似合ってる？
+
+
+＊5ya前
+\0\s[26]ねぇ（ユーザ名）、私が大きくなったら……
+
+＊5ya後
+\0\s[32]もっと色んなこと教えてね（はーと）\e
+
+＊suwari着替える
+\0\s[24]え～っ！？\w5 もうデートおしまーい？
+……\s[2]ってホントだ、もうこんな時間！\w6
+\s[5]おうち帰んなきゃっ！\w3 じゃあね！
+\0\s[-1]\u\s[-1]\c\w9
+
+＊suwari着替えた
+＄辞書フォルダ	Bmode
+＄デフォルトサーフェス0	100
+＄デフォルトサーフェス1	10
+＄会話時サーフェス戻し	
+\0\c\s[105]おかえりなさい、（ユーザ名B）。
+
+＃─────────────────────────────
+＃ネットワーク更新
+＃─────────────────────────────
+＊OnUpdateBegin
+\0\s[26]更新チェーック！
+
+＊OnUpdateReady
+\0\s[28]（Reference0）件の更新だって！
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[4]あれ？
+\_q（Reference0）\_qが間違ってるって……
+
+＊OnUpdateComplete
+＞ネットワーク更新（Reference0）
+
+＊ネットワーク更新none
+\0\s[3]なんもなかったわ……\e
+
+＊ネットワーク更新changed
+\0\s[5]更新おーわりっ！\e
+
+＊OnUpdateFailure
+＞ネットワーク更新（Reference0）
+
+＊ネットワーク更新timeout
+\0\s[4]うーん……時間切れだって\e
+
+＊ネットワーク更新md5 miss
+\0\s[4]MD5エラーだってぇ……
+
+＊ネットワーク更新404
+\0\s[2]404だって……\e
+
+＊ネットワーク更新artificial
+\0(中断します)\e
+
+＊OnNetworkHeavy
+\0\s[4]う～ん重い……\e
+
+＃─────────────────────────────
+＃ダウンロード
+＃─────────────────────────────
+＊OnURLDropping
+\0\s[26]ダウンロードちゅ（はーと）\e
+
+＊OnURLDropped
+\0\s[5]おーしまい！
+\_q（Reference0）\_qにおいとくね。\e
+
+＃─────────────────────────────
+＃インストール
+＃─────────────────────────────
+＊OnInstallBegin
+\0\s[0]インストールするね。\e
+
+＊OnInstallComplete
+\0\s[28]はい終わり！\w6
+\_q（Reference0）/（Reference1）\_qだって。\e
+
+＊OnInstallFailure
+\0\s[24]「（Reference0）」で失敗だって！\e
+
+＊OnInstallRefuse
+\0\s[31]（ユーザ名）？
+これ、（Reference0）のだって……\e
+
+＃─────────────────────────────
+＃更新ファイル作成
+＃─────────────────────────────
+＊OnUpdatedataCreating
+\0\s[5]更新ファイル？を作るね。\e
+
+＊OnUpdatedataCreated
+\0\s[26]でっきあがり～！\e
+
+＊OnNarCreating
+\0\s[28]「（Reference0）」をNARにしちゃうね。\e
+
+＊OnNarCreated
+\0\s[8]で～きたっ！
+\_q（Reference1）\_q\e
+
+＃─────────────────────────────
+＃文字・キー入力
+＃─────────────────────────────
+＊OnUserInput
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＊OnKeyPress
+（whenlist,（Reference0）==
+,t,（）
+,r,（set,辞書リロード,実行）\0\s[0]リロード\e
+）
+
+＃─────────────────────────────
+＃選択肢
+＃─────────────────────────────
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+（NoAnchor）
+
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+（NoAnchor）
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+（NoAnchor）
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+（NoAnchor）
+
+＠NoAnchor
+\0\s[4]選択肢「（Reference0）」は存在しないみたい……\e
+
+＊OnChoiceTimeout
+\0\s[24]ちょっと（ユーザ名）聞いてるー？\e
