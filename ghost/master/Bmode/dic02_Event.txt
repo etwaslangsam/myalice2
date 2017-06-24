@@ -282,10 +282,17 @@
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
 ＊OnKeyPress
-（whenlist,（Reference0）==
-,t,（）
-,c,（Communication）
-）
+＞（Reference0）が押された
+
+＊tが押された
+（）
+
+＊cが押された
+＞Communication
+
+＊rが押された
+＄辞書リロード	実行
+\0\s[100]リロードしました。\e
 
 ＃─────────────────────────────
 ＃選択肢

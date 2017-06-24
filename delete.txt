@@ -1,3 +1,4 @@
 .gitignore
 commulist.txt
 thumbnail.png
+ghost/master/Bmode/dic09_Menu.txt
