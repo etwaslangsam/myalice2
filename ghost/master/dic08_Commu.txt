@@ -22,7 +22,7 @@
 
 ＊Communication2
 \h\b[2]\_q
-\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\_a[UserCommunicate]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
 \_a[自己紹介]◆アリス自己紹介して\_a
 \_a[好きなところ]◆お互いの好きな所\_a
 \_a[洗うところ]◆お風呂で体はどこから洗う？\_a
