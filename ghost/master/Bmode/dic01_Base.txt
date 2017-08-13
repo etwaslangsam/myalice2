@@ -248,12 +248,13 @@
 ＃喋り頻度
 ＃─────────────────────────────
 ＊TalkInterval
-：\s[126]おしゃべりはあまり得意じゃないのですが……\_q\n[half]
-\![*]\_a[TILevel0]喋らない\_a\n[half]
-\![*]\_a[TILevel3]３分おき\_a\n[half]
-\![*]\_a[TILevel2]５分おき\_a\n[half]
-\![*]\_a[TILevel1]１０分おき\_a\n
-\![*]\q[なんでもない,Cancel]
+\0\s[126]おしゃべりはあまり得意じゃないのですが……
+\_q
+【\q[３分おき,TILevel3]】\n[half]
+【\q[５分おき,TILevel2]】\n[half]
+【\q[１０分おき,TILevel1]】\n[half]
+【\q[喋らない,TILevel0]】\n
+\q[なんでもない,Cancel]
 \_q\e
 
 ＊TILevel0
@@ -277,11 +278,12 @@
 ＃ユーザ名
 ＃─────────────────────────────
 ＊NicknameSelect
-\h\s[100]なんとお呼びしましょうか？\w9\_q\n[half]
-\![*]\_a[Nickname]ご主人様\_a\n[half]
-\![*]\_a[Nickname]お父様\_a　\![*]\_a[Nickname]お父さん\_a　\![*]\_a[Nickname]パパ\_a\n[half]
-\![*]\_a[Nickname]お兄様\_a　\![*]\_a[Nickname]兄さん\_a　\_l[@12]\![*]\_a[Nickname]お兄ちゃん\_a\n[half]
-\![*]\_a[NicknameInput]自分で決める\_a\n
+\0\s[100]なんとお呼びしましょうか？\w3
+\_q
+【\_a[Nickname]ご主人様\_a】\n[half]
+【\_a[Nickname]お父様\_a】　【\_a[Nickname]お父さん\_a】　【\_a[Nickname]パパ\_a】\n[half]
+【\_a[Nickname]お兄様\_a】　【\_a[Nickname]兄さん\_a】　\_l[@12]【\_a[Nickname]お兄ちゃん\_a】\n[half]
+【\_a[NicknameInput]自分で決める\_a】\n
 \q[なんでもない,Cancel]
 \_q\e
 
