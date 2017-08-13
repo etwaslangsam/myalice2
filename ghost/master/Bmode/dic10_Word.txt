@@ -111,6 +111,9 @@
 兄ちゃま
 お兄ちゃん
 
+＠はーと２
+\f[color,#e34174]\_u[0x2665]\f[color,default]
+
 ＠重要
 \f[color,red]\f[bold,1]φ！\f[bold,0]\f[color,default]
 
