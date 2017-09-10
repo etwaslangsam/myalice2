@@ -5,3 +5,4 @@ ghost\master\Bmode\dic09_Menu.txt
 ghost\master\dic09_Menu.txt
 ghost\master\dic03_Touch2.txt
 ghost\master\dic_network.txt
+ghost\master\Bmode\dic11_pantu.txt
