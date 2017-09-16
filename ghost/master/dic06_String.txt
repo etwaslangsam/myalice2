@@ -28,7 +28,7 @@ bgm2.png
 0
 
 ＠dressuprootbutton.visible
-0
+1
 
 ＊sakura.recommendsites
 サーティーワン アイスクリーム
