@@ -349,11 +349,11 @@
 ＃─────────────────────
 ＃選択肢
 ＃─────────────────────
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-＞NoAnchor
-
+＃＊OnChoiceSelect
+＃＄選択ＩＤ	（Reference0）
+＃＞（Reference0）
+＃＞NoAnchor
+＃
 ＊OnChoiceSelectEx
 ＄選択ラベル	（Reference0）
 ＄選択ＩＤ	（Reference1）

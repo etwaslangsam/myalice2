@@ -359,12 +359,12 @@
 ＃─────────────────────────────
 ＃選択肢
 ＃─────────────────────────────
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-\0\s[7]『（Reference0）』？ってなーに？
-\1\s[103]選択肢エラーですね。\w6
-バグ報告をお願いします。\e
+＃＊OnChoiceSelect
+＃＄選択ＩＤ	（Reference0）
+＃＞（Reference0）
+＃\0\s[7]『（Reference0）』？ってなーに？
+＃\1\s[103]選択肢エラーですね。\w6
+＃バグ報告をお願いします。\e
 
 ＊OnChoiceSelectEx
 ＄選択ラベル	（Reference0）
