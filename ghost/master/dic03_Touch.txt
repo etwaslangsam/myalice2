@@ -3,6 +3,17 @@
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
 
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	
+
+
 ＊OnMouseHover
 ＄（Reference3）（Reference4）見つめタイマ	３
 

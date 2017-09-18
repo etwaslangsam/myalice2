@@ -183,12 +183,12 @@
 \0\s[127]（ユーザ名B）……はやく、はやく続きを（はーと）
 
 ＊Menu
-\h\![bind,ハート,ハート,0]（MenuTalk）
-\_q
-\![*]\q[えっちなお願い,えっちなお願い]　（when、（現在シェル）==5years_after2、\![*]\q[服を脱がす,服を脱がす]）\n[half]
-\![*]\q[話しかける,Communication]\n[half]
-\![*]\q[呼び方を変えて,NicknameSelect]\n[half]
-\![*]\q[喋る間隔を変えて,TalkInterval]\n
+\0\![bind,ハート,ハート,0]（MenuTalk）\_q\_l[,@8]
+\![*]\q[えっちなお願い,えっちなお願い]　（when、（現在シェル）==5years_after2、\![*]\q[服を脱がす,服を脱がす]）\_l[,@5]
+\![*]\q[なにか話して,PleaseTalk]\_l[,@5]
+\![*]\q[話しかける,Communication]\_l[,@5]
+\![*]\q[喋る間隔を変えて,TalkInterval]\_l[,@5]
+\![*]\q[呼び方を変えて,NicknameSelect]\_l[,@8]
 \q[なんでもない,Cancel]
 \u\![*]\q[アリスが帰ってきた,アリス帰還]\n
 （whenlist,（現在月）（現在日）==
@@ -215,6 +215,9 @@
 ＄今日のパンツ	
 \0\![bind,着せ替え,全裸,1]\s[127]脱ぎました（はーと）
 \e
+
+＊PleaseTalk
+（）
 
 ＃─────────────────────────────
 ＃えっちなお願い
@@ -255,10 +258,10 @@
 ＊TalkInterval
 \0\s[126]おしゃべりはあまり得意じゃないのですが……
 \_q\n[half]\_a[TILevel0]（TalkIntervalFlag1）\_a 喋るな\n[half]
-\_a[TILevel4]（TalkIntervalFlag2）\_a 60秒\n[half]
-\_a[TILevel3]（TalkIntervalFlag3）\_a 180秒\n[half]
-\_a[TILevel2]（TalkIntervalFlag4）\_a 300秒\n[half]
-\_a[TILevel1]（TalkIntervalFlag5）\_a 600秒\n
+\_a[TILevel4]（TalkIntervalFlag2）\_a １分\n[half]
+\_a[TILevel3]（TalkIntervalFlag3）\_a ３分\n[half]
+\_a[TILevel2]（TalkIntervalFlag4）\_a ５分\n[half]
+\_a[TILevel1]（TalkIntervalFlag5）\_a 10分\n
 \q[なんでもない,Cancel]
 \_q\e
 
@@ -324,15 +327,15 @@
 ＃モード切替
 ＃─────────────────────
 ＊アリス帰還
-\s[-1](ただいまー！)
-：（when、（現在シェル）==5years_after、\s[201]、\s[101]）もうおしまい、ですね……。
-\h\s[-1]\u\s[-1]\c\w9
+\1\s[-1](ただいまー！)
+\0（when、（現在シェル）==5years_after、\s[201]、\s[101]）もうおしまい、ですね……。
+\0\s[-1]\1\s[-1]\c\w9
 ＄辞書フォルダ	.
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	100
 ＄会話時サーフェス戻し	有効
-\h\s[0]\c\u\s[101]
-：\s[5]たっだいまー！
+\0\s[0]\c\1\s[101]
+\0\s[5]たっだいまー！
 （choice、（ユーザ名）、ありす）寂しかった？
 ：\cおかえりなさい、アリスさん。
 ：\s[2]あれ？顔赤いよ？\w6だいじょーぶ？
