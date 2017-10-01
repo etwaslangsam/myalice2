@@ -266,6 +266,31 @@ surface508
 
 }
 
+surface509
+{
+
+}
+
+surface510
+{
+
+}
+
+surface511
+{
+
+}
+
+surface512
+{
+
+}
+
+surface513
+{
+
+}
+
 ””””G‚è”½‰”””””””””””””””””””””””S
 
 surface.append100-139
@@ -288,6 +313,16 @@ animation10.interval,bind
 animation10.pattern0,overlay,507,0,0,0
 animation11.interval,bind
 animation11.pattern0,overlay,508,0,0,0
+animation12.interval,bind
+animation12.pattern0,overlay,509,0,0,0
+animation13.interval,bind
+animation13.pattern0,overlay,510,0,0,0
+animation14.interval,bind
+animation14.pattern0,overlay,511,0,0,0
+animation15.interval,bind
+animation15.pattern0,overlay,512,0,0,0
+animation16.interval,bind
+animation16.pattern0,overlay,513,0,0,0
 
 collisionex0,Head,ellipse,63,41,170,84
 collisionex9,Hair,polygon,93,81,60,61,48,83,53,98,38,123,53,141,48,153,33,163,36,191,40,208,53,203,60,173,58,163,65,148,68,131,85,138,100,128,90,113

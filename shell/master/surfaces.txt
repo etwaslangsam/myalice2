@@ -200,6 +200,31 @@ surface508
 
 }
 
+surface509
+{
+
+}
+
+surface510
+{
+
+}
+
+surface511
+{
+
+}
+
+surface512
+{
+
+}
+
+surface513
+{
+
+}
+
 ””””G‚è”½‰”””””””””””””””””””””””S
 
 surface.append0-35
@@ -218,6 +243,16 @@ animation10.interval,bind
 animation10.pattern0,overlay,507,0,0,0
 animation11.interval,bind
 animation11.pattern0,overlay,508,0,0,0
+animation12.interval,bind
+animation12.pattern0,overlay,509,0,0,0
+animation13.interval,bind
+animation13.pattern0,overlay,510,0,0,0
+animation14.interval,bind
+animation14.pattern0,overlay,511,0,0,0
+animation15.interval,bind
+animation15.pattern0,overlay,512,0,0,0
+animation16.interval,bind
+animation16.pattern0,overlay,513,0,0,0
 
 collisionex0,Head,polygon,126,41,99,41,74,48,56,81,61,98,131,84,148,81,141,61
 collisionex1,Bust,polygon,103,143,88,156,83,166,83,178,133,181,130,169,130,151
