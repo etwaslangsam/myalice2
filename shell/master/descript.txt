@@ -7,19 +7,43 @@ craftmanw,蟻の住む木
 craftmanurl,http://seizonkakuninbasyo.web.fc2.com/
 
 seriko.use_self_alpha,1
-
 seriko.alignmenttodesktop,bottom
 
 sakura.menu,hidden
+kero.menu,hidden
 
 sakura.bindgroup3.name,カルピス,カルピス,calpis
 sakura.bindgroup3.default,0
-
 sakura.bindgroup4.name,ハート,ハート,Heart
 sakura.bindgroup4.default,0
-
 sakura.bindgroup5.name,目隠し線,目隠し線,EyeBlind
 sakura.bindgroup5.default,0
+sakura.bindgroup6.name,エモ,気づき,Ex
+sakura.bindgroup6.default,0
+sakura.bindgroup7.name,エモ,怒り,ang
+sakura.bindgroup7.default,0
+sakura.bindgroup8.name,エモ,汗,ase
+sakura.bindgroup8.default,0
+sakura.bindgroup9.name,エモ,あせあせ,asease
+sakura.bindgroup9.default,0
+sakura.bindgroup10.name,エモ,眠り,zzz
+sakura.bindgroup10.default,0
+sakura.bindgroup11.name,エモ,音符,onpu
+sakura.bindgroup11.default,0
 
 kero.bindgroup3.name,カルピス,カルピス,calpis
 kero.bindgroup3.default,0
+kero.bindgroup4.name,ハート,ハート,Heart
+kero.bindgroup4.default,0
+kero.bindgroup6.name,エモ,気づき,Ex
+kero.bindgroup6.default,0
+kero.bindgroup7.name,エモ,怒り,ang
+kero.bindgroup7.default,0
+kero.bindgroup8.name,エモ,汗,ase
+kero.bindgroup8.default,0
+kero.bindgroup9.name,エモ,あせあせ,asease
+kero.bindgroup9.default,0
+kero.bindgroup10.name,エモ,眠り,zzz
+kero.bindgroup10.default,0
+kero.bindgroup11.name,エモ,音符,onpu
+kero.bindgroup11.default,0
