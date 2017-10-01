@@ -157,11 +157,11 @@
 ＃メニュー
 ＃─────────────────────
 ＊0つつかれ
+\1（エモ消し）\0（MenuTalk）
 ＞MainMenu
 
 ＊MainMenu
-\1（エモ消し）\0（MenuTalk）\_q\n[half]
-\![*]\q[なにか話して,PleaseTalk]\n[half]
+\0（エモ消し）\_q\_l[,@8]\![*]\q[なにか話して,PleaseTalk]\n[half]
 \![*]\q[話しかける,OnCommunicate,user,アリス]\n[half]
 \![*]\q[喋り頻度,TalkInterval]\n[half]
 \![*]\q[名前を教える,UserNameChange]\n[half]
