@@ -130,7 +130,13 @@
 \![*]\q[作者に連絡,OnWebClap]\n
 \q[なんでもない,Cancel]
 \_q
+（DateEvent）
 \e
+
+＠DateEvent
+（whenlist、（現在月）月（現在日）日==
+、１１月１１日、\u\![*]\q[ポッキーゲームしよう,ポッキーゲーム]
+）
 
 ＊PleaseTalk
 \0\s[0]（エモ消し）（）

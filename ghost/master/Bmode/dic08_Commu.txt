@@ -2,7 +2,7 @@
 ＃コミュニケート
 ＃─────────────────────────────
 ＊Communication
-\0\b[2]\![open,communicatebox]\_q
+\0\b[2]\_q
 \_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
 \![*]\_a[OnCommunicate,user,おはよう]おはよう\_a
 \![*]\_a[OnCommunicate,user,おやすみ]おやすみ\_a
@@ -37,7 +37,7 @@
 \![*]\_a[性感帯]性感帯は？\_a
 \![*]\_a[自慰回数]オナニーは週何回？\_a
 \![*]\_a[決断]もしユーザとアリスが付き合ったら？\_a\n[half]
-（when、（婚約）==1、\_a[子供の数]子供は何人ほしい？\_a）
+（when、（婚約）==1、\![*]\_a[子供の数]子供は何人ほしい？\_a）
 \n
 \q[なんでもない,Cancel]
 \_q\e
