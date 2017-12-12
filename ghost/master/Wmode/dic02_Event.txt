@@ -19,13 +19,13 @@
 ＃────────────
 ＊OnShellChanging
 ＄現在シェル	（Reference0）
-＞5ya前	（Reference0）==5years_after
+＞5ya前	（Reference0）==5years_after2
 ＞suwari着替える	（Reference0）==suwari
 \0\s[5]ねーねー（ユーザ名）？\w6
 
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
-＞5ya後	（Reference0）==5years_after
+＞5ya後	（Reference0）==5years_after2
 ＞suwari着替えた	（Reference0）==suwari
 \0\s[26]この服どう？\w3 似合ってる？
 
