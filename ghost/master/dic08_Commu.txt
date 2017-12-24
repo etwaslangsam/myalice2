@@ -2,7 +2,7 @@
 
 ＊UserCommunicate
 \1（エモ消し）\c\_q\0（エモ消し）\b[2]\c
-\_a[UserCommunication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\_a[UserCommunication]【話しかけ】\_a　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a\n
 \_a[OnCommunicate,user,アリス]◆アリス\_a\n\_a[OnCommunicate,user,ありす]◆ありす\_a\n
 \_a[OnCommunicate,user,好き]◆好き\_a
 \_a[OnCommunicate,user,かわいい]◆かわいい\_a
@@ -22,8 +22,8 @@
 \_q\e
 
 ＊Communication2
-\1（エモ消し）\0（エモ消し）\b[2]\_q
-\_a[UserCommunicate]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\1（エモ消し）\c\_q\0（エモ消し）\b[2]\c
+\_a[UserCommunication]【話しかけ】\_a　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a\n
 \_a[自己紹介]◆アリス自己紹介して\_a
 \_a[好きなところ]◆お互いの好きな所\_a
 \_a[洗うところ]◆お風呂で体はどこから洗う？\_a
@@ -33,6 +33,13 @@
 \n[half]
 ※質問内容随時募集中
 \n\q[◆なんでもない,QuestionCancel]
+\_q\e
+
+＊EventLibrary
+\1（エモ消し）\c\_q\0（エモ消し）\b[2]\c
+\_a[UserCommunication]【話しかけ】\_a　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a\n
+（when、（アリスキス）!=１、（times,１２,─）、\_a[アリスソロ解禁]◆アリスソロモード解禁\_a）
+\n\q[◆なんでもない,CommuCancel]
 \_q\e
 
 ＊CommuCancel
