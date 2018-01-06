@@ -111,8 +111,9 @@
 
 ＊Menu
 ：\c（エモ消し）\_q\b[2]φ
-\![*]\q[なにか話して,PleaseTalk]\n[half]
-\![*]\q[言葉を教える,Learning]\n[half]
+\![*]\q[なにか話して,PleaseTalk]\_l[,@3]
+\![*]\q[話しかける,UserCommunicate]\_l[,@3]
+\![*]\q[言葉を教える,Learning]\_l[,@3]
 \![*]\q[名前を教える,UserNameChange]\n[half]
 （times,20,－）\n[half]
 ◯喋り頻度\_l[,@3]
@@ -124,14 +125,13 @@
 （times,20,－）\n[half]
 ◯各種設定\_l[,@3]
 　（when、（TimeSignal）==0、[　]、[◯]）\_a[時報設定]時報ＯＮφ・ＯＦＦスイッチ\_a
-　（when、（Ca）==1、[　]、[◯]）\_a[トーク設定]トーク抑制\_a\n[half]
+　（when、（Ca）==1、[　]、[◯]）\_a[トーク設定]トーク抑制\_a
+　（when、（コミュ送信）==0、[　]、[◯]）\_a[未対応コミュ送信]未対応コミュワード送信\_a\n[half]
 （times,20,－）\n[half]
-\![*]\q[家に戻る,DateEnd]\n[half]
-\![*]\q[作者に連絡,OnWebClap]\n
+\![*]\q[家に戻る,DateEnd]
+（DateEvent）\n
 \q[なんでもない,Cancel]
 \_q
-（DateEvent）
-\e
 
 ＠DateEvent
 （whenlist、（現在月）月（現在日）日==
@@ -140,52 +140,81 @@
 ）
 
 ＊PleaseTalk
-\0\s[0]（エモ消し）（）
+：\s[0]（エモ消し）（）
 
 ＊Learning
-\0\s[5]なにを教えてくれるの？
+：\s[5]なにを教えてくれるの？
 \![open,teachbox]
 
+＊Cancel
+：\s[24]む～っ！
+\![close,communicatebox]
+
+＃────────────
+＃喋り頻度
+＃────────────
 ＊TILevel0
 ＄喋り間隔	０秒
 ＞Menu
-
 ＊TILevel4
 ＄喋り間隔	６０秒
 ＞Menu
-
 ＊TILevel3
 ＄喋り間隔	１８０秒
 ＞Menu
-
 ＊TILevel2
 ＄喋り間隔	３００秒
 ＞Menu
-
 ＊TILevel1
 ＄喋り間隔	６００秒
 ＞Menu
 
+＃────────────
+＃時報設定
+＃────────────
 ＊時報設定
 （when、（TimeSignal）==0、（set,TimeSignal,1）、（set,TimeSignal,0））
 ＞Menu
 
+＃────────────
+＃トーク設定
+＃────────────
 ＊トーク設定
-：\_q
-\![*]\q[トーク抑制,TalkSafe]　現在φ：（when、（Ca）==1、トークする、トークしない）
+：\s[0]\_q※人によっては苦手に感じる要素のある
+トークをしないようにしますか？
 
-※人によっては苦手に感じる要素のある
-トークをしないようにします。
+\![*]\q[トーク抑制する,TalkSafe]　\![*]\q[トーク抑制しない,TalkAuto]
 
 \q[戻る,Menu]
 \_q
 
 ＊TalkSafe
-（when、（Ca）==1、（set,Ca,0）、（set,Ca,1））
-＞トーク設定
+＄Ca	0
+＞Menu
 
-＊Cancel
-\0\s[24]む～っ！
+＊TalkAuto
+＄Ca	1
+＞Menu
+
+＃────────────
+＃未対応コミュ
+＃────────────
+＊未対応コミュ送信
+：\s[0]\_q※コミュニケートに未対応のワードを
+インターネットを通じて送信しますか？
+
+\![*]\q[送信する,コミュ送信する]　\![*]\q[送信しない,コミュ送信しない]
+
+\q[戻る,Menu]
+\_q
+
+＊コミュ送信する
+＄コミュ送信	1
+＞Menu
+
+＊コミュ送信しない
+＄コミュ送信	0
+＞Menu
 
 ＃────────────
 ＃ユーザ名
@@ -206,21 +235,38 @@
 ＃モード切替
 ＃────────────
 ＊DateEnd
-\0\s[24]え～っ！？\w5 もうデートおしまーい？
-……\s[2]ってホントだ、もうこんな時間！\w6\n
-\s[4]ありすが待ってるから、はやく帰らないとね。\w6
-\s[0]じゃ、行こっか。
-\0\s[-1]\1\s[-1]\c\w9
+\0（エモ消し）\s[-1]\1（エモ消し）\s[-1]\c\w9
 ＄辞書フォルダ	.
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	100
 ＄会話時サーフェス戻し	有効
 ＄全タイマ解除	実行
-\0\c\s[5]たっだいまー！\n[half]
-\1\c\s[105]おかえりなさい。
-\1\s[103]アリスさん、変なことされませんでした？
-\0\s[28]だいじょーぶだいじょーぶ！
-\s[26]何にもなかったよねー？\e
+\0\s[5]\1\s[105]
+
+＃────────────
+＃バグ報告
+＃────────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+
+＊拍手送信内容を教えてもらった
+\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="アリス＠（拍手送信内容）",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容を空打ちされた
+\e
+
+＊拍手送信完了
+：（エモ気づき）\s[5]送信したよ！
+
+＊拍手送信失敗
+：（エモ落ち込み）\s[4]「（Reference4）」で失敗したみたい……。
+
+＊OnExecuteHTTPComplete
+＞拍手送信完了	（R1）==webclap
+
+＊OnExecuteHTTPFailure
+＞拍手送信失敗	（R1）==webclap
 
 ＃────────────
 ＃String
@@ -258,6 +304,25 @@ http://www.misterdonut.jp/
 ＊sakura.recommendsites
 ぷっちょ公式
 http://puccho.jp/
+
+＊sakura.recommendsites
+-
+
+＊sakura.recommendsites
+配布サイト
+http://ghosthacking.webcrow.jp/index.html
+
+
+＊sakura.recommendsites
+バグ報告
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＊sakura.recommendsites
+web拍手
+script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+
+
 
 
 ＊sakura.portalsites

@@ -53,6 +53,26 @@ http://www.misterdonut.jp/
 ぷっちょ公式
 http://puccho.jp/
 
+＊sakura.recommendsites
+-
+
+＊sakura.recommendsites
+配布サイト
+http://ghosthacking.webcrow.jp/index.html
+
+
+＊sakura.recommendsites
+バグ報告
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＊sakura.recommendsites
+web拍手
+script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+
+
+
+
 ＊kero.recommendsites
 キッズワコール
 http://www.wacoal.jp/kids/?link=global_nav

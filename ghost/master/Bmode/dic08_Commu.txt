@@ -2,8 +2,9 @@
 ＃コミュニケート
 ＃─────────────────────────────
 ＊Communication
-\0\b[2]\_q
-\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\![open,communicatebox]
+：\b[2]\_q
+【話しかけ】　\_a[Communication2]【質問】\_a\n
 \![*]\_a[OnCommunicate,user,おはよう]おはよう\_a
 \![*]\_a[OnCommunicate,user,おやすみ]おやすみ\_a
 \![*]\_a[OnCommunicate,user,好き]好き\_a
@@ -24,7 +25,7 @@
 
 ＊Communication2
 \0\b[2]\_q
-\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
+\_a[Communication]【話しかけ】\_a　【質問】\_a\n
 \![*]\_a[年齢は]何歳？\_a
 \![*]\_a[学年は]何年生？\_a
 \![*]\_a[誕生日は]誕生日は？\_a
@@ -42,8 +43,13 @@
 \q[なんでもない,Cancel]
 \_q\e
 
-＊COMMUNICATE該当なし
+＊COMMUNICATE該当なし	（コミュ送信）==0
 \0（エモ汗）\s[104]すいません、よく聞こえませんでした。\n
+\_q\![*]\_a[Communication]戻る\_a\_q
+
+＊COMMUNICATE該当なし	（コミュ送信）==1
+\0（エモ汗）\s[104]すいません、よく聞こえませんでした。
+\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="ありす＠（Reference1）",--async=commu]
 \_q\![*]\_a[Communication]戻る\_a\_q\e
 
 ＃──────────────────────────

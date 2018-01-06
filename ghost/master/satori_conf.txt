@@ -25,6 +25,7 @@
 ‰‹­§	0
 Ca	0
 TimeSignal	1
+ƒRƒ~ƒ…‘—M	0
 —SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float

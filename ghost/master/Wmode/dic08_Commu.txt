@@ -1,24 +1,179 @@
-＃─────────────────────────────
+＃────────────
 ＃コミュニケート
-＃─────────────────────────────
-＊Communication
-\h\b[2]\![open,communicatebox]\_q
-\_a[Communication]【話しかけ】\_a　\_a[Communication2]【質問】\_a\n
-\![*]\_a[OnCommunicate,user,おはよう]おはよう\_a
-\![*]\_a[OnCommunicate,user,おやすみ]おやすみ\_a
-\![*]\_a[OnCommunicate,user,好き]好き\_a
-\![*]\_a[OnCommunicate,user,愛してる]愛してる\_a
-\![*]\_a[OnCommunicate,user,可愛い]かわいい\_a
-\![*]\_a[OnCommunicate,user,結婚]結婚しよう\_a
-\![*]\_a[OnCommunicate,user,おっぱい]おっaぱい\_a
-\![*]\_a[OnCommunicate,user,脱いで]脱いで\_a
-\![*]\_a[OnCommunicate,user,えっち]えっちしたい\_a
-\![*]\_a[OnCommunicate,user,子供]こども産んで\_a
-\![*]\_a[OnCommunicate,user,ママ]ママ\_a
-\![*]\_a[OnCommunicate,user,甘えて]甘えて\_a
-\![*]\_a[OnCommunicate,user,風呂]お風呂に入ろう\_a
-\![*]\_a[OnCommunicate,user,抱きたい]抱きたい\_a
-\![*]\_a[OnCommunicate,user,寝よう]一緒に眠ろう\_a\n
-\q[なんでもない,Cancel]
+＃────────────
+
+＊UserCommunicate
+\![open,communicatebox]
+：（エモ消し）\s[0]\b[2]\_q\c
+【話しかけ】　\n
+\_a[OnCommunicate,user,好き]◆好き\_a
+\_a[OnCommunicate,user,かわいい]◆かわいい\_a
+\_a[OnCommunicate,user,きれい]◆綺麗\_a
+\_a[OnCommunicate,user,愛してる]◆愛してる\_a
+\_a[OnCommunicate,user,結婚]◆結婚しよ\_a
+\_a[OnCommunicate,user,ありがとう]◆ありがとう\_a
+\_a[OnCommunicate,user,ごめん]◆ごめん\_a
+\_a[OnCommunicate,user,ぱんつ]◆ぱんつ見せて\_a
+＃\_a[OnCommunicate,user,おっぱい]◆おっぱい\_a
+＃\_a[OnCommunicate,user,ママ]◆ママー！\_a
+＃\_a[OnCommunicate,user,ちゅーしたい]◆ちゅーしたい\_a
+＃\_a[OnCommunicate,user,励まして]◆励まして\_a
+＃\_a[OnCommunicate,user,膝枕]◆膝枕\_a
+\n\q[◆なんでもない,CommuCancel]
 \_q\e
+
+＊Communication2
+：（エモ消し）\s[0]\b[2]\_q\c
+\_a[UserCommunicate]【話しかけ】\_a　【質問】\n
+\_a[自己紹介]◆アリス自己紹介して\_a
+\_a[好きなところ]◆お互いの好きな所\_a
+\_a[洗うところ]◆お風呂で体はどこから洗う？\_a
+\_a[チャームポイント]◆自分のチャームポイント\_a
+\_a[出身]◆アリスは外国人？\_a
+\_a[両親は]◆アリスのご両親はこのことを知っているか\_a
+\n[half]
+※質問内容随時募集中
+\n\q[◆なんでもない,QuestionCancel]
+\_q\e
+
+＊CommuCancel
+＞Cancel
+
+＊QuestionCancel
+：（エモ気づき）\s[26]なんでも質問していーからね？
+
+＊COMMUNICATE該当なし	（コミュ送信）==0
+：（エモ怒り）\s[24]ちゃんと分かるように言って！
+
+＊COMMUNICATE該当なし	（コミュ送信）==1
+：（エモ怒り）\s[24]ちゃんと分かるように言って！
+\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="アリス＠（Reference1）",--async=commu]
+
+＃────────────
+＃
+＃────────────
+＊ユーザ「　好き　すき　スキ
+＞好き
+
+＊好き
+：（エモハート）\s[26]ありがと（はーと）\w6
+（エモ音符）\s[28]私も、（ユーザ名）のこと好きだよ（はーと）\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ユーザ「　愛してる　あいしてる
+＞愛してる
+
+＊愛してる
+：（エモハート）\s[32]…\w3…\w3…\w3…\w3うん、私も（はーと）\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+＊ユーザ「　かわいい　可愛い　kawaii
+＞かわいい
+
+＊かわいい
+：（エモ音符）\s[28]えへへっ\_u[0x266A]
+もっと褒めてもいーんだよ？\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+＊ユーザ「　きれい　キレイ　綺麗　kirei
+＞きれい
+
+＊きれい
+：（エモ気づき）\s[26]でっしょー？\w6
+\s[5]ママもすっごい美人なんだから！\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ユーザ「　結婚　けっこん　ケッコン　kekkon　（仮）　かっこかり　カッコカリ
+＞結婚
+
+＊結婚
+：（エモ気づき）\s[5]いいよ\_u[0x2606]
+\s[2]あれ？\w3 でも結婚って大人じゃなくても出来るの？\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ユーザ「　ありがとう　アリガトウ　有難う　有り難う　arigato　ありがつお
+＞ありがとう
+
+＊ありがとう
+：（エモ気づき）\s[5]おっけーおっけー、まっかせなさぁ～い！\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ユーザ「　ごめん　ゴメン　めんご　メンゴ　gomen　そーりー　ソーリー　sorry
+＞ごめん
+
+＊ごめん
+：（エモ？）\s[2]どーしたの？ なんかあった？\w3\n
+（エモ気づき）\s[0]よく分かんないけど……\s[26]ま、許してあげる。
+\s[26]だから今度なにか奢ってね（はーと）\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+＊ユーザ「　ぱんつ　パンツ　ぱん２　パン２　pantu　panstu
+＞ぱんつ
+
+＊ぱんつ
+：\s[32]今日は勝負パンツじゃないからダーメ（はーと）\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+＊ユーザ「　おっぱい　オッパイ　ぱいおつ　パイオツ　oppai　いっぱい　イッパイ
+＞おっぱい
+
+＊おっぱい
+：（エモ気づき）\s[5]しょーらいを楽しみにしてなさい！\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+
+＊ユーザ「　まま　ママ　おかーさん　お母さん
+＞ママ
+
+＊ママ
+：（エモ気づき）\s[5]あははっ\w3なにそれー！\w6
+（ユーザ名）赤ちゃんみたーい！\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+
+＊ユーザ「　ちゅーしたい　チューしたい　きすしたい　キスしたい
+＞ちゅー
+
+＊ちゅー
+\s[103]\h（エモ気づき）\s[5]ん？\w3 アタシとちゅーしたいの？\w6
+どーしよっかなぁ、（ユーザ名）ならしてあげてもいいかな？
+：（エモ怒り）（ユーザ名C）……\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ちゅー
+\u\s[103]\h（エモ音符）\s[28]（ユーザ名）ならしてもいいよ。
+：（エモあせあせ）\s[102]だ、ダメですよ！\w3 なに言ってるんですか！？
+：（エモ？）\s[5]え～？\w3 ちゅーなんてパパやママとよくしてるよ？
+：（エモ驚き）か、家族で……？！
+：（エモ音符）寝る前とか朝起きた時とかー、こうほっぺにチュッて
+：（エモあせあせ）あ、ああ……頬にですか……\s[104]
+：（エモ気づき）\s[8]な～にありす、アタシと（ユーザ名）が大人のキスすると思ったの？\w3 やらしー（はーと）
+：（エモあせあせ）\s[109]いえ、そういうわけでは……\s[128]うぅ……
+：\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ちゅー	（アリスキス）==1
+：（エモハート）\s[32]もぉ～、ありすにバレちゃうよ？\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ちゅー	（アリスキス）==1
+\u\s[-1]\h（エモハート）\s[32]ありすが戻ってくる前に、ね\w9\n
+\s[33]ん……（はーと）\w6
+\s[35]はっ……ぁ、（ユーザ名）の舌が入って……（はーと）\w9\n
+\s[34]はぁ……はぁ……すっごぉい（はーと）
+\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+
+
+＊ユーザ「　励まして　はげまして　激励　ゲキレイ　hagemasite　hagemashite　ハゲマシテ
+＞励まして
+
+＊励まして
+：（エモ気づき）\s[26]ほら（ユーザ名）、アタシがいてあげるから元気だしてっ！\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
 
