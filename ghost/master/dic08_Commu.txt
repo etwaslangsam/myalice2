@@ -15,7 +15,7 @@
 \_a[OnCommunicate,user,ぱんつ]◆ぱんつ\_a
 \_a[OnCommunicate,user,おっぱい]◆おっぱい\_a
 \_a[OnCommunicate,user,ママ]◆ママー！\_a
-\_a[OnCommunicate,user,ちゅーしたい]◆ちゅーしたい\_a
+\_a[OnCommunicate,user,ちゅー]◆ちゅーしたい\_a
 \_a[OnCommunicate,user,励まして]◆励まして\_a
 \_a[OnCommunicate,user,膝枕]◆膝枕\_a
 \_a[OnCommunicate,user,ポッキーゲーム]◆ポッキゲームしよう\_a
@@ -272,7 +272,7 @@
 
 ＃──────────────────────────
 
-＊ユーザ「　ちゅーしたい　チューしたい　きすしたい　キスしたい
+＊ユーザ「　ちゅー　チュー　きす　キス
 ＞（話しかけ）ちゅー
 
 ＊アリスにちゅー
