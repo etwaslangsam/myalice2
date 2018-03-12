@@ -72,6 +72,9 @@ script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
 
 
 
+＊kero.recommendsites
+はじめてからだナビ
+http://www.unicharm.co.jp/girls/index.html
 
 ＊kero.recommendsites
 キッズワコール

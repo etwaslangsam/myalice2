@@ -126,29 +126,15 @@
 ＞Menu
 
 ＊Menu
-：\c（エモ消し）\_q\b[2]φ
-\![*]\q[なにか話して,PleaseTalk]\_l[,@3]
-\![*]\q[話しかける,UserCommunicate]\_l[,@3]
-\![*]\q[言葉を教える,Learning]\_l[,@3]
-\![*]\q[名前を教える,UserNameChange]\n[half]
-（times,20,－）\n[half]
-◯喋り頻度\_l[,@3]
-　（when,（喋り間隔）==０秒,[◯],[　]）\_a[TILevel0]おしずかに (喋らない)\_a
-　（when,（喋り間隔）==６０秒,[◯],[　]）\_a[TILevel4]いっぱい　(１分)\_a
-　（when,（喋り間隔）==１８０秒,[◯],[　]）\_a[TILevel3]まあまあ　(３分)\_a
-　（when,（喋り間隔）==３００秒,[◯],[　]）\_a[TILevel2]そこそこ　(５分)\_a
-　（when,（喋り間隔）==６００秒,[◯],[　]）\_a[TILevel1]ときたま(１０分)\_a\n[half]
-（times,20,－）\n[half]
-◯各種設定\_l[,@3]
-　（when、（TimeSignal）==0、[　]、[◯]）\_a[時報設定]時報ＯＮφ・ＯＦＦスイッチ\_a
-　（when、（Ca）==1、[　]、[◯]）\_a[トーク設定]トーク抑制\_a
-　（when、（コミュ送信）==0、[　]、[◯]）\_a[未対応コミュ送信]未対応コミュワード送信\_a\n[half]
-（times,20,－）\n[half]
+：（エモ消し）\_q
+\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,OnCommunicate,user,アリス]\n[half]
+\![*]\q[言葉を教える,Learning]　\![*]\q[名前を教える,UserNameChange]\n[half]
+\![*]\q[喋り頻度,TalkInterval]　\_l[@24,]\![*]\q[各種設定,Setting]\n[half]
 ◯イベント
 　（DateEvent）\n
-\![*]\q[家に戻る,DateEnd]\n
 \q[なんでもない,Cancel]
 \_q
+\e
 
 ＠DateEvent
 （whenlist、（現在月）月（現在日）日==
@@ -170,68 +156,80 @@
 ＃────────────
 ＃喋り頻度
 ＃────────────
+＊TalkInterval
+：\_q\n[half]　（when,（喋り間隔）==０秒,[◯],[　]）\_a[TILevel0]おしずかに (喋らない)\_a\n[half]
+　（when,（喋り間隔）==６０秒,[◯],[　]）\_a[TILevel4]いっぱい　(１分)\_a\n[half]
+　（when,（喋り間隔）==１８０秒,[◯],[　]）\_a[TILevel3]まあまあ　(３分)\_a\n[half]
+　（when,（喋り間隔）==３００秒,[◯],[　]）\_a[TILevel2]そこそこ　(５分)\_a\n[half]
+　（when,（喋り間隔）==６００秒,[◯],[　]）\_a[TILevel1]ときたま(１０分)\_a\n
+\q[もどる,Menu]　\q[やめる,Cancel]
+\_q
+
 ＊TILevel0
 ＄喋り間隔	０秒
-＞Menu
+＞TalkInterval
 ＊TILevel4
 ＄喋り間隔	６０秒
-＞Menu
+＞TalkInterval
 ＊TILevel3
 ＄喋り間隔	１８０秒
-＞Menu
+＞TalkInterval
 ＊TILevel2
 ＄喋り間隔	３００秒
-＞Menu
+＞TalkInterval
 ＊TILevel1
 ＄喋り間隔	６００秒
-＞Menu
+＞TalkInterval
 
 ＃────────────
-＃時報設定
+＃設定
 ＃────────────
+＊Setting
+：\_q
+　（when,（TimeSignal）==0,[　],[◯]） \q[時報スイッチ,時報設定]\n[half]
+　（when,（Ca）==1,[　],[◯]） \q[トーク抑制,トーク設定]\n[half]
+　（when,（コミュ送信）==0,[　],[◯]） \q[未対応コミュワード送信,未対応コミュ送信]\n
+\q[もどる,Menu]　\q[やめる,Cancel]
+\_q
+
+
 ＊時報設定
 （when、（TimeSignal）==0、（set,TimeSignal,1）、（set,TimeSignal,0））
-＞Menu
+＞Setting
 
-＃────────────
-＃トーク設定
-＃────────────
 ＊トーク設定
 ：\s[0]\_q※人によっては苦手に感じる要素のある
 トークをしないようにしますか？
 
 \![*]\q[トーク抑制する,TalkSafe]　\![*]\q[トーク抑制しない,TalkAuto]
 
-\q[戻る,Menu]
+\q[もどる,Menu]　\q[やめる,Cancel]
 \_q
 
 ＊TalkSafe
 ＄Ca	0
-＞Menu
+＞Setting
 
 ＊TalkAuto
 ＄Ca	1
-＞Menu
+＞Setting
 
-＃────────────
-＃未対応コミュ
-＃────────────
 ＊未対応コミュ送信
 ：\s[0]\_q※コミュニケートに未対応のワードを
 インターネットを通じて送信しますか？
 
 \![*]\q[送信する,コミュ送信する]　\![*]\q[送信しない,コミュ送信しない]
 
-\q[戻る,Menu]
+\q[もどる,Menu]　\q[やめる,Cancel]
 \_q
 
 ＊コミュ送信する
 ＄コミュ送信	1
-＞Menu
+＞Setting
 
 ＊コミュ送信しない
 ＄コミュ送信	0
-＞Menu
+＞Setting
 
 ＃────────────
 ＃ユーザ名
