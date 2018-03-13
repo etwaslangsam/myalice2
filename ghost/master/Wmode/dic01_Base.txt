@@ -127,7 +127,7 @@
 
 ＊Menu
 ：（エモ消し）\_q
-\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,OnCommunicate,user,アリス]\n[half]
+\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,UserCommunicate]　\![*]\q[家に戻る,DateEnd]\n[half]
 \![*]\q[言葉を教える,Learning]　\![*]\q[名前を教える,UserNameChange]\n[half]
 \![*]\q[喋り頻度,TalkInterval]　\_l[@24,]\![*]\q[各種設定,Setting]\n[half]
 ◯イベント
