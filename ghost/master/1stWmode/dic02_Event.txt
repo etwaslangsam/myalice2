@@ -1,0 +1,193 @@
+汎用イベント
+＃────────
+＃最小化復帰
+＃────────
+＊OnWindowStateRestore
+＞最小化解除
+
+＊最小化解除
+：\s[2]（エモ気づき）あ、いた。
+（エモ？）\s[3]急に物陰に隠れてどうしたの？
+
+＃────────
+＃表情復帰
+＃────────
+＊OnSurfaceRestore
+\1（エモ消し）\0（エモ消し）\s[0]
+
+＃────────
+＃シェル変更
+＃────────
+＊OnShellChanging
+＄現在シェル	（Reference0）
+＞suwari着替える	（Reference0）==suwari
+：\s[5]ねーねー（ユーザ名）？\w6
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＞suwari着替えた	（Reference0）==suwari
+：\s[26]この服どう？\w3 似合ってる？
+
+＊suwari着替える
+：\s[2]え？\w2 なに？\w3 （ユーザ名）。\w4\n
+・・・家に帰る？\w6
+\s[0]そっか、じゃあここでお別れね。
+またね、（ユーザ名）。\w5\s[-1]\x
+
+＊suwari着替えた
+＄辞書フォルダ	1stBmode
+＄デフォルトサーフェス0	100
+＄デフォルトサーフェス1	10
+＞Ｂモードはじめて	（初Ｂモード）==0
+＞あ（現在月）月（現在日）日	（現在年）（現在月）（現在日）!=（あイベント年月日）
+：\c,\s[100]お帰りなさいませ、（ユーザ名B）。
+
+＃────────
+＃ネットワーク更新
+＃────────
+＊OnUpdateBegin
+：\s[26]更新チェーック！
+
+＊OnUpdateReady
+：\s[28]（Reference0）件の更新だって！
+
+＊OnUpdate.OnMD5CompareFailure
+：\s[4]あれ？
+\_q（Reference0）\_qが間違ってるって……
+
+＊OnUpdateComplete
+＞ネットワーク更新（Reference0）
+
+＊ネットワーク更新none
+：\s[3]なんもなかったわ……\e
+
+＊ネットワーク更新changed
+：\s[5]更新おーわりっ！\e
+
+＊OnUpdateFailure
+＞ネットワーク更新（Reference0）
+
+＊ネットワーク更新timeout
+：\s[4]うーん……時間切れだって\e
+
+＊ネットワーク更新md5 miss
+：\s[4]MD5エラーだってぇ……
+
+＊ネットワーク更新404
+：\s[2]404だって……\e
+
+＊ネットワーク更新artificial
+：(中断します)\e
+
+＊OnNetworkHeavy
+：\s[4]う～ん重い……\e
+
+＃────────
+＃ダウンロード
+＃────────
+＊OnURLDropping
+：\s[26]ダウンロードちゅ（はーと）\e
+
+＊OnURLDropped
+：\s[5]おーしまい！
+\_q（Reference0）\_qにおいとくね。\e
+
+＃────────
+＃インストール
+＃────────
+＊OnInstallBegin
+：\s[0]インストールするね。\e
+
+＊OnInstallComplete
+：\s[28]はい終わり！\w6
+\_q（Reference0）/（Reference1）\_qだって。\e
+
+＊OnInstallFailure
+：\s[24]「（Reference0）」で失敗だって！\e
+
+＊OnInstallRefuse
+：\s[31]（ユーザ名）？
+これ、（Reference0）のだって……\e
+
+＃────────
+＃更新ファイル作成
+＃────────
+＊OnUpdatedataCreating
+：\s[5]更新ファイル？を作るね。\e
+
+＊OnUpdatedataCreated
+：\s[26]でっきあがり～！\e
+
+＊OnNarCreating
+：\s[28]「（Reference0）」をNARにしちゃうね。\e
+
+＊OnNarCreated
+：\s[8]で～きたっ！
+\_q（Reference1）\_q\e
+
+＃────────
+＃文字入力
+＃────────
+＊OnUserInput
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＃────────
+＃キー押下
+＃────────
+＊OnKeyPress
+＞（Reference0）が押された
+
+＊tが押された
+\1\s[-1]（エモ消し）：\s[0]（エモ消し）（）
+
+＃＊cが押された
+＃＞Communication
+
+＊rが押された
+＄辞書リロード	実行
+\1（エモ消し）：（エモ消し）\s[26]リロードしたよ☆
+
+＊sが押された
+：\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
+ランダムトーク数φ：（countNoNameTalk）個\n[half]
+ユーザ名φ：（ユーザ名）\n[half]
+好感度φ：（好感度）\n[half]
+現在シェルφ：（現在シェル）
+\_q
+
+＃────────
+＃選択肢
+＃────────
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊NoAnchor
+：\s[4]選択肢「（Reference0）」は存在しないみたい……
+
+＊OnChoiceTimeout
+：\s[24]ちょっと（ユーザ名）聞いてるー？\e
