@@ -7,3 +7,4 @@ ghost\master\dic03_Touch2.txt
 ghost\master\dic_network.txt
 ghost\master\Bmode\dic11_pantu.txt
 ghost\master\Wmode\dic09_Menu.txt
+ghost\master\Bmode\dic10_Word.txt
