@@ -7,6 +7,7 @@
 【話しかけ】　\_a[Communication2]【質問】\_a\n
 \![*]\_a[OnCommunicate,user,おはよう]おはよう\_a
 \![*]\_a[OnCommunicate,user,おやすみ]おやすみ\_a
+\![*]\_a[OnCommunicate,user,ただいま]ただいま\_a　\f[color,red]NEW!\f[default]
 \![*]\_a[OnCommunicate,user,好き]好き\_a
 \![*]\_a[OnCommunicate,user,愛してる]愛してる\_a
 \![*]\_a[OnCommunicate,user,可愛い]かわいい\_a
@@ -53,6 +54,11 @@
 \_q\![*]\_a[Communication]戻る\_a\_q\e
 
 ＃──────────────────────────
+＊ユーザ「　ただいま　タダイマ
+：（エモハート）\s[124]おかえりなさい、（ユーザ名B）。\n
+\_q\![*]\_a[Communication]戻る\_a\_q
+
+
 ＊ユーザ「　オナニー　おなにー　じい　自慰
 ：（エモ！）\s[102]えっ？\w9
 オナニーはしてるのか正直に答えろ？\w9\n

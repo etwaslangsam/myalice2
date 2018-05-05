@@ -6,3 +6,5 @@ shell/suwari/,nonar,noupdate
 commulist.txt,nonar,noupdate
 shell/5years_after/,nonar,noupdate
 shell/5years_after2/,nonar,noupdate
+shell/master+/,nonar,noupdate
+shell/master+/,nonar,noupdate

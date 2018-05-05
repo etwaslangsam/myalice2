@@ -12,6 +12,7 @@
 \_a[OnCommunicate,user,結婚]◆結婚\_a
 \_a[OnCommunicate,user,ありがとう]◆ありがとう\_a
 \_a[OnCommunicate,user,ごめん]◆ごめん\_a
+\_a[OnCommunicate,user,ただいま]◆ただいま\_a　\f[color,red]NEW!\f[default]
 \_a[OnCommunicate,user,ぱんつ]◆ぱんつ\_a
 \_a[OnCommunicate,user,おっぱい]◆おっぱい\_a
 \_a[OnCommunicate,user,ママ]◆ママー！\_a
@@ -71,6 +72,17 @@
 ＄話しかけ	ありすに
 \1（エモ気づき）\s[124]なんでしょうか？\w6
 ＞UserCommunicate
+
+＊ユーザ「　ただいま　タダイマ
+＞（話しかけ）ただいま
+
+＊アリスにただいま
+：（エモ気づき）\s[5]おっかえりぃ～♪\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+
+＊ありすにただいま
+（エモ音符）\s[105]おかえりなさい、（ユーザ名C）。\n
+\_q\_a[UserCommunicate]◆戻る\_a\_q\e
 
 ＃──────────────────────────
 ＊ユーザ「　ポッキーゲーム　ぽっきーげーむ

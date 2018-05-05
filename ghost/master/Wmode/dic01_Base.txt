@@ -126,12 +126,29 @@
 ＞Menu
 
 ＊Menu
-：（エモ消し）\_q
-\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,UserCommunicate]　\![*]\q[家に戻る,DateEnd]\n[half]
-\![*]\q[言葉を教える,Learning]　\![*]\q[名前を教える,UserNameChange]\n[half]
-\![*]\q[喋り頻度,TalkInterval]　\_l[@24,]\![*]\q[各種設定,Setting]\n[half]
-◯イベント
-　（DateEvent）\n
+：\b[2]\_q
+\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,UserCommunicate]
+\![*]\q[言葉を教える,Learning]
+（Line）
+\![*]呼ばれ方
+　\_a[UserNameChange]アリス　→\_a　(（ユーザ名）)
+（Line）
+\![*]喋り頻度
+　（when,（喋り間隔）==０秒,[◯],[　]）\_a[TILevel0]おしずかに (喋らない)\_a
+　（when,（喋り間隔）==６０秒,[◯],[　]）\_a[TILevel4]いっぱい　(１分)\_a
+　（when,（喋り間隔）==１８０秒,[◯],[　]）\_a[TILevel3]まあまあ　(３分)\_a
+　（when,（喋り間隔）==３００秒,[◯],[　]）\_a[TILevel2]そこそこ　(５分)\_a
+　（when,（喋り間隔）==６００秒,[◯],[　]）\_a[TILevel1]ときたま(１０分)\_a
+（Line）
+\![*]各種設定
+　（when,（TimeSignal）==0,[　],[◯]） \_a[時報設定]時報スイッチ\_a
+　（when,（Ca）==1,[　],[◯]） \_a[トーク設定]トーク抑制\_a
+　（when,（コミュ送信）==0,[　],[◯]） \_a[未対応コミュ送信]未対応コミュワード送信\_a
+（Line）
+\![*]イベント
+　（DateEvent）
+（Line）
+\![*]\q[家に戻る,DateEnd]\n
 \q[なんでもない,Cancel]
 \_q
 \e
@@ -156,46 +173,28 @@
 ＃────────────
 ＃喋り頻度
 ＃────────────
-＊TalkInterval
-：\_q\n[half]　（when,（喋り間隔）==０秒,[◯],[　]）\_a[TILevel0]おしずかに (喋らない)\_a\n[half]
-　（when,（喋り間隔）==６０秒,[◯],[　]）\_a[TILevel4]いっぱい　(１分)\_a\n[half]
-　（when,（喋り間隔）==１８０秒,[◯],[　]）\_a[TILevel3]まあまあ　(３分)\_a\n[half]
-　（when,（喋り間隔）==３００秒,[◯],[　]）\_a[TILevel2]そこそこ　(５分)\_a\n[half]
-　（when,（喋り間隔）==６００秒,[◯],[　]）\_a[TILevel1]ときたま(１０分)\_a\n
-\q[もどる,Menu]　\q[やめる,Cancel]
-\_q
-
 ＊TILevel0
 ＄喋り間隔	０秒
-＞TalkInterval
+＞Menu
 ＊TILevel4
 ＄喋り間隔	６０秒
-＞TalkInterval
+＞Menu
 ＊TILevel3
 ＄喋り間隔	１８０秒
-＞TalkInterval
+＞Menu
 ＊TILevel2
 ＄喋り間隔	３００秒
-＞TalkInterval
+＞Menu
 ＊TILevel1
 ＄喋り間隔	６００秒
-＞TalkInterval
+＞Menu
 
 ＃────────────
 ＃設定
 ＃────────────
-＊Setting
-：\_q
-　（when,（TimeSignal）==0,[　],[◯]） \q[時報スイッチ,時報設定]\n[half]
-　（when,（Ca）==1,[　],[◯]） \q[トーク抑制,トーク設定]\n[half]
-　（when,（コミュ送信）==0,[　],[◯]） \q[未対応コミュワード送信,未対応コミュ送信]\n
-\q[もどる,Menu]　\q[やめる,Cancel]
-\_q
-
-
 ＊時報設定
 （when、（TimeSignal）==0、（set,TimeSignal,1）、（set,TimeSignal,0））
-＞Setting
+＞Menu
 
 ＊トーク設定
 ：\s[0]\_q※人によっては苦手に感じる要素のある
@@ -208,11 +207,11 @@
 
 ＊TalkSafe
 ＄Ca	0
-＞Setting
+＞Menu
 
 ＊TalkAuto
 ＄Ca	1
-＞Setting
+＞Menu
 
 ＊未対応コミュ送信
 ：\s[0]\_q※コミュニケートに未対応のワードを
@@ -225,11 +224,11 @@
 
 ＊コミュ送信する
 ＄コミュ送信	1
-＞Setting
+＞Menu
 
 ＊コミュ送信しない
 ＄コミュ送信	0
-＞Setting
+＞Menu
 
 ＃────────────
 ＃ユーザ名
