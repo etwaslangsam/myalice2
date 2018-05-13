@@ -26,6 +26,7 @@
 ＄Ca	0
 ＄TimeSignal	1
 ＄コミュ送信	0
+＄自動アンカー	無効
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
