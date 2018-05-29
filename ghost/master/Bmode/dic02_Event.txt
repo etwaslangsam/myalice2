@@ -439,6 +439,13 @@
 ＊時報
 ：\s[100]（現在時）時です。
 
+＃────────────
+＃コミュニケート
+＃────────────
+＊OnCommunicate
+＞（Reference1）	（Reference0）==user
+＞COMMUNICATE該当なし	（Reference0）==user
+
 ＃────────
 ＃翻訳
 ＃────────

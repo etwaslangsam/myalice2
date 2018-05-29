@@ -27,6 +27,8 @@
 ＄TimeSignal	1
 ＄コミュ送信	0
 ＄自動アンカー	無効
+＄ありす誕生月	0
+＄ありす誕生日	0
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
