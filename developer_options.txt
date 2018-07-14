@@ -8,3 +8,4 @@ shell/5years_after/,nonar,noupdate
 shell/5years_after2/,nonar,noupdate
 shell/master+/,nonar,noupdate
 shell/master+/,nonar,noupdate
+shell/kisekae_doll/,nonar,noupdate
