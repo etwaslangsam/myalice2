@@ -128,7 +128,7 @@
 
 ＊Menu
 ：\c\b[2]\_q
-\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,UserCommunicate]
+\![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,話しかける]
 \![*]\q[言葉を教える,Learning]
 （Line）
 \![*]呼ばれ方

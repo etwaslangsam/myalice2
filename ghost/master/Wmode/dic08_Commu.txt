@@ -2,7 +2,7 @@
 ＃コミュニケート
 ＃────────────
 
-＊UserCommunicate
+＊話しかける
 ＄今回は自動アンカー	有効
 \![open,communicatebox]
 ：\s[0]\b[2]（エモ消し）\_q\c甘えたい
@@ -60,7 +60,7 @@
 ハアハア
 美人
 
-\q[なんでもない,CommuCancel]　\q[前のページ,UserCommunicate]　\q[次のページ,話しかける３]
+\q[なんでもない,CommuCancel]　\q[前のページ,話しかける]　\q[次のページ,話しかける３]
 \_q
 
 ＊話しかける３

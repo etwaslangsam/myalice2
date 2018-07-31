@@ -12,7 +12,7 @@
 ＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
 
 ＊ころころカウンタ初期化
-＄ころころカウンタ	
+＄ころころカウンタ	０
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
