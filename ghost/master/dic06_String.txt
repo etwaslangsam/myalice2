@@ -34,9 +34,16 @@ bgm2.png
 スヌーピー公式サイト
 https://www.snoopy.co.jp/
 
+：\s[5]スヌーピー！\w5
+漫画は読んだことないけどかわいいよね。
+
 ＊sakura.recommendsites
 ムーミン公式サイト
 http://moomin.co.jp/
+
+：\s[5]ムーミンは、ママも、お祖母ちゃんも大好きなの。
+もちろんアタシも！
+
 
 ＊sakura.recommendsites
 -
@@ -45,9 +52,15 @@ http://moomin.co.jp/
 サーティーワン アイスクリーム
 http://www.31ice.co.jp/
 
+：\s[5]サーティワンのアイス大好き（はーと）
+\s[26]オススメはもちろんラブポーション！
+
 ＊sakura.recommendsites
 ミスタードーナツ
 http://www.misterdonut.jp/
+
+：\s[5]ミスタードーナツ♪
+ドーナツポップが一口サイズでカラフルでかわいくて好き。
 
 ＊sakura.recommendsites
 ぷっちょ公式
