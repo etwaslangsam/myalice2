@@ -117,38 +117,24 @@
 ＃ネットワーク更新
 ＃────────────
 ＊OnUpdateBegin
-\0\s[26]更新チェーック！
+\0\s[26]SNSの更新チェーック！\w5
 
 ＊OnUpdateReady
-\0\s[28]（Reference0）件の更新だって！
+\0\s[5]あっ（Reference0）件の更新があった。
 
 ＊OnUpdate.OnMD5CompareFailure
 \0\s[4]あれ？
-\_q（Reference0）\_qが間違ってるって……
+\_q（Reference0）\_qが間違ってる？
 
-＊OnUpdateComplete
-＞ネットワーク更新（Reference0）
+＊OnUpdateComplete	（Reference0）==none
+\0\s[24]つまんなーい！\w3 特に更新はないみたい。
 
-＊ネットワーク更新none
-\0\s[3]なんもなかったわ……\e
-
-＊ネットワーク更新changed
-\0\s[5]更新おーわりっ！\e
+＊OnUpdateComplete	（Reference0）==changed
+\0\s[5]チェックおーわりっ！
 
 ＊OnUpdateFailure
-＞ネットワーク更新（Reference0）
-
-＊ネットワーク更新timeout
-\0\s[4]うーん……時間切れだって\e
-
-＊ネットワーク更新md5 miss
-\0\s[4]MD5エラーだってぇ……
-
-＊ネットワーク更新404
-\0\s[2]404だって……\e
-
-＊ネットワーク更新artificial
-\0(中断します)\e
+\0\s[2]（Reference0）で失敗だって。
+\s[24]なんでぇ～？
 
 ＊OnNetworkHeavy
 \0\s[4]う～ん重い……\e
@@ -167,18 +153,23 @@
 ＃インストール
 ＃────────────
 ＊OnInstallBegin
-\0\s[0]インストールするね。\e
+\0\s[2]え？\w3 なに？
+インストール？\w5
 
-＊OnInstallComplete
-\0\s[28]はい終わり！\w6
-\_q（Reference0）/（Reference1）\_qだって。\e
+＊OnInstallComplete	（Reference0）!=ghost
+\0\s[5]『（Reference1）』？
+これをアタシに？\w5 ありがとー！
+
+＊OnInstallComplete	（Reference0）==ghost
+\0\s[0]『（Reference1）』？
+（ユーザ名）のお友達？
 
 ＊OnInstallFailure
-\0\s[24]「（Reference0）」で失敗だって！\e
+\0\s[4]「（Reference0）」で失敗だってさ。
 
 ＊OnInstallRefuse
 \0\s[31]（ユーザ名）？
-これ、（Reference0）のだって……\e
+これ、『（Reference0）』専用のだって・・・。
 
 ＃────────────
 ＃更新ファイル作成

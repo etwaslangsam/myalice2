@@ -11,3 +11,4 @@ ghost\master\Bmode\dic10_Word.txt
 ghost\master\dic05_Order.txt
 ghost\master\dic11_Word.txt
 thumbnail2.png
+ghost\master\1stWmode\dic05_Order.txt

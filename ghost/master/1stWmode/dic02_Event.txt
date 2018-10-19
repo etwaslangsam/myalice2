@@ -3,38 +3,25 @@
 ＃最小化復帰
 ＃────────
 ＊OnWindowStateRestore
-＞最小化解除
-
-＊最小化解除
-：\s[2]（エモ気づき）あ、いた。
+\0\s[2]（エモ気づき）あ、いた。
 （エモ？）\s[3]急に物陰に隠れてどうしたの？
 
 ＃────────
 ＃表情復帰
 ＃────────
 ＊OnSurfaceRestore
-\1（エモ消し）\0（エモ消し）\s[0]
+\0（エモ消し）\s[0]
 
 ＃────────
 ＃シェル変更
 ＃────────
-＊OnShellChanging
-＄現在シェル	（Reference0）
-＞suwari着替える	（Reference0）==suwari
-：\s[5]ねーねー（ユーザ名）？\w6
-
-＊OnShellChanged
-＄現在シェル	（Reference0）
-＞suwari着替えた	（Reference0）==suwari
-：\s[26]この服どう？\w3 似合ってる？
-
-＊suwari着替える
+＊OnShellChanging	（Reference0）==suwari
 ：\s[2]え？\w2 なに？\w3 （ユーザ名）。\w4\n
 ・・・家に帰る？\w6
 \s[0]そっか、じゃあここでお別れね。
 またね、（ユーザ名）。\w5\s[-1]\x
 
-＊suwari着替えた
+＊OnShellChanged	（Reference0）==suwari
 ＄辞書フォルダ	1stBmode
 ＄デフォルトサーフェス0	100
 ＄デフォルトサーフェス1	10
@@ -42,42 +29,102 @@
 ＞あ（現在月）月（現在日）日	（現在年）（現在月）（現在日）!=（あイベント年月日）
 ：\c,\s[100]お帰りなさいませ、（ユーザ名B）。
 
+
+＊OnShellChanged	（Reference0）==5years_after2
+\0\s[26]アタシがもっと大きかったら、カップルに見えるかな？\_w[1000]
+
+\s[8]（ユーザ名）、いま大きくなったアタシのこと想像した？\w5
+\s[28]どう？\w5 美人でしょ？
+
+＊OnShellChanged	（Reference0）==マイリトルド－ルズ
+\0\s[26]色んなアタシで（ユーザ名）のこと魅了してあげる！
+
+＃────────────
+＃着せ替え
+＃────────────
+＊OnDressupChanged
+＞（Reference1）を着た	（Reference2）==1
+
+＊スク水を着た
+\0\s[24]アタシとしては、もっとセクシーな水着がいいな。
+
+＊ナースを着た
+\0\s[26]どう？\w5 まさに白衣の天使でしょ？
+
+＊くのいちを着た
+\0\s[5]ニンニン！
+
+＊バニーを着た
+\0\s[26]うふっ（はーと）\w5
+セクシーでしょ？
+
+＊スケスケを着た
+\0\s[2]ん？ なんか必死な顔してない？
+
+＊ハロウィンを着た
+\0\s[8]（ユーザ名）、アタシの眷属にしてあげようか？
+
+＊ロリータワンピースを着た
+\0\s[26]アタシの名前にピッタリでしょ☆
+
+＊メイドを着た
+\0\s[5]ハァイ！\w3 （ユーザ名）ご注文は？
+
+＊男の娘を着た
+\0\s[2]あれっ？\w3
+この服ってどっかで・・・？\_w[1000]
+
+\c\s[5]ま、カワイイからどうでもいっか！
+
+＊くノ一を着た
+＞くのいちを着た
+
+＊チャイナを着た
+\0\s[26]そこの（ユーザ名）、アタシと飲茶しない？
+
+＊お祭り褌を着た
+\0\s[2]へぇ～、この辺って女の子もお祭りに出られるんだ。\w5
+
+\s[9]・・・って、さすがにこれは際どすぎない？
+
+＊水着を着た
+\0\s[26]これでビーチの視線はアタシのモノ☆
+
+＊セクシーメイドを着た
+\0\s[2]これもメイド服なの？\w5
+アタシが知ってるのとはぜんぜん違うみたいだけど。
+
+＊ランジェリーを着た
+\0\s[32]・・・・・・。
+
+＊くまちゃんを着た
+\0\s[5]クマの気持ちになるでごぜーます！
+
+＊でかパーカーを着た
+\0\s[5]どう？\w3 似合う？
+
 ＃────────
 ＃ネットワーク更新
 ＃────────
 ＊OnUpdateBegin
-：\s[26]更新チェーック！
+\0\s[26]SNSの更新チェーック！\w5
 
 ＊OnUpdateReady
-：\s[28]（Reference0）件の更新だって！
+\0\s[5]あっ（Reference0）件の更新があった。
 
 ＊OnUpdate.OnMD5CompareFailure
-：\s[4]あれ？
-\_q（Reference0）\_qが間違ってるって……
+\0\s[4]あれ？
+\_q（Reference0）\_qが間違ってる？
 
-＊OnUpdateComplete
-＞ネットワーク更新（Reference0）
+＊OnUpdateComplete	（Reference0）==none
+\0\s[24]つまんなーい！\w3 特に更新はないみたい。
 
-＊ネットワーク更新none
-：\s[3]なんもなかったわ……\e
-
-＊ネットワーク更新changed
-：\s[5]更新おーわりっ！\e
+＊OnUpdateComplete	（Reference0）==changed
+\0\s[5]チェックおーわりっ！
 
 ＊OnUpdateFailure
-＞ネットワーク更新（Reference0）
-
-＊ネットワーク更新timeout
-：\s[4]うーん……時間切れだって\e
-
-＊ネットワーク更新md5 miss
-：\s[4]MD5エラーだってぇ……
-
-＊ネットワーク更新404
-：\s[2]404だって……\e
-
-＊ネットワーク更新artificial
-：(中断します)\e
+\0\s[2]（Reference0）で失敗だって。
+\s[24]なんでぇ～？
 
 ＊OnNetworkHeavy
 ：\s[4]う～ん重い……\e
@@ -86,44 +133,48 @@
 ＃ダウンロード
 ＃────────
 ＊OnURLDropping
-：\s[26]ダウンロードちゅ（はーと）\e
+\0\s[26]ダウンロードするね☆
 
 ＊OnURLDropped
-：\s[5]おーしまい！
+\0\s[5]おーしまい！
 \_q（Reference0）\_qにおいとくね。\e
 
 ＃────────
 ＃インストール
 ＃────────
 ＊OnInstallBegin
-：\s[0]インストールするね。\e
+\0\s[2]え？\w3 なに？
+インストール？\w5
 
-＊OnInstallComplete
-：\s[28]はい終わり！\w6
-\_q（Reference0）/（Reference1）\_qだって。\e
+＊OnInstallComplete	（Reference0）!=ghost
+\0\s[5]『（Reference1）』？
+これをアタシに？\w5 ありがとー！
+
+＊OnInstallComplete	（Reference0）==ghost
+\0\s[0]『（Reference1）』？
+（ユーザ名）のお友達？
 
 ＊OnInstallFailure
-：\s[24]「（Reference0）」で失敗だって！\e
+\0\s[4]「（Reference0）」で失敗だってさ。
 
 ＊OnInstallRefuse
-：\s[31]（ユーザ名）？
-これ、（Reference0）のだって……\e
+\0\s[31]（ユーザ名）？
+これ、『（Reference0）』専用のだって・・・。
 
 ＃────────
 ＃更新ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
-：\s[5]更新ファイル？を作るね。\e
+\0\s[5]更新ファイル？\w5を作るね。
 
 ＊OnUpdatedataCreated
-：\s[26]でっきあがり～！\e
+\0\s[26]でっきあがり～！\e
 
 ＊OnNarCreating
-：\s[28]「（Reference0）」をNARにしちゃうね。\e
+\0\s[28]「（Reference0）」をNARにしちゃうね。\e
 
 ＊OnNarCreated
-：\s[8]で～きたっ！
-\_q（Reference1）\_q\e
+\0\s[8]で～きたっ！\e
 
 ＃────────
 ＃文字入力
@@ -140,26 +191,26 @@
 ＃────────
 ＃キー押下
 ＃────────
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊tが押された
+＊OnKeyPress	（Reference0）==t
 \1\s[-1]（エモ消し）：\s[0]（エモ消し）（）
 
-＃＊cが押された
-＃＞Communication
-
-＊rが押された
+＊OnKeyPress	（Reference0）==r
 ＄辞書リロード	実行
 \1（エモ消し）：（エモ消し）\s[26]リロードしたよ☆
 
-＊sが押された
+＊OnKeyPress	（Reference0）==s
 ：\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
 ランダムトーク数φ：（countNoNameTalk）個\n[half]
 ユーザ名φ：（ユーザ名）\n[half]
 好感度φ：（好感度）\n[half]
 現在シェルφ：（現在シェル）
 \_q
+
+＃＊OnKeyPress	（Reference0）==z
+＃＄辞書フォルダ	.
+＃＄デフォルトサーフェス0	0
+＃＄デフォルトサーフェス1	100
+＃\0\s[0]\1\s[100]2ndです。
 
 ＃────────
 ＃選択肢
@@ -187,7 +238,30 @@
 ＞NoAnchor
 
 ＊NoAnchor
-：\s[4]選択肢「（Reference0）」は存在しないみたい……
+\0\s[4]選択肢「（Reference0）」は存在しないみたい。
 
 ＊OnChoiceTimeout
-：\s[24]ちょっと（ユーザ名）聞いてるー？\e
+\0\s[24]ちょっと（ユーザ名）聞いてるー？\e
+
+＃────────
+＃さわり反応
+＃────────
+＊OnMouseDoubleClick
+＄（Reference3）（Reference4）見つめタイマ	
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	３
+
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
