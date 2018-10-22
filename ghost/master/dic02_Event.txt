@@ -1,63 +1,73 @@
 汎用イベント
 
-＃────────────
+＃────────
 ＃最小化解除
-＃────────────
+＃────────
 ＊OnWindowStateRestore
-＞StateRestore
-
-＊StateRestore
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
 
-＊StateRestore
+＊OnWindowStateRestore
 \1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
 
+＃────────
+＃表情復帰
+＃────────
 ＊OnSurfaceRestore
 \0\s[0]\![bind,エモ,,0]\1\s[100]\![bind,エモ,,0]
 
-＃────────────
+＃────────
 ＃シェル変更
-＃────────────
-＊OnShellChanging
+＃────────
+＊OnShellChanging	（Reference0）==master
 ＄現在シェル	（Reference0）
-＞（Reference0）に着替え
-：\s[0]なに？ 着替え？\w6
+\0\s[0]なに？ 着替え？\w6
 \s[26]（ユーザ名）、覗いていいからね？
-：\s[107]ダメですからね、（ユーザ名C）。\e
+\1\s[107]ダメですからね、（ユーザ名C）。\e
 
-＊suwariに着替え
+＊OnShellChanged	（Reference0）==master
+＄現在シェル	（Reference0）
+\0\s[5]ジャーン！\w3 どう似合う？
+\1\s[103]似合ってると嬉しいのですが……。
+
+
+＊OnShellChanging	（Reference0）==suwari
+＄現在シェル	（Reference0）
 ＄選択ラベル	
-：\s[5]ちょっとあたし遊びに行ってくるねー！
-：\c\s[105]分かりました、気をつけてくださいね。
-\h\s[-1]\u\s[-1]\w9
+\0\s[5]ちょっとあたし遊びに行ってくるねー！
+\1\c\s[105]分かりました、気をつけてくださいね。
+\0\s[-1]\1\s[-1]\w9
 ＄辞書フォルダ	Bmode
 ＄デフォルトサーフェス0	100
 ＄デフォルトサーフェス1	10
 ＄会話時サーフェス戻し	無効
-\u\s[10]\b[-1]
+\1\s[10]\b[-1]
 
-＊5years_after2に着替え
-\1\s[105]\0\s[28]（ユーザ名）、ちょっと目をつぶっててね？
-
-
-＊OnShellChanged
+＊OnShellChanged	（Reference0）==suwari
 ＄現在シェル	（Reference0）
-＞（Reference0）に着替えた
-：\s[5]ジャーン！\w3 どう似合う？
-：\s[103]似合ってると嬉しいのですが……。
-
-＊suwariに着替えた
 ＄今日のパンツ	
 \h\s[126]お待たせしました。\w6
 ……\s[101]あまりジロジロ見られると恥ずかしいです。\e
 
-＊5years_after2に着替えた
-：\s[26]お・ま・た・せ\w3（はーと）
-：\s[101]私達、もう子供じゃありませんよ？
 
-＃────────────
+＊OnShellChanging	（Reference0）==5years_after2
+＄現在シェル	（Reference0）
+\1\s[105]\0\s[28]（ユーザ名）、ちょっと目をつぶっててね？
+
+＊OnShellChanged	（Reference0）==5years_after2
+＄現在シェル	（Reference0）
+\0\s[26]お・ま・た・せ\w3（はーと）
+\1\s[101]私達、もう子供じゃありませんよ？
+
+
+＊OnShellChanged	（Reference0）==マイリトルド－ルズ
+＄現在シェル	（Reference0）
+\0\s[5]すっごーい！\w3 色んな衣装がある！\w5
+\s[1]好きな衣装で、（ユーザ名）色に染めてね（はーと）
+\1\s[101]今だけは、（ユーザ名C）の着せ替え人形です。
+
+＃────────
 ＃着せ替え
-＃────────────
+＃────────
 ＊OnDressupChanged
 ＞（Reference0）（Reference1）	（Reference2）==1
 
@@ -154,201 +164,188 @@
 ＊1でかパーカー
 \1\s[103]私がこういう服・・・変じゃないですよね？
 
-＃────────────
+＃────────
 ＃インストール
-＃────────────
+＃────────
 ＊OnInstallBegin
-（エモ気づき）\s[100]それでは、インストールします。\e
+\1（エモ気づき）\s[100]それでは、インストールします。\e
 
-＊OnInstallComplete
-：（エモ気づき）\s[5]『（Reference1）』だって！
-：\s[100]【（Reference0）】ですね。
-＞（Reference0）インストール
+＃＊OnInstallComplete
+＃：（エモ気づき）\s[5]『（Reference1）』だって！
+＃：\s[100]【（Reference0）】ですね。
+＃＞（Reference0）インストール
 
-＊ghostインストール
-：（エモ気づき）新しい子？\w3 \s[5]友達になれるかな？
-：（エモ音符）\s[105]そうですね、なれるといいですね。
+＊OnInstallComplete	（Reference0）==ghost
+\0（エモ気づき）新しい子？\w3 \s[5]友達になれるかな？
+\1（エモ音符）\s[105]そうですね、なれるといいですね。
 
-＊shellインストール
-：（エモ！）\s[2]これって私達の服？
-：（エモ！）\s[102]そうみたいですね。
-：（エモ音符）\s[5]やった！\w3 （ユーザ名）ありがとー！
-：（エモハート）\s[101]ありがとうございます。
+＊OnInstallComplete	（Reference0）==shell
+\0（エモ！）\s[2]これって私達の服？
+\1（エモ！）\s[102]そうみたいですね。
+\0（エモ音符）\s[5]やった！\w3 （ユーザ名）ありがとー！
+\1（エモハート）\s[101]ありがとうございます。
 
-＊ballonインストール
-：（エモ？）\s[0]バルーン？\w3 飾るの？
-：\s[105]そうみたいですね。
+＊OnInstallComplete	（Reference0）==ballon
+\0（エモ？）\s[0]バルーン？\w3 飾るの？
+\1\s[105]そうみたいですね。
 
 ＊OnInstallFailure
-\h\s[2]あれ？\w6　なんか失敗したみたいよ？\u\s[102]『（Reference0）』で失敗みたいですね。\e
+\0\s[2]あれ？\w3 なんか失敗しちゃったみたい。
+\1\s[102]『（Reference0）』で失敗みたいですね。\e
 
 ＊OnInstallRefuse
-\u\s[104]これは私達のモノじゃありませんね。
-\h\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Reference0））』のだって。\e
+\1\s[104]これは私達のモノじゃありませんね。
+\0\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Reference0））』のだって。\e
 
-＃────────────
+＃────────
 ＃ネットワーク更新
-＃────────────
+＃────────
 ＊OnUpdateBegin
-：（エモ気づき）\s[26]ねっとわーく更新ね！ まっかせときなさい！
-：\s[105]それでは開始しますね。\w6
+\0（エモ気づき）\s[26]ねっとわーく更新ね！ まっかせときなさい！
+\1\s[105]それでは開始しますね。\w6
 
 ＊OnUpdateBegin
-（エモ気づき）\s[105]ネットワーク更新ですね。
-：\s[5]は～い！\w6
+\1（エモ気づき）\s[105]ネットワーク更新ですね。
+\0\s[5]は～い！\w6
 
 ＊OnUpdateReady
-：（エモ音符）\s[5]（Reference0）件の新着ね。\w6
+\0（エモ音符）\s[5]（Reference0）件の新着ね。\w5
 
 ＊OnUpdateReady
-\1（エモ音符）\s[100]今回は（Reference0）件の更新ですね。\w6
+\1（エモ音符）\s[100]今回は（Reference0）件の更新ですね。\w5
 
 ＊OnUpdate.OnDownloadBegin
 
 ＊OnUpdate.OnMD5CompareBegin
 
 ＊OnUpdate.OnMD5CompareComplete
-：\s[0]\_q（Reference0）\_qは
+\0\s[0]\_q（Reference0）\_qは
 \_q（Reference2）\_qであってる？
-：\s[100]\_q（Reference1）\_q
+\1\s[100]\_q（Reference1）\_q
 だからあってます。\w5
 
 ＊OnUpdate.OnMD5CompareFailure
-：\s[0]\_q（Reference0）\_qは
+\0\s[0]\_q（Reference0）\_qは
 \_q（Reference2）\_qであってる？
-：\s[104]\_q（Reference1）\_q
+\1\s[104]\_q（Reference1）\_q
 だから違いますね。\w5
 
-＊OnUpdateComplete
-＞更新成功（Reference0）
+＊OnUpdateComplete	（Reference0）==none
+\0\s[25]（エモ汗）ざんね～ん、更新ないって。
+\1\s[103]（エモ汗）気長に待つしかありませんね。
 
-＊更新成功none
-：\s[25]（エモ汗）ざんね～ん、更新ないって。
-：\s[103]（エモ汗）気長に待つしかありませんね。
-
-＊更新成功changed
+＊OnUpdateComplete	（Reference0）==changed
 ＄辞書リロード	実行
-：（エモ気づき）\s[5]更新おっしま～い！\n
-：\s[105]お疲れ様でしたアリスさん。
-：\_q\![*]\_a[OpenBlog]更新履歴\_a ※ブラウザが開きます\_q
+\0（エモ気づき）\s[5]更新おっしま～い！
+\1\s[105]お疲れ様でしたアリスさん。
+\0\_q
+\![*]\_a[OpenBlog]更新履歴\_a ※ブラウザが開きます
+\_q
 \e
 
 ＊OpenBlog
 \![open,browser,https://hotpepar.blogspot.jp/]
 
-＊OnUpdateFailure
-＞更新失敗（Reference0）
-：（エモ怒り）\s[24]むー！\w3 失敗だってぇ～！
-：\s[100]理由は『（Reference0）』のようです。
+＊OnUpdateFailure	（Reference0）==timeout
+\0（エモ驚き）\s[2]あっ時間切れだって。
+\1（エモ汗）\s[103]時間をおいてからもう一度、試してみて下さい。
 
-＊更新失敗timeout
-：（エモ驚き）\s[2]あっ時間切れだって。
-：（エモ汗）\s[103]時間をおいてからもう一度、試してみて下さい。
+＊OnUpdateFailure	（Reference0）==md5 miss
+\0（エモ怒り）\s[7]う～っ！\w3 md5が合わないって！
+\1（エモあせあせ）\s[104]これは作者に報告してください。
 
-＊更新失敗md5 miss
-：（エモ怒り）\s[7]う～っ！\w3 md5が合わないって！
-：（エモあせあせ）\s[104]これは作者に報告してください。
+＊OnUpdateFailure	（Reference0）==artificial
+\0（エモ？）\s[2]途中だけどやめちゃっていーの？
+\1\s[103]中止しました。
 
-＊更新失敗artificial
-：（エモ？）\s[2]途中だけどやめちゃっていーの？
-：\s[103]中止しました。
+＊OnUpdateFailure	（Reference0）==404
+\0（エモ怒り）\s[24]404で失敗だってぇ～！
+\1（エモ落ち込み）\s[104]更新サーバが消失したようです……。
 
-＊更新失敗404
-：(エモ怒り)\s[24]404で失敗だってぇ～！
-：（エモ落ち込みの）\s[104]更新サーバが消失したようです……。
-
-＃────────────
+＃────────
 ＃RSS
-＃────────────
+＃────────
 ＊OnHeadlinesenseBegin
-：(「（Reference0）」のヘッドラインを取得中)
+\0\s[0]「（Reference0）」のヘッドラインを取得中だよ。
 
-＊OnHeadlinesense.OnFind
-＞読み上げフェーズ（Ｒ２）
-
-＊読み上げフェーズFirst
-：\b[2](「（Reference0）」ヘッドラインです)
-（Ｒ３）
+＊OnHeadlinesense.OnFind	（Reference2）==First
+\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
+（Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
-＊読み上げフェーズFirst and Last
-：\b[2](「（Reference0）」ヘッドラインです)
-（Ｒ３）
+＊OnHeadlinesense.OnFind	（Reference2）==First and Last
+\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
+（Reference3）
 ＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
-＊読み上げフェーズLast
-：\b[2]（Ｒ３）
+＊OnHeadlinesense.OnFind	（Reference2）==Last
+\0\b[2]（Reference3）
 ＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 
-＊読み上げフェーズNext
-：\b[2]（Ｒ３）
+＊OnHeadlinesense.OnFind	（Reference2）==Next
+\0\b[2]（Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
 ＿やめる		読み上げ中止
 
 
-＃＊サイトを開く
-＃\![open,browzer,]
+＊サイトを開く
+\![open,browzer,]
 
 ＊読み上げ中止
-：\b[-1]
+\0\b[-1]
 
 ＊OnHeadlinesenseComplete
-：(更新されていませんでした)
+\0\s[4]更新されなかったって～……。
 
-＊OnHeadlinesenseFailure
-：(ヘッドラインセンス失敗)
-＞（Reference0）によりヘッドラインセンス失敗
-(理由は（Reference0）)
+＊OnHeadlinesenseFailure	（Reference0）==can't download
+\0\s[4]ダウンロードできなかった……。
+\1\s[104]重すぎるか、ネットに繋がってない可能性があります。
 
-＊can't downloadによりヘッドラインセンス失敗
-：(ダウンロードできませんでした。
-重すぎるか、ネットに繋がっていない可能性があります)
-
-＊can't analyzeによりヘッドラインセンス失敗
-：(解析失敗。
-最新版のヘッドラインセンサがあれば入れ替えてください)
+＊OnHeadlinesenseFailure	（Reference0）==can't analyze
+\0\s[24]解析失敗だって！
+\1\s[100]最新版のヘッドラインセンサがあれば入れ替えてください。
 
 ＊OnSSTPBreak
-：(SSTPがブレイクされたようです)
+\0\s[8]SSTPブレーイク！
 
-＃────────────
+＃────────
 ＃ファイル作成
-＃────────────
+＃────────
 ＊OnUpdatedataCreating
-：（エモ気づき）\s[0]更新ファイル？を作るね。
+\0（エモ気づき）\s[0]更新ファイル？を作るね。
 
 ＊OnUpdatedataCreated
-：（エモ音符）\s[5]でーきたっ！\e
+\0（エモ音符）\s[5]でーきたっ！\e
 
 ＊OnNarCreating
-：（エモ気づき）\s[28]おっけー！
+\0（エモ気づき）\s[28]おっけー！
 『（Reference0）』をnarにすればいいのね！\e
 
 ＊OnNarCreated
-：（エモ音符）\s[5]でーきた！
-：\s[100]『（Reference1）』を作成しました。\e
+\0（エモ音符）\s[5]でーきた！
+\1\s[100]『（Reference1）』を作成しました。\e
 
-＃────────────
+＃────────
 ＃ダウンロード
-＃────────────
+＃────────
 ＊OnURLDropping
-：（エモ気づき）\s[5]\_q（Reference0）\_qからダウンロードするね！\e
+\0（エモ気づき）\s[5]\_q（Reference0）\_qからダウンロードするね！\e
 
 ＊OnURLDropped
-：（エモ音符）\s[5]ダウンロードおしまいっ！
-：\s[100]ファイルは\_q（Reference0）\_qにあります。\e
+\0（エモ音符）\s[5]ダウンロードおしまいっ！
+\1\s[100]ファイルは\_q（Reference0）\_qにあります。\e
 
-＃────────────
+＃────────
 ＃メールチェック
-＃────────────
+＃────────
 ＊OnBIFFBegin
-：\s[0]メールちぇっく？
+\0\s[0]メールちぇっく？
 
 ＊OnBIFFComplete
 ＞メールがない	（Reference0）==0
@@ -361,7 +358,7 @@
 
 ＊OnBIFF2Complete
 ＞メールがない	（Reference0）==0
-＞メールが増えた	（Ｒ３）>0
+＞メールが増えた	（Reference3）>0
 ：\_q（Reference0）通／（Reference1）バイト\_q
 \s[0]新着メールはなかったよ。
 \_q
@@ -371,7 +368,7 @@
 
 ＊メールが増えた
 ：\_q（Reference0）通／（Reference1）バイト\_q\n
-\s[5]新着メールが（Ｒ３）通あるって！
+\s[5]新着メールが（Reference3）通あるって！
 \_q
 \![*]\_a[メーラを開く]メーラを開く\_a
 \![*]\_a[何もしない]何もしない\_a
@@ -402,9 +399,9 @@
 ：\s[3]応答なしだって～。
 ：\s[103]サーバの設定が違うか、混んでいる可能性があります。
 
-＃────────────
+＃────────
 ＃ユーザインプット
-＃────────────
+＃────────
 ＊OnUserInput
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
@@ -414,9 +411,9 @@
 ＊OnUserInputCancel
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
-＃────────────
+＃────────
 ＃キー押下
-＃────────────
+＃────────
 ＊OnKeyPress	（Reference0）==r
 ＄辞書リロード	実行
 \0\s[0]（エモ消し）\1\s[100]（エモ消し）リロードしました。\e
@@ -452,9 +449,9 @@
 ＃＄デフォルトサーフェス1	10
 ＃\1\s[10]\0\s[0]1stWmodeだよ。
 
-＃────────────
+＃────────
 ＃選択肢
-＃────────────
+＃────────
 ＃＊OnChoiceSelect
 ＃＄選択ＩＤ	（Reference0）
 ＃＞（Reference0）
@@ -482,24 +479,24 @@
 ：（エモ落ち込み）\s[103]選択肢エラーですね。\w6
 バグ報告をお願いします。\e
 
-＃────────────
+＃────────
 ＃時間イベント
-＃────────────
+＃────────
 ＊OnMinuteChange
 （when、（起動分）==30、（set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1））
-＞重なり	（Ｒ２）==1
+＞重なり	（Reference2）==1
 ＞時報	（TimeSignal）==1&&（現在分）==0
 
 ＊重なり
-：\s[24]
-：\c（エモあせあせ）\s[103]……あの、アリスさん？
-：\c……（エモハート）\s[26]ちゅっ（はーと）
-：（エモあせあせ）\s[126]な、なんですか急に？
-：（エモ音符）\s[28]んふふ～ありすが可愛いからちゅーしたくなっちゃった！
-：（エモハート）もう……離れますよ？\w9\4
+\0\s[24]
+\1\c（エモあせあせ）\s[103]……あの、アリスさん？
+\0\c……（エモハート）\s[26]ちゅっ（はーと）
+\1（エモあせあせ）\s[126]な、なんですか急に？
+\0（エモ音符）\s[28]んふふ～ありすが可愛いからちゅーしたくなっちゃった！
+\1（エモハート）もう……離れますよ？\w9\4
 
 ＊時報
-：\s[0]（現在時）時ね。
+\0\s[0]（現在時）時ね。
 
 ＊時報
-\c\s[100]（現在時）時です。
+\1\c\s[100]（現在時）時です。

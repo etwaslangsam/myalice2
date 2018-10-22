@@ -30,6 +30,9 @@ bgm2.png
 ＠dressuprootbutton.visible
 1
 
+＃────────
+＃アリスおすすめ
+＃────────
 ＊sakura.recommendsites
 スヌーピー公式サイト
 https://www.snoopy.co.jp/
@@ -66,25 +69,9 @@ http://www.misterdonut.jp/
 ぷっちょ公式
 http://puccho.jp/
 
-＊sakura.recommendsites
--
-
-＊sakura.recommendsites
-配布サイト
-http://ghosthacking.webcrow.jp/index.html
-
-
-＊sakura.recommendsites
-質問φ・要望φ・バグ報告
-https://goo.gl/forms/qJhnaKjUfVtcOWSk1
-
-
-＊sakura.recommendsites
-web拍手
-script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
-
-
-
+＃────────
+＃ありすおすすめ
+＃────────
 ＊kero.recommendsites
 はじめてからだナビ
 http://www.unicharm.co.jp/girls/index.html
@@ -113,53 +100,32 @@ http://www.cecile.co.jp/genre/g1/3/TN/
 アダルトショップ -NLS-
 http://www.e-nls.com/
 
+＃────────
+＃ポータルサイト
+＃────────
 ＃＊sakura.portalsites
 ＃-
-＃「-」といれることでリンクメニューに罫線を引くことができます。 
+＃「-」といれることでリンクメニューに罫線を引くことができます。
+＠portalrootbutton.caption
+配布サイト
 
 ＊sakura.portalsites
-SSPのバグ報告はこちら
-
-
-＊sakura.portalsites
-SSP BUGTRAQ 
-http://ssp.shillest.net/ 
+ほっとぺっぱぁ団
+https://hotpepar.blogspot.com/
 
 
 ＊sakura.portalsites
-ゴースト探すなら
+メッセージフォーム
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 
 ＊sakura.portalsites
-GHOST TOWN
-http://ghosttown.mikage.jp/
-
-＊sakura.portalsites
-総合情報サイト
-
-
-＊sakura.portalsites
-Disc-2 
-http://disc2.s56.xrea.com/ 
-
-
-＊sakura.portalsites
-Uka-Ni-Sphere
-http://www.ghost.sakura.tv/index.html
-
-
-＊sakura.portalsites
-ゴーストの感想などは
-
-
-＊sakura.portalsites
-ゴースト回覧板３ｒｄ
-http://jbbs.shitaraba.net/computer/44300/
+web拍手
+script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
 
 ＃────────
 ＃単語群
 ＃────────
-
 ＠パンツ種類
 Tバックショーツ
 サイドストリングショーツ
