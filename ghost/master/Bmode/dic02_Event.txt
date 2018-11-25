@@ -1,15 +1,34 @@
-汎用イベント
+
 ＃────────
-＃最小化復帰
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）＞２
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）＞２
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）＞２
+
+＊OnMouseDownEx
+＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
+
+＊OnMouseHover
+＄（Reference4）見つめタイマ	３
+
+＊OnMouseLeave
+＄（Reference4）見つめタイマ	
+
+＃────────
+＃■最小化復帰
 ＃────────
 ＊OnWindowStateRestore
-＞最小化解除
+\0（最小化解除）\e
 
-＊最小化解除
-\0（エモ？）\s[103]（ユーザ名B）？
-
-＊最小化解除
-\0（エモ？）\s[100]どうしました？
+＠最小化解除
+（エモ？）\s[103]（ユーザ名B）？
+（エモ？）\s[100]どうしました？
 
 ＃────────
 ＃表情復帰
@@ -264,21 +283,17 @@
 確認してきます。
 
 ＊OnInstallComplete
-＞（Reference1）インストール
-
-＊ghostインストール
-\0（エモ気づき）\s[105]「（Reference0）」様をお迎えしました。\e
-
-＊shellインストール
-\0（エモ！）\s[102]「（Reference0）」……これは服、ですか？\w5 私に？
-（エモハート）\s[101]ありがとうございます、（ユーザ名B）。\e
-
-＊ballonインストール
-\0（エモ気づき）\s[105]「（Reference0）」という荷物が届いてました。\e
+\0（whenlist、（Reference1）==
+、ghost、（エモ気づき）\s[105]「（Reference0）」様をお迎えしました。
+、shell、（エモ！）\s[102]「（Reference0）」・・・これは服ですか？\w5 私に？\n（エモハート）\s[101]ありがとうございます、（ユーザ名B）。\e
+、（エモ気づき）\s[105]「（Reference0）」という荷物が届いてました。
+）\e
 
 ＊OnInstallFailure
-\0（エモ落ち込み）\s[103]気のせいだったみたいです……。
-\1（Reference0）\e
+\0（エモ落ち込み）\s[103]気のせいだったみたいです・・・。
+
+（Reference0）
+\e
 
 ＊OnInstallRefuse
 \0（エモ汗）\s[103]これは……（Reference0）様宛のお荷物ですね。\e
@@ -347,16 +362,17 @@
 ＃更新ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
-\0（エモ気づき）\s[105]updates2.dauを作りますね。\e
+\0（エモ気づき）\s[105]お任せください。\e
 
 ＊OnUpdatedataCreated
-\0（エモ音符）\s[105]updates2.dauが出来ました。\e
+\0（エモ音符）\s[124]updates2.dauが出来ました。\e
 
 ＊OnNarCreating
-\0（エモ！）\s[100]「（Reference0）」をNARにします。\e
+\0（エモ！）\s[105]お任せください。\e
 
 ＊OnNarCreated
-\0（エモ気づき）\s[105]「（Reference0）」を （Reference1） に詰め込みました。\e
+\0（エモ気づき）\s[124]（Reference1）
+完了しました。\e
 
 ＃────────
 ＃メールチェック
@@ -539,3 +555,24 @@
 ＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[138]（sprintf,%c,3）\s[238]）
 ＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[139]（sprintf,%c,3）\s[239]）
 （話）
+
+＃────────
+＃■バグ報告
+＃────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+\0\s[124]なんなりとお申し付けください。\e
+
+＊拍手送信内容を教えてもらった
+\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="ありす＠（拍手送信内容）",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容を空打ちされた
+\e
+
+＊OnExecuteHTTPComplete	（Reference1）==webclap
+\0（エモ気づき）\s[105]送信しました。\e
+
+＊OnExecuteHTTPFailure	（Reference1）==webclap
+\0（エモ落ち込み）\s[104]「（Reference4）」で失敗したみたいです……。\e
+
