@@ -1,10 +1,8 @@
-コミュニケート
 
 ＊Communication
 ＄今回は自動アンカー	有効
 \![open,communicatebox]
-：\s[100]\b[2]（エモ消し）\_q\c【話しかける】　\_a[FAQ]【質問】\_a
-
+\0\s[100]\b[2]（エモ消し）\_q\c【話しかける】　\_a[FAQ]【質問】\_a\n[half]
 甘えて
 ありがとう
 愛してる
@@ -34,8 +32,7 @@
 ＊話しかける２
 ＄今回は自動アンカー	有効
 \![open,communicatebox]
-：\b[2]\_q【話しかける】　\_a[FAQ]【質問】\_a
-
+\0\b[2]\_q【話しかける】　\_a[FAQ]【質問】\_a\n[half]
 親密度
 触りたい
 好き
@@ -65,7 +62,7 @@
 ＊話しかける３
 ＄今回は自動アンカー	有効
 \![open,communicatebox]
-：\b[2]\_q【話しかける】　\_a[FAQ]【質問】\_a
+\0\b[2]\_q【話しかける】　\_a[FAQ]【質問】\_a\n[half]
 
 笑って
 
@@ -75,8 +72,7 @@
 
 ＊FAQ
 ＄今回は自動アンカー	有効
-：\b[2]\_q\_a[Communication]【話しかける】\_a　【質問】
-
+\0\b[2]\_q\_a[Communication]【話しかける】\_a　【質問】\n[half]
 アリスについて
 好きな体位は？
 好きなモノは？
@@ -90,16 +86,7 @@
 \_q
 
 ＊COMMUNICATE該当なし
-：（エモ汗）\s[104]すいません、よく聞こえませんでした。
-＞未対応ワード送信	（コミュ送信）==1
+\0（エモ汗）\s[104]すいません、よく聞こえませんでした。
 \_q
-\![*]\_a[Communication]戻る\_a
+\![*]\q[戻る,Communication]
 \_q
-
-＊未対応ワード送信
-：
-\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="ありす＠（Reference1）",--async=commu]
-\_q
-\![*]\_a[Communication]戻る\_a
-\_q
-

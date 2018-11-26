@@ -1,5 +1,26 @@
 
 ＃────────
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）＞２
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）＞２
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）＞２
+
+＊OnMouseDownEx
+＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
+
+＊OnMouseHover
+＄（Reference4）見つめタイマ	３
+
+＊OnMouseLeave
+＄（Reference4）見つめタイマ	
+
+＃────────
 ＃最小化復帰
 ＃────────
 ＊OnWindowStateRestore
@@ -280,25 +301,25 @@
 （Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 ＊OnHeadlinesense.OnFind	（Reference2）==First and Last
 ：\b[2]
 （Reference3）
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 ＊OnHeadlinesense.OnFind	（Reference2）==Last
 ：\b[2]（Reference3）
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 
 ＊OnHeadlinesense.OnFind	（Reference2）==Next
 ：\b[2]（Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 
 ＊サイトを開く
@@ -453,22 +474,6 @@
 
 ＊時報
 \0\s[100]（現在時）時です。
-
-＃────────
-＃マウスイベント
-＃────────
-＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ
-
-＊OnMouseWheel
-＄ころころカウンタ=（ころころカウンタ）+1
-＄ころころカウンタ初期化タイマ	3
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
-
-＊ころころカウンタ初期化
-＄ころころカウンタ	０
 
 ＃────────
 ＃Web拍手

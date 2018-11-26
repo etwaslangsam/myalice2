@@ -273,25 +273,25 @@
 （Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 ＊OnHeadlinesense.OnFind	（Reference2）==First and Last
 \0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
 （Reference3）
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 ＊OnHeadlinesense.OnFind	（Reference2）==Last
 \0\b[2]（Reference3）
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 
 ＊OnHeadlinesense.OnFind	（Reference2）==Next
 \0\b[2]（Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
-＿やめる		読み上げ中止
+\q[やめる,読み上げ中止]
 
 
 ＊サイトを開く
