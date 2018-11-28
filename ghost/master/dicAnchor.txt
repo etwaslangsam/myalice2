@@ -83,11 +83,11 @@
 
 ＊アリスにただいま
 ：（エモ気づき）\s[5]おっかえりぃ～♪\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにただいま
 （エモ音符）\s[105]おかえりなさい、（ユーザ名C）。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ポッキーゲームしよう
 ＞（話しかけ）ポッキーゲーム
@@ -99,30 +99,30 @@
 ：（エモ気づき）\s[26]どうせ最終的にはキスすることになるから、\_q
 \_qいらないかな～って！
 ：（エモ怒り）よくないです！\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにポッキーゲーム
 （エモあせあせ）\s[109]は、恥ずかしくて出来ません。
 ：（エモ気づき）\s[26]そういうゲームなんだから大丈夫だって！
 ：アリスさんの見てる前だなんて……！
 ：（エモ？）\s[0]……ん？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊好き
 ＞（話しかけ）好き
 
 ＊アリスに好き
 ：（エモハート）\s[1]……ありがと（はーと）\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスに好き
 ：（エモ音符）\s[26]私も（ユーザ名）のこと好きよ？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすに好き
 \s[105]ありがとうございます。
 （エモハート）\s[101]私も……好き、です。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊かわいい
 ＞（話しかけ）かわいい
@@ -130,24 +130,24 @@
 ＊アリスにかわいい
 ：（エモ音符）\s[26]ありがとっ（はーと）
 \s[5]ま、トーゼンよね。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにかわいい
 （エモ驚き）\s[102]わ、私ですか？
 （エモハート）\s[126]……ありがとうございます。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊綺麗
 ＞（話しかけ）きれい
 
 ＊アリスにきれい
 ：（エモ気づき）\s[26]でっしょー？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにきれい
 （エモあせあせ）\s[126]そんな、私なんてまだまだ……
 ：（エモ気づき）\s[26]アタシから見てもじゅうぶんキレイだから、もっと自信持ちなって！
-：\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+：\n\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊愛してる
 ＞（話しかけ）愛してる
@@ -155,13 +155,13 @@
 ＊アリスに愛してる
 ：（エモ気づき）\s[26]なぁ～に？\w3 口説いてるの？
 ：\s[108]（ユーザ名C）、捕まっちゃいますよ。
-：\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+：\n\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすに愛してる
 \s[106]…………。
 ：（エモ汗）\s[8]さすがに引いてるみたいね。
 ：（エモハート）\s[101]…………（はーと）
-：\s[2]えっ\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+：\s[2]えっ\n\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 
 ＊結婚
@@ -170,39 +170,39 @@
 ＊アリスに結婚
 ：（エモ気づき）\s[8]え～？\w3 どうしようかな～（はーと）
 ：（エモ汗）\s[104]どうしようもこうしようも未成年とは結婚できません。
-：\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+：\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすに結婚	（婚約）==0
 （エモハート）\s[101]結婚、したいですね。
 ：（エモ？）\s[0]兄妹で結婚ってできるの？
 ：（エモ汗）\s[104]う……\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすに結婚	（婚約）==1
 （エモハート）\s[101]うふふ（はーと）\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありがとう
 ＞（話しかけ）ありがとう
 
 ＊アリスにありがとう
 ：（エモ気づき）\s[26]おっけーおっけー、まっかせなさぁ～い！\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにありがとう
 （エモ音符）\s[105]お役に立てたならなによりです。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ごめん
 ＞（話しかけ）ごめん
 
 ＊アリスにごめん
 ：（エモ気づき）\s[26]お詫びにデートしてね（はーと）\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにごめん
 \s[106]大丈夫です、気にしてませんから……。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ぱんつ
 ＞（話しかけ）ぱんつ
@@ -213,27 +213,27 @@
 （ユーザ名C）、なに言ってるんですか！\w6
 \s[103]アリスさんもそんな簡単に……
 ：（エモ音符）\s[5]減るもんじゃないしい～じゃん\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにぱんつ
 ：（エモ気づき）\s[5]あははっ学校の男子みたい。
 （エモ？）\s[0]（ユーザ名）は大人なのに、子供のぱんつ見たいの？
 ：\s[108]（ユーザ名C）はロリコンですもんね。
 ：（エモ音符）\s[1]ま、アタシはお子様ぱんつじゃなくてセクシーな大人のぱんつ穿いてますけど。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにぱんつ	（アリスキス）==1
 ：（エモハート）\s[32]見たい？\w6
 二人っきりの時にね、ンフフ（はーと）\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにぱんつ
 （エモ汗）\s[103]なに言ってるんですか……\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにぱんつ
 （エモあせあせ）\s[109]今はダメですよ……\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊おっぱい
 ＞（話しかけ）おっぱい
@@ -241,20 +241,20 @@
 ＊アリスにおっぱい
 \s[103]
 ：（エモ？）\s[0]ん？\w3 まだないよ？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにおっぱい
 \s[103]
 ：（エモ気づき）\s[5]しょーらいを楽しみにしてなさい！\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにおっぱい
 （エモ？）\s[100]どうしたんですか？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにおっぱい
 （エモあせあせ）\s[109]今は触っちゃダメですよ？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ママ
 ＞（話しかけ）ママ
@@ -262,11 +262,11 @@
 ＊アリスにママ
 ：（エモ気づき）\s[5]あははっ\w3なにそれー！\w6
 （ユーザ名）赤ちゃんみたーい！\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにママ
 （エモ汗）\s[103]ママじゃありませんよ。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ちゅー
 ＞（話しかけ）ちゅー
@@ -275,7 +275,7 @@
 \s[103]\h（エモ気づき）\s[5]ん？\w3 アタシとちゅーしたいの？\w6
 どーしよっかなぁ、（ユーザ名）ならしてあげてもいいかな？
 ：（エモ怒り）（ユーザ名C）……\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにちゅー
 \u\s[103]\h（エモ音符）\s[28]（ユーザ名）ならしてもいいよ。
@@ -286,41 +286,41 @@
 ：（エモあせあせ）あ、ああ……頬にですか……\s[104]
 ：（エモ気づき）\s[8]な～にありす、アタシと（ユーザ名）が大人のキスすると思ったの？\w3 やらしー（はーと）
 ：（エモあせあせ）\s[109]いえ、そういうわけでは……\s[128]うぅ……
-：\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+：\n\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにちゅー	（アリスキス）==1
 ：（エモハート）\s[32]もぉ～、ありすにバレちゃうよ？\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊アリスにちゅー	（アリスキス）==1
 \u\s[-1]\h（エモハート）\s[32]ありすが戻ってくる前に、ね\w9\n
 \s[33]ん……（はーと）\w6
 \s[35]はっ……ぁ、（ユーザ名）の舌が入って……（はーと）\w9\n
 \s[34]はぁ……はぁ……すっごぉい（はーと）
-\n\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\n\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにちゅー
 \u（エモハート）\s[126]アリスさんの見てる前でなんて、ダメですよ。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすにちゅー
 \u（エモハート）\s[101]頬に軽くならいいですよ……
 ：（エモ！）\s[24]あ～ずる～い！\w6
 アタシもありすにちゅーする！
 ：（エモあせあせ）\s[126]アリスさんまで……\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊励まして
 ＞（話しかけ）励まして
 
 ＊アリスに励まして
 ：（エモ気づき）\s[26]ほら（ユーザ名）、アタシがいてあげるから元気だしてっ！\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊ありすに励まして
 （エモ気づき）\s[105]（ユーザ名C）なら大丈夫です。\w6
 頑張ってください。\n
-\_q\_a[UserCommunicate]◆戻る\_a\_q\e
+\_q\![*]\q[戻る,UserCommunicate]\_q\e
 
 ＊膝枕
 ＞（話しかけ）膝枕
