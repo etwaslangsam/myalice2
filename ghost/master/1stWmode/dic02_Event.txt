@@ -1,16 +1,39 @@
-汎用イベント
+
 ＃────────
-＃最小化復帰
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＄（Reference3）（Reference4）見つめタイマ	
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	３
+
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
+
+＃────────
+＃■最小化復帰
 ＃────────
 ＊OnWindowStateRestore
 \0\s[2]（エモ気づき）あ、いた。
-（エモ？）\s[3]急に物陰に隠れてどうしたの？
+（エモ？）\s[3]急に物陰に隠れてどうしたの？\e
 
 ＃────────
-＃表情復帰
+＃■表情復帰
 ＃────────
 ＊OnSurfaceRestore
-\0（エモ消し）\s[0]
+\0（エモ消し）\s[0]\e
 
 ＃────────
 ＃シェル変更
@@ -50,7 +73,9 @@
 ＃────────────
 ＃着せ替え
 ＃────────────
-＊OnDressupChanged
+＊OnDressupChanged	（着せ替えトーク抑制）==0
+（when、（Reference3）==衣装、（set,ア衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,ア後ろ髪,（Reference1）））
+（when、（Reference3）==前髪、（set,ア前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,アもみあげ,（Reference1）））
 ＞（Reference1）を着た	（Reference2）==1
 
 ＊スク水を着た
@@ -214,25 +239,19 @@
 現在シェルφ：（現在シェル）
 \_q
 
-＃＊OnKeyPress	（Reference0）==z
-＃＄辞書フォルダ	.
-＃＄デフォルトサーフェス0	0
-＃＄デフォルトサーフェス1	100
-＃\0\s[0]\1\s[100]2ndです。
-
 ＃────────
 ＃選択肢
 ＃────────
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-＞NoAnchor
-
-＊OnChoiceSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-＞NoAnchor
+＃＊OnChoiceSelect
+＃＄選択ＩＤ	（Reference0）
+＃＞（Reference0）
+＃＞NoAnchor
+＃
+＃＊OnChoiceSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃＞NoAnchor
 
 ＊OnAnchorSelectEx
 ＄選択ラベル	（Reference0）
@@ -251,25 +270,4 @@
 ＊OnChoiceTimeout
 \0\s[24]ちょっと（ユーザ名）聞いてるー？\e
 
-＃────────
-＃さわり反応
-＃────────
-＊OnMouseDoubleClick
-＄（Reference3）（Reference4）見つめタイマ	
-＞（Reference3）（Reference4）つつかれ
 
-＊OnMouseWheel
-＄ころころカウンタ=（ころころカウンタ）+1
-＄ころころカウンタ初期化タイマ	3
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
-
-＊ころころカウンタ初期化
-＄ころころカウンタ	０
-
-＊OnMouseHover
-＄（Reference3）（Reference4）見つめタイマ	３
-
-＊OnMouseLeave
-＄（Reference3）（Reference4）見つめタイマ	

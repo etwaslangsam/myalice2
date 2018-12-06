@@ -93,7 +93,9 @@
 ＃────────
 ＃着せ替え
 ＃────────
-＊OnDressupChanged
+＊OnDressupChanged	（着せ替えトーク抑制）==0
+（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））
+（when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
 ＞（Reference1）外し	（Reference2）==0
 ＞（Reference1）へ着せ替え	（Reference2）==1
 
@@ -226,15 +228,15 @@
 ＊OnUpdate.OnMD5CompareFailure
 \0\s[103]これは……注文した覚えがありませんが？
 
-＊OnUpdateComplete
-＞ネットワーク更新（Reference0）
 
-＊ネットワーク更新none
+＊OnUpdateComplete	（Reference0）==none
 \0（エモ落ち込み）\s[104]何も来てませんでした。\e
 
-＊ネットワーク更新changed
-\0（エモ音符）\s[105]確認終わりました。\n
-\_q\![*]\_a[OpenBlog]更新履歴\_a　※ブラウザが開きます\_q\e
+＊OnUpdateComplete	（Reference0）==changed
+\0（エモ音符）\s[105]確認終わりました。
+\_q
+ \![*]\_a[OpenBlog]更新履歴\_a　※ブラウザが開きます
+\_q\e
 
 ＊OpenBlog
 \![open,browser,https://hotpepar.blogspot.jp/]
@@ -463,6 +465,11 @@
 ＃────────
 ＃選択肢
 ＃────────
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞選択先がない
+
 ＊OnChoiceSelectEx
 ＄選択ラベル	（Reference0）
 ＄選択ＩＤ	（Reference1）
@@ -541,39 +548,6 @@
 ＞COMMUNICATE該当なし	（Reference0）==user
 
 ＃────────
-＃翻訳
-＃────────
-＊OnTranslate	（現在シェル）==5years_after
-＄話	（Reference0）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[100]（sprintf,%c,3）\s[200]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[101]（sprintf,%c,3）\s[201]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[102]（sprintf,%c,3）\s[202]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[103]（sprintf,%c,3）\s[203]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[104]（sprintf,%c,3）\s[204]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[105]（sprintf,%c,3）\s[205]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[106]（sprintf,%c,3）\s[206]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[107]（sprintf,%c,3）\s[207]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[108]（sprintf,%c,3）\s[208]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[109]（sprintf,%c,3）\s[209]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[124]（sprintf,%c,3）\s[224]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[125]（sprintf,%c,3）\s[225]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[126]（sprintf,%c,3）\s[226]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[127]（sprintf,%c,3）\s[227]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[128]（sprintf,%c,3）\s[228]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[129]（sprintf,%c,3）\s[229]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[130]（sprintf,%c,3）\s[230]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[131]（sprintf,%c,3）\s[231]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[132]（sprintf,%c,3）\s[232]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[133]（sprintf,%c,3）\s[233]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[134]（sprintf,%c,3）\s[234]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[135]（sprintf,%c,3）\s[235]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[136]（sprintf,%c,3）\s[236]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[137]（sprintf,%c,3）\s[237]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[138]（sprintf,%c,3）\s[238]）
-＄話	（replace（sprintf,%c,3）（話）（sprintf,%c,3）\s[139]（sprintf,%c,3）\s[239]）
-（話）
-
-＃────────
 ＃■バグ報告
 ＃────────
 ＊OnWebClap
@@ -593,3 +567,36 @@
 ＊OnExecuteHTTPFailure	（Reference1）==webclap
 \0（エモ落ち込み）\s[104]「（Reference4）」で失敗したみたいです……。\e
 
+＃────────
+＃■バッテリイベント
+＃────────
+＊OnBatteryNotify
+＄バッテリ残量	（Reference0）
+＄充電状況	（Reference2）
+
+＊OnBatteryLow
+\0\s[0]でんちが（Reference0）%になったよ。
+\1\s[100]そろそろ充電した方が良いんじゃないですか？\e
+
+＊OnBatteryCritical
+\0\s[4]でんちが（Reference0）%・・・。
+\1\s[103]（ユーザ名C）・・・充電を・・・。\e
+
+＊OnBatteryChargingStart
+\0\s[5]じゅーでん開始！\e
+
+＊OnBatteryChargingStop
+＞充電完了	（Reference0）==100
+\1\s[100]充電を終了します。\w5
+\s[103]・・・あの、まだ（Reference0）%なのに良いんですか？\e
+
+＊充電完了
+\0\s[5]じゅーでんかんりょー！\e
+
+＃────────
+＃音声認識
+＃────────
+＊OnVoiceRecognitionWord
+＞Menu	（compare,（Reference1）,アリス）
+＞（Reference1）
+\0\s[103]（Reference1）？
