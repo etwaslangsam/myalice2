@@ -1,7 +1,27 @@
-汎用イベント
 
 ＃────────
-＃最小化解除
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	３
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
+
+＃────────
+＃■最小化解除
 ＃────────
 ＊OnWindowStateRestore
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
@@ -10,13 +30,13 @@
 \1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
 
 ＃────────
-＃表情復帰
+＃■表情復帰
 ＃────────
 ＊OnSurfaceRestore
-\0\s[0]\![bind,エモ,,0]\1\s[100]\![bind,エモ,,0]
+\0\s[0]\![bind,エモ,,0]\1\s[100]\![bind,エモ,,0]\e
 
 ＃────────
-＃シェル変更
+＃■シェル変更
 ＃────────
 ＊OnShellChanging
 ＄現在シェル	（Reference0）
@@ -66,12 +86,12 @@
 ＃着せ替え
 ＃────────
 ＊OnDressupChanged	（Reference0）==0
-（when、（Reference3）==衣装、（set,ア衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,ア後ろ髪,（Reference1）））
+（when、（Reference3）==衣装、（set,ア衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,ア後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、ア顔、（Reference1）,（Reference2）））
 （when、（Reference3）==前髪、（set,ア前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,アもみあげ,（Reference1）））
 ＞0（Reference1）	（Reference2）==1
 
 ＊OnDressupChanged	（Reference0）==1
-（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））
+（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、あ顔、（Reference1）,（Reference2）））
 （when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
 ＞1（Reference1）	（Reference2）==1
 
@@ -154,44 +174,56 @@
 \1\s[103]\c私がこういう服・・・変じゃないですよね？
 
 ＃────────
-＃バルーン変更
+＃■バルーン変更
 ＃────────
 ＊OnBalloonChange
 \1\s[100]バルーンを（Reference0）にしました。
 \0\s[5]オッシャレー☆
+\e
 
 ＃────────
-＃インストール
+＃■インストール
 ＃────────
 ＊OnInstallBegin
 \1（エモ気づき）\s[100]それでは、インストールします。\e
 
-＃＊OnInstallComplete
-＃：（エモ気づき）\s[5]『（Reference1）』だって！
-＃：\s[100]【（Reference0）】ですね。
-＃＞（Reference0）インストール
+＊OnInstallComplete
+＞（Reference0）をインストール
+\0（エモ気づき）\s[5]『（Reference1）』だって！
+\1\s[100]【（Reference0）】ですね。
+\e
 
-＊OnInstallComplete	（Reference0）==ghost
-\0（エモ気づき）新しい子？\w3 \s[5]友達になれるかな？
-\1（エモ音符）\s[105]そうですね、なれるといいですね。
+＊ghostをインストール
+\0（エモ気づき）新しい子？\w5
+\s[5]友達になれるかな？
+\1（エモ音符）\s[105]そうですね。\w5
+なれるといいですね。
+\e
 
-＊OnInstallComplete	（Reference0）==shell
+＊shellをインストール
 \0（エモ！）\s[2]これって私達の服？
-\1（エモ！）\s[102]そうみたいですね。
-\0（エモ音符）\s[5]やった！\w3 （ユーザ名）ありがとー！
-\1（エモハート）\s[101]ありがとうございます。
+\1（エモ！）\s[102]そうみたいですね。\_w[1000]
+\0（エモ音符）\s[5]\cやった！\w5
+（ユーザ名）ありがとー！
+\1（エモハート）\s[101]\cありがとうございます。
+\e
 
-＊OnInstallComplete	（Reference0）==ballon
+＊ballonをインストール
 \0（エモ？）\s[0]バルーン？\w3 飾るの？
 \1\s[105]そうみたいですね。
+\e
+
 
 ＊OnInstallFailure
 \0\s[2]あれ？\w3 なんか失敗しちゃったみたい。
-\1\s[102]『（Reference0）』で失敗みたいですね。\e
+\1\s[102]『（Reference0）』で失敗みたいですね。
+\e
+
 
 ＊OnInstallRefuse
 \1\s[104]これは私達のモノじゃありませんね。
-\0\s[24]これは『（call（バイト値、１）KillDangerousTag（バイト値、１）（Reference0））』のだって。\e
+\0\s[24]これは『（Reference0）』のだって。
+\e
 
 ＃────────
 ＃ネットワーク更新
@@ -229,6 +261,7 @@
 ＊OnUpdateComplete	（Reference0）==none
 \0\s[25]（エモ汗）ざんね～ん、更新ないって。
 \1\s[103]（エモ汗）気長に待つしかありませんね。
+\e
 
 ＊OnUpdateComplete	（Reference0）==changed
 ＄辞書リロード	実行
@@ -242,21 +275,33 @@
 ＊OpenBlog
 \![open,browser,https://hotpepar.blogspot.jp/]
 
-＊OnUpdateFailure	（Reference0）==timeout
+
+＊OnUpdateFailure
+＞（Reference0）で失敗
+\0\s[4]よくわかんないけど失敗だって。
+\1\s[103]「（Reference0）」で失敗のようです。
+\e
+
+＊timeoutで失敗
 \0（エモ驚き）\s[2]あっ時間切れだって。
 \1（エモ汗）\s[103]時間をおいてからもう一度、試してみて下さい。
+\e
 
-＊OnUpdateFailure	（Reference0）==md5 miss
-\0（エモ怒り）\s[7]う～っ！\w3 md5が合わないって！
+＊md5 missで失敗
+\0（エモ怒り）\s[7]う～っ！\w5
+md5が合わないって！
 \1（エモあせあせ）\s[104]これは作者に報告してください。
+\e
 
-＊OnUpdateFailure	（Reference0）==artificial
+＊artificialで失敗
 \0（エモ？）\s[2]途中だけどやめちゃっていーの？
 \1\s[103]中止しました。
+\e
 
-＊OnUpdateFailure	（Reference0）==404
+＊404で失敗
 \0（エモ怒り）\s[24]404で失敗だってぇ～！
-\1（エモ落ち込み）\s[104]更新サーバが消失したようです……。
+\1（エモ落ち込み）\s[104]更新サーバが消失したようです。
+\e
 
 ＃────────
 ＃RSS
@@ -311,7 +356,7 @@
 \0\s[8]SSTPブレーイク！
 
 ＃────────
-＃ファイル作成
+＃■ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
 \0（エモ気づき）\s[0]更新ファイル？を作るね。
@@ -328,7 +373,7 @@
 \1\s[100]『（Reference1）』を作成しました。\e
 
 ＃────────
-＃ダウンロード
+＃■ダウンロード
 ＃────────
 ＊OnURLDropping
 \0（エモ気づき）\s[5]\_q（Reference0）\_qからダウンロードするね！\e
@@ -396,19 +441,19 @@
 ：\s[103]サーバの設定が違うか、混んでいる可能性があります。
 
 ＃────────
-＃ユーザインプット
+＃■ユーザインプット
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
 ＃────────
-＃キー押下
+＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
@@ -480,15 +525,15 @@
 \1（エモあせあせ）\s[126]な、なんですか急に？
 \0（エモ音符）\s[28]んふふ～ありすが可愛いからちゅーしたくなっちゃった！
 \1（エモハート）もう……離れますよ？\w9\4
+\e
 
 ＊時報
-\0\s[0]（現在時）時ね。
-
+\0\s[0]（現在時）時ね。\e
 ＊時報
-\1\c\s[100]（現在時）時です。
+\1\s[100]\c（現在時）時です。\e
 
 ＃────────
-＃バグ報告
+＃■バグ報告
 ＃────────
 ＊OnWebClap
 \![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]

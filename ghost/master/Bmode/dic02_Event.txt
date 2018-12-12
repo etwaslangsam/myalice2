@@ -94,7 +94,7 @@
 ＃着せ替え
 ＃────────
 ＊OnDressupChanged	（着せ替えトーク抑制）==0
-（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））
+（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、あ顔、（Reference1）,（Reference2）））
 （when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
 ＞（Reference1）外し	（Reference2）==0
 ＞（Reference1）へ着せ替え	（Reference2）==1
@@ -575,23 +575,21 @@
 ＄充電状況	（Reference2）
 
 ＊OnBatteryLow
-\0\s[0]でんちが（Reference0）%になったよ。
-\1\s[100]そろそろ充電した方が良いんじゃないですか？\e
+\0\s[100]そろそろ充電した方が良いんじゃないですか？\e
 
 ＊OnBatteryCritical
-\0\s[4]でんちが（Reference0）%・・・。
-\1\s[103]（ユーザ名C）・・・充電を・・・。\e
+\0\s[103]（ユーザ名C）・・・充電を・・・。\e
 
 ＊OnBatteryChargingStart
-\0\s[5]じゅーでん開始！\e
+\0\s[124]充電を開始しますね。\e
 
 ＊OnBatteryChargingStop
 ＞充電完了	（Reference0）==100
-\1\s[100]充電を終了します。\w5
+\0\s[100]充電を終了します。\w5
 \s[103]・・・あの、まだ（Reference0）%なのに良いんですか？\e
 
 ＊充電完了
-\0\s[5]じゅーでんかんりょー！\e
+\0\s[105]100％になりました。\e
 
 ＃────────
 ＃音声認識
