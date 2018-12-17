@@ -268,11 +268,8 @@ Tフロント
 ＠重要
 \f[color,red]\f[bold,1]φ！\f[bold,0]\f[color,default]
 
-＠Line
-\f[color,#999999]（times,20,－）\f[color,default]
-
-＠MenuColor
-\f[anchorfontcolor,#ff3366]\f[anchorpencolor,#ff3366]\f[cursorstyle,underline]
+＠はーと
+\f[color,hotpink]\f[name,メイリオ]\_u[0x2665]\f[default]
 
 ＠ぶっかけ
 \![bind,カルピス,カルピス,1]（set,顔射,1）

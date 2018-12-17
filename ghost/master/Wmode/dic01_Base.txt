@@ -358,3 +358,9 @@ https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 ＊sakura.portalsites
 web拍手
 script:\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+
+＃────────
+＃単語群
+＃────────
+＠はーと
+\f[color,hotpink]\f[name,メイリオ]\_u[0x2665]\f[default]
