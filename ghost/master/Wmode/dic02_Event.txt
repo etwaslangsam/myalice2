@@ -1,22 +1,55 @@
-汎用イベント
-＃────────────
-＃最小化復帰
-＃────────────
+
+＃────────
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	1
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）==3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）==3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseDownEx
+＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
+
+＊OnMouseHover
+＄（Reference4）見つめタイマ	３
+
+＊OnMouseLeave
+＄（Reference4）見つめタイマ	
+
+
+＃────────
+＃■時間イベント
+＃────────
+＊OnMinuteChange
+＞時報	（現在分）==0
+
+＊時報	（TimeSignal）==1
+\0\s[0]（現在時）時ね。
+
+＃────────
+＃■最小化復帰
+＃────────
 ＊OnWindowStateRestore
-＞最小化解除
+\0\s[2]（ユーザ名）？\w5
+どうしたの？\w5 急に物陰に隠れたりして。\e
 
-＊最小化解除
-\0\s[32]んもー（ユーザ名）ったら、だいたん（はーと）\e
-
-＃────────────
-＃表情復帰
-＃────────────
+＃────────
+＃■表情復帰
+＃────────
 ＊OnSurfaceRestore
-\1（エモ消し）\0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）
+\0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）
 
-＃────────────
+＃────────
 ＃シェル変更
-＃────────────
+＃────────
 ＊OnShellChanging
 ＄現在シェル	（Reference0）
 ＞5ya前	（Reference0）==5years_after2
@@ -49,9 +82,9 @@
 ＄会話時サーフェス戻し	
 \0\c\s[105]おかえりなさい、（ユーザ名B）。
 
-＃────────────
+＃────────
 ＃着せ替え
-＃────────────
+＃────────
 ＊OnDressupChanged
 ＞（Reference1）を着た	（Reference2）==1
 
@@ -113,9 +146,9 @@
 ＊でかパーカーを着た
 ：\s[5]どう？\w3 カジュアルなのも似合うでしょ？
 
-＃────────────
+＃────────
 ＃ネットワーク更新
-＃────────────
+＃────────
 ＊OnUpdateBegin
 \0\s[26]SNSの更新チェーック！\w5
 
@@ -139,9 +172,9 @@
 ＊OnNetworkHeavy
 \0\s[4]う～ん重い……\e
 
-＃────────────
+＃────────
 ＃ダウンロード
-＃────────────
+＃────────
 ＊OnURLDropping
 \0\s[26]ダウンロードちゅ（はーと）\e
 
@@ -149,9 +182,9 @@
 \0\s[5]おーしまい！
 \_q（Reference0）\_qにおいとくね。\e
 
-＃────────────
+＃────────
 ＃インストール
-＃────────────
+＃────────
 ＊OnInstallBegin
 \0\s[2]え？\w3 なに？
 インストール？\w5
@@ -171,9 +204,9 @@
 \0\s[31]（ユーザ名）？
 これ、『（Reference0）』専用のだって・・・。
 
-＃────────────
+＃────────
 ＃更新ファイル作成
-＃────────────
+＃────────
 ＊OnUpdatedataCreating
 \0\s[5]更新ファイル？を作るね。\e
 
@@ -187,9 +220,9 @@
 \0\s[8]で～きたっ！
 \_q（Reference1）\_q\e
 
-＃────────────
+＃────────
 ＃文字入力
-＃────────────
+＃────────
 ＊OnUserInput
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
@@ -199,21 +232,21 @@
 ＊OnUserInputCancel
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
-＃────────────
+＃────────
 ＃キー押下
-＃────────────
+＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
 
 ＊tが押された
-\1\s[-1]（エモ消し）\0\s[0]（エモ消し）（）
+\0\s[0]（エモ消し）（）
 
 ＊cが押された
 ＞UserCommunicate
 
 ＊rが押された
 ＄辞書リロード	実行
-\1（エモ消し）\0（エモ消し）\s[26]リロードしたよ☆
+\0（エモ消し）\s[26]リロードしたよ☆
 
 ＊sが押された
 ：\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
@@ -223,9 +256,9 @@
 現在シェルφ：（現在シェル）
 \_q
 
-＃────────────
+＃────────
 ＃選択肢
-＃────────────
+＃────────
 ＊OnChoiceSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
@@ -254,9 +287,9 @@
 ＊OnChoiceTimeout
 \0\s[24]ちょっと（ユーザ名）聞いてるー？\e
 
-＃────────────
+＃────────
 ＃学習機能
-＃────────────
+＃────────
 ＊OnTeach
 ＄教わった単語	（Reference0）
 ＞教わった内容が空っぽ	（変数「教わった単語」の存在）==0
@@ -290,8 +323,128 @@
 （単語の追加、動物、（教わった単語））
 ：\s[26]（教わった単語）は場所の名前ね、覚えたわ！\e
 
-＃────────────
+＊CLearning
+\![open,inputbox,忘却単語,-1]
+\0\s[0]φ（忘れさせたい単語を入力してくださいφ）
+
+＊忘却単語を教えてもらった
+\0\s[0]φ（単語のカテゴリを選んでくださいφ）
+\_q
+\![*]\q[アリスにしてほしいこと,してほしい忘れ]
+\![*]\q[アリスにしたいこと,したい忘れ]
+\![*]\q[場所の名前,場所忘れ]
+\![*]\q[生き物の名前,生物忘れ]
+
+\q[なんでもないよ,Cancel]
+\_q
+\e
+
+＊してほしい忘れ
+（追加単語の削除、してほしいこと、（忘却単語））
+＄忘却単語	
+\0\s[0]φ（単語を忘れましたφ）\e
+＊したい忘れ
+（追加単語の削除、したいこと、（忘却単語））
+＄忘却単語	
+\0\s[0]φ（単語を忘れましたφ）\e
+＊場所忘れ
+（追加単語の削除、デートスポット、（忘却単語））
+＄忘却単語	
+\0\s[0]φ（単語を忘れましたφ）\e
+＊生物忘れ
+（追加単語の削除、動物、（忘却単語））
+＄忘却単語	
+\0\s[0]φ（単語を忘れましたφ）\e
+
+＃────────
 ＃コミュニケート
-＃────────────
+＃────────
 ＊OnCommunicate
 ＞（Reference1）	（Reference0）==user
+
+
+＃────────
+＃バグ報告
+＃────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+
+＊拍手送信内容を教えてもらった
+\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="アリス＠（拍手送信内容）",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容を空打ちされた
+\e
+
+＊OnExecuteHTTPComplete	（R1）==webclap
+：（エモ気づき）\s[5]送信したよ！
+
+＊OnExecuteHTTPFailure	（R1）==webclap
+：（エモ落ち込み）\s[4]「（Reference4）」で失敗したみたい……。
+
+＃────────────
+＃■String
+＃────────────
+＠homeurl
+https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
+＠portalrootbutton.caption
+配布サイト
+＠menu.background.bitmap.filename
+bgm2.png
+＠menu.background.font.color.r
+255
+＠menu.background.font.color.g
+255
+＠menu.background.font.color.b
+255
+＠menu.foreground.bitmap.filename
+bgm2.png
+＠menu.foreground.font.color.r
+255
+＠menu.foreground.font.color.g
+0
+＠menu.foreground.font.color.b
+0
+＠dressuprootbutton.visible
+1
+
+＃────────
+＃おすすめサイト
+＃────────
+＊sakura.recommendsites
+サーティーワン アイスクリーム
+http://www.31ice.co.jp/
+
+
+＊sakura.recommendsites
+ミスタードーナツ
+http://www.misterdonut.jp/
+
+
+＊sakura.recommendsites
+ぷっちょ公式
+http://puccho.jp/
+
+
+＃────────
+＃ポータルサイト
+＃────────
+＊sakura.portalsites
+ほっとぺっぱぁ団
+https://hotpepar.blogspot.com/
+
+
+＊sakura.portalsites
+バグ報告
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＃────────
+＃単語群
+＃────────
+＠曜日
+（whenlist,（現在曜日）==,土,休日,日,休日,平日）
+＠季節
+（whenlist,（現在月）<=,2,冬,5,春,8,夏,11,秋,冬）
+＠時間帯
+（whenlist,（現在時）<=,3,深夜,5,早朝,10,朝,15,昼,18,夕方,22,夜,深夜）

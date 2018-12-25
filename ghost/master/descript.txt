@@ -1,7 +1,7 @@
 charset,Shift_JIS
 name,僕のアリス2nd
 type,ghost
-craftman,牧野信次
+craftmanw,てにてに
 craftmanurl,https://hotpepar.blogspot.jp/
 homeurl,https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 readme,readme.txt

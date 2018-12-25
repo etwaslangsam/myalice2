@@ -16,3 +16,4 @@ ghost\master\1stBmode\dic07_Order2.txt
 ghost\master\1stBmode\dic_play3.txt
 ghost\master\dic06_String.txt
 ghost\master\dic00_system.txt
+ghost\master\Wmode\dic04_Time.txt
