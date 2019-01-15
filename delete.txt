@@ -17,3 +17,6 @@ ghost\master\1stBmode\dic_play3.txt
 ghost\master\dic06_String.txt
 ghost\master\dic00_system.txt
 ghost\master\Wmode\dic04_Time.txt
+ghost\master\Bmode\dic06_String.txt
+ghost\master\Bmode\dic08_Commu.txt
+ghost\master\Wmode\dic_Word.txt

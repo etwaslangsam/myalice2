@@ -86,7 +86,16 @@
 ＃着せ替え
 ＃────────
 ＊OnDressupChanged
-＞（Reference1）を着た	（Reference2）==1
+（when,（Reference2）==1,
+（whenlist、（Reference3）==
+、衣装、（set,ア衣装,（Reference1））
+、後ろ髪、（set,ア後ろ髪,（Reference1））
+、顔、（set，ア顔，（Reference1）,（Reference2））
+、前髪、（set,ア前髪,（Reference1））
+、もみあげ、（set,アもみあげ,（Reference1））
+）
+）
+＞（Reference1）を着た	（Reference2）==1&&（着せ替えトーク抑制）==0
 
 ＊制服を着た
 ：\s[28]制服デートね♪
@@ -173,7 +182,7 @@
 \0\s[4]う～ん重い……\e
 
 ＃────────
-＃ダウンロード
+＃■ダウンロード
 ＃────────
 ＊OnURLDropping
 \0\s[26]ダウンロードちゅ（はーと）\e
@@ -189,23 +198,27 @@
 \0\s[2]え？\w3 なに？
 インストール？\w5
 
-＊OnInstallComplete	（Reference0）!=ghost
+＊OnInstallComplete
+＞（Reference0）をインストール
 \0\s[5]『（Reference1）』？
 これをアタシに？\w5 ありがとー！
+\e
 
-＊OnInstallComplete	（Reference0）==ghost
-\0\s[0]『（Reference1）』？
+＊ghostをインストール
+\0\s[0]『（Reference1）』？\w5
 （ユーザ名）のお友達？
+\e
 
 ＊OnInstallFailure
 \0\s[4]「（Reference0）」で失敗だってさ。
+\e
 
 ＊OnInstallRefuse
 \0\s[31]（ユーザ名）？
 これ、『（Reference0）』専用のだって・・・。
-
+\e
 ＃────────
-＃更新ファイル作成
+＃■更新ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
 \0\s[5]更新ファイル？を作るね。\e
@@ -221,19 +234,19 @@
 \_q（Reference1）\_q\e
 
 ＃────────
-＃文字入力
+＃■文字入力
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
 ＃────────
-＃キー押下
+＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
@@ -249,7 +262,7 @@
 \0（エモ消し）\s[26]リロードしたよ☆
 
 ＊sが押された
-：\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
+\0\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
 ランダムトーク数φ：（countNoNameTalk）個\n[half]
 ユーザ名φ：（ユーザ名）\n[half]
 好感度φ：（好感度）\n[half]
@@ -257,24 +270,24 @@
 \_q
 
 ＃────────
-＃選択肢
+＃■選択肢
 ＃────────
 ＊OnChoiceSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
 （NoAnchor）
 
-＊OnChoiceSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-（NoAnchor）
-
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-（NoAnchor）
+＃＊OnChoiceSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃（NoAnchor）
+＃
+＃＊OnAnchorSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃（NoAnchor）
 
 ＊OnAnchorSelect
 ＄選択ＩＤ	（Reference0）
@@ -382,9 +395,9 @@
 ＊OnExecuteHTTPFailure	（R1）==webclap
 ：（エモ落ち込み）\s[4]「（Reference4）」で失敗したみたい……。
 
-＃────────────
+＃────────
 ＃■String
-＃────────────
+＃────────
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 ＠portalrootbutton.caption
@@ -448,3 +461,175 @@ https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 （whenlist,（現在月）<=,2,冬,5,春,8,夏,11,秋,冬）
 ＠時間帯
 （whenlist,（現在時）<=,3,深夜,5,早朝,10,朝,15,昼,18,夕方,22,夜,深夜）
+
+
+＠パンツ種類
+Tバックショーツ
+サイドストリングショーツ
+ローライズ
+ソング
+Oバック
+Gストリング
+Cストリング
+Tフロント
+オープンショーツ
+スキャンティー
+ワンポイントショーツ
+（ユーザ名B）のトランクス
+前貼り
+褌
+しましまぱんつ
+アンダースコート
+
+＠フレーバー
+バニラ
+チョコミント
+ストロベリー
+キャラメル
+ホッピング
+オレオ
+モカ
+ラムレーズン
+チップチョコ
+メロン
+バナナアンドストロベリー
+ナッツ
+オレンジソルベ
+チョコ
+アーモンドファッジ
+ロッキーロード
+ラブポーション
+
+＠サンデー
+オレオ＆ブラウニー
+ベイクドチーズケーキ
+
+＠ソース
+キャラメル
+ストロベリー
+チョコレート
+
+＠チュッパチャプス
+グレープ
+ストロベリー
+コーラ
+ラムネ
+チェリー
+ストロベリークリーム
+チョコバナナ
+プリン
+ピンクグレープフルーツ 
+ミルクコーヒー
+すいか
+チェリーコーラ
+レモンコーラ
+ピーチクリーム
+ライチ
+レモン
+ソーダグレープ
+カメレオン
+チョコココナッツ
+チョコピーナッツ
+チョコストロベリー
+マンゴー
+パイナップル
+バニラ
+ピーチ
+マンダリンオレンジ
+バナナ
+ミルク
+カプチーノバニラ
+グリーンアップル
+レモンスカッシュ
+チョコバニラ
+ブルーベリーヨーグルト
+バナナミルク
+ロイヤルミルクティ
+抹茶ラテ
+
+＠条件
+優しい人
+格好いい人
+強い人
+頼りになる人
+お金持ちの人
+イケメン
+
+＠いつ
+週末
+休日
+誕生日
+祝日
+
+＠動物
+スコティッシュフォールド
+ノルウェージャンフォレストキャット
+アメリカンショートヘア
+ロシアンブルー
+ラグドール
+シャム猫
+チェシャ猫
+三毛猫
+シェパード
+ゴールデンレトリバー
+グレートデン
+シベリアンハスキー
+パグ
+ボーダーコリー
+セントバーナード
+ダルメシアン
+
+＠デートスポット
+映画館
+プラネタリウム
+水族館
+遊園地
+カラオケ
+ゲームセンター
+ボウリング
+
+
+＠してほしいこと
+キス
+
+＠したいこと
+キス
+
+＠Line
+\f[color,#999999]（times,20,－）\f[color,default]
+
+＠エモハート
+\![bind,エモ,ハート,1]
+＠エモ気づき
+\![bind,エモ,気づき,1]
+＠エモ怒り
+\![bind,エモ,怒り,1]
+＠エモ汗
+\![bind,エモ,汗,1]
+＠エモあせあせ
+\![bind,エモ,あせあせ,1]
+＠エモ眠り
+\![bind,エモ,眠り,1]
+＠エモ音符
+\![bind,エモ,音符,1]
+＠エモ驚き
+\![bind,エモ,吃驚,1]
+＠エモ！
+\![bind,エモ,！,1]
+＠エモ？
+\![bind,エモ,？,1]
+＠エモ閃き
+\![bind,エモ,閃き,1]
+＠エモ落ち込み
+\![bind,エモ,落ち込み,1]
+＠エモ消し
+\![bind,エモ,,0]
+
+＠吐息
+は――――――（はーと）\w6 は――――――（はーと）
+ふ――――――っ（はーと）\w6 ふ――――――っ（はーと）
+
+＠絶頂
+っ～～～～～～～～～～～～（times、3、（はーと）） 
+んっ～～～～～～～～～～～（times、3、（はーと）） 
+ぅ～～～～～～～～～～～～（times、3、（はーと）） 
