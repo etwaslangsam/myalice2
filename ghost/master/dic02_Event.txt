@@ -86,14 +86,28 @@
 ＃着せ替え
 ＃────────
 ＊OnDressupChanged	（Reference0）==0
-（when、（Reference3）==衣装、（set,ア衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,ア後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、ア顔、（Reference1）,（Reference2）））
-（when、（Reference3）==前髪、（set,ア前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,アもみあげ,（Reference1）））
-＞0（Reference1）	（Reference2）==1
+（when,（Reference2）==1,
+（whenlist、（Reference3）==
+、衣装、（set,ア衣装,（Reference1））
+、後ろ髪、（set,ア後ろ髪,（Reference1））
+、顔、（set，ア顔，（Reference1）,（Reference2））
+、前髪、（set,ア前髪,（Reference1））
+、もみあげ、（set,アもみあげ,（Reference1））
+）
+）
+＞0（Reference1）	（Reference2）==1&&（着せ替えトーク抑制）==0
 
 ＊OnDressupChanged	（Reference0）==1
-（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、あ顔、（Reference1）,（Reference2）））
-（when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
-＞1（Reference1）	（Reference2）==1
+（when,（Reference2）==1,
+（whenlist、（Reference3）==
+、衣装、（set,あ衣装,（Reference1））
+、後ろ髪、（set,あ後ろ髪,（Reference1））
+、顔、（set，あ顔，（Reference1）,（Reference2））
+、前髪、（set,あ前髪,（Reference1））
+、もみあげ、（set,あもみあげ,（Reference1））
+）
+）
+＞1（Reference1）	（Reference2）==1&&（着せ替えトーク抑制）==0
 
 ＊0制服
 \0\s[26]学校の制服よ。

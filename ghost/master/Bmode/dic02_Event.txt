@@ -7,9 +7,14 @@
 
 ＊OnMouseWheel
 ＄ころころカウンタ=（ころころカウンタ）+1
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）＞２
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）＞２
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）＞２
+＄ころころカウンタ初期化タイマ	１
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）==２
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）==２
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）==２
+
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
@@ -31,12 +36,14 @@
 （エモ？）\s[100]どうしました？
 
 ＃────────
-＃表情復帰
+＃■表情復帰
 ＃────────
 ＊OnSurfaceRestore
 ＞顔を洗う	（顔射）==1
 ＞興奮時	（Reference0）>=132
-\0\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\s[100]\e
+\0\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]
+（when,（ローターモード）==1,\s[138],\s[100]）
+\e
 
 ＊顔を洗う
 ＄顔射	0
@@ -49,55 +56,52 @@
 \0\s[128]\w9\s[127]\e
 
 ＃────────
-＃シェル変更
+＃■シェル変更
 ＃────────
 ＊OnShellChanging
 ＞（Reference0）に着替える
-：\s[100]ここで着替え、ですか？\w6
-\s[124]分かりました。少々お待ち下さいね？\w6
-
-＊masterに着替える
-：\s[105]いつもの服ですね？\w5
+\0\s[100]ここで着替え、ですか？\_w[1000]
+\s[124]\c分かりました。\w5
+少々お待ち下さいね？\_w[1000]
 
 ＊5years_after2に着替える
-：\s[127]五年後の私……楽しみにしてくださいね？\w5
+\0\s[127]五年後の私・・・。\w5
+楽しみにしてくださいね？\_w[1000]
 
 ＊suwariに着替える
-：\s[127]ここに、座ればいいんですか？\w5
+\0\s[127]ここに、座ればいいんですか？\_w[1000]
 
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
-＞suwariアリス帰還２	（選択ラベル）==通常モードに戻る
 ＞（Reference0）に着替えた
-＄今日のパンツ	（パンツ種類）
 ＄パンツ残数	5
-：（エモ消し）\s[105]着替えました。
-\s[126]どう、でしょうか？\w3 似合ってますか？
+\0（エモ消し）\s[105]着替えました。\_w[1000]
+\s[126]\cどう、でしょうか？\w5
+似合ってますか？
+\e
 
 ＊5years_after2に着替えた
-＄今日のパンツ	0
-：\s[138]（ユーザ名B）…\w3…\w3私、もう大人ですよ？
+\0\s[138]（ユーザ名B）・・・。\w5
+私、もう大人ですよ？\e
 
 ＊suwariに着替えた
-＄今日のパンツ	0
-：\s[105]座りました。
-
-＊suwariアリス帰還２
-＄選択ラベル	
-＄辞書フォルダ	.
-＄デフォルトサーフェス0	0
-＄デフォルトサーフェス1	100
-＄会話時サーフェス戻し	有効
-\u\s[100]\0\s[0]
+\0\s[105]座りました。\e
 
 ＃────────
 ＃着せ替え
 ＃────────
-＊OnDressupChanged	（着せ替えトーク抑制）==0
-（when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））（when,（Reference3）==顔,（set、あ顔、（Reference1）,（Reference2）））
-（when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
+＊OnDressupChanged
+（when,（Reference2）==1,
+（whenlist、（Reference3）==
+、衣装、（set,あ衣装,（Reference1））
+、後ろ髪、（set,あ後ろ髪,（Reference1））
+、顔、（set，あ顔，（Reference1）,（Reference2））
+、前髪、（set,あ前髪,（Reference1））
+、もみあげ、（set,あもみあげ,（Reference1））
+）
+）
 ＞（Reference1）外し	（Reference2）==0
-＞（Reference1）へ着せ替え	（Reference2）==1
+＞（Reference1）へ着せ替え	（Reference2）==1&&（着せ替えトーク抑制）==0
 
 ＊お嫁さんへ着せ替え
 \0\s[101]素敵なドレス……。
@@ -188,11 +192,19 @@
 
 ＊ローターへ着せ替え
 ＄ローターモード	1
+＄デフォルトサーフェス0	138
+＄一時保存	（喋り間隔）
+＄喋り間隔	０秒
 \0\s[128]あっ・・・（はーと）
+\e
 
 ＊ローター外し
 ＄ローターモード	0
+＄デフォルトサーフェス0	100
+＄喋り間隔	（一時保存）
+＄一時保存	
 \0\s[138]（吐息）
+\e
 
 ＃────────
 ＃ネットワーク更新
@@ -418,32 +430,43 @@
 サーバの設定が違うか、混んでいる可能性があります。\e
 
 ＃────────
-＃文字入力
+＃■文字入力
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 
 ＃────────
-＃キー押下
+＃■コミュニケート
+＃────────
+＊OnCommunicate
+＞（Reference1）	（compare,（Reference0）,user）
+＞COMMUNICATE該当なし	（compare,（Reference0）,user）
+
+＊OnCommunicateInputCancel
+＞愛撫中止	（興奮度）＞０
+＞Cancel
+
+＃────────
+＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
 
 ＊tが押された
-：（エモ消し）（）
+\0（エモ消し）（）
 
 ＊cが押された
 ＞Communication
 
 ＊rが押された
 ＄辞書リロード	実行
-：（エモ消し）\s[100]リロードしました。\e
+\0（エモ消し）\s[100]リロードしました。\e
 
 ＊sが押された
 \0\b[2]\s[100]パートφ：僕のアリス2nd
@@ -463,23 +486,21 @@
 （set,パンツ残数,5）
 
 ＃────────
-＃選択肢
+＃■選択肢
 ＃────────
 ＊OnChoiceSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
-＞選択先がない
-
-＊OnChoiceSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
 ＞NoAnchor
 
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
+＃＊OnChoiceSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃＞NoAnchor
+
+＊OnAnchorSelect
+＞（Reference0）
 ＞NoAnchor
 
 ＊NoAnchor
@@ -539,13 +560,6 @@
 ＊ローター感想
 ：\s[129]んっ・・・くっ・・・（はーと）
 うぅ・・・前は・・・ダメ、なんです（はーと）
-
-＃────────────
-＃コミュニケート
-＃────────────
-＊OnCommunicate
-＞（Reference1）	（Reference0）==user
-＞COMMUNICATE該当なし	（Reference0）==user
 
 ＃────────
 ＃■バグ報告
