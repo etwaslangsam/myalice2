@@ -21,13 +21,85 @@
 ＄（Reference3）（Reference4）見つめタイマ	
 
 ＃────────
+＃■時間イベント
+＃────────
+＊OnMinuteChange
+＞時報	（TimeSignal）&&（compare,（現在分）,0）
+＞重なり	（Reference2）==1
+\e
+
+＊OnHourTimeSignal
+（set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1）
+\e
+
+＊時報
+\0\s[0]（現在時）時ね。
+\e
+＊時報
+\1\s[100]\c（現在時）時です。
+\e
+
+＊OnOverlap
+＄SAORI引数の計算	無効
+＞重なり	（compare,（Reference0）,0-1）
+＄SAORI引数の計算	自動
+\e
+
+＊重なり
+＄SAORI引数の計算	自動
+\0\s[24]
+\1（エモあせあせ）\s[103]\c・・・あの、アリスさん？
+\0\c・・・（エモハート）\s[26]ちゅっ（はーと）\_w[1000]
+\1（エモあせあせ）\s[126]\cな、なんですか急に？\_w[1000]
+\0（エモ音符）\s[28]\cんふふ～！\w5
+ありすが可愛いからちゅーしたくなっちゃった！\_w[1000]
+\1（エモハート）もう、離れますよ？\w9\4
+\e
+
+＃────────
 ＃■最小化解除
 ＃────────
 ＊OnWindowStateRestore
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
 
 ＊OnWindowStateRestore
-\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
+\0\s[0]\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
+
+＃────────
+＃■スリープ解除
+＃────────
+＊OnSysResume
+\0（エモ気づき）\s[5]（ユーザ名）おっはよ～！
+\1\s[100]おはようございます。
+\e
+
+＊OnScreenSaverStart
+\0\s[6]\1\s[106]
+\e
+
+＊OnScreenSaverEnd
+＞起動
+\e
+
+＊OnDisplayPowerStatus
+＞起動	（Reference0）
+\0\s[6]\1\s[106]
+\e
+
+＃────────
+＃■SSP更新
+＃────────
+＊OnBasewareUpdating
+＄temp	（Reference0）
+\0\s[0]
+\1\s[100]ベースウェアの更新を行います。
+\e
+
+＊OnBasewareUpdated
+\0\s[5]たっだいま～！\w5
+\1\s[100]ベースウェアのバージョンが（temp）から（Reference0）になりました。
+＄temp	
+\e
 
 ＃────────
 ＃■表情復帰
@@ -461,23 +533,27 @@ md5が合わないって！
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
+\e
 
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+\e
 
 ＃────────
 ＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
+\e
 
 ＊rが押された
 ＄辞書リロード	実行
 \0\s[0]（エモ消し）\1\s[100]（エモ消し）リロードしました。\e
 
 ＊tが押された
-\0\s[0]（エモ消し）\1\s[100]（エモ消し）（）
+＄r_talk	（）
+\0\s[0]（エモ消し）\1\s[100]（エモ消し）（r_talk）
 
 ＊cが押された
 ＞UserCommunicate
@@ -497,54 +573,26 @@ md5が合わないって！
 \_q
 
 ＃────────
-＃選択肢
+＃■選択肢
 ＃────────
-＃＊OnChoiceSelect
-＃＄選択ＩＤ	（Reference0）
-＃＞（Reference0）
-＃＞選択先がない
-＃
-＃＊OnChoiceSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃＞選択先がない
+＊OnChoiceSelect
+＞（Reference0）
+＞選択先がない
+\e
 
 ＊OnChoiceTimeout
-：（エモ怒り）\s[24]（ユーザ名）聞いてる～？\e
+\0（エモ怒り）\s[24]（ユーザ名）聞いてる～？
+\e
 
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
+＊OnAnchorSelect
+＞（Reference0）
 ＞選択先がない
+\e
 
 ＊選択先がない
 ：（エモ？）\s[7]『（Reference0）』？ってなーに？
 ：（エモ落ち込み）\s[103]選択肢エラーですね。\w6
 バグ報告をお願いします。\e
-
-＃────────
-＃時間イベント
-＃────────
-＊OnMinuteChange
-（when、（起動分）==30、（set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1））
-＞重なり	（Reference2）==1
-＞時報	（TimeSignal）==1&&（現在分）==0
-
-＊重なり
-\0\s[24]
-\1\c（エモあせあせ）\s[103]……あの、アリスさん？
-\0\c……（エモハート）\s[26]ちゅっ（はーと）
-\1（エモあせあせ）\s[126]な、なんですか急に？
-\0（エモ音符）\s[28]んふふ～ありすが可愛いからちゅーしたくなっちゃった！
-\1（エモハート）もう……離れますよ？\w9\4
-\e
-
-＊時報
-\0\s[0]（現在時）時ね。\e
-＊時報
-\1\s[100]\c（現在時）時です。\e
 
 ＃────────
 ＃■バグ報告
@@ -569,7 +617,14 @@ md5が合わないって！
 \1（エモ落ち込み）\s[104]「（Reference4）」で失敗したみたいです……。\e
 
 ＃────────
-＃■バッテリイベント
+＃■ネットワーク状態
+＃────────
+＊OnNetworkStatusChange
+\1（when、（Reference0）==online、ネットワークに接続、ネットワークから切断）されました。
+\e
+
+＃────────
+＃■バッテリ状態
 ＃────────
 ＊OnBatteryNotify
 ＄バッテリ残量	（Reference0）
