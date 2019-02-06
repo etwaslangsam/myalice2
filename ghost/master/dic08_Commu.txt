@@ -1,8 +1,7 @@
-コミュ反応
 
 ＊UserCommunicate
 ＄今回は自動アンカー＝有効
-：\b[2]（エモ消し）\_q\c
+\0\b[2]（エモ消し）\_q\c
 【話しかけ】　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a
 
 \![*]アリス
@@ -23,10 +22,23 @@
 \![*]励まして
 \![*]膝枕
 \![*]ポッキーゲームしよう
-\![*]肩車　\f[color,red]NEW!\f[default]
-\![*]お姫様だっこ　\f[color,red]NEW!\f[default]
+\![*]肩車
+\![*]お姫様だっこ
 
-\q[なんでもない,CommuCancel]
+\q[なんでもない,CommuCancel]　\q[次のページφ＞,UserCommunicate2]
+\_q\e
+
+＊UserCommunicate2
+＄今回は自動アンカー＝有効
+\0\b[2]（エモ消し）\_q\c
+【話しかけ】　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a
+
+\![*]アリス
+\![*]ありす
+
+\![*]二人で応援して
+
+\q[φ＜前のページ,UserCommunicate]　\q[なんでもない,CommuCancel]
 \_q\e
 
 ＊Communication2
