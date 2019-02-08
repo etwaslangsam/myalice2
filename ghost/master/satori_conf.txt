@@ -29,6 +29,7 @@
 Ž©“®ƒAƒ“ƒJ[	–³Œø
 ‚ ‚è‚·’a¶ŒŽ	0
 ‚ ‚è‚·’a¶“ú	0
+ˆêŽž•Û‘¶	‚P‚W‚O•b
 —SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float

@@ -37,6 +37,7 @@
 \![*]ありす
 
 \![*]二人で応援して
+\![*]今日の給食なんだった？
 
 \q[φ＜前のページ,UserCommunicate]　\q[なんでもない,CommuCancel]
 \_q\e
@@ -67,8 +68,13 @@
 \q[なんでもない,CommuCancel]
 \_q\e
 
-＊CommuCancel
-（whenlist,（話しかけ）==,アリスに,（Cancel）,ありすに,（Cancel2））
+＊CommuCancel	（compare,（話しかけ）,アリスに）
+\0\s[5]ん！
+\e
+
+＊CommuCancel	（compare,（話しかけ）,ありすに）
+\1\s[105]はい。
+\e
 
 ＊QuestionCancel
 ：（エモ気づき）\s[26]またなんでも質問していーからね？
