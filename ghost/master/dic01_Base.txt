@@ -35,12 +35,7 @@
 ＃■起動
 ＃────────
 ＊OnBoot
-＄話しかけ	アリスに
-＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
-＄喋り間隔	（一時保存）
-＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
-（set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1）
+（FlagSet）
 ＞（現在月）月（現在日）日	（アイベント年月日）!=（現在年）（現在月）（現在日）
 ＞アリスソロ解禁	（アリスキス）==0&&（好感度）>115
 ＞起動
@@ -163,7 +158,7 @@
 ＞ソロ解禁End
 
 ＊ソロ解禁見送り
-（set,好感度,100）
+＄好感度	100
 \t\1\s[-1]\0\c\s[33]…\w3…\w3…\w3…\w3（エモ怒り）\s[9]（ユーザ名）？\w5
 \s[24]もー！\w3 意気地なし！\w3 キスぐらいいーじゃん！！\w5
 （エモ落ち込み）\s[4]そんなにアタシが嫌いなの……？\w9\n
@@ -193,15 +188,9 @@
 ＃■終了
 ＃────────
 ＊OnClose
-＄全タイマ解除	実行
-＄興奮度	0
-＄パンツ濡れ	0
-＄パンツ汚れ	0
-＄ア頭カウンタ	０
-＄あ頭カウンタ	０
-＄r_talk	
-（when、（好感度）>120、（set,好感度,120））（when、（好感度B）>120、（set,好感度B,120））
+（FlagReset）
 ＞End
+\e
 
 ＊End
 \0（エモハート）\s[1]はやく帰ってきてね、あ・な・た（はーと）
@@ -229,23 +218,18 @@
 ＃────────
 ＊OnGhostChanging
 ＞アリスへ変更	（compare,（Reference0）,アリス）
-＄全タイマ解除	実行
-＄興奮度	0
-＄パンツ濡れ	0
-＄パンツ汚れ	0
-＄ア頭カウンタ	０
-＄あ頭カウンタ	０
-（when、（好感度）>120、（set,好感度,120））（when、（好感度B）>120、（set,好感度B,120））
+（FlagReset）
 ＞（Reference0）へ変更
 ＞End
+\e
 
 ＊アリスへ変更
 \1\s[100]\0\s[14]ちょっと待っててね？\_w[1000]
 
 ＊OnGhostChanged
-＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
+（FlagSet）
 ＞（Reference0）から変更
-＞OnBoot
+＞起動
 \e
 
 ＊アリスから変更
@@ -355,7 +339,7 @@
 ＄デフォルトサーフェス0	100
 ＄デフォルトサーフェス1	10
 ＄着せ替えトーク抑制	1
-＄r_talk	
+（FlagReset）
 \1\s[10]\b[-1]
 \0\![bind,衣装,（あ衣装）,1]\![bind,後ろ髪,（あ後ろ髪）,1]\![bind,前髪,（あ前髪）,1]\![bind,もみあげ,（あもみあげ）,1]\![bind,顔,（あ顔）]
 （エモハート）（when,（興奮度）>0
@@ -370,7 +354,7 @@
 ＄辞書フォルダ	Wmode
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	10
-＄r_talk	
+（FlagReset）
 \1\s[10]\0\s[5]\cえっへっへ～！\w3
 （ユーザ名）とデート～♪\w3 \s[32]やっと二人きりだね（はーと）\e
 
@@ -507,118 +491,30 @@
 
 
 ＃────────
-＃■リソース
-＃────────
-＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
-
-＠menu.background.bitmap.filename
-bgm2.png
-＠menu.background.font.color.r
-255
-＠menu.background.font.color.g
-255
-＠menu.background.font.color.b
-255
-
-＠menu.foreground.bitmap.filename
-bgm2.png
-＠menu.foreground.font.color.r
-255
-＠menu.foreground.font.color.g
-0
-＠menu.foreground.font.color.b
-0
-
-＠portalrootbutton.caption
-配布サイト
-
-＃────────
-＃■アリスおすすめ
-＃────────
-＊sakura.recommendsites
-スヌーピー公式サイト
-https://www.snoopy.co.jp/
-
-：\s[5]スヌーピー！\w5
-漫画は読んだことないけどかわいいよね。
-
-＊sakura.recommendsites
-ムーミン公式サイト
-http://moomin.co.jp/
-
-：\s[5]ムーミンは、ママも、お祖母ちゃんも大好きなの。
-もちろんアタシも！
-
-
-＊sakura.recommendsites
--
-
-＊sakura.recommendsites
-サーティーワン アイスクリーム
-http://www.31ice.co.jp/
-
-：\s[5]サーティワンのアイス大好き（はーと）
-\s[26]オススメはもちろんラブポーション！
-
-＊sakura.recommendsites
-ミスタードーナツ
-http://www.misterdonut.jp/
-
-：\s[5]ミスタードーナツ♪
-ドーナツポップが一口サイズでカラフルでかわいくて好き。
-
-＊sakura.recommendsites
-ぷっちょ公式
-http://puccho.jp/
-
-＃────────
-＃■ありすおすすめ
-＃────────
-＊kero.recommendsites
-はじめてからだナビ
-http://www.unicharm.co.jp/girls/index.html
-
-＊kero.recommendsites
-キッズワコール
-http://www.wacoal.jp/kids/?link=global_nav
-
-＊kero.recommendsites
-ファーストブラの選び方
-http://www.wacoal.jp/fairytiara/sp/1st_bra.html
-
-＊kero.recommendsites
-ガールズばでなび
-http://www.wacoal.jp/girlsbody/index.html
-
-＊kero.recommendsites
-ルシアン/Troppo
-http://www.lecien.co.jp/lingerie/toroppo/index.html
-
-＊kero.recommendsites
-セシール/Cupop
-http://www.cecile.co.jp/genre/g1/3/TN/
-
-＊kero.recommendsites
-アダルトショップ -NLS-
-http://www.e-nls.com/
-
-＃────────
-＃■ポータルサイト
-＃────────
-＊sakura.portalsites
-ほっとぺっぱぁ団
-https://hotpepar.blogspot.com/
-
-
-＊sakura.portalsites
-メッセージフォーム
-https://goo.gl/forms/qJhnaKjUfVtcOWSk1
-
-
-＃────────
 ＃単語群
 ＃────────
+＊FlagSet
+＄話しかけ	アリスに
+＄今日のパンツ	（パンツ種類）
+＄パンツ残数	5
+＄喋り間隔	（一時保存）
+＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
+（set,好感度,（好感度）+1）
+（set,好感度B,（好感度B）+1）
+
+＊FlagReset
+＄全タイマ解除	実行
+＄興奮度	0
+＄パンツ濡れ	0
+＄パンツ汚れ	0
+＄ア頭カウンタ	０
+＄あ頭カウンタ	０
+＄ア抱きしめた	
+＄あ抱きしめた	
+＄r_talk	
+（when、（好感度）>120、（set,好感度,120））
+（when、（好感度B）>120、（set,好感度B,120））
+
 ＠曜日
 （whenlist,（現在曜日）==,土,休日,日,休日,平日）
 ＠季節
@@ -802,11 +698,6 @@ Tフロント
 生チョコ
 チョコトリュフ
 
-
-＠重要
-\f[color,red]\f[bold,1]φ！\f[bold,0]\f[color,default]
-＠痙攣
-（times、5、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
 ＠voiceA
 （喘ぎ声２）\n\n[half]（rx2）（喘ぎ声２）\n\n
 ＠voiceB
@@ -856,29 +747,4 @@ Tフロント
 んっ～～～～～～～～～～～（times、3、（はーと）） 
 ぅ～～～～～～～～～～～～（times、3、（はーと）） 
 
-＠エモハート
-\![bind,エモ,ハート,1]
-＠エモ気づき
-\![bind,エモ,気づき,1]
-＠エモ怒り
-\![bind,エモ,怒り,1]
-＠エモ汗
-\![bind,エモ,汗,1]
-＠エモあせあせ
-\![bind,エモ,あせあせ,1]
-＠エモ眠り
-\![bind,エモ,眠り,1]
-＠エモ音符
-\![bind,エモ,音符,1]
-＠エモ驚き
-\![bind,エモ,吃驚,1]
-＠エモ！
-\![bind,エモ,！,1]
-＠エモ？
-\![bind,エモ,？,1]
-＠エモ閃き
-\![bind,エモ,閃き,1]
-＠エモ落ち込み
-\![bind,エモ,落ち込み,1]
-＠エモ消し
-\![bind,エモ,,0]
+

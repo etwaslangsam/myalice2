@@ -55,32 +55,29 @@
 少々お待ち下さい。
 \e
 
-＊OnShellChanged	（Reference0）==master
+＊OnShellChanged
 ＄現在シェル	（Reference0）
 ＄今日のパンツ	（パンツ種類）
 ＄パンツ残数	5
-\0（エモ消し）\s[100]着替えました。\e
+＞（Reference0）に着替えた
+\0（エモ消し）\s[100]着替えました。
+\e
 
-＊OnShellChanged	（Reference0）==suwari
-＄現在シェル	（Reference0）
+＊suwariに着替えた
 ＄今日のパンツ	0
-\0\s[100]座りました。\e
+\0\s[100]座りました。
+\e
 
-＊OnShellChanged	（Reference0）==5years_after2
-＄現在シェル	（Reference0）
-＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
+＊5years_after2に着替えた
 \0\s[106]着替えました。\_w[1000]
-\c（エモ？）\s[103]……どうかしましたか？\w5
-成長してない？\w5 なんの話ですか？\e
+\c（エモ？）\s[103]・・・どうかしましたか？\w5
+成長してない？\w5 なんの話ですか？
+\e
 
-＊OnShellChanged	（Reference0）==マイリトルド－ルズ
-＄現在シェル	（Reference0）
-＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
-\0\s[106]着替え終わりました。\w5
-
-\s[100]ずいぶん、たくさん衣装を用意したんですね。\e
+＊マイリトルド－ルズに着替えた
+\0\s[106]着替え終わりました。\_w[1000]
+\s[100]\c・・・ずいぶん、たくさん衣装を用意したんですね。
+\e
 
 ＃────────
 ＃着せ替え
@@ -89,6 +86,7 @@
 （when、（Reference3）==衣装、（set,あ衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,あ後ろ髪,（Reference1）））
 （when、（Reference3）==前髪、（set,あ前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,あもみあげ,（Reference1）））
 ＞（Reference1）へ着せ替え	（Reference2）==1
+\e
 
 ＊お嫁さんへ着せ替え
 ＄今日のパンツ	0
@@ -258,14 +256,15 @@
 \0\s[130]こ、これ……お、大きい……！\e
 
 ＃────────
-＃ダウンロード
+＃■ダウンロード
 ＃────────
 ＊OnURLDropping
 \0\s[100]ダウンロードを開始します。
+\e
 
 ＊OnURLDropped
 \0\s[100]ダウンロードが終りました。
-ファイルは\_q（Reference0）\_qにあります。\e
+\e
 
 ＃────────
 ＃インストール
@@ -345,20 +344,24 @@
 \0\s[100]SSTPがブレイクされたようです。
 
 ＃────────
-＃更新ファイル作成
+＃■ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
 \0\s[100]updates2.dauを作ります。
+\e
 
 ＊OnUpdatedataCreated
 \0\s[106]updates2.dauが出来ました。\_w[1000]
-\c…………お疲れ様です。
+\s[100]\c・・・お疲れ様です。
+\e
 
 ＊OnNarCreating
 \0\s[100]「（Reference0）」をNARにします。
+\e
 
 ＊OnNarCreated
-\0\s[106]「（Reference0）」を （Reference1） に詰め込みました。\e
+\0\s[106]「（Reference0）」をNARにしました。
+\e
 
 ＃────────
 ＃メールチェック
@@ -411,25 +414,33 @@
 ＃文字入力
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
+\e
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+\0\s[100]中断します。
+\e
 
 ＃────────
 ＃キー押下
 ＃────────
-＊OnKeyPress	（Reference0）==t
+＊OnKeyPress
+＞（Reference0）が押された
+\e
+
+＊t
 \0（エモ消し）（）
 
-＊OnKeyPress	（Reference0）==r
+＊rが押された
 ＄辞書リロード	実行
 \0（エモ消し）\s[100]リロードしました。
+\e
 
-＊OnKeyPress	（Reference0）==s
+＊sが押された
 \0\b[2]\s[100]モードφ：1stBmode
 
 ランダムトーク数φ：（countNoNameTalk）個\n[half]
@@ -445,31 +456,24 @@
 \x
 
 ＊パンツチャージ
-（set,パンツ残数,5）（set,今日のパンツ,（パンツ種類））
+＄パンツ残数	5
+＄今日のパンツ	（パンツ種類）
+＞sが押された
 
 ＃────────
-＃選択肢
+＃■選択肢
 ＃────────
-＃＊OnChoiceSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃＞NoAnchor
-
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-＞NoAnchor
-
-＊NoAnchor
-\0\s[106]選択肢「（Reference0）」は存在しませんご報告下さい\e
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+\e
 
 ＊OnChoiceTimeout
-\0\s[103]あの、（ユーザ名B）？\e
+\0\s[103]あの、（ユーザ名B）？
+\e
 
 ＃────────
-＃時間イベント
+＃■時間イベント
 ＃────────
 ＊OnMinuteChange
 ＞時報	（現在分）==0&&（TimeSignal）==1
@@ -478,21 +482,25 @@
 \0\s[100]（現在時）時です。
 
 ＃────────
-＃Web拍手
+＃■Web拍手
 ＃────────
 ＊OnWebClap
 \![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]φ
 \0\s[100]なにかご要望などありましたら遠慮せずにどうぞ,
+\e
 
 ＊拍手送信内容を教えてもらった
 \![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="ありす1＠（拍手送信内容）",--async=webclap]
 ＄拍手送信内容	
+\e
 
 ＊拍手送信内容を空打ちされた
 ＞なんでもない
 
 ＊OnExecuteHTTPComplete	（Reference1）==webclap
 \0\s[105]送信しました、ありがとうございます。
+\e
 
 ＊OnExecuteHTTPFailure	（Reference1）==webclap
 \0\s[103]「（Reference4）」という理由で送信に失敗しました。
+\e

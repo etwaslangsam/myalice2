@@ -70,9 +70,9 @@
 ＊マイリトルド－ルズシェルになった
 \0\s[26]色んなアタシで（ユーザ名）のこと魅了してあげる！
 
-＃────────────
+＃────────
 ＃着せ替え
-＃────────────
+＃────────
 ＊OnDressupChanged	（着せ替えトーク抑制）==0
 （when、（Reference3）==衣装、（set,ア衣装,（Reference1）））（when、（Reference3）==後ろ髪、（set,ア後ろ髪,（Reference1）））
 （when、（Reference3）==前髪、（set,ア前髪,（Reference1）））（when、（Reference3）==もみあげ、（set,アもみあげ,（Reference1）））
@@ -163,111 +163,111 @@
 ：\s[4]う～ん重い……\e
 
 ＃────────
-＃ダウンロード
+＃■ダウンロード
 ＃────────
 ＊OnURLDropping
 \0\s[26]ダウンロードするね☆
+\e
 
 ＊OnURLDropped
 \0\s[5]おーしまい！
-\_q（Reference0）\_qにおいとくね。\e
+\e
 
 ＃────────
-＃インストール
+＃■インストール
 ＃────────
 ＊OnInstallBegin
 \0\s[2]え？\w3 なに？
-インストール？\w5
+インストール？
+\e
 
 ＊OnInstallComplete	（Reference0）!=ghost
 \0\s[5]『（Reference1）』？
-これをアタシに？\w5 ありがとー！
+これをアタシに？\w5
+ありがとー！
+\e
 
 ＊OnInstallComplete	（Reference0）==ghost
-\0\s[0]『（Reference1）』？
+\0\s[0]『（Reference1）』？\w5
 （ユーザ名）のお友達？
+\e
 
 ＊OnInstallFailure
 \0\s[4]「（Reference0）」で失敗だってさ。
+\e
 
 ＊OnInstallRefuse
 \0\s[31]（ユーザ名）？
 これ、『（Reference0）』専用のだって・・・。
+\e
 
 ＃────────
-＃更新ファイル作成
+＃■ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
-\0\s[5]更新ファイル？\w5を作るね。
+\0\s[5]更新ファイル？を作るね。
+\e
 
 ＊OnUpdatedataCreated
-\0\s[26]でっきあがり～！\e
+\0\s[26]でっきあがり～！
+\e
 
 ＊OnNarCreating
-\0\s[28]「（Reference0）」をNARにしちゃうね。\e
+\0\s[28]「（Reference0）」をNARにしちゃうね。
+\e
 
 ＊OnNarCreated
-\0\s[8]で～きたっ！\e
+\0\s[8]で～きたっ！
+\e
 
 ＃────────
-＃文字入力
+＃■文字入力
 ＃────────
 ＊OnUserInput
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
+\e
 
 ＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+\0\s[0]ん？\w5 やめるの？
+\e
 
 ＃────────
-＃キー押下
+＃■キー押下
 ＃────────
-＊OnKeyPress	（Reference0）==t
-\1\s[-1]（エモ消し）：\s[0]（エモ消し）（）
+＊OnKeyPress
+＞（Reference0）が押された
+\e
 
-＊OnKeyPress	（Reference0）==r
+＊tが押された
+\0（エモ消し）\s[0]（）
+
+＊rが押された
 ＄辞書リロード	実行
-\1（エモ消し）：（エモ消し）\s[26]リロードしたよ☆
+\0（エモ消し）\s[26]リロードしたよ☆
+\e
 
-＊OnKeyPress	（Reference0）==s
-：\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）\n
+＊sが押された
+\0\_q\s[0]（現在年）年（現在月）月（現在日）日φ（（現在曜日）φ）
+
 ランダムトーク数φ：（countNoNameTalk）個\n[half]
 ユーザ名φ：（ユーザ名）\n[half]
 好感度φ：（好感度）\n[half]
 現在シェルφ：（現在シェル）
 \_q
+\e
 
 ＃────────
-＃選択肢
+＃■選択肢
 ＃────────
-＃＊OnChoiceSelect
-＃＄選択ＩＤ	（Reference0）
-＃＞（Reference0）
-＃＞NoAnchor
-＃
-＃＊OnChoiceSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃＞NoAnchor
-
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-＞NoAnchor
-
 ＊OnAnchorSelect
-＄選択ＩＤ	（Reference0）
 ＞（Reference0）
-＞NoAnchor
-
-＊NoAnchor
-\0\s[4]選択肢「（Reference0）」は存在しないみたい。
+\e
 
 ＊OnChoiceTimeout
-\0\s[24]ちょっと（ユーザ名）聞いてるー？\e
-
+\0\s[24]ちょっと（ユーザ名）聞いてる？
+\e
 
