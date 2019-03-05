@@ -29,7 +29,10 @@
 ＃時間イベント
 ＃────────
 ＊OnMinuteChange
-＞時報	（TimeSignal）&&（現在分）==0
+\e
+
+＊OnHourTimeSignal
+＞時報	（TimeSignal）
 \e
 
 ＊時報
@@ -108,7 +111,7 @@
 ＃■表情復帰
 ＃────────
 ＊OnSurfaceRestore
-＞顔を洗う	（顔射）==1
+＞顔を洗う	（顔射）
 ＞興奮時	（Reference0）>=132
 \0\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]
 （when,（ローターモード）==1,\s[138],\s[100]）
@@ -384,7 +387,8 @@
 ＄ほめてほしい	１
 ＄ほめられなかったタイマ	１５
 \0（エモ気づき）\s[124]ダウンロードが終りました。
-ファイルは\_q（Reference0）\_qにあります。\e
+ファイルは\_q（Reference0）\_qにあります。
+\e
 
 ＃────────
 ＃■インストール
@@ -547,10 +551,12 @@
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
+\e
 
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+\e
 
 ＃────────
 ＃■コミュニケート
@@ -561,23 +567,26 @@
 
 ＊OnCommunicateInputCancel
 ＞愛撫中止	（興奮度）＞０
-＞Cancel
+\e
 
 ＃────────
 ＃■キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
+\e
 
 ＊tが押された
 \0（エモ消し）（）
 
 ＊cが押された
 ＞Communication
+\e
 
 ＊rが押された
 ＄辞書リロード	実行
-\0（エモ消し）\s[100]リロードしました。\e
+\0（エモ消し）\s[100]リロードしました。
+\e
 
 ＊sが押された
 \0\b[2]\s[100]パートφ：僕のアリス2nd
@@ -610,7 +619,6 @@
 ＊OnChoiceTimeout
 \0\s[101]あの、（ユーザ名B）？
 \e
-
 
 ＃────────
 ＃■バグ報告
