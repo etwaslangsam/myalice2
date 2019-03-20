@@ -335,4 +335,5 @@ collisionex4,Skirt,rect,68,255,153,280
 collisionex5,Face,polygon,93,84,91,113,96,126,113,131,128,128,138,121,148,84
 collisionex7,Hand,polygon,60,251,46,251,41,266,53,278,63,273,68,258
 collisionex8,Hand,polygon,173,263,151,275,151,285,168,290,183,286,183,273
+collisionex11,Pussy,rect,98,232,120,253
 }
