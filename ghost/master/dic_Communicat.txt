@@ -51,7 +51,7 @@
 ＊UserCommunicate
 \![open,communicatebox]
 \1\s[100]\0\s[0]\b[2]（エモ消し）\_q\c
-【話しかけ】　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a
+【話しかけ】　\_a[Communication2]【質問】\_a
 
 （when,（話しかけ）==ありす,\![*]アリスに話しかける,\![*]ありすに話しかける）
 
@@ -437,7 +437,7 @@
 ＊UserCommunicate2
 \![open,communicatebox]
 \1\s[100]\0\s[0]\b[2]（エモ消し）\_q\c
-【話しかけ】　\_a[Communication2]【質問】\_a　\_a[EventLibrary]【回想】\_a
+【話しかけ】　\_a[Communication2]【質問】\_a
 
 （when,（話しかけ）==ありす,\![*]アリスに話しかける,\![*]ありすに話しかける）
 
@@ -482,7 +482,7 @@
 ＃────────
 ＊Communication2
 \1\s[100]\0\s[0]\b[2]\_q\c
-\_a[UserCommunicate]【話しかけ】\_a　【質問】　\_a[EventLibrary]【回想】\_a
+\_a[UserCommunicate]【話しかけ】\_a　【質問】
 
 \![*]\q[何年生？,QA1]
 \![*]\q[誕生日はいつ？,QA2]
@@ -613,14 +613,4 @@
 \0\x
 ＞Communication2
 
-＃────────
-＃
-＃────────
-＊EventLibrary
-\1（エモ消し）\c\_q\0（エモ消し）\b[2]\c
-\_a[UserCommunicate]【話しかけ】\_a　\_a[Communication2]【質問】\_a　【回想】
 
-（when、（アリスキス）!=１、（times,１２,─）、\![*]\_a[アリスソロ解禁]アリスソロモード解禁\_a）
-
-\q[なんでもない,CommuCancel]
-\_q\e
