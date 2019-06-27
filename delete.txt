@@ -1,6 +1,6 @@
 .gitignore
+ghost\master\dicAnchor.txt
 ghost\master\dic08_Commu.txt
 ghost\master\1stWmode\dic06_String.txt
 ghost\master\1stBmode\dic06_String.txt
 ghost\master\Wmode\dic08_Commu.txt
-ghost\master\dicAnchor.txt
