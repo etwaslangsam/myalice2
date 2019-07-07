@@ -28,7 +28,7 @@ file,ghost/master/1stBmode/dic02_Event.txtcdb0ecd19e61b7bef784eca8eff8b963size
 file,ghost/master/1stBmode/dic03_Touch.txtd081945dae3678abfc4fa164af4f6f80size=8829
 file,ghost/master/1stBmode/dic04_Time.txt0b14a17f763f56ef7030052a3915b83csize=14369
 file,ghost/master/1stBmode/dic05_Menu.txtb71291a32be0c13ac28e116e055878e5size=10035
-file,ghost/master/1stBmode/dic08_Commu.txt3b16b935e6835a03db992b6bfe520c62size=11106
+file,ghost/master/1stBmode/dic08_Commu.txte538f052b4f56044f2fcea101e537d16size=11108
 file,ghost/master/1stBmode/dic12_talk.txtf95adbd6770c075ef39e23daba3edc94size=5552
 file,ghost/master/1stBmode/dic_play1.txtfbf6a626fb26379449cdfbfec4cfd0desize=20513
 file,ghost/master/1stBmode/dic_play2.txtc70968f54a8d3e7b29afbaf3faf86972size=19304
