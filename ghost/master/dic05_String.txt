@@ -281,9 +281,6 @@ bgm2.png
 ＠menu.foreground.font.color.b
 0
 
-＠portalrootbutton.caption
-配布サイト
-
 ＃────────
 ＃■アリスおすすめ
 ＃────────
@@ -358,12 +355,67 @@ http://www.e-nls.com/
 ＃■ポータルサイト
 ＃────────
 ＊sakura.portalsites
+配布サイト
+
+＊sakura.portalsites
 ほっとぺっぱぁ団
 https://hotpepar.blogspot.com/
 
+\1\s[100]更新履歴を兼ねた配布ブログです。
+\0\s[0]トークの追加だけだと更新しないけどね。
 
 ＊sakura.portalsites
 メッセージフォーム
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
+\1\s[100]長文メッセージを送るのに向いています。
+\0\s[26]バグ報告もいいけど応援メッセージもよろしくね（はーと）
 
+＊sakura.portalsites
+-
+
+＊sakura.portalsites
+独立伺か研究施設 ばぐとら研究所
+http://ssp.shillest.net/
+
+
+＊sakura.portalsites
+Disc-2
+http://disc2.s56.xrea.com/
+
+\1\s[100]伺かに関するニュースサイトです。
+\0\s[25]投稿式だからここに載ってない情報もあるけどね。
+
+＊sakura.portalsites
+伺か情報ブログ「ghost-log」
+https://ghost-log.net/
+
+\1\s[100]伺かに関する情報を集積しているブログです。
+\0\s[0]Disc-2にない情報もあったりするね。
+
+＊sakura.portalsites
+ゴーストキャプターさくら
+http://buynowforsale.shillest.net/ghosts/
+
+\1\s[100]ゴーストの更新の有無を確認できます。
+\0\s[26]ここから配布サイトにも飛べるよ☆
+
+＊sakura.portalsites
+ゴースト回覧板3rd
+http://jbbs.shitaraba.net/computer/44300/
+
+\1\s[100]ゴーストについて話し合える掲示板です。
+
+＊sakura.portalsites
+伺的な感想やレビューのWiki
+https://ghost-info.net/dokuwiki/doku.php
+
+\1\s[100]ゴーストの感想やレビューを投稿できる場所です。
+\0\s[5]アタシたちの感想もよろしくね！
+
+＊sakura.portalsites
+噂と評判[改] 過去ログ保管庫+
+https://ghostreview.sakura.ne.jp/
+
+\1\s[100]ゴーストに対する短いコメントを投稿できる場所です。
+\0\s[26]アタシたちの噂も広めてね（はーと）
