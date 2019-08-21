@@ -17,7 +17,6 @@
 ＞夕方起動	（現在時）＜１９
 ＞夜起動	（現在時）＜２３
 ＞深夜起動
-\e
 
 ＊朝起動
 ：\s[100]おはようございます、（ユーザ名B）。
@@ -328,7 +327,7 @@ http://ukask.x.fc2.com/
 https://hotpepar.blogspot.jp/
 
 ＊sakura.portalsites
-バグ報告
+連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 

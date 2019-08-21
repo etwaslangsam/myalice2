@@ -365,7 +365,7 @@ https://hotpepar.blogspot.com/
 \0\s[0]トークの追加だけだと更新しないけどね。
 
 ＊sakura.portalsites
-メッセージフォーム
+連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 \1\s[100]長文メッセージを送るのに向いています。

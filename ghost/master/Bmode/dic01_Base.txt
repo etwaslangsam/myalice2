@@ -1,6 +1,6 @@
 ＊OnSatoriLoad
-＄文「＊」の重複回避	有効、起動中
-＄単語群「＊」の重複回避	有効、起動中
+＄文「＊」の重複回避	無効、起動中
+＄単語群「＊」の重複回避	有効、直前
 ＄引数区切り追加	（sprintf,%c,3）
 
 ＃────────
@@ -402,7 +402,7 @@ https://hotpepar.blogspot.com/
 \0\s[100]更新履歴を兼ねた配布ブログです。
 
 ＊sakura.portalsites
-メッセージフォーム
+連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 \0\s[100]長文メッセージを送るのに向いています。

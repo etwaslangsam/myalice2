@@ -3,8 +3,7 @@
 ＃────────
 ＊Communication
 ＄今回は自動アンカー	有効
-\![open,communicatebox]
-\0\b[2]（エモ消し）\_q\c【話しかける】　\_a[FAQ]【質問】\_a\n[half]
+\0\s[0]\b[2]（エモ消し）\_q\c【話しかける】　\_a[FAQ]【質問】\_a\n[half]
 甘えて
 ありがとう
 愛してる
@@ -34,7 +33,6 @@
 
 ＊話しかける２
 ＄今回は自動アンカー	有効
-\![open,communicatebox]
 \0\b[2]\_q【話しかける】　\_a[FAQ]【質問】\_a\n[half]
 親密度
 触りたい
