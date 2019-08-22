@@ -88,7 +88,6 @@
 \e
 
 –CommuCancel
-\![close,communicatebox]
 \e
 
 ”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
