@@ -2,6 +2,8 @@
 ＄文「＊」の重複回避	直前、起動中
 ＄単語群「＊」の重複回避	有効、トーク中
 ＄引数区切り追加	（sprintf,%c,3）
+＄なでられ反応回数	４５
+＄コミュニケートの検索方法	里々
 
 ＃────────
 ＃■起動
@@ -9,7 +11,7 @@
 ＊OnBoot
 （set,好感度B,（好感度B）+1）
 ＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
+＄パンツ残数	
 ＄着せ替えトーク抑制	
 ＞（現在月）月（現在日）日	（あイベント年月日）!=（現在年）（現在月）（現在日）
 ＞深夜起動	（現在時）＜５
@@ -52,7 +54,6 @@
 （エモ！）\s[102]あっ、（エモあせあせ）\s[126]失礼しました。\w5
 
 お呼びでしょうか、（ユーザ名B）。\e
-
 
 ＊起動
 \0（エモ消し）\s[100]お呼びでしょうか、（ユーザ名B）？\e
@@ -210,12 +211,13 @@
 ＊FlagRset
 ＄全タイマ解除	実行
 ＄興奮度	0
-＄パンツ濡れ	0
-＄パンツ汚れ	0
+＄パンツ濡れ	
+＄パンツ汚れ	
 ＄あ頭カウンタ	
 ＄ほめてほしい	
 ＄なぐさめてほしい	
 ＄着せ替えトーク抑制	1
+＄ぎゅってされたい	
 
 ＊OnClose
 （when、（好感度B）>120、（set,好感度B,120））
@@ -299,7 +301,7 @@
 （set,好感度B,（好感度B）+1）
 ＞アリスから変更	（compare,（Reference0）,アリス）
 ＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
+＄パンツ残数	
 ＞（現在月）月（現在日）日	（あイベント年月日）!=（現在年）（現在月）（現在日）
 \0\s[105]\cお疲れ様です、（ユーザ名B）。\e
 
@@ -399,13 +401,11 @@ http://ukask.x.fc2.com/
 ほっとぺっぱぁ団
 https://hotpepar.blogspot.com/
 
-\0\s[100]更新履歴を兼ねた配布ブログです。
 
 ＊sakura.portalsites
 連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
-\0\s[100]長文メッセージを送るのに向いています。
 
 ＊sakura.portalsites
 -
@@ -419,37 +419,31 @@ http://ssp.shillest.net/
 Disc-2
 http://disc2.s56.xrea.com/
 
-\0\s[100]伺かに関するニュースサイトです。
 
 ＊sakura.portalsites
 伺か情報ブログ「ghost-log」
 https://ghost-log.net/
 
-\0\s[100]伺かに関する情報を集積しているブログです。
 
 ＊sakura.portalsites
 ゴーストキャプターさくら
 http://buynowforsale.shillest.net/ghosts/
 
-\0\s[100]ゴーストの更新の有無を確認できます。
 
 ＊sakura.portalsites
 ゴースト回覧板3rd
 http://jbbs.shitaraba.net/computer/44300/
 
-\0\s[100]ゴーストについて話し合える掲示板です。
 
 ＊sakura.portalsites
 伺的な感想やレビューのWiki
 https://ghost-info.net/dokuwiki/doku.php
 
-\0\s[100]ゴーストの感想やレビューを投稿できる場所です。
 
 ＊sakura.portalsites
 噂と評判[改] 過去ログ保管庫+
 https://ghostreview.sakura.ne.jp/
 
-\0\s[100]ゴーストに対する短いコメントを投稿できる場所です。
 
 
 ＃────────
@@ -520,6 +514,13 @@ https://ghostreview.sakura.ne.jp/
 ぶどうゼリー
 カットパイル
 
+＠パンツの色
+白い
+黒い
+赤い
+水色の
+黄色い
+ピンクの
 
 ＠パンツ種類
 Tバックショーツ

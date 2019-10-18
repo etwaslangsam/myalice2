@@ -481,7 +481,6 @@ https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 ＊FlagSet
 ＄話しかけ	アリスに
 ＄今日のパンツ	（パンツ種類）
-＄パンツ残数	5
 ＄喋り間隔	（一時保存）
 ＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
 （set,好感度,（好感度）+1）
@@ -489,8 +488,6 @@ https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 ＊FlagReset
 ＄全タイマ解除	実行
 ＄興奮度	0
-＄パンツ濡れ	0
-＄パンツ汚れ	0
 ＄ア頭カウンタ	０
 ＄あ頭カウンタ	０
 ＄ア抱きしめた	
