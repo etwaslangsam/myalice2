@@ -43,12 +43,17 @@
 ＃────────
 ＊OnHourTimeSignal
 （set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1）
-＞時報	（TimeSignal）
+＞時報A	（Sender）==ssp&&（TimeSignal）
+＞時報B	（TimeSignal）
 
-＊時報
-\0\s[0]（現在時）時ね。\e
-＊時報
-\1\s[100]\c（現在時）時です。\e
+＊時報A
+\0\s[5]（エモ気づき）（現在時）時だよ！\e
+＊時報A
+\1\s[100]（エモ気づき）（現在時）時になりました。\e
+＊時報B
+\![set,trayballoon,--text=ありす,--title=（現在時）時です,--icon=info,--timeout=3]
+＊時報B
+\![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
 ＃────────
 ＃■最小化解除
