@@ -1,45 +1,107 @@
 ＃────────
-＃■マウスイベント
+＃シェル変更
 ＃────────
-＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ
+＊OnShellChanging
+＄現在シェル	（Reference0）
+＞（Reference0）に変更する
+\0\s[0]なに？ 着替え？\w6
+\s[26]（ユーザ名）、覗いていいからね？
+\1\s[107]ダメですからね、（ユーザ名C）。\e
 
-＊OnMouseWheel
-＄ころころカウンタ=（ころころカウンタ）+1
-＄ころころカウンタ初期化タイマ	3
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＞（Reference0）に変更した
+\0\s[5]ジャーン！\w3 どう似合う？
+\1\s[103]似合ってるといいんですけど……。\e
 
-＊ころころカウンタ初期化
-＄ころころカウンタ	０
+＊5years_after2に変更する
+\1\s[105]\0\s[28]（ユーザ名）、ちょっと目をつぶっててね？
 
-＊OnMouseHover
-＄（Reference3）（Reference4）見つめタイマ	３
-＊OnMouseLeave
-＄（Reference3）（Reference4）見つめタイマ	
+＊5years_after2に変更した
+\0\s[26]お・ま・た・せ\w3（はーと）
+\1\s[101]私達、もう子供じゃありませんよ？
+
+
+＊マイリトルド－ルズに変更した
+\0\s[5]すっごーい！\w3 色んな衣装がある！\w5
+\s[1]好きな衣装で、（ユーザ名）色に染めてね（はーと）
+\1\s[101]今だけは、（ユーザ名C）の着せ替え人形です。
+
+＊通学路に変更する
+\1\s[107]\0\s[0]ランドセル見たいの？\w5
+\s[5]いいよ！\w3 ちょっと待っててね。
+
+＊通学路に変更した
+\1\s[107]\0\s[5]じゃーん！\w5
+どう？どう？
 
 ＃────────
-＃■重なり
+＃バルーン変更
 ＃────────
-＊OnOverlap
-＄SAORI引数の計算	無効
-＞重なり	（compare,（Reference0）,0-1）
-＄SAORI引数の計算	自動
+＊OnBalloonChange
+\1\s[100]バルーンを（Reference0）にしました。
+\0\s[5]オッシャレー☆\e
 
-＊重なり
-＄SAORI引数の計算	自動
-\0\s[24]
-\1（エモあせあせ）\s[103]\c・・・あの、アリスさん？
-\0\c・・・（エモハート）\s[26]ちゅっ（はーと）\_w[1000]
-\1（エモあせあせ）\s[126]\cな、なんですか急に？\_w[1000]
-\0（エモ音符）\s[28]\cんふふ～！\w5
-ありすが可愛いからちゅーしたくなっちゃった！\_w[1000]
-\1（エモハート）もう、離れますよ？\w9\4
+＃────────
+＃最小化解除
+＃────────
+＊OnWindowStateRestore
+\1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
+
+＊OnWindowStateRestore
+\0\s[0]\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
+
+＃────────
+＃スリープ解除
+＃────────
+＊OnSysResume
+\0（エモ気づき）\s[5]（ユーザ名）おっはよ～！
+\1\s[100]おはようございます。\e
+
+＃────────
+＃SSP更新
+＃────────
+＊OnBasewareUpdating
+＄temp	（Reference0）
+\0\s[0]
+\1\s[100]ベースウェアの更新を行います。\e
+
+＊OnBasewareUpdated
+\0\s[5]たっだいま～！\w5
+\1\s[100]ベースウェアのバージョンが（temp）から（Reference0）になりました。
+＄temp	
 \e
 
 ＃────────
-＃■時報
+＃ユーザインプット
+＃────────
+＊OnCommunicate
+≫「　（Reference1）	（compare,（Reference0）,user）
+＞（話しかけ）該当なし
+
+＊アリスに該当なし
+\0（エモ怒り）\s[24]ちゃんと分かるように言って！\e
+＊ありすに該当なし
+\1（エモ汗）\s[104]すいません、よく意味が・・・。\e
+
+＊OnCommunicateInputCancel
+＞（話しかけ）CommuCancel	
+＊アリスにCommuCancel
+\0\s[5]ん！\e
+＊ありすにCommuCancel
+\1\s[105]\cはい。\e
+
+＊OnUserInput
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＃────────
+＃時間イベント
 ＃────────
 ＊OnMinuteChange	（compare,（喋り間隔）,０秒）
 \0（無言表情A）\1（無言表情B）
@@ -80,88 +142,55 @@
 \![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
 ＃────────
-＃■最小化解除
+＃選択肢
 ＃────────
-＊OnWindowStateRestore
-\1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
+＊OnChoiceSelect
+＞（Reference0）
+＞選択先がない
 
-＊OnWindowStateRestore
-\0\s[0]\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
+＊OnChoiceTimeout
+\0（エモ怒り）\s[24]（ユーザ名）聞いてる～？\e
 
-＃────────
-＃■スリープ解除
-＃────────
-＊OnSysResume
-\0（エモ気づき）\s[5]（ユーザ名）おっはよ～！
-\1\s[100]おはようございます。\e
+＊OnAnchorSelect
+＞（Reference0）
+＞選択先がない
 
-＃────────
-＃■SSP更新
-＃────────
-＊OnBasewareUpdating
-＄temp	（Reference0）
-\0\s[0]
-\1\s[100]ベースウェアの更新を行います。\e
-
-＊OnBasewareUpdated
-\0\s[5]たっだいま～！\w5
-\1\s[100]ベースウェアのバージョンが（temp）から（Reference0）になりました。
-＄temp	
-\e
+＊選択先がない
+\0（エモ？）\s[7]『（Reference0）』？ってなーに？
+\1（エモ落ち込み）\s[103]選択肢エラーですね。\w6
+バグ報告をお願いします。\e
 
 ＃────────
-＃■表情復帰
+＃サーフェスイベント
 ＃────────
 ＊OnSurfaceRestore	（喋り間隔）!=０秒
 ＄顔射	0
 \0（エモ消し）\s[0]\1（エモ消し）\s[100]\![bind,カルピス,カルピス,0]\e
 
-＃────────
-＃■シェル変更
-＃────────
-＊OnShellChanging
-＄現在シェル	（Reference0）
-＞（Reference0）に変更する
-\0\s[0]なに？ 着替え？\w6
-\s[26]（ユーザ名）、覗いていいからね？
-\1\s[107]ダメですからね、（ユーザ名C）。\e
-
-＊OnShellChanged
-＄現在シェル	（Reference0）
-＞（Reference0）に変更した
-\0\s[5]ジャーン！\w3 どう似合う？
-\1\s[103]似合ってるといいんですけど……。\e
-
-＊5years_after2に変更する
-\1\s[105]\0\s[28]（ユーザ名）、ちょっと目をつぶっててね？
-
-＊5years_after2に変更した
-\0\s[26]お・ま・た・せ\w3（はーと）
-\1\s[101]私達、もう子供じゃありませんよ？
-
-
-＊マイリトルド－ルズに変更した
-\0\s[5]すっごーい！\w3 色んな衣装がある！\w5
-\s[1]好きな衣装で、（ユーザ名）色に染めてね（はーと）
-\1\s[101]今だけは、（ユーザ名C）の着せ替え人形です。
-
-＊通学路に変更する
-\1\s[107]\0\s[0]ランドセル見たいの？\w5
-\s[5]いいよ！\w3 ちょっと待っててね。
-
-＊通学路に変更した
-\1\s[107]\0\s[5]じゃーん！\w5
-どう？どう？
 
 ＃────────
-＃■バルーン変更
+＃■マウスイベント
 ＃────────
-＊OnBalloonChange
-\1\s[100]バルーンを（Reference0）にしました。
-\0\s[5]オッシャレー☆\e
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	３
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
 
 ＃────────
-＃■インストール
+＃インストール
 ＃────────
 ＊OnInstallBegin
 \1（エモ気づき）\s[100]それでは、インストールします。\e
@@ -197,6 +226,33 @@
 ＊OnInstallRefuse
 \1\s[104]これは私達のモノじゃありませんね。
 \0\s[24]これは『（Reference0）』のだって。\e
+
+＃────────
+＃ダウンロード
+＃────────
+＊OnURLDropping
+\0（エモ気づき）\s[5]\_q（Reference0）\_qからダウンロードするね！\e
+
+＊OnURLDropped
+\0（エモ音符）\s[5]ダウンロードおしまいっ！
+\1\s[100]ファイルは\_q（Reference0）\_qにあります。\e
+
+＃────────
+＃ファイル作成
+＃────────
+＊OnUpdatedataCreating
+\0（エモ気づき）\s[0]更新ファイル？を作るね。
+
+＊OnUpdatedataCreated
+\0（エモ音符）\s[5]でーきたっ！\e
+
+＊OnNarCreating
+\0（エモ気づき）\s[28]おっけー！
+『（Reference0）』をnarにすればいいのね！\e
+
+＊OnNarCreated
+\0（エモ音符）\s[5]でーきた！
+\1\s[100]『（Reference1）』を作成しました。\e
 
 ＃────────
 ＃ネットワーク更新
@@ -268,6 +324,55 @@ md5が合わないって！
 \1（エモ落ち込み）\s[104]更新サーバが消失したようです。\e
 
 ＃────────
+＃メールチェック
+＃────────
+＊OnBIFFBegin
+\0\s[0]メールちぇっく？
+
+＊OnBIFFComplete
+＞メールが増えた	（Reference3）＞0
+＞メールがない	（Reference0）==0
+\0\s[0]（Reference0）通\n
+メールが届いてるよ。
+\_q
+\![*]\q[メーラを開く,メーラを開く]
+\![*]\q[何もしない,何もしない]
+\_q\e
+
+＊メールが増えた
+\0\s[5]（Reference0）通\n
+新着メールが（Reference3）通あるって！
+\_q
+\![*]\q[メーラを開く,メーラを開く]
+\![*]\q[何もしない,何もしない]
+\_q\e
+
+＊メーラを開く
+\![open,mailer]
+
+＊何もしない
+\0\b[-1]\1\b[-1]
+
+＊メールがない
+\0\s[0]メールはないみたい。\e
+
+＊OnBIFFFailure
+＞（Reference0）によりメールチェック失敗
+\0\s[4]メールチェックしっぱ～い。
+\1\s[104]原因は『（Reference0）』だそうです。\e
+
+＊defectによりメールチェック失敗
+\0\s[4]メールチェックしっぱ～い。
+\1\s[104]一度設定を見なおしてみてください。\e
+
+＊kickによりメールチェック失敗
+\0\s[24]ＩＤかパスワードがまちがってるって～！\e
+
+＊timeoutによりメールチェック失敗
+\0\s[3]応答なしだって～。
+\1\s[103]サーバの設定が違うか、混んでいる可能性があります。\e
+
+＃────────
 ＃RSS
 ＃────────
 ＊OnHeadlinesenseBegin
@@ -320,104 +425,51 @@ md5が合わないって！
 \0\s[8]SSTPブレーイク！
 
 ＃────────
-＃■ファイル作成
+＃重なり
 ＃────────
-＊OnUpdatedataCreating
-\0（エモ気づき）\s[0]更新ファイル？を作るね。
+＊OnOverlap
+＄SAORI引数の計算	無効
+＞重なり	（compare,（Reference0）,0-1）
+＄SAORI引数の計算	自動
 
-＊OnUpdatedataCreated
-\0（エモ音符）\s[5]でーきたっ！\e
-
-＊OnNarCreating
-\0（エモ気づき）\s[28]おっけー！
-『（Reference0）』をnarにすればいいのね！\e
-
-＊OnNarCreated
-\0（エモ音符）\s[5]でーきた！
-\1\s[100]『（Reference1）』を作成しました。\e
-
-＃────────
-＃■ダウンロード
-＃────────
-＊OnURLDropping
-\0（エモ気づき）\s[5]\_q（Reference0）\_qからダウンロードするね！\e
-
-＊OnURLDropped
-\0（エモ音符）\s[5]ダウンロードおしまいっ！
-\1\s[100]ファイルは\_q（Reference0）\_qにあります。\e
+＊重なり
+＄SAORI引数の計算	自動
+\0\s[24]
+\1（エモあせあせ）\s[103]\c・・・あの、アリスさん？
+\0\c・・・（エモハート）\s[26]ちゅっ（はーと）\_w[1000]
+\1（エモあせあせ）\s[126]\cな、なんですか急に？\_w[1000]
+\0（エモ音符）\s[28]\cんふふ～！\w5
+ありすが可愛いからちゅーしたくなっちゃった！\_w[1000]
+\1（エモハート）もう、離れますよ？\w9\4\e
 
 ＃────────
-＃メールチェック
+＃バッテリ状態
 ＃────────
-＊OnBIFFBegin
-\0\s[0]メールちぇっく？
+＊OnBatteryNotify
+＄バッテリ残量	（Reference0）
+＄充電状況	（Reference2）
 
-＊OnBIFFComplete
-＞メールがない	（Reference0）==0
-：\_q（Reference0）通／（Reference1）バイト\_q
-\s[0]メールが届いてるよ。
-\_q
-\![*]\_a[メーラを開く]メーラを開く\_a
-\![*]\_a[何もしない]何もしない\_a
-\_q
+＊OnBatteryLow
+\0\s[0]でんちが（Reference0）%になったよ。
+\1\s[100]そろそろ充電した方が良いんじゃないですか？\e
 
-＊OnBIFF2Complete
-＞メールがない	（Reference0）==0
-＞メールが増えた	（Reference3）>0
-：\_q（Reference0）通／（Reference1）バイト\_q
-\s[0]新着メールはなかったよ。
-\_q
-\![*]\_a[メーラを開く]メーラを開く\_a
-\![*]\_a[何もしない]何もしない\_a
-\_q
+＊OnBatteryCritical
+\0\s[4]でんちが（Reference0）%・・・。
+\1\s[103]（ユーザ名C）・・・充電を・・・。\e
 
-＊メールが増えた
-：\_q（Reference0）通／（Reference1）バイト\_q\n
-\s[5]新着メールが（Reference3）通あるって！
-\_q
-\![*]\_a[メーラを開く]メーラを開く\_a
-\![*]\_a[何もしない]何もしない\_a
-\_q
+＊OnBatteryChargingStart
+\0\s[5]じゅーでん開始！\e
 
-＊メーラを開く
-\![open,mailer]
+＊OnBatteryChargingStop
+＞充電完了	（Reference0）==100
+\1\s[100]充電を終了します。\w5
+\s[103]・・・あの、まだ（Reference0）%なのに良いんですか？\e
 
-＊何もしない
-\h\b[-1]\1\b[-1]
-
-＊メールがない
-：\s[0]\cメールはなかったよ。
-
-＊OnBIFFFailure
-＞（Reference0）によりメールチェック失敗
-：\s[4]メールチェックしっぱ～い。
-：\s[104]原因は『（Reference0）』だそうです。
-
-＊defectによりメールチェック失敗
-：\s[4]メールチェックしっぱ～い。
-：\s[104]一度設定を見なおしてみてください。
-
-＊kickによりメールチェック失敗
-：\s[24]ＩＤかパスワードがまちがってる～！
-
-＊timeoutによりメールチェック失敗
-：\s[3]応答なしだって～。
-：\s[103]サーバの設定が違うか、混んでいる可能性があります。
+＊充電完了
+\0\s[5]じゅーでんかんりょー！\e
 
 ＃────────
-＃■ユーザインプット
-＃────────
-＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-
-＃────────
-＃■キー押下
+＃キー押下
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
@@ -445,25 +497,6 @@ md5が合わないって！
 ＞ありす抱きしめ	（話しかけ）==ありすに
 
 ＃────────
-＃■選択肢
-＃────────
-＊OnChoiceSelect
-＞（Reference0）
-＞選択先がない
-
-＊OnChoiceTimeout
-\0（エモ怒り）\s[24]（ユーザ名）聞いてる～？\e
-
-＊OnAnchorSelect
-＞（Reference0）
-＞選択先がない
-
-＊選択先がない
-\0（エモ？）\s[7]『（Reference0）』？ってなーに？
-\1（エモ落ち込み）\s[103]選択肢エラーですね。\w6
-バグ報告をお願いします。\e
-
-＃────────
 ＃
 ＃────────
 ＊OnTalk
@@ -477,32 +510,6 @@ md5が合わないって！
 ＄一時保存	（喋り間隔）
 ＞（現在月）月	（乱数１～６）==３
 （）
-
-＃────────
-＃■バッテリ状態
-＃────────
-＊OnBatteryNotify
-＄バッテリ残量	（Reference0）
-＄充電状況	（Reference2）
-
-＊OnBatteryLow
-\0\s[0]でんちが（Reference0）%になったよ。
-\1\s[100]そろそろ充電した方が良いんじゃないですか？\e
-
-＊OnBatteryCritical
-\0\s[4]でんちが（Reference0）%・・・。
-\1\s[103]（ユーザ名C）・・・充電を・・・。\e
-
-＊OnBatteryChargingStart
-\0\s[5]じゅーでん開始！\e
-
-＊OnBatteryChargingStop
-＞充電完了	（Reference0）==100
-\1\s[100]充電を終了します。\w5
-\s[103]・・・あの、まだ（Reference0）%なのに良いんですか？\e
-
-＊充電完了
-\0\s[5]じゅーでんかんりょー！\e
 
 ＃────────
 ＃音声認識

@@ -121,6 +121,7 @@
 ＃なにか話して
 ＃────────
 ＊PleaseTalk
+＞OnTalk（VariableInterval）
 ＞（現在月）月	（乱数１～６）==３
 （）
 
