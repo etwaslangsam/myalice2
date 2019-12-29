@@ -8,9 +8,8 @@
 
 ＊Menu
 \0\_q
+ \![*]\q[なにか話して,PleaseTalk]\n[half]
  \![*]\q[イベント回想,イベント回想]\n[half]
- \![*]\q[なにか話して,PleaseTalk]
- \![*]\q[言葉を教える,Learning]　\![*]\q[言葉を忘れさせる,CLearning]\n[half]
  \![*]\q[設定,各種設定]\n[half]
  \![*]\q[家に戻る,DateEnd]
 
