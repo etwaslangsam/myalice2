@@ -11,3 +11,5 @@ shell/kisekae_doll/,nonar,noupdate
 ghost/master/dicAnchor.txt,nonar,noupdate
 shell/tuugakuro/,nonar,noupdate
 shell/tuugakuro+/,nonar,noupdate
+shell/bustup2x/,nonar,noupdate
+shell/bustup/,nonar,noupdate
