@@ -81,7 +81,7 @@
 ＃時間イベント
 ＃────────
 ＊OnMinuteChange	（compare,（喋り間隔）,０秒）
-\0（無言表情A）\1（無言表情B）
+\0（無言表情A）
 
 ＠無言表情A
 \s[0]
@@ -94,15 +94,7 @@
 \s[28]
 \s[31]
 \s[29]
-＠無言表情B
-\s[100]
-\s[101]
-\s[102]
-\s[103]
-\s[104]
-\s[105]
-\s[124]
-\s[125]
+
 
 ＊OnHourTimeSignal
 （set,好感度,（好感度）+1）
@@ -112,7 +104,44 @@
 \![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
 ＃────────
-＃■マウスイベント
+＃選択肢
+＃────────
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊NoAnchor
+\0\s[4]選択肢「（Reference0）」は存在しないみたい……\e
+
+＊OnChoiceTimeout
+\0\s[24]ちょっと（ユーザ名）聞いてるー？\e
+
+＃────────
+＃サーフェスイベント
+＃────────
+＊OnSurfaceRestore
+\0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）\e
+
+＃────────
+＃マウスイベント
 ＃────────
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
@@ -137,13 +166,195 @@
 ＄（Reference4）見つめタイマ	
 
 ＃────────
-＃■表情復帰
+＃インストール
 ＃────────
-＊OnSurfaceRestore
-\0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）
+＊OnInstallBegin
+\0\s[2]え？\w3 なに？
+インストール？\w5
+
+＊OnInstallComplete
+＞（Reference0）をインストール
+\0\s[5]『（Reference1）』？
+これをアタシに？\w5 ありがとー！\e
+
+＊ghostをインストール
+\0\s[0]『（Reference1）』？\w5
+（ユーザ名）のお友達？\e
+
+＊OnInstallFailure
+\0\s[4]「（Reference0）」で失敗だってさ。\e
+
+＊OnInstallRefuse
+\0\s[31]（ユーザ名）？
+これ、『（Reference0）』専用のだって・・・。\e
+
+＃────────
+＃ファイルドロップ
+＃────────
+＊OnUpdatedataCreating
+\0\s[5]更新ファイル？を作るね。\e
+
+＊OnUpdatedataCreated
+\0\s[26]でっきあがり～！\e
+
+＊OnNarCreating
+\0\s[28]「（Reference0）」をNARにしちゃうね。\e
+
+＊OnNarCreated
+\0\s[8]で～きたっ！
+\_q（Reference1）\_q\e
+
+＃────────
+＃URLドロップ
+＃────────
+＊OnURLDropping
+\0\s[26]ダウンロードちゅ（はーと）\e
+
+＊OnURLDropped
+\0\s[5]おーしまい！
+\_q（Reference0）\_qにおいとくね。\e
+
+＃────────
+＃ネットワーク更新
+＃────────
+＊OnUpdateBegin
+\0\s[26]SNSの更新チェーック！\w5
+
+＊OnUpdateReady
+\0\s[5]あっ（Reference0）件の更新があった。
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[4]あれ？
+\_q（Reference0）\_qが間違ってる？
+
+＊OnUpdateComplete	（Reference0）==none
+\0\s[24]つまんなーい！\w3 特に更新はないみたい。
+
+＊OnUpdateComplete	（Reference0）==changed
+\0\s[5]チェックおーわりっ！
+
+＊OnUpdateFailure
+\0\s[2]（Reference0）で失敗だって。
+\s[24]なんでぇ～？
+
+＊OnNetworkHeavy
+\0\s[4]う～ん重い……\e
+
+＃────────
+＃メールチェック
+＃────────
+＊OnBIFFBegin
+\0\s[0]メールちぇっく？
+
+＊OnBIFFComplete
+＞メールが増えた	（Reference3）＞0
+＞メールがない	（Reference0）==0
+\0\s[0]（Reference0）通\n
+メールが届いてるよ。
+\_q
+\![*]\q[メーラを開く,メーラを開く]
+\![*]\q[何もしない,何もしない]
+\_q\e
+
+＊メールが増えた
+\0\s[5]（Reference0）通\n
+新着メールが（Reference3）通あるって！
+\_q
+\![*]\q[メーラを開く,メーラを開く]
+\![*]\q[何もしない,何もしない]
+\_q\e
+
+＊メーラを開く
+\![open,mailer]
+
+＊何もしない
+\0\b[-1]\1\b[-1]
+
+＊メールがない
+\0\s[0]メールはないみたい。\e
+
+＊OnBIFFFailure
+\0\s[4]メールチェックしっぱ～い。\e
+
+＃────────
+＃RSS
+＃────────
+＊OnHeadlinesenseBegin
+\0\s[0]「（Reference0）」のヘッドラインを取得中だよ。
+
+＊OnHeadlinesense.OnFind	（Reference2）==First
+\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
+（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==First and Last
+\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
+（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==Last
+\0\b[2]（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
 
 
+＊OnHeadlinesense.OnFind	（Reference2）==Next
+\0\b[2]（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
 
+
+＊サイトを開く
+\![open,browzer,]
+
+＊読み上げ中止
+\0\b[-1]
+
+＊OnHeadlinesenseComplete
+\0\s[4]更新されなかったって～。
+
+＊OnHeadlinesenseFailure
+\0\s[4]よく分かんないけど失敗しちゃった。\e
+
+＊OnSSTPBreak
+\0\s[8]SSTPブレーイク！
+
+＃────────
+＃キー押下
+＃────────
+＊OnKeyPress
+＞（Reference0）が押された
+
+＊tが押された
+＞OnTalk（VariableInterval）
+＞（現在月）月	（乱数１～６）==３
+（）
+
+＊cが押された
+＞UserCommunicate
+
+＊rが押された
+＄辞書リロード	実行
+\0（エモ消し）\s[26]リロードしたよ☆
+
+＃────────
+＃
+＃────────
+＊OnTalk
+＞（Reference1）	（Reference0）
+＞OnTalk（VariableInterval）
+＞（現在月）月	（乱数１～６）==３
+（）
+
+＊OnTalk１
+＄喋り間隔	（乱数３０～３００）秒
+＄一時保存	（喋り間隔）
+＞（現在月）月	（乱数１～６）==３
+（）
 
 ＃────────
 ＃着せ替え
@@ -339,144 +550,6 @@
 ＊0淫紋外し
 ＄ア淫紋	なし
 
-
-＃────────
-＃ネットワーク更新
-＃────────
-＊OnUpdateBegin
-\0\s[26]SNSの更新チェーック！\w5
-
-＊OnUpdateReady
-\0\s[5]あっ（Reference0）件の更新があった。
-
-＊OnUpdate.OnMD5CompareFailure
-\0\s[4]あれ？
-\_q（Reference0）\_qが間違ってる？
-
-＊OnUpdateComplete	（Reference0）==none
-\0\s[24]つまんなーい！\w3 特に更新はないみたい。
-
-＊OnUpdateComplete	（Reference0）==changed
-\0\s[5]チェックおーわりっ！
-
-＊OnUpdateFailure
-\0\s[2]（Reference0）で失敗だって。
-\s[24]なんでぇ～？
-
-＊OnNetworkHeavy
-\0\s[4]う～ん重い……\e
-
-＃────────
-＃■ダウンロード
-＃────────
-＊OnURLDropping
-\0\s[26]ダウンロードちゅ（はーと）\e
-
-＊OnURLDropped
-\0\s[5]おーしまい！
-\_q（Reference0）\_qにおいとくね。\e
-
-＃────────
-＃インストール
-＃────────
-＊OnInstallBegin
-\0\s[2]え？\w3 なに？
-インストール？\w5
-
-＊OnInstallComplete
-＞（Reference0）をインストール
-\0\s[5]『（Reference1）』？
-これをアタシに？\w5 ありがとー！
-\e
-
-＊ghostをインストール
-\0\s[0]『（Reference1）』？\w5
-（ユーザ名）のお友達？
-\e
-
-＊OnInstallFailure
-\0\s[4]「（Reference0）」で失敗だってさ。
-\e
-
-＊OnInstallRefuse
-\0\s[31]（ユーザ名）？
-これ、『（Reference0）』専用のだって・・・。
-\e
-＃────────
-＃■更新ファイル作成
-＃────────
-＊OnUpdatedataCreating
-\0\s[5]更新ファイル？を作るね。\e
-
-＊OnUpdatedataCreated
-\0\s[26]でっきあがり～！\e
-
-＊OnNarCreating
-\0\s[28]「（Reference0）」をNARにしちゃうね。\e
-
-＊OnNarCreated
-\0\s[8]で～きたっ！
-\_q（Reference1）\_q\e
-
-＃────────
-＃■文字入力
-＃────────
-＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-
-＃────────
-＃■キー押下
-＃────────
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊tが押された
-\0\s[0]（エモ消し）（）
-
-＊cが押された
-＞UserCommunicate
-
-＊rが押された
-＄辞書リロード	実行
-\0（エモ消し）\s[26]リロードしたよ☆
-
-＃────────
-＃■選択肢
-＃────────
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-（NoAnchor）
-
-＃＊OnChoiceSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃（NoAnchor）
-＃
-＃＊OnAnchorSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃（NoAnchor）
-
-＊OnAnchorSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-（NoAnchor）
-
-＠NoAnchor
-\0\s[4]選択肢「（Reference0）」は存在しないみたい……\e
-
-＊OnChoiceTimeout
-\0\s[24]ちょっと（ユーザ名）聞いてるー？\e
-
 ＃────────
 ＃学習機能
 ＃────────
@@ -546,17 +619,3 @@
 ＄忘却単語	
 \0\s[0]φ（単語を忘れましたφ）\e
 
-＃────────
-＃
-＃────────
-＊OnTalk
-＞（Reference1）	（Reference0）
-＞OnTalk（VariableInterval）
-＞（現在月）月	（乱数１～６）==３
-（）
-
-＊OnTalk１
-＄喋り間隔	（乱数３０～３００）秒
-＄一時保存	（喋り間隔）
-＞（現在月）月	（乱数１～６）==３
-（）
