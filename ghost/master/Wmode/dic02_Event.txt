@@ -1,3 +1,115 @@
+＃────────
+＃シェル変更
+＃────────
+＊OnShellChanging
+＄現在シェル	（Reference0）
+＞（Reference0）に変更する
+\0\s[5]ねーねー（ユーザ名）？\_w[1000]
+
+＊5years_after2に変更する
+\0\s[26]ねぇ（ユーザ名）、私が大きくなったら……\_w[1000]
+
+＊EAT ME!!に変更する
+\0\s[28]（ユーザ名）！\_w[1000]
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＞（Reference0）に変更した
+\0\s[26]この服どう？\w3 似合ってる？
+
+＊5years_after2に変更した
+\0\s[32]もっと色んなこと教えてね（はーと）\e
+
+＊マイリトルド－ルズに変更した
+\0\s[1]（ユーザ名）色に染めてね（はーと）
+
+＊EAT ME!!に変更する
+\0\s[5]えへへ！\e
+
+＃────────
+＃バルーン変更
+＃────────
+＊OnBalloonChange
+\0\s[5]見てみて（ユーザ名）！\w5
+「（Reference0）」だって！\w3 かわいくない？\e
+
+＃────────
+＃最小化復帰
+＃────────
+＊OnWindowStateRestore
+\0\s[2]（ユーザ名）？\w5
+どうしたの？\w5 急に物陰に隠れたりして。\e
+
+＃────────
+＃スリープ解除
+＃────────
+＊OnSysResume
+\0（エモ気づき）\s[5]（ユーザ名）おっはよ～！\e
+
+＃────────
+＃SSP更新
+＃────────
+＊OnBasewareUpdating
+＄temp	（Reference0）
+\0\s[26]（ユーザ名）、ちょっと待っててね？
+
+＊OnBasewareUpdated
+\0\s[5]たっだいま～！
+＄temp	
+\e
+
+＃────────
+＃ユーザインプット
+＃────────
+＊OnCommunicate
+≫「　（Reference1）	（compare,（Reference0）,user）
+\0（エモ落ち込み）\s[4]ん～・・・よくわかんない・・・。\e
+
+＊OnCommunicateInputCancel
+\0（エモ気づき）\s[5]ん！\e
+
+＊OnUserInput
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+
+＃────────
+＃時間イベント
+＃────────
+＊OnMinuteChange	（compare,（喋り間隔）,０秒）
+\0（無言表情A）\1（無言表情B）
+
+＠無言表情A
+\s[0]
+\s[2]
+\s[5]
+\s[4]
+\s[25]
+\s[26]
+\s[27]
+\s[28]
+\s[31]
+\s[29]
+＠無言表情B
+\s[100]
+\s[101]
+\s[102]
+\s[103]
+\s[104]
+\s[105]
+\s[124]
+\s[125]
+
+＊OnHourTimeSignal
+（set,好感度,（好感度）+1）
+＞時報	（Sender）==ssp&&（TimeSignal）
+
+＊時報
+\![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
 ＃────────
 ＃■マウスイベント
@@ -24,50 +136,13 @@
 ＊OnMouseLeave
 ＄（Reference4）見つめタイマ	
 
-
-＃────────
-＃■時間イベント
-＃────────
-＊OnMinuteChange
-＞時報	（現在分）==0
-
-＊時報	（TimeSignal）==1
-\0\s[0]（現在時）時ね。
-
-＃────────
-＃■最小化復帰
-＃────────
-＊OnWindowStateRestore
-\0\s[2]（ユーザ名）？\w5
-どうしたの？\w5 急に物陰に隠れたりして。\e
-
 ＃────────
 ＃■表情復帰
 ＃────────
 ＊OnSurfaceRestore
 \0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）
 
-＃────────
-＃シェル変更
-＃────────
-＊OnShellChanging
-＄現在シェル	（Reference0）
-＞5ya前	（Reference0）==5years_after2
-＞suwari着替える	（Reference0）==suwari
-\0\s[5]ねーねー（ユーザ名）？\w6
 
-＊OnShellChanged
-＄現在シェル	（Reference0）
-＞5ya後	（Reference0）==5years_after2
-＞suwari着替えた	（Reference0）==suwari
-\0\s[26]この服どう？\w3 似合ってる？
-
-
-＊5ya前
-\0\s[26]ねぇ（ユーザ名）、私が大きくなったら……
-
-＊5ya後
-\0\s[32]もっと色んなこと教えてね（はーと）\e
 
 
 ＃────────
@@ -470,13 +545,6 @@
 （追加単語の削除、動物、（忘却単語））
 ＄忘却単語	
 \0\s[0]φ（単語を忘れましたφ）\e
-
-＃────────
-＃コミュニケート
-＃────────
-＊OnCommunicate
-＞（Reference1）	（Reference0）==user
-
 
 ＃────────
 ＃
