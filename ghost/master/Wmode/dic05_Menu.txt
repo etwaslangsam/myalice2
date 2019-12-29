@@ -9,9 +9,9 @@
 ＊Menu
 \0\_q
  \![*]\q[イベント回想,イベント回想]\n[half]
- \![*]\q[なにか話して,PleaseTalk]　\![*]\q[話しかける,話しかける]
+ \![*]\q[なにか話して,PleaseTalk]
  \![*]\q[言葉を教える,Learning]　\![*]\q[言葉を忘れさせる,CLearning]\n[half]
- \![*]\q[呼び方を変更,UserNameChange]　\![*]\q[設定とか,各種設定]\n[half]
+ \![*]\q[設定,各種設定]\n[half]
  \![*]\q[家に戻る,DateEnd]
 
 \q[なんでもない,Cancel]
@@ -19,6 +19,8 @@
 
 ＊各種設定
 \0\b[2]\c\_q
+■名前\n[half]
+ （ユーザ名）　\![*]\q[呼び方を変えて,UserNameChange]\n
 ■喋る頻度\n[half]
  \![*]\q[１分,TILevel4] \![*]\q[２分,TILevel1] \![*]\q[３分,TILevel3] \![*]\q[５分,TILevel2]\n[half]
  \![*]\q[自由にして,VariableIntervalChange]
