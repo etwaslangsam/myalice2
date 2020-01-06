@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-file,delete.txt680c5473b713c3247b28b340777ccb44size=186
-=======
 file,delete.txt749e685a580fa52f130c4a6c4a3172dcsize=184
->>>>>>> 作業用
 file,developer_options.txt10de800bd128c997f0a226a625c1e881size=522
 file,install.txtff835745a11d48414e658cdf059b0d23size=125
 file,readme.txtf504c848fd5beb233dc2cdd38eee8126size=2665
@@ -55,12 +51,7 @@ file,ghost/master/Wmode/dic02_Event.txt2951160632f977df317ba660c425c10bsize=12
 file,ghost/master/Wmode/dic03_Touch.txt97a66224afa7975830681979653c4ffesize=4480
 file,ghost/master/Wmode/dic05_Menu.txt0fa814c908f1d224165c2a8a9ac6fcbesize=3609
 file,ghost/master/Wmode/dic10_Scenario.txtb2c4e8de3f8e733191207b81a624a421size=13252
-<<<<<<< HEAD
-file,ghost/master/Wmode/dic12_talk.txt9fadab343da034eff7cc443e7c81ce86size=8938
-file,ghost/master/Wmode/dicAnchor.txtbbae53aa5e78f98b405d599ac6520bc3size=3083
-=======
 file,ghost/master/Wmode/dic12_talk.txt9299950bbd7f8a095d4b555035188ad2size=8900
->>>>>>> 作業用
 file,shell/master/descript.txt766c821d2044e8df416dc4944a1afa50size=2106
 file,shell/master/eye1.pngace52c30a588b008eeb0b908cf7ffceasize=4798
 file,shell/master/eye101.png0d4f37dba059cd5fb7a27eb7a98089eesize=4569
