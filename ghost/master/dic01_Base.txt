@@ -1,9 +1,27 @@
+＊OnCacheRestore
+＞OnSatoriLoad
 ＊OnSatoriLoad
 ＄文「＊」の重複回避	直前、起動中
 ＄単語群「＊」の重複回避	直前、トーク中
 ＄引数区切り追加	（sprintf,%c,3）
 ＄会話時サーフェス戻し	無効
 ＄なでられ反応回数	４５
+＄手動セーブ	実行
+
+＊OnCacheSuspend
+＞OnSatoriUnLoad
+＊OnSatoriUnload
+＄全タイマ解除	実行
+＄興奮度	0
+＄パンツ濡れ	
+＄パンツ汚れ	
+＄ア頭カウンタ	０
+＄あ頭カウンタ	０
+＄ア胸カウンタ	０
+＄あ胸カウンタ	０
+＄ア抱きしめた	
+＄あ抱きしめた	
+＄r_talk	
 
 ＃────────
 ＃初回起動
@@ -113,7 +131,7 @@
 ＃■終了
 ＃────────
 ＊OnClose
-（FlagReset）
+（when、（好感度）>120、（set,好感度,120））（when、（好感度B）>120、（set,好感度B,120））
 ＞終了
 
 ＊終了
@@ -142,7 +160,6 @@
 ＃────────
 ＊OnGhostChanging
 ＞アリスへ変更	（compare,（Reference0）,アリス）
-（FlagReset）
 ＞終了
 
 ＊アリスへ変更
