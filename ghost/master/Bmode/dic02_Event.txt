@@ -435,6 +435,7 @@
 ＃────────
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
+
 ＃────────
 ＊OnMouseWheel
 ＄ころころカウンタ=（ころころカウンタ）+1
@@ -442,21 +443,30 @@
 ＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）==２
 ＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）==２
 ＞（Reference3）（Reference4）ころころ	（ころころカウンタ）==２
+
 ＃────────
 ＊ころころカウンタ初期化
 ＄ころころカウンタ	
+
 ＃────────
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
+
 ＃────────
 ＊OnMouseHover
 ＄（Reference4）見つめタイマ	３
+
 ＃────────
 ＊OnMouseLeave
 ＄（Reference4）見つめタイマ	
+
 ＃────────
 ＊OnMouseEnterAll	（Status）!=talking
-\0\s[124]
+（when,（興奮度）==0,\0\s[124]）
+
+＃────────
+＊OnMouseEnter	（Status）!=talking
+（when,（Reference4）==Bust,\0\s[127]）
 
 ＃────────
 ＃■インストール
