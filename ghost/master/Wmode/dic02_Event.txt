@@ -5,24 +5,25 @@
 ＄現在シェル	（Reference0）
 ＞（Reference0）に変更する
 \0\s[5]ねーねー（ユーザ名）？\_w[1000]
-
+＃────────
 ＊5years_after2に変更する
 \0\s[26]ねぇ（ユーザ名）、私が大きくなったら……\_w[1000]
-
+＃────────
 ＊EAT ME!!に変更する
 \0\s[28]（ユーザ名）！\_w[1000]
 
+＃────────
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
 ＞（Reference0）に変更した
 \0\s[26]この服どう？\w3 似合ってる？
-
+＃────────
 ＊5years_after2に変更した
 \0\s[32]もっと色んなこと教えてね（はーと）\e
-
+＃────────
 ＊マイリトルド－ルズに変更した
 \0\s[1]（ユーザ名）色に染めてね（はーと）
-
+＃────────
 ＊EAT ME!!に変更する
 \0\s[5]えへへ！\e
 
@@ -52,7 +53,7 @@
 ＊OnBasewareUpdating
 ＄temp	（Reference0）
 \0\s[26]（ユーザ名）、ちょっと待っててね？
-
+＃────────
 ＊OnBasewareUpdated
 \0\s[5]たっだいま～！
 ＄temp	
@@ -64,15 +65,16 @@
 ＊OnCommunicate
 ≫「　（Reference1）	（compare,（Reference0）,user）
 \0（エモ落ち込み）\s[4]ん～・・・よくわかんない・・・。\e
-
+＃────────
 ＊OnCommunicateInputCancel
 \0（エモ気づき）\s[5]ん！\e
-
+＃────────
 ＊OnUserInput
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
+＃────────
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
@@ -83,6 +85,7 @@
 ＊OnMinuteChange	（compare,（喋り間隔）,０秒）
 \0（無言表情A）
 
+＃────────
 ＠無言表情A
 \s[0]
 \s[2]
@@ -95,11 +98,11 @@
 \s[31]
 \s[29]
 
-
+＃────────
 ＊OnHourTimeSignal
 （set,好感度,（好感度）+1）
 ＞時報	（Sender）==ssp&&（TimeSignal）
-
+＃────────
 ＊時報
 \![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
@@ -111,26 +114,31 @@
 ＞（Reference0）
 ＞NoAnchor
 
+＃────────
 ＊OnChoiceSelectEx
 ＄選択ラベル	（Reference0）
 ＄選択ＩＤ	（Reference1）
 ＞（Reference1）
 ＞NoAnchor
 
+＃────────
 ＊OnAnchorSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
 ＞NoAnchor
 
+＃────────
 ＊OnAnchorSelectEx
 ＄選択ラベル	（Reference0）
 ＄選択ＩＤ	（Reference1）
 ＞（Reference1）
 ＞NoAnchor
 
+＃────────
 ＊NoAnchor
 \0\s[4]選択肢「（Reference0）」は存在しないみたい……\e
 
+＃────────
 ＊OnChoiceTimeout
 \0\s[24]ちょっと（ユーザ名）聞いてるー？\e
 
@@ -146,6 +154,7 @@
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
 
+＃────────
 ＊OnMouseWheel
 ＄ころころカウンタ=（ころころカウンタ）+1
 ＄ころころカウンタ初期化タイマ	1
@@ -153,15 +162,19 @@
 ＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）==3
 ＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
 
+＃────────
 ＊ころころカウンタ初期化
 ＄ころころカウンタ	０
 
+＃────────
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
 
+＃────────
 ＊OnMouseHover
 ＄（Reference4）見つめタイマ	３
 
+＃────────
 ＊OnMouseLeave
 ＄（Reference4）見つめタイマ	
 
@@ -172,18 +185,19 @@
 \0\s[2]え？\w3 なに？
 インストール？\w5
 
+＃────────
 ＊OnInstallComplete
 ＞（Reference0）をインストール
 \0\s[5]『（Reference1）』？
 これをアタシに？\w5 ありがとー！\e
-
+＃────────
 ＊ghostをインストール
 \0\s[0]『（Reference1）』？\w5
 （ユーザ名）のお友達？\e
-
+＃────────
 ＊OnInstallFailure
 \0\s[4]「（Reference0）」で失敗だってさ。\e
-
+＃────────
 ＊OnInstallRefuse
 \0\s[31]（ユーザ名）？
 これ、『（Reference0）』専用のだって・・・。\e
@@ -193,13 +207,13 @@
 ＃────────
 ＊OnUpdatedataCreating
 \0\s[5]更新ファイル？を作るね。\e
-
+＃────────
 ＊OnUpdatedataCreated
 \0\s[26]でっきあがり～！\e
-
+＃────────
 ＊OnNarCreating
 \0\s[28]「（Reference0）」をNARにしちゃうね。\e
-
+＃────────
 ＊OnNarCreated
 \0\s[8]で～きたっ！
 \_q（Reference1）\_q\e
@@ -209,7 +223,7 @@
 ＃────────
 ＊OnURLDropping
 \0\s[26]ダウンロードちゅ（はーと）\e
-
+＃────────
 ＊OnURLDropped
 \0\s[5]おーしまい！
 \_q（Reference0）\_qにおいとくね。\e
@@ -219,24 +233,24 @@
 ＃────────
 ＊OnUpdateBegin
 \0\s[26]SNSの更新チェーック！\w5
-
+＃────────
 ＊OnUpdateReady
 \0\s[5]あっ（Reference0）件の更新があった。
-
+＃────────
 ＊OnUpdate.OnMD5CompareFailure
 \0\s[4]あれ？
 \_q（Reference0）\_qが間違ってる？
-
+＃────────
 ＊OnUpdateComplete	（Reference0）==none
 \0\s[24]つまんなーい！\w3 特に更新はないみたい。
-
+＃────────
 ＊OnUpdateComplete	（Reference0）==changed
 \0\s[5]チェックおーわりっ！
-
+＃────────
 ＊OnUpdateFailure
 \0\s[2]（Reference0）で失敗だって。
 \s[24]なんでぇ～？
-
+＃────────
 ＊OnNetworkHeavy
 \0\s[4]う～ん重い……\e
 
@@ -245,7 +259,7 @@
 ＃────────
 ＊OnBIFFBegin
 \0\s[0]メールちぇっく？
-
+＃────────
 ＊OnBIFFComplete
 ＞メールが増えた	（Reference3）＞0
 ＞メールがない	（Reference0）==0
@@ -255,7 +269,7 @@
 \![*]\q[メーラを開く,メーラを開く]
 \![*]\q[何もしない,何もしない]
 \_q\e
-
+＃────────
 ＊メールが増えた
 \0\s[5]（Reference0）通\n
 新着メールが（Reference3）通あるって！
@@ -263,16 +277,16 @@
 \![*]\q[メーラを開く,メーラを開く]
 \![*]\q[何もしない,何もしない]
 \_q\e
-
+＃────────
 ＊メーラを開く
 \![open,mailer]
-
+＃────────
 ＊何もしない
 \0\b[-1]\1\b[-1]
-
+＃────────
 ＊メールがない
 \0\s[0]メールはないみたい。\e
-
+＃────────
 ＊OnBIFFFailure
 \0\s[4]メールチェックしっぱ～い。\e
 
@@ -281,45 +295,45 @@
 ＃────────
 ＊OnHeadlinesenseBegin
 \0\s[0]「（Reference0）」のヘッドラインを取得中だよ。
-
+＃────────
 ＊OnHeadlinesense.OnFind	（Reference2）==First
 \0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
 （Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
 \q[やめる,読み上げ中止]
-
+＃────────
 ＊OnHeadlinesense.OnFind	（Reference2）==First and Last
 \0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
 （Reference3）
 ＿サイトを開く		（Reference1）
 \q[やめる,読み上げ中止]
-
+＃────────
 ＊OnHeadlinesense.OnFind	（Reference2）==Last
 \0\b[2]（Reference3）
 ＿サイトを開く		（Reference1）
 \q[やめる,読み上げ中止]
-
+＃────────
 
 ＊OnHeadlinesense.OnFind	（Reference2）==Next
 \0\b[2]（Reference3）
 ＿続きを読む		
 ＿サイトを開く		（Reference1）
 \q[やめる,読み上げ中止]
-
+＃────────
 
 ＊サイトを開く
 \![open,browzer,]
-
+＃────────
 ＊読み上げ中止
 \0\b[-1]
-
+＃────────
 ＊OnHeadlinesenseComplete
 \0\s[4]更新されなかったって～。
-
+＃────────
 ＊OnHeadlinesenseFailure
 \0\s[4]よく分かんないけど失敗しちゃった。\e
-
+＃────────
 ＊OnSSTPBreak
 \0\s[8]SSTPブレーイク！
 
@@ -329,14 +343,17 @@
 ＊OnKeyPress
 ＞（Reference0）が押された
 
+＃────────
 ＊tが押された
 ＞OnTalk（VariableInterval）
 ＞（現在月）月	（乱数１～６）==３
 （）
 
+＃────────
 ＊cが押された
 ＞UserCommunicate
 
+＃────────
 ＊rが押された
 ＄辞書リロード	実行
 \0（エモ消し）\s[26]リロードしたよ☆
@@ -350,6 +367,7 @@
 ＞（現在月）月	（乱数１～６）==３
 （）
 
+＃────────
 ＊OnTalk１
 ＄喋り間隔	（乱数３０～３００）秒
 ＄一時保存	（喋り間隔）
