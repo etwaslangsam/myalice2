@@ -3,37 +3,32 @@
 ＃────────
 ＊OnShellChanging
 ＄現在シェル	（Reference0）
-＞（Reference0）に変更する
+＞「（Reference0）」前
 \0\s[0]なに？ 着替え？\w6
 \s[26]（ユーザ名）、覗いていいからね？
 \1\s[107]ダメですからね、（ユーザ名C）。\e
-
+＃────────
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
-＞（Reference0）に変更した
+＞「（Reference0）」後
 \0\s[5]ジャーン！\w3 どう似合う？
 \1\s[103]似合ってるといいんですけど……。\e
 
-＊5years_after2に変更する
+＃────────
+＊「座談の国の」後
+\0\s[5]ほらほら、（ユーザ名）も座って座って！\e
+＃────────
+＊「五年後の」前
 \1\s[105]\0\s[28]（ユーザ名）、ちょっと目をつぶっててね？
-
-＊5years_after2に変更した
+＃────────
+＊「五年後の」後
 \0\s[26]お・ま・た・せ\w3（はーと）
 \1\s[101]私達、もう子供じゃありませんよ？
-
-
-＊マイリトルド－ルズに変更した
+＃────────
+＊「マイリトルド－ルズ」後
 \0\s[5]すっごーい！\w3 色んな衣装がある！\w5
 \s[1]好きな衣装で、（ユーザ名）色に染めてね（はーと）
 \1\s[101]今だけは、（ユーザ名C）の着せ替え人形です。
-
-＊通学路に変更する
-\1\s[107]\0\s[0]ランドセル見たいの？\w5
-\s[5]いいよ！\w3 ちょっと待っててね。
-
-＊通学路に変更した
-\1\s[107]\0\s[5]じゃーん！\w5
-どう？どう？
 
 ＃────────
 ＃バルーン変更
@@ -46,31 +41,13 @@
 ＃最小化解除
 ＃────────
 ＊OnWindowStateRestore
+＞最小化解除
+
+＊最小化解除
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
-
-＊OnWindowStateRestore
+＃────────
+＊最小化解除
 \0\s[0]\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
-
-＃────────
-＃スリープ解除
-＃────────
-＊OnSysResume
-\0（エモ気づき）\s[5]（ユーザ名）おっはよ～！
-\1\s[100]おはようございます。\e
-
-＃────────
-＃SSP更新
-＃────────
-＊OnBasewareUpdating
-＄temp	（Reference0）
-\0\s[0]
-\1\s[100]ベースウェアの更新を行います。\e
-
-＊OnBasewareUpdated
-\0\s[5]たっだいま～！\w5
-\1\s[100]ベースウェアのバージョンが（temp）から（Reference0）になりました。
-＄temp	
-\e
 
 ＃────────
 ＃ユーザインプット
@@ -81,21 +58,28 @@
 
 ＊アリスに該当なし
 \0（エモ怒り）\s[24]ちゃんと分かるように言って！\e
+＃────────
 ＊ありすに該当なし
 \1（エモ汗）\s[104]すいません、よく意味が・・・。\e
 
+＃────────
 ＊OnCommunicateInputCancel
 ＞（話しかけ）CommuCancel	
+
+＃────────
 ＊アリスにCommuCancel
 \0\s[5]ん！\e
+＃────────
 ＊ありすにCommuCancel
 \1\s[105]\cはい。\e
 
+＃────────
 ＊OnUserInput
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
+＃────────
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
@@ -127,17 +111,24 @@
 \s[124]
 \s[125]
 
+＃────────
 ＊OnHourTimeSignal
 （set,好感度,（好感度）+1）（set,好感度B,（好感度B）+1）
-＞時報A	（Sender）==ssp&&（TimeSignal）
-＞時報B	（TimeSignal）
+＞時報	（TimeSignal）
+
+＊時報
+＞時報B	（compare,（Sender）,ssp）
+＞時報A
 
 ＊時報A
 \0\s[5]（エモ気づき）（現在時）時だよ！\e
+＃────────
 ＊時報A
 \1\s[100]（エモ気づき）（現在時）時になりました。\e
+＃────────
 ＊時報B
 \![set,trayballoon,--text=ありす,--title=（現在時）時です,--icon=info,--timeout=3]
+＃────────
 ＊時報B
 \![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
@@ -443,32 +434,6 @@ md5が合わないって！
 \1（エモハート）もう、離れますよ？\w9\4\e
 
 ＃────────
-＃バッテリ状態
-＃────────
-＊OnBatteryNotify
-＄バッテリ残量	（Reference0）
-＄充電状況	（Reference2）
-
-＊OnBatteryLow
-\0\s[0]でんちが（Reference0）%になったよ。
-\1\s[100]そろそろ充電した方が良いんじゃないですか？\e
-
-＊OnBatteryCritical
-\0\s[4]でんちが（Reference0）%・・・。
-\1\s[103]（ユーザ名C）・・・充電を・・・。\e
-
-＊OnBatteryChargingStart
-\0\s[5]じゅーでん開始！\e
-
-＊OnBatteryChargingStop
-＞充電完了	（Reference0）==100
-\1\s[100]充電を終了します。\w5
-\s[103]・・・あの、まだ（Reference0）%なのに良いんですか？\e
-
-＊充電完了
-\0\s[5]じゅーでんかんりょー！\e
-
-＃────────
 ＃キー押下
 ＃────────
 ＊OnKeyPress
@@ -477,12 +442,6 @@ md5が合わないって！
 ＊rが押された
 ＄辞書リロード	実行
 \0\s[0]（エモ消し）\1\s[100]（エモ消し）リロードしました。\e
-
-＊tが押された
-＞OnTalk
-
-＊cが押された
-＞UserCommunicate
 
 ＊leftが押された
 ＄話しかけ	ありすに
@@ -510,11 +469,3 @@ md5が合わないって！
 ＄一時保存	（喋り間隔）
 ＞（現在月）月	（乱数１～６）==３
 （）
-
-＃────────
-＃音声認識
-＃────────
-＊OnVoiceRecognitionWord
-＞MainMenu	（compare,（Reference1）,アリス）
-＞（Reference1）
-\0\s[2]（Reference1）ってなに？
