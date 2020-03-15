@@ -8,6 +8,7 @@
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
 ＞（Reference0）シェルになった
+\0\s[8]どーお？\w3 似合う？\e
 
 ＃────────
 ＊五年後のシェルになった
@@ -45,11 +46,12 @@
 （set,好感度,（好感度）+1）
 ＞時報	（TimeSignal）
 
-＊時報	（Sender）==SSP
-\![set,trayballoon,--text=アリス,--title=（現在時）時だよ,--icon=info,--timeout=3]
-
-＊時報	（Sender）!=SSP
+＊時報
+＞時報A	（Sender）==SSP
 \0\s[0]（現在時）時だよ。\e
+
+＊時報A
+\![set,trayballoon,--text=アリス,--title=（現在時）時だよ,--icon=info,--timeout=3]
 
 ＃────────
 ＃選択肢
@@ -142,24 +144,26 @@
 ＃ネットワーク更新
 ＃────────
 ＊OnUpdateBegin
-\0\s[26]SNSの更新チェーック！\w5
-
+\0\s[0]更新のチェックするよ。\w5
+＃────────
 ＊OnUpdateReady
-\0\s[5]あっ（Reference0）件の更新があった。
-
+\0\s[5]（Reference0）件の更新があるみたい。
+＃────────
 ＊OnUpdate.OnMD5CompareFailure
 \0\s[4]あれ？
 \_q（Reference0）\_qが間違ってる？
 
-＊OnUpdateComplete	（Reference0）==none
-\0\s[24]つまんなーい！\w3 特に更新はないみたい。
+＊OnUpdateComplete
+＞ネットワーク更新なし	（Reference0）==none
+\0\s[26]ネットワーク更新、終わったよ☆\e
+＃────────
+＊ネットワーク更新なし
+\0\s[3]更新なしだって。\e
 
-＊OnUpdateComplete	（Reference0）==changed
-\0\s[5]チェックおーわりっ！
-
+＃────────
 ＊OnUpdateFailure
-\0\s[2]（Reference0）で失敗だって。
-\s[24]なんでぇ～？
+\0\s[8]ざぁんね～ん。
+「（Reference0）」で失敗だってぇ。\e
 
 ＊OnNetworkHeavy
 ：\s[4]う～ん重い……\e
@@ -168,35 +172,25 @@
 ＃■ダウンロード
 ＃────────
 ＊OnURLDropping
-\0\s[26]ダウンロードするね☆
-\e
+\0\s[26]ダウンロードするね☆\e
 
 ＊OnURLDropped
-\0\s[5]おーしまい！
-\e
-
-
+\0\s[5]おーしまい！\e
 
 ＃────────
 ＃■ファイル作成
 ＃────────
 ＊OnUpdatedataCreating
-\0\s[5]更新ファイル？を作るね。
-\e
+\0\s[5]更新ファイル？を作るね。\e
 
 ＊OnUpdatedataCreated
-\0\s[26]でっきあがり～！
-\e
+\0\s[26]でっきあがり～！\e
 
 ＊OnNarCreating
-\0\s[28]「（Reference0）」をNARにしちゃうね。
-\e
+\0\s[28]「（Reference0）」をNARにしちゃうね。\e
 
 ＊OnNarCreated
-\0\s[8]で～きたっ！
-\e
-
-
+\0\s[8]で～きたっ！\e
 
 ＃────────
 ＃■キー押下
@@ -211,7 +205,6 @@
 ＊mが押された	（2nd開放フラグ）==2
 ＄辞書フォルダ	Wmode
 \0\s[8]ん？\e
-
 
 ＃────────
 ＃
