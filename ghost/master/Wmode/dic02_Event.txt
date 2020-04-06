@@ -53,7 +53,7 @@
 ＊OnBasewareUpdating
 ＄temp	（Reference0）
 \0\s[26]（ユーザ名）、ちょっと待っててね？
-＃────────
+
 ＊OnBasewareUpdated
 \0\s[5]たっだいま～！
 ＄temp	
@@ -65,16 +65,15 @@
 ＊OnCommunicate
 ≫「　（Reference1）	（compare,（Reference0）,user）
 \0（エモ落ち込み）\s[4]ん～・・・よくわかんない・・・。\e
-＃────────
+
 ＊OnCommunicateInputCancel
 \0（エモ気づき）\s[5]ん！\e
-＃────────
+
 ＊OnUserInput
 ＞（Reference0）を空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
-＃────────
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
@@ -82,31 +81,28 @@
 ＃────────
 ＃時間イベント
 ＃────────
-＊OnMinuteChange	（compare,（喋り間隔）,０秒）
-\0（無言表情A）
+＊OnMinuteChange
+＞好感度アップ	（起動分）==０&&（起動時）＞０
+＞無言表情	（compare,（喋り間隔）,０秒）
 
-＃────────
-＠無言表情A
-\s[0]
-\s[2]
-\s[5]
-\s[4]
-\s[25]
-\s[26]
-\s[27]
-\s[28]
-\s[31]
-\s[29]
+＊好感度アップ
+（set,好感度,（好感度）+1）
+
+＊無言表情
+\0（choice,\s[0],\s[2],\s[5],\s[4],\s[25],\s[26],\s[27],\s[28],\s[31],\s[29]）
 
 ＃────────
 ＊OnHourTimeSignal
-（set,好感度,（好感度）+1）
 ＞時報	（TimeSignal）
 
-＊時報	（Sender）==SSP
+＊時報
+＞時報A	（Sender）==SSP
+＞時報B
+
+＊時報A
 \![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
-＊時報	（Sender）!=SSP
+＊時報B
 \0\s[5]（現在時）時になったよ。\e
 
 ＃────────
@@ -144,7 +140,7 @@
 ＃サーフェスイベント
 ＃────────
 ＊OnSurfaceRestore
-\1\s[-1]\0（エモ消し）（choice,\s[0],\s[5],\s[6],\s[26],\s[28]）\e
+\0（エモ消し）\e
 
 ＃────────
 ＃マウスイベント
@@ -152,7 +148,6 @@
 ＊OnMouseDoubleClick
 ＞（Reference3）（Reference4）つつかれ
 
-＃────────
 ＊OnMouseWheel
 ＄ころころカウンタ=（ころころカウンタ）+1
 ＄ころころカウンタ初期化タイマ	1
@@ -160,19 +155,15 @@
 ＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）==3
 ＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
 
-＃────────
 ＊ころころカウンタ初期化
 ＄ころころカウンタ	０
 
-＃────────
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
 
-＃────────
 ＊OnMouseHover
 ＄（Reference4）見つめタイマ	３
 
-＃────────
 ＊OnMouseLeave
 ＄（Reference4）見つめタイマ	
 
