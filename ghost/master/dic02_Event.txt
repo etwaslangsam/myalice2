@@ -45,7 +45,6 @@
 
 ＊最小化解除
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
-＃────────
 ＊最小化解除
 \0\s[0]\1（エモ？）\s[103]（ユーザ名C）、大丈夫ですか？
 
@@ -58,7 +57,7 @@
 
 ＊アリスに該当なし
 \0（エモ怒り）\s[24]ちゃんと分かるように言って！\e
-＃────────
+
 ＊ありすに該当なし
 \1（エモ汗）\s[104]すいません、よく意味が・・・。\e
 
@@ -66,10 +65,9 @@
 ＊OnCommunicateInputCancel
 ＞（話しかけ）CommuCancel	
 
-＃────────
 ＊アリスにCommuCancel
 \0\s[5]ん！\e
-＃────────
+
 ＊ありすにCommuCancel
 \1\s[105]\cはい。\e
 
@@ -79,7 +77,6 @@
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
 
-＃────────
 ＊OnUserInputCancel
 ＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
