@@ -1,4 +1,116 @@
 ＃────────
+＃シェル変更
+＃────────
+＊OnShellChanging
+\0\s[106]分かりました……。\w5
+少々お待ち下さい。\_w[1000]
+
+＊OnShellChanged
+＄現在シェル	（Reference0）
+＄今日のパンツ	（パンツ種類）
+＞（Reference0）に着替えた
+\0（エモ消し）\s[100]着替えました。\e
+
+＊五年後のに着替えた
+\0\s[106]着替えました。\w9\n
+\s[100]……どうかしましたか？\w5
+\s[103]成長してない？\w5 なんの話ですか？\e
+
+＊マイリトルド－ルズに着替えた
+\0\s[106]着替え終わりました。\w5
+\s[100]……ずいぶん、たくさん衣装を用意したんですね。\e
+
+＊座談の国のに着替えた
+\0\s[100]……これでいいですか？\e
+
+＃────────
+＃最小化復帰
+＃────────
+＊OnWindowStateRestore
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[103]もう……出てきてもいいんですか？\e
+
+＃────────
+＃文字入力
+＃────────
+＊OnUserInput
+＞（Reference0）を空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊OnUserInputCancel
+＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
+＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
+\0\s[100]中断します。\e
+
+＃────────
+＃■時間イベント
+＃────────
+＊OnHourTimeSignal
+（set,好感度B,（好感度B）+1）（when、（好感度B）>120、（set,好感度B,120））
+＞時報	（TimeSignal）
+
+＊時報
+＞時報A	（Sender）==SSP
+\0\s[100]（現在時）時になりました。\e
+
+＊時報A
+\![set,trayballoon,--text=ありす,--title=（現在時）時です,--icon=info,--timeout=3]
+
+＃────────
+＃■選択肢
+＃────────
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
+＞NoAnchor
+
+＊NoAnchor
+＄なぐさめてほしい	１
+＄なぐさめてくれなかったタイマ	３０
+\0\s[103]す、すみません……。\w5
+選択肢のジャンプ先が見つからないそうです……。\e
+
+＊OnChoiceTimeout
+\0\s[103]あの……（ユーザ名B）？\e
+
+＃────────
+＃表情復帰
+＃────────
+＊OnSurfaceRestore
+＞顔を洗う	（顔射）==1
+＞興奮時	（Reference0）>=132
+\0\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\s[100]\e
+
+＊顔を洗う
+＄顔射	0
+\0\s[106]・・・顔を洗ってきますね。\s[-1]\w5
+\c（times,6,・\n）
+\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,カルピス,0]
+\c\s[100]お待たせしました。\e
+
+＊興奮時
+\0\s[130]\w9\s[138]\e
+
+＃────────
 ＃■マウスイベント
 ＃────────
 ＊OnMouseDoubleClick
@@ -20,61 +132,288 @@
 ＄（Reference4）見つめタイマ	
 
 ＃────────
-＃最小化復帰
+＃インストール
 ＃────────
-＊OnWindowStateRestore
-＞最小化解除
+＊OnInstallBegin
+\0\s[100]インストールを開始します。\e
+＃────────
+＊OnInstallComplete
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+＞（Reference0）をインストール
+\0\s[100]（Reference1）をインストールしました。\e
+＃────────
+＊ghostをインストール
+\0\s[100]（Reference1）さんをインストールしました。\w5
+\s[106]さっそく交代しますか？
+\_q
+\![*]\q[交代する,インスト交代]　\![*]\q[呼び出す,インスト呼び出し]
 
-＊最小化解除
-\0\s[103]もう・・・大丈夫ですか？\e
+\q[どうもしない,Cancel]
+\_q\e
+
+＊インスト交代
+\![change,ghost,lastinstalled]
+
+＊インスト呼び出し
+\![call,ghost,lastinstalled]
+＃────────
+＊shellをインストール
+\0\s[100]シェル「（Reference1）」をインストールしました。\w5
+さっそく着てきましょうか？
+\_q
+\![*]\q[シェルを変更する,インストシェル変]
+
+\q[どうもしない,Cancel]
+\_q\e
+
+＊インストシェル変
+\![change,shell,lastinstalled]
+＃────────
+＊balloonをインストール
+\0\s[100]バルーン「（Reference1）」をインストールしました。\w5
+変更しますか？
+\_q
+\q[バルーンを変更する,インストバル変]
+
+\q[どうもしない,Cancel]
+\_q\e
+
+＊インストバル変
+\![change,balloon,lastinstalled]
+＃────────
+＊OnInstallFailure
+＄なぐさめてほしい	１
+＄なぐさめてくれなかったタイマ	３０
+\0\s[103]インストールに失敗しました……。\e
+＃────────
+＊OnInstallRefuse
+＄なぐさめてほしい	１
+＄なぐさめてくれなかったタイマ	３０
+\0\s[104]これは「（Reference0）」さんの……ですね。\e
 
 ＃────────
-＃表情復帰
+＃■ダウンロード
 ＃────────
-＊OnSurfaceRestore
-＞顔を洗う	（顔射）==1
-＞興奮時	（Reference0）>=132
-\0\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\s[100]\e
+＊OnURLDropping
+\0\s[100]ダウンロードを開始します。\e
 
-＊顔を洗う
-＄顔射	0
-\0\s[106]・・・顔を洗ってきますね。\s[-1]\w5
-\c（times,6,・\n）
-\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,カルピス,0]
-\c\s[100]お待たせしました。\e
-
-＊興奮時
-\0\s[128]\w9\s[127]\e
+＊OnURLDropped
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[105]ダウンロード……終りました。\e
 
 ＃────────
-＃シェル変更
+＃■ファイル作成
 ＃────────
-＊OnShellChanging
-\0\s[106]分かりました・・・。\w5
-少々お待ち下さい。\_w[1000]
+＊OnUpdatedataCreating
+\0\s[100]updates2.dauを作ります。\e
 
-＊OnShellChanged
-＄現在シェル	（Reference0）
-＄今日のパンツ	（パンツ種類）
-＞（Reference0）に着替えた
-\0（エモ消し）\s[100]着替えました。\e
+＊OnUpdatedataCreated
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[106]updates2.dauが出来ました。\w5
+\s[100]……お疲れ様です。\e
+＃────────
+＊OnNarCreating
+\0\s[100]「（Reference0）」をNARにします。\e
 
-＊五年後のに着替えた
-\0\s[106]着替えました。\w9\n
-\s[100]・・・どうかしましたか？\w5
-\s[103]成長してない？\w5 なんの話ですか？\e
+＊OnNarCreated
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[106]「（Reference0）」をNARにしました。\e
 
-＊マイリトルド－ルズに着替えた
-\0\s[106]着替え終わりました。\w5
-\s[100]・・・ずいぶん、たくさん衣装を用意したんですね。\e
+＃────────
+＃ネットワーク更新
+＃────────
+＊OnUpdateBegin
+\0\s[106]更新の確認をします。\w5
+＃────────
+＊OnUpdateReady
+\0\s[100]（Reference0）件の更新があります。
+＃────────
+＊OnUpdate.OnMD5CompareFailure
+\0\s[100]\_q（Reference0）
+MD5不一致\_q\w3
+＃────────
+＊OnUpdateComplete
+＞更新なし	（Reference0）==none
+＄辞書リロード	実行
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[100]更新が終わりました。\e
 
-＊通学路に着替えた
-\0\s[100]ランドセル・・・。\e
-＊通学路+に着替えた
-＞通学路に着替えた
+＊更新なし
+\0\s[103]更新はありませんでした……。\e
+＃────────
+＊OnUpdateFailure
+＄なぐさめてほしい	１
+＄なぐさめてくれなかったタイマ	３０
+＞ネットワーク更新（Reference0）
 
-＊座談の国のに着替えた
-\0\s[100]・・・これでいいですか？\e
+＊ネットワーク更新timeout
+\0\s[103]タイムアウト……しました。\w5
+少し時間を空けてから、試してみて下さい。\e
+
+＊ネットワーク更新md5 miss
+\0\s[104]MD5が一致しませんでした……。\w5
+製作者にご連絡ください。\e
+
+＊ネットワーク更新404
+\0\s[102]404 NotFound
+サーバが……見つかりませんでした。\e
+
+＊ネットワーク更新artificial
+\0\s[106]更新を中断します。\e
+＃────────
+＊OnNetworkHeavy
+\0\s[103]……ネットワークが重たいようですね。\e
+
+＃────────
+＃時計合わせ
+＃────────
+＊OnSNTPBegin
+\0\s[100]時刻の修正を始めます。\e
+＊OnSNTPCompare
+\6
+＊OnSNTPCorrect
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[100]\_qあっちφ：（Reference1）\_q
+\_qこっちφ：（Reference2）\_q\n
+時刻の修正が完了しました。\e
+
+＊OnSNTPFailure
+＄なぐさめてほしい	１
+＄なぐさめてくれなかったタイマ	３０
+\0\s[103]ご、ごめんなさい……。\w5
+サーバの接続に失敗しました……。\e
+
+＃────────
+＃RSS
+＃────────
+＊OnHeadlinesenseBegin
+\0「（Reference0）」のヘッドラインを取得中。
+
+＊OnHeadlinesense.OnFind	（Reference2）==First
+：\b[2]
+（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==First and Last
+：\b[2]
+（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==Last
+：\b[2]（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊OnHeadlinesense.OnFind	（Reference2）==Next
+：\b[2]（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊サイトを開く
+\![open,browzer,]
+
+＊読み上げ中止
+：\b[-1]
+
+＊OnHeadlinesenseComplete
+\0\s[103]更新されていませんでした。
+
+＊OnHeadlinesenseFailure	（Reference0）==can't download
+\0\s[103ダウンロードできませんでした。
+重すぎるか、ネットに繋がっていない可能性があります。
+
+＊OnHeadlinesenseFailure	（Reference0）==can't analyze
+\0\s[103]解析失敗。
+最新版のヘッドラインセンサがあれば入れ替えてください。
+
+＊OnSSTPBreak
+\0\s[100]SSTPがブレイクされたようです。
+
+＃────────
+＃メールチェック
+＃────────
+＊OnBIFFBegin
+\0\_q（Reference2）\_q
+お手紙を確認しています。
+
+＊OnBIFFComplete
+＞メールがない	（Reference0）==0
+＞メールが増えた	（Reference3）>0
+\0\s[100]お手紙が（Reference0）通、来ていました。
+\_q
+\![*]\_a[メーラを開く]メーラを開く\_a
+\![*]\_a[何もしない]何もしない\_a
+\_q\e
+
+＊メールが増えた
+\0\s[100]お手紙が（Reference0）通、来ていました。
+新着メールが（Reference3）通あります。
+\_q
+\![*]\_a[メーラを開く]メーラを開く\_a
+\![*]\_a[何もしない]何もしない\_a
+\_q\e
+
+＊メーラを開く
+\![open,mailer]
+
+＊何もしない
+\0\b[-1]\1\b[-1]
+
+＊メールがない
+\0\s[100]新しい手紙はありませんでした。\e
+
+＊OnBIFFFailure
+＞（Reference0）によりメールチェック失敗
+
+＊defectによりメールチェック失敗
+\0\s[103]郵便受けが開きませんでした……。
+設定を見なおしてください。\e
+
+＊kickによりメールチェック失敗
+\0\s[103]ＩＤかパスワードが違うようです。\e
+
+＊timeoutによりメールチェック失敗
+\0\s[103]メールサーバが応答しませんでした。
+サーバの設定が違うか、混んでいる可能性があります。\e
+
+＃────────
+＃キー押下
+＃────────
+＊OnKeyPress
+＞（Reference0）が押された
+
+＊rが押された
+＄辞書リロード	実行
+\0\![set,alpha,100]（エモ消し）\s[100]リロードしました。\e
+
+＃────────
+＃トーク
+＃────────
+＊OnTalk
+＞（Reference1）	（Reference0）
+＞OnTalk（VariableInterval）
+＞トーク低好感度	（好感度B）＜0
+＞（現在月）月	（乱数１～６）==３
+（）
+＃────────
+＊OnTalk１
+＄喋り間隔	（乱数３０～３００）秒
+＄一時保存	（喋り間隔）
+＞トーク低好感度	（好感度B）＜0
+＞（現在月）月	（乱数１～６）==３
+（）
 
 ＃────────
 ＃着せ替え
@@ -269,274 +608,3 @@
 ＄あ淫紋	あり
 ＊淫紋外し
 ＄あ淫紋	なし
-
-＃────────
-＃ネットワーク更新
-＃────────
-＊OnUpdateBegin
-\0\s[106]更新の確認をします。\w5
-
-＊OnUpdateReady
-\0\s[100]（Reference0）件の更新があります。
-
-＊OnUpdate.OnMD5CompareFailure
-\0\s[100]\_q（Reference0）
-MD5不一致\_q\w3
-
-＊OnUpdateComplete
-＞更新なし	（Reference0）==none
-＄辞書リロード	実行
-\0\s[100]更新が終わりました。\e
-
-＊更新なし
-\0\s[103]更新はありませんでした……。\e
-
-＊OnUpdateFailure
-＞ネットワーク更新（Reference0）
-
-＊ネットワーク更新timeout
-\0\s[103]タイムアウト……しました。\w5
-少し時間を空けてから、試してみて下さい。\e
-
-＊ネットワーク更新md5 miss
-\0\s[104]MD5が一致しませんでした……。\w5
-製作者にご連絡ください。\e
-
-＊ネットワーク更新404
-\0\s[102]404 NotFound
-サーバが……見つかりませんでした。\e
-
-＊ネットワーク更新artificial
-\0\s[106]更新を中断します。\e
-
-＊OnNetworkHeavy
-\0\s[103]……ネットワークが重たいようですね。\e
-
-＃────────
-＃■ダウンロード
-＃────────
-＊OnURLDropping
-\0\s[100]ダウンロードを開始します。\e
-
-＊OnURLDropped
-\0\s[105]ダウンロード……終りました。\e
-
-＃────────
-＃インストール
-＃────────
-＊OnInstallBegin
-\0\s[100]インストールを開始します。
-
-＊OnInstallComplete
-＞（Reference0）をインストール
-\0\s[100]（Reference1）をインストールしました。\e
-
-＊ghostをインストール
-\0\s[100]（Reference1）さんをインストールしました。\w5
-\s[106]さっそく交代しますか？
-\_q
-\![*]\q[交代する,インスト交代]　\![*]\q[呼び出す,インスト呼び出し]
-
-\q[どうもしない,Cancel]
-\_q\e
-
-＊インスト交代
-\![change,ghost,lastinstalled]
-
-＊インスト呼び出し
-\![call,ghost,lastinstalled]
-
-＊shellをインストール
-\0\s[100]シェル「（Reference1）」をインストールしました。\w5
-さっそく着てきましょうか？
-\_q
-\![*]\q[シェルを変更する,インストシェル変]
-
-\q[どうもしない,Cancel]
-\_q\e
-
-＊インストシェル変
-\![change,shell,lastinstalled]
-
-＊balloonをインストール
-\0\s[100]バルーン「（Reference1）」をインストールしました。\w5
-変更しますか？
-\_q
-\q[バルーンを変更する,インストバル変]
-
-\q[どうもしない,Cancel]
-\_q\e
-
-＊インストバル変
-\![change,balloon,lastinstalled]
-
-＊OnInstallFailure
-\0\s[103]インストールに失敗しました……。\e
-
-＊OnInstallRefuse
-\0\s[104]これは「（Reference0）」さんの……ですね。\e
-
-＃────────
-＃RSS
-＃────────
-＊OnHeadlinesenseBegin
-\0「（Reference0）」のヘッドラインを取得中。
-
-＊OnHeadlinesense.OnFind	（Reference2）==First
-：\b[2]
-（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==First and Last
-：\b[2]
-（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==Last
-：\b[2]（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊OnHeadlinesense.OnFind	（Reference2）==Next
-：\b[2]（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊サイトを開く
-\![open,browzer,]
-
-＊読み上げ中止
-：\b[-1]
-
-＊OnHeadlinesenseComplete
-\0\s[103]更新されていませんでした。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't download
-\0\s[103ダウンロードできませんでした。
-重すぎるか、ネットに繋がっていない可能性があります。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't analyze
-\0\s[103]解析失敗。
-最新版のヘッドラインセンサがあれば入れ替えてください。
-
-＊OnSSTPBreak
-\0\s[100]SSTPがブレイクされたようです。
-
-＃────────
-＃■ファイル作成
-＃────────
-＊OnUpdatedataCreating
-\0\s[100]updates2.dauを作ります。\e
-
-＊OnUpdatedataCreated
-\0\s[106]updates2.dauが出来ました。\w5
-\s[100]・・・お疲れ様です。\e
-
-＊OnNarCreating
-\0\s[100]「（Reference0）」をNARにします。\e
-
-＊OnNarCreated
-\0\s[106]「（Reference0）」をNARにしました。\e
-
-＃────────
-＃メールチェック
-＃────────
-＊OnBIFFBegin
-\0\_q（Reference2）\_q
-お手紙を確認しています。
-
-＊OnBIFFComplete
-＞メールがない	（Reference0）==0
-＞メールが増えた	（Reference3）>0
-\0\s[100]お手紙が（Reference0）通、来ていました。
-\_q
-\![*]\_a[メーラを開く]メーラを開く\_a
-\![*]\_a[何もしない]何もしない\_a
-\_q\e
-
-＊メールが増えた
-\0\s[100]お手紙が（Reference0）通、来ていました。
-新着メールが（Reference3）通あります。
-\_q
-\![*]\_a[メーラを開く]メーラを開く\_a
-\![*]\_a[何もしない]何もしない\_a
-\_q\e
-
-＊メーラを開く
-\![open,mailer]
-
-＊何もしない
-\0\b[-1]\1\b[-1]
-
-＊メールがない
-\0\s[100]新しい手紙はありませんでした。\e
-
-＊OnBIFFFailure
-＞（Reference0）によりメールチェック失敗
-
-＊defectによりメールチェック失敗
-\0\s[103]郵便受けが開きませんでした……。
-設定を見なおしてください。\e
-
-＊kickによりメールチェック失敗
-\0\s[103]ＩＤかパスワードが違うようです。\e
-
-＊timeoutによりメールチェック失敗
-\0\s[103]メールサーバが応答しませんでした。
-サーバの設定が違うか、混んでいる可能性があります。\e
-
-＃────────
-＃文字入力
-＃────────
-＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-\0\s[100]中断します。\e
-
-＃────────
-＃キー押下
-＃────────
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊tが押された
-（）
-
-＊rが押された
-＄辞書リロード	実行
-\0\![set,alpha,100]（エモ消し）\s[100]リロードしました。\e
-
-＃────────
-＃■選択肢
-＃────────
-＊OnAnchorSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-
-＊OnAnchorSelect
-＞（Reference0）
-
-＊OnChoiceTimeout
-\0\s[103]あの……（ユーザ名B）？\e
-
-＃────────
-＃■時間イベント
-＃────────
-＊OnHourTimeSignal
-＄好感度B＝（好感度B）+1
-（when、（好感度B）>120、（set,好感度B,120））
-＞時報	（TimeSignal）==1
-
-＊時報
-\0\s[100]（現在時）時になりました。\e

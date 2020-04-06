@@ -154,10 +154,9 @@
 ＃────────
 ＃サーフェスイベント
 ＃────────
-＊OnSurfaceRestore	（喋り間隔）!=０秒
+＊OnSurfaceRestore
 ＄顔射	0
-\0（エモ消し）\s[0]\1（エモ消し）\s[100]\![bind,カルピス,カルピス,0]\e
-
+\0（エモ消し）\1（エモ消し）\![bind,カルピス,カルピス,0]\e
 
 ＃────────
 ＃■マウスイベント
@@ -179,6 +178,13 @@
 ＄（Reference3）（Reference4）見つめタイマ	３
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
+
+＊OnMouseEnterAll
+＞（Reference3）にフォーカス	（Status）!=talking
+＊0にフォーカス
+\0\s[5]\e
+＊1にフォーカス
+\1\s[105]\e
 
 ＃────────
 ＃インストール
