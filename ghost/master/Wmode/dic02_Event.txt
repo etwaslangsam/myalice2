@@ -167,6 +167,9 @@
 ＊OnMouseLeave
 ＄（Reference4）見つめタイマ	
 
+＊OnMouseEnterAll	（Status）!=talking
+\0\s[26]\e
+
 ＃────────
 ＃インストール
 ＃────────
