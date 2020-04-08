@@ -18,6 +18,8 @@
 ＄今日のパンツ	（パンツ種類）
 ＄喋り間隔	（一時保存）
 ＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
+＄話しかけ	ありすに
+＄手動セーブ	実行
 ＞（現在月）月（現在日）日	（あイベント年月日）!=（現在年）（現在月）（現在日）
 ＞深夜起動	（現在時）＜５
 ＞朝起動	（現在時）＜１０
@@ -269,9 +271,7 @@
 ＃────────
 ＃切り替え
 ＃────────
-＊OnGhostChanging
-＄着せ替えトーク抑制	1
-＞（Reference0）へ変更
+＊他のゴーストへ変更
 \0\s[100]\![bind,おもちゃ,ローター,0]（Reference0）様の処へお出かけですか。\w9
 お気をつけて。\_w[1000]
 
@@ -292,129 +292,3 @@
 ＃────────
 ＊OnGhostCalling
 \0\s[105]（Reference0）様をお呼びします。
-
-
-＃────────
-＃■リソース
-＃────────
-＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
-＠menu.background.bitmap.filename
-bgm1.png
-＠menu.background.font.color.r
-255
-＠menu.background.font.color.g
-255
-＠menu.background.font.color.b
-255
-＠menu.foreground.bitmap.filename
-bgm1.png
-＠menu.foreground.font.color.r
-0
-＠menu.foreground.font.color.g
-0
-＠menu.foreground.font.color.b
-255
-＠dressuprootbutton.visible
-1
-
-＃────────
-＃■おすすめ
-＃────────
-＊sakura.recommendsites
-僕たち男の娘！
-http://eroblack.ie-yasu.com/
-
-
-＊sakura.recommendsites
-エロ日記
-http://eroblack.ie-yasu.com/
-
-
-＊sakura.recommendsites
-レモンスカッシュ
-http://eroblack.ie-yasu.com/
-
-
-＊sakura.recommendsites
-ゆうやけ　ないて
-http://project.hacca.jp/
-
-
-＊sakura.recommendsites
-MORALハザード
-http://highkaru.page2.jp/moral.html
-
-
-＊sakura.recommendsites
-maternity!!
-http://densoko.sitemix.jp/
-
-
-＊sakura.recommendsites
-maternity!!2（仮）
-http://densoko.sitemix.jp/
-
-
-＊sakura.recommendsites
-快楽園「LoveMix」
-http://densoko.sitemix.jp/
-
-
-＊sakura.recommendsites
-イモウトオモイノ
-http://ukask.x.fc2.com/
-
-
-＃────────
-＃■ポータル
-＃────────
-＊sakura.portalsites
-配布サイト
-
-＊sakura.portalsites
-ほっとぺっぱぁ団
-https://hotpepar.blogspot.com/
-
-
-＊sakura.portalsites
-連絡先
-https://goo.gl/forms/qJhnaKjUfVtcOWSk1
-
-
-＊sakura.portalsites
--
-
-＊sakura.portalsites
-独立伺か研究施設 ばぐとら研究所
-http://ssp.shillest.net/
-
-
-＊sakura.portalsites
-Disc-2
-http://disc2.s56.xrea.com/
-
-
-＊sakura.portalsites
-伺か情報ブログ「ghost-log」
-https://ghost-log.net/
-
-
-＊sakura.portalsites
-ゴーストキャプターさくら
-http://buynowforsale.shillest.net/ghosts/
-
-
-＊sakura.portalsites
-ゴースト回覧板3rd
-http://jbbs.shitaraba.net/computer/44300/
-
-
-＊sakura.portalsites
-伺的な感想やレビューのWiki
-https://ghost-info.net/dokuwiki/doku.php
-
-
-＊sakura.portalsites
-噂と評判[改] 過去ログ保管庫+
-https://ghostreview.sakura.ne.jp/

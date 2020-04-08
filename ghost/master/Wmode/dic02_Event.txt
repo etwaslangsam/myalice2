@@ -62,8 +62,7 @@
 ＃────────
 ＃ユーザインプット
 ＃────────
-＊OnCommunicate
-≫「　（Reference1）	（compare,（Reference0）,user）
+＊アリスに該当なし
 \0（エモ落ち込み）\s[4]ん～・・・よくわかんない・・・。\e
 
 ＊OnCommunicateInputCancel
@@ -180,11 +179,11 @@
 ＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
 ＄手動セーブ	実行
 \0\s[5]チェックおーわりっ！
-＃────────
-＊OnUpdateFailure
+
+＊ネットワーク更新失敗
 \0\s[2]（Reference0）で失敗だって。
 \s[24]なんでぇ～？
-＃────────
+
 ＊OnNetworkHeavy
 \0\s[4]う～ん重い……\e
 
@@ -274,14 +273,6 @@
 ＃────────
 ＃キー押下
 ＃────────
-＊tが押された
-＞OnTalk（VariableInterval）
-＞（現在月）月	（乱数１～６）==３
-（）
-
-＊cが押された
-＞UserCommunicate
-
 ＊mが押された
 ＄辞書フォルダ	1stWmode,Common
 \0\s[8]ん？\e

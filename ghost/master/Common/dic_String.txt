@@ -1,0 +1,185 @@
+＊OnCacheSuspend
+＞OnSatoriUnload
+＊OnSatoriUnload
+＄全タイマ解除	実行
+＄興奮度	0
+＄パンツ濡れ	
+＄パンツ汚れ	
+＄パンツ残数	
+＄ア頭カウンタ	０
+＄あ頭カウンタ	０
+＄ア胸カウンタ	０
+＄あ胸カウンタ	０
+＄ア抱きしめた	
+＄あ抱きしめた	
+＄r_talk	
+＄バッテリ残量	
+＄充電状況	.
+＄コミュ送信	
+＄デフォルトサーフェス10	
+＄ほめてほしい	
+＄なぐさめてほしい	
+＄着せ替えトーク抑制	
+＄ぎゅってされたい	
+
+
+＃────────
+＃■リソース
+＃────────
+＠homeurl
+https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
+
+＠menu.background.bitmap.filename
+（when，（count、（辞書フォルダ）、B）==1，bgm1.png，bgm2.png）
+＠menu.foreground.bitmap.filename
+（when，（count、（辞書フォルダ）、B）==1，bgm1.png，bgm2.png）
+
+＠menu.background.font.color.r
+255
+＠menu.background.font.color.g
+255
+＠menu.background.font.color.b
+255
+
+＠menu.foreground.font.color.r
+（when，（count、（辞書フォルダ）、B）==1，0，255）
+＠menu.foreground.font.color.g
+0
+＠menu.foreground.font.color.b
+（when，（count、（辞書フォルダ）、B）==1，255，0）
+
+＃────────
+＃■おすすめ
+＃────────
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+スヌーピー公式サイト
+https://www.snoopy.co.jp/
+
+：\s[5]スヌーピー！\w5
+漫画は読んだことないけどかわいいよね。
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+ムーミン公式サイト
+http://moomin.co.jp/
+
+：\s[5]ムーミンは、ママも、お祖母ちゃんも大好きなの。
+もちろんアタシも！
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+-
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+サーティーワン アイスクリーム
+http://www.31ice.co.jp/
+
+：\s[5]サーティワンのアイス大好き（はーと）
+\s[26]オススメはもちろんラブポーション！
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+ミスタードーナツ
+http://www.misterdonut.jp/
+
+：\s[5]ミスタードーナツ♪
+ドーナツポップが一口サイズでカラフルでかわいくて好き。
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+ぷっちょ公式
+http://puccho.jp/
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+僕たち男の娘！
+http://eroblack.ie-yasu.com/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+エロ日記
+http://eroblack.ie-yasu.com/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+レモンスカッシュ
+http://eroblack.ie-yasu.com/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+ゆうやけ　ないて
+http://project.hacca.jp/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+MORALハザード
+http://highkaru.page2.jp/moral.html
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+maternity!!
+http://densoko.sitemix.jp/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+maternity!!2（仮）
+http://densoko.sitemix.jp/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+快楽園「LoveMix」
+http://densoko.sitemix.jp/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
+イモウトオモイノ
+http://ukask.x.fc2.com/
+
+＃────────
+＃■ポータル
+＃────────
+＊sakura.portalsites
+配布サイト
+
+＊sakura.portalsites
+ほっとぺっぱぁ団
+https://hotpepar.blogspot.com/
+
+
+＊sakura.portalsites
+連絡先
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＊sakura.portalsites
+-
+
+＊sakura.portalsites
+独立伺か研究施設 ばぐとら研究所
+http://ssp.shillest.net/
+
+
+＊sakura.portalsites
+Disc-2
+http://disc2.s56.xrea.com/
+
+
+＊sakura.portalsites
+伺か情報ブログ「ghost-log」
+https://ghost-log.net/
+
+
+＊sakura.portalsites
+ゴーストキャプターさくら
+http://buynowforsale.shillest.net/ghosts/
+
+
+＊sakura.portalsites
+ゴースト回覧板3rd
+http://jbbs.shitaraba.net/computer/44300/
+
+
+＊sakura.portalsites
+伺的な感想やレビューのWiki
+https://ghost-info.net/dokuwiki/doku.php
+
+
+＊sakura.portalsites
+噂と評判[改] 過去ログ保管庫+
+https://ghostreview.sakura.ne.jp/
