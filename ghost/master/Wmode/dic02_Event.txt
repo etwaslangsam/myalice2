@@ -224,53 +224,6 @@
 \0\s[4]メールチェックしっぱ～い。\e
 
 ＃────────
-＃RSS
-＃────────
-＊OnHeadlinesenseBegin
-\0\s[0]「（Reference0）」のヘッドラインを取得中だよ。
-＃────────
-＊OnHeadlinesense.OnFind	（Reference2）==First
-\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
-（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-＃────────
-＊OnHeadlinesense.OnFind	（Reference2）==First and Last
-\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
-（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-＃────────
-＊OnHeadlinesense.OnFind	（Reference2）==Last
-\0\b[2]（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-＃────────
-
-＊OnHeadlinesense.OnFind	（Reference2）==Next
-\0\b[2]（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-＃────────
-
-＊サイトを開く
-\![open,browzer,]
-＃────────
-＊読み上げ中止
-\0\b[-1]
-＃────────
-＊OnHeadlinesenseComplete
-\0\s[4]更新されなかったって～。
-＃────────
-＊OnHeadlinesenseFailure
-\0\s[4]よく分かんないけど失敗しちゃった。\e
-＃────────
-＊OnSSTPBreak
-\0\s[8]SSTPブレーイク！
-
-＃────────
 ＃キー押下
 ＃────────
 ＊mが押された

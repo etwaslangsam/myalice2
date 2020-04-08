@@ -82,12 +82,6 @@
 \0\s[130]\w9\s[138]\e
 
 ＃────────
-＃■マウスイベント
-＃────────
-＊0にフォーカス
-（when,（興奮度）==0,\0\s[103]）\e
-
-＃────────
 ＃インストール
 ＃────────
 ＊OnInstallBegin
@@ -245,58 +239,6 @@ MD5不一致\_q\w3
 ＄なぐさめてくれなかったタイマ	３０
 \0\s[103]ご、ごめんなさい……。\w5
 サーバの接続に失敗しました……。\e
-
-＃────────
-＃RSS
-＃────────
-＊OnHeadlinesenseBegin
-\0「（Reference0）」のヘッドラインを取得中。
-
-＊OnHeadlinesense.OnFind	（Reference2）==First
-：\b[2]
-（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==First and Last
-：\b[2]
-（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==Last
-：\b[2]（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊OnHeadlinesense.OnFind	（Reference2）==Next
-：\b[2]（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊サイトを開く
-\![open,browzer,]
-
-＊読み上げ中止
-：\b[-1]
-
-＊OnHeadlinesenseComplete
-\0\s[103]更新されていませんでした。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't download
-\0\s[103ダウンロードできませんでした。
-重すぎるか、ネットに繋がっていない可能性があります。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't analyze
-\0\s[103]解析失敗。
-最新版のヘッドラインセンサがあれば入れ替えてください。
-
-＊OnSSTPBreak
-\0\s[100]SSTPがブレイクされたようです。
 
 ＃────────
 ＃メールチェック

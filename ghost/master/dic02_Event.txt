@@ -295,58 +295,6 @@ md5が合わないって！
 \1\s[103]サーバの設定が違うか、混んでいる可能性があります。\e
 
 ＃────────
-＃RSS
-＃────────
-＊OnHeadlinesenseBegin
-\0\s[0]「（Reference0）」のヘッドラインを取得中だよ。
-
-＊OnHeadlinesense.OnFind	（Reference2）==First
-\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
-（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==First and Last
-\0\s[5]\b[2]「（Reference0）」ヘッドラインだって。\n[half]
-（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==Last
-\0\b[2]（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊OnHeadlinesense.OnFind	（Reference2）==Next
-\0\b[2]（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊サイトを開く
-\![open,browzer,]
-
-＊読み上げ中止
-\0\b[-1]
-
-＊OnHeadlinesenseComplete
-\0\s[4]更新されなかったって～……。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't download
-\0\s[4]ダウンロードできなかった……。
-\1\s[104]重すぎるか、ネットに繋がってない可能性があります。
-
-＊OnHeadlinesenseFailure	（Reference0）==can't analyze
-\0\s[24]解析失敗だって！
-\1\s[100]最新版のヘッドラインセンサがあれば入れ替えてください。
-
-＊OnSSTPBreak
-\0\s[8]SSTPブレーイク！
-
-＃────────
 ＃重なり
 ＃────────
 ＊OnOverlap

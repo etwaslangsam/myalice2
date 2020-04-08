@@ -149,6 +149,61 @@
 ＞ネットワーク更新失敗
 
 ＃────────
+＃RSS
+＃────────
+＊OnHeadlinesenseBegin
+\0「（Reference0）」のヘッドラインを取得中
+
+＊OnHeadlinesense.OnFind	（Reference2）==First
+\0\b[2]「（Reference0）」ヘッドライン\n[half]
+（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==First and Last
+\0\b[2]「（Reference0）」ヘッドライン\n[half]
+（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==Last
+\0\b[2]（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊OnHeadlinesense.OnFind	（Reference2）==Next
+\0\b[2]（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊サイトを開く
+\![open,browzer,]
+
+＊読み上げ中止
+\0\b[-1]
+
+＊OnHeadlinesenseComplete
+\0φ（更新されていませんでした。φ）\e
+
+＊OnHeadlinesenseFailure
+\0φ（ヘッドラインセンス失敗。φ）
+＞（Reference0）によりヘッドラインセンス失敗
+φ（理由は（Reference0）。φ）\e
+
+＊can't downloadによりヘッドラインセンス失敗
+\0φ（ダウンロードできませんでした。\n重すぎるか、ネットに繋がっていない可能性があります。φ）\e
+
+＊can't analyzeによりヘッドラインセンス失敗
+\0φ（解析失敗。\n最新版のヘッドラインセンサがあれば入れ替えてください。φ）\e
+
+＊OnSSTPBreak
+\0φ（SSTPがブレイクされたようです。φ）\e
+
+＃────────
 ＃キー押下
 ＃────────
 ＊OnKeyPress
