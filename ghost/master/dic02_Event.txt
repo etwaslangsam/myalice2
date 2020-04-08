@@ -40,9 +40,6 @@
 ＃────────
 ＃最小化解除
 ＃────────
-＊OnWindowStateRestore
-＞最小化解除
-
 ＊最小化解除
 \1\s[100]\0（エモ？）\s[5]（ユーザ名）何してたの～？
 ＊最小化解除
@@ -72,16 +69,6 @@
 \1\s[105]\cはい。\e
 
 ＃────────
-＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-
-＃────────
 ＃時間イベント
 ＃────────
 ＊OnMinuteChange
@@ -95,39 +82,23 @@
 \0（choice,\s[0],\s[2],\s[5],\s[4],\s[25],\s[26],\s[27],\s[28],\s[31],\s[29]）φ
 \1（choice,\s[100],\s[101],\s[102],\s[103],\s[104],\s[105],\s[124],\s[125]）\e
 
-＃────────
-＊OnHourTimeSignal
-＞時報	（TimeSignal）
-
-＊時報
-＞時報B	（compare,（Sender）,ssp）
-＞時報A
+＊時報B
+\![set,trayballoon,--text=ありす,--title=（現在時）時です,--icon=info,--timeout=3]
+＊時報B
+\![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
 
 ＊時報A
 \0\s[5]（エモ気づき）（現在時）時だよ！\e
 ＊時報A
 \1\s[100]（エモ気づき）（現在時）時になりました。\e
 
-＊時報B
-\![set,trayballoon,--text=ありす,--title=（現在時）時です,--icon=info,--timeout=3]
-＊時報B
-\![set,trayballoon,--text=アリス,--title=（現在時）時だよ！,--icon=info,--timeout=3]
-
 ＃────────
 ＃選択肢
 ＃────────
-＊OnChoiceSelect
-＞（Reference0）
-＞選択先がない
-
 ＊OnChoiceTimeout
 \0（エモ怒り）\s[24]（ユーザ名）聞いてる～？\e
 
-＊OnAnchorSelect
-＞（Reference0）
-＞選択先がない
-
-＊選択先がない
+＊NoAnchor
 \0（エモ？）\s[7]『（Reference0）』？ってなーに？
 \1（エモ落ち込み）\s[103]選択肢エラーですね。\w6
 バグ報告をお願いします。\e
@@ -142,26 +113,6 @@
 ＃────────
 ＃■マウスイベント
 ＃────────
-＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ
-
-＊OnMouseWheel
-＄ころころカウンタ=（ころころカウンタ）+1
-＄ころころカウンタ初期化タイマ	3
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
-
-＊ころころカウンタ初期化
-＄ころころカウンタ	０
-
-＊OnMouseHover
-＄（Reference3）（Reference4）見つめタイマ	３
-＊OnMouseLeave
-＄（Reference3）（Reference4）見つめタイマ	
-
-＊OnMouseEnterAll
-＞（Reference3）にフォーカス	（Status）!=talking
 ＊0にフォーカス
 \0\s[5]\e
 ＊1にフォーカス
@@ -268,8 +219,9 @@
 
 ＊OnUpdateComplete
 ＞ネットワーク更新なし	（Reference0）==none
-＄辞書リロード	実行
+＄辞書フォルダ	.,Common
 ＄今日の給食	（主食）!（副菜）!（汁物）!（デザート）
+＄手動セーブ	実行
 \0（エモ気づき）\s[5]更新おっしま～い！
 \1\s[105]お疲れ様でしたアリスさん。\e
 
@@ -423,13 +375,6 @@ md5が合わないって！
 ＃────────
 ＃キー押下
 ＃────────
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊rが押された
-＄辞書リロード	実行
-\0\s[0]（エモ消し）\1\s[100]（エモ消し）リロードしました。\e
-
 ＊leftが押された
 ＄話しかけ	ありすに
 \1（エモ気づき）（when,（あ抱きしめた）==0,\s[124]なんでしょうか？,\s[101]）\e
@@ -442,17 +387,3 @@ md5が合わないって！
 ＞アリス抱きしめ	（話しかけ）==アリスに
 ＞ありす抱きしめ	（話しかけ）==ありすに
 
-＃────────
-＃
-＃────────
-＊OnTalk
-＞（Reference1）	（Reference0）
-＞OnTalk（VariableInterval）
-＞（現在月）月	（乱数１～６）==３
-（）
-
-＊OnTalk１
-＄喋り間隔	（乱数３０～３００）秒
-＄一時保存	（喋り間隔）
-＞（現在月）月	（乱数１～６）==３
-（）
