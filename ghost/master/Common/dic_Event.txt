@@ -80,6 +80,11 @@
 ＃────────
 ＃
 ＃────────
+＊OnMinuteChange
+＞好感度アップ	（起動分）==０&&（起動時）＞０
+＞二人遊び	（compare,（喋り間隔）,０秒）
+＞無言表情	（compare,（喋り間隔）,０秒）
+
 ＊OnHourTimeSignal
 ＞時報	（TimeSignal）
 
