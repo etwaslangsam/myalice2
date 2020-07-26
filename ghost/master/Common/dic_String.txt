@@ -78,6 +78,11 @@ http://www.31ice.co.jp/
 \s[26]オススメはもちろんラブポーション！
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
+セブンティーンアイス
+https://cp.glico.com/17ice/
+
+
+＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 ミスタードーナツ
 http://www.misterdonut.jp/
 
