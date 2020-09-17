@@ -38,13 +38,13 @@ file,ghost/master/1stWmode/dic02_Event.txt8a64d2f6168d608525790cb3279c5698size
 file,ghost/master/1stWmode/dic03_Touch.txtd6148bbcf083bf12386da5b7a6668e86size=2249
 file,ghost/master/1stWmode/dic04_Menu.txt318d3bccf1ce7b9d8f54928338c9698bsize=7031
 file,ghost/master/1stWmode/dic11_Talk.txt197d530fc3b7fdf1fbfc242842e469bfsize=4667
-file,ghost/master/Bmode/dic01_Base.txt23a92b4188d83ceea8f427ac262b5007size=8527
-file,ghost/master/Bmode/dic02_Event.txt8625e29c236974575e77b6043933aa14size=15023
+file,ghost/master/Bmode/dic01_Base.txt861c782a8e5078bec9b7afb66906df89size=8560
+file,ghost/master/Bmode/dic02_Event.txt84a27b7578a38bf7814a504ea8a76e5bsize=14878
 file,ghost/master/Bmode/dic03_Touch.txt216edf8f3564af9eb2f799818d689797size=14088
 file,ghost/master/Bmode/dic04_Time.txt07733378b9e6be1f7a86d831cad8aa80size=20368
-file,ghost/master/Bmode/dic12_talk.txt877a769de443e1129a40ee277265dcbcsize=17103
+file,ghost/master/Bmode/dic12_talk.txt5bf19c67720c39806b0f859ebce60173size=17208
 file,ghost/master/Bmode/dic12_talk2.txte27992114d3c0cb551b9182b90e2ab7csize=4082
-file,ghost/master/Bmode/dicAnchor.txt4d5dc4bec537784d2da3c40a3dda3471size=15794
+file,ghost/master/Bmode/dicAnchor.txtda4ec89a700c1aec70304a71bd2ed280size=16469
 file,ghost/master/Bmode/dic_Menu.txtce07173d12dd60e3973af905f66718b5size=9488
 file,ghost/master/Bmode/dic_play1.txt0a94485284487acb751f576b150f273csize=29053
 file,ghost/master/Bmode/dic_play2.txtcd295880cfc9c3e59b429c1622586c5csize=24198
