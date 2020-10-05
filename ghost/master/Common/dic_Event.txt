@@ -7,6 +7,13 @@
 \0\e
 
 ＊拍手送信内容を教えてもらった
+\0\_q（拍手送信内容）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容がからっぽ]
+\_q\e
+
+＊SendClap
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠（拍手送信内容）",--async=webclap]
 ＄拍手送信内容	
 
@@ -21,6 +28,7 @@
 ＄拍手送信内容	
 
 ＊拍手送信内容がからっぽ
+＄拍手送信内容	
 \0φ（中断しますφ）\e
 
 ＊OnExecuteHTTPComplete
@@ -93,6 +101,7 @@
 ＃最小化解除
 ＃────────
 ＊OnWindowStateRestore
+＄手動セーブ	実行
 ＞最小化解除
 
 ＃────────
@@ -122,6 +131,7 @@
 ＞無言表情	（compare,（喋り間隔）,０秒）
 
 ＊OnHourTimeSignal
+＄手動セーブ	実行
 ＞時報	（TimeSignal）
 
 ＊時報
@@ -263,11 +273,11 @@
 ＞OnTalk（VariableInterval）
 ＞トーク低好感度	（好感度B）＜0
 ＞（現在月）月	（乱数１～６）==３
-（）
+\1（エモ消し）\c\0（エモ消し）\c（）
 
 ＊OnTalk１
 ＄喋り間隔	（乱数３０～３００）秒
 ＄一時保存	（喋り間隔）
 ＞トーク低好感度	（好感度B）＜0
 ＞（現在月）月	（乱数１～６）==３
-（）
+\1（エモ消し）\c\0（エモ消し）\c（）
