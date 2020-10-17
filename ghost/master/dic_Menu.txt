@@ -2,7 +2,7 @@
 ＃メニュー
 ＃────────
 ＊0つつかれ
-\0（MenuTalk）\w5
+\0（MenuTalk）\w9
 ＞MainMenu
 
 ＠MenuTalk
@@ -11,25 +11,40 @@
 （エモハート）\s[1]しょーがないなぁ～。
 
 ＊MainMenu
-\1（エモ消し）\0（エモ消し）\_q
- \![*]\q[ありすとなにか話して,PleaseTalk]
- \![*]\q[コミュニケーション,UserCommunicate]
+\1（エモ消し）\0\b[2]（エモ消し）\_q■トーク\n[half]
+ \![*]\q[t)ありすとなにか話して,PleaseTalk]\n
+■コミュニケーション\n[half]
+ \![*]\q[c)話しかける,cが押された]
+ \![*]\q[s)スキンシップ,sが押された]
+ \![*]\q[質問する,Communication2]\n
+■設定\n[half]
  \![*]\q[呼び方を変えて,UserNameChange]
- \![*]\q[その他設定とか,各種設定]\n[half]
+ \![*]\q[トークする頻度,TalkIntervalSetting]
+ \![*]\q[その他設定とか,各種設定]\n
+■モード切り替え
  \![*]\q[二人きりになる,Wmode] 
 
 \q[なんでもない,Cancel]
 \1\![*]\q[メッセージを送る,OnWebClap]\n[half]
 ■簡易メッセージ送信
- \![*]\q[いいねφ！,簡易拍手1] \![*]\q[好き,簡易拍手2] \![*]\q[かわいい,簡易拍手3]
+ \![*]\q[二人とも好き,簡易拍手4] \![*]\q[二人ともかわいい,簡易拍手5]
+\_q\e
+
+＊TalkIntervalSetting
+\0\b[2]\_q
+■自発トークする頻度\n[half]
+ \![*]\q[１分おき,TILevel4]
+ \![*]\q[２分おき,TILevel1]
+ \![*]\q[３分おき,TILevel3]
+ \![*]\q[５分おき,TILevel2]\n
+ \![*]\q[スライダーで決める,スライダーで決める]\n[half]
+ \![*]\q[自由にして,VariableIntervalChange]\n[half]
+ \![*]\q[静かにしてて,TILevel0]\n
+\q[もどる,MainMenu]　\q[とじる,script:\e]
 \_q\e
 
 ＊各種設定
 \0\b[2]\c\_q
-■喋る頻度\n[half]
- \![*]\q[１分,TILevel4] \![*]\q[２分,TILevel1] \![*]\q[３分,TILevel3] \![*]\q[５分,TILevel2]\n[half]
- \![*]\q[自由にして,VariableIntervalChange] \![*]\q[スライダーで決める,スライダーで決める]
- \![*]\q[静かにしてて,TILevel0]\n
 ■時報の設定\n[half]
  \![*]\q[お知らせする,時報オン]
  \![*]\q[お知らせしない,時報オフ]\n
@@ -39,10 +54,8 @@
 ■表示 ※ゴースト終了まで有効\n[half]
  \![*]\q[常に手前に表示,常に手前に表示]
  \![*]\q[喋り終わると奥に沈む,奥に沈む]\n
-\q[もどる,MainMenu]
-\q[なんでもない,Cancel]
+\q[もどる,MainMenu]　\q[とじる,script:\e]
 \_q\e
-
 
 ＊Cancel
 \![close,communicatebox]
@@ -116,7 +129,6 @@
 ＃────────
 ＊PleaseTalk
 ＞OnTalk（VariableInterval）
-＞（現在月）月	（乱数１～６）==３
 （）
 
 ＃────────

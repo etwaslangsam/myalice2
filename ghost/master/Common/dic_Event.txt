@@ -10,7 +10,7 @@
 \0\_q（拍手送信内容）\_q
 \1（この内容で送信します）
 \_q
-\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容がからっぽ]
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容が空打ちされた]
 \_q\e
 
 ＊SendClap
@@ -27,13 +27,21 @@
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠かわいい",--async=webclap]
 ＄拍手送信内容	
 
-＊拍手送信内容がからっぽ
+＊簡易拍手4
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠二人とも好き",--async=webclap]
+＄拍手送信内容	
+＊簡易拍手5
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠二人ともかわいい",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容が空打ちされた
 ＄拍手送信内容	
 \0φ（中断しますφ）\e
 
 ＊OnExecuteHTTPComplete
 ＞拍手送信完了	（Reference1）==webclap
 ＊拍手送信完了
+＞（選択ラベル）が送信された
 \0（送信完了φ。ありがとうございますφ。）\e
 
 ＊OnExecuteHTTPFailure
@@ -273,11 +281,11 @@
 ＞OnTalk（VariableInterval）
 ＞トーク低好感度	（好感度B）＜0
 ＞（現在月）月	（乱数１～６）==３
-\1（エモ消し）\c\0（エモ消し）\c（）
+（）
 
 ＊OnTalk１
 ＄喋り間隔	（乱数３０～３００）秒
 ＄一時保存	（喋り間隔）
 ＞トーク低好感度	（好感度B）＜0
 ＞（現在月）月	（乱数１～６）==３
-\1（エモ消し）\c\0（エモ消し）\c（）
+（）
