@@ -6,3 +6,5 @@ shell/suwari/,nonar,noupdate
 shell/5years_after/,nonar,noupdate
 shell/kisekae_doll/,nonar,noupdate
 shell/bustup2x/,nonar,noupdate
+ghost/master/updates2.dau.bak,nonar,noupdate
+updates2.dau.bak,nonar,noupdate
