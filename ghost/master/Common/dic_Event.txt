@@ -18,14 +18,17 @@
 ＄拍手送信内容	
 
 ＊簡易拍手1
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠いいね！",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠いいね！",--async=webclap]
 ＄拍手送信内容	
 ＊簡易拍手2
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠好き",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠好き",--async=webclap]
 ＄拍手送信内容	
 ＊簡易拍手3
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠かわいい",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠かわいい",--async=webclap]
 ＄拍手送信内容	
+
+＠アリスver判定
+（when，（count、（辞書フォルダ）、1stWmode）==1，アリス1，アリス）
 
 ＊簡易拍手4
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリスとありす＠二人とも好き",--async=webclap]
@@ -34,16 +37,19 @@
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリスとありす＠二人ともかわいい",--async=webclap]
 ＄拍手送信内容	
 
+
 ＊簡易拍手6
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ありす＠気持ちよかったよ",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠気持ちよかったよ",--async=webclap]
 ＄拍手送信内容	
 ＊簡易拍手7
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ありす＠好きだ",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠好きだ",--async=webclap]
 ＄拍手送信内容	
 ＊簡易拍手8
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ありす＠かわいい",--async=webclap]
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠かわいい",--async=webclap]
 ＄拍手送信内容	
 
+＠ありすver判定
+（when，（count、（辞書フォルダ）、1stBmode）==1，ありす1，ありす）
 
 ＊拍手送信内容が空打ちされた
 ＄拍手送信内容	
