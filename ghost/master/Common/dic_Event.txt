@@ -151,7 +151,6 @@
 ＃
 ＃────────
 ＊OnMinuteChange
-＞好感度アップ	（起動分）==０&&（起動時）＞０
 ＞二人遊び	（compare,（喋り間隔）,０秒）
 ＞無言表情	（compare,（喋り間隔）,０秒）
 
@@ -171,22 +170,22 @@
 ＞（Reference0）
 ＞NoAnchor
 
-＊OnChoiceSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-＞NoAnchor
+＃＊OnChoiceSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃＞NoAnchor
 
 ＊OnAnchorSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
 ＞NoAnchor
 
-＊OnAnchorSelectEx
-＄選択ラベル	（Reference0）
-＄選択ＩＤ	（Reference1）
-＞（Reference1）
-＞NoAnchor
+＃＊OnAnchorSelectEx
+＃＄選択ラベル	（Reference0）
+＃＄選択ＩＤ	（Reference1）
+＃＞（Reference1）
+＃＞NoAnchor
 
 ＃────────
 ＃■マウスイベント
