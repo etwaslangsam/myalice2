@@ -34,11 +34,10 @@
 \![*]\q[話を聞く,PleaseTalk]\n[half]
 \![*]\q[呼び方を変えて,UserNameChange]\n[half]
 \![*]\q[その他の設定,各種設定]\n
-■喋るタイミング
- \![*]\q[１分,TILevel4] \![*]\q[２分,TILevel1] \![*]\q[３分,TILevel3] \![*]\q[５分,TILevel2]
- \![*]\q[スライダーで決める,スライダーで決める]\n[half]
- \![*]\q[自由にして,VariableIntervalChange]
- \![*]\q[静かにしてて,TILevel0]\n
+■トーク
+ \![*]\q[自由に話して,VariableIntervalChange]
+ \![*]\q[静かにしてて,TILevel0]\n[half]
+ \![*]\q[スライダーで決める,スライダーで決める]\n
 （when、（2nd開放フラグ）==1、\![*]\q[アリスを家に招待,そして2ndへ]\n）
 \q[なんでもない,Cancel]
 \1\![*]\q[メッセージを送る,OnWebClap]\n[half]
@@ -51,11 +50,10 @@
 \![*]\q[話を聞く,PleaseTalk]\n[half]
 \![*]\q[呼び方を変えて,UserNameChange]\n[half]
 \![*]\q[その他の設定,各種設定]\n
-■喋るタイミング
- \![*]\q[１分,TILevel4] \![*]\q[２分,TILevel1] \![*]\q[３分,TILevel3] \![*]\q[５分,TILevel2]
- \![*]\q[スライダーで決める,スライダーで決める]\n[half]
- \![*]\q[自由にして,VariableIntervalChange]
- \![*]\q[静かにしてて,TILevel0]\n
+■トーク
+ \![*]\q[自由に話して,VariableIntervalChange]
+ \![*]\q[静かにしてて,TILevel0]\n[half]
+ \![*]\q[スライダーで決める,スライダーで決める]\n
 ■モード切り替え
  \![*]\q[家に戻る,家に戻る]
  \![*]\q[2ndモードに戻る,Change2nd]\n
