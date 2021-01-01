@@ -6,7 +6,7 @@ descript
 version,1
 }
 
-surface0-9,24-35
+surface0-9,24-36
 {
 element0,base,surface00.png,0,0
 }
@@ -165,6 +165,14 @@ element3,overlay,mouth6.png,0,0
 element4,overlay,sekimen2.png,0,0
 }
 
+surface36
+{
+element1,overlay,eye2.png,0,0
+element2,overlay,mayu3.png,0,0
+element3,overlay,mouth7.png,0,0
+element4,overlay,sekimen2.png,0,0
+}
+
 surface501
 {
 
@@ -227,7 +235,7 @@ surface513
 
 ””””G‚è”½‰”””””””””””””””””””””””S
 
-surface.append0-35
+surface.append0-36
 {
 animation4.interval,bind
 animation4.pattern0,overlay,501,0,0,0
