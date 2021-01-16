@@ -6,7 +6,7 @@ descript
 version,1
 }
 
-surface0-9,24-36
+surface0-9,24-43
 {
 element0,base,surface00.png,0,0
 }
@@ -167,10 +167,64 @@ element4,overlay,sekimen2.png,0,0
 
 surface36
 {
-element1,overlay,eye2.png,0,0
-element2,overlay,mayu3.png,0,0
-element3,overlay,mouth7.png,0,0
-element4,overlay,sekimen2.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface37
+{
+	element1,overlay,eye1.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth6.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface38
+{
+	element1,overlay,eye2.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth7.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface39
+{
+	element1,overlay,eye3.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth2.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface40
+{
+	element1,overlay,eye2.png,0,0
+	element2,overlay,mayu4.png,0,0
+	element3,overlay,mouth3.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface41
+{
+	element1,overlay,eye6.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth2.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface42
+{
+	element1,overlay,eye6.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth6.png,0,0
+	element4,overlay,sekimen2.png,0,0
+}
+
+surface43
+{
+	element1,overlay,eye5.png,0,0
+	element2,overlay,mayu2.png,0,0
+	element3,overlay,mouth6.png,0,0
+	element4,overlay,sekimen2.png,0,0
 }
 
 surface501
@@ -235,7 +289,7 @@ surface513
 
 ””””G‚è”½‰”””””””””””””””””””””””S
 
-surface.append0-36
+surface.append0-9,24-43
 {
 animation4.interval,bind
 animation4.pattern0,overlay,501,0,0,0

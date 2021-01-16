@@ -267,7 +267,7 @@
 ＊OnGhostChanged
 ＄辞書フォルダ	Bmode,Common
 ＄着せ替えトーク抑制	
-＞アリスから変更	（compare,（Reference0）,アリス）
+＞アリスから変更	（compare,（Reference0）,高千穂アリス）
 ＞OnBoot
 
 ＊アリスから変更

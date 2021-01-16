@@ -107,7 +107,7 @@
 
 ＊OnGhostChanged
 ＄辞書フォルダ	1stBmode,Common
-＞リロードした	（compare,（Reference0）,アリス）
+＞リロードした	（compare,（Reference0）,高千穂アリス）
 ＞OnBoot
 
 ＊リロードした

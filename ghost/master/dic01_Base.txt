@@ -147,7 +147,7 @@
 
 ＊OnGhostChanged
 ＄辞書フォルダ	.,Common
-＞アリスから変更	（compare,（Reference0）,アリス）
+＞アリスから変更	（compare,（Reference0）,高千穂アリス）
 ＞OnBoot
 
 ＊アリスから変更

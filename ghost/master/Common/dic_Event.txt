@@ -118,7 +118,7 @@
 ＃────────
 ＊OnGhostChanging
 ＄着せ替えトーク抑制	1
-＞アリスへ変更	（compare,（Reference0）,アリス）
+＞アリスへ変更	（compare,（Reference0）,高千穂アリス）
 ＞（Reference0）へ変更
 ＞他のゴーストへ変更
 
@@ -190,8 +190,11 @@
 ＃────────
 ＃■マウスイベント
 ＃────────
+＊OnMouseClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+
 ＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ
+＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
@@ -291,17 +294,9 @@
 ＃
 ＃────────
 ＊OnTalk
+＞（Reference1）	（Reference0）
 ＞ローター動作	（ローターモード）
 ＞おねだり	（興奮度）＞0
-＞（Reference1）	（Reference0）
-＞OnTalk（VariableInterval）
 ＞トーク低好感度	（好感度B）＜0
-＞（現在月）月	（乱数１～６）==３
-（）
-
-＊OnTalk１
-＄喋り間隔	（乱数３０～３００）秒
-＄一時保存	（喋り間隔）
-＞トーク低好感度	（好感度B）＜0
-＞（現在月）月	（乱数１～６）==３
+＞（現在月）月	（乱数１～５）==３
 （）

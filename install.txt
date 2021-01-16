@@ -3,4 +3,4 @@ name,–l‚ÌƒAƒŠƒX2nd
 type,ghost
 directory,myalice2nd
 refresh,1
-refreshundeletemask,satori_savedata.txt
+refreshundeletemask,satori_savedata.txt:satori_savebackup.txt
