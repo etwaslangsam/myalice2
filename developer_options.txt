@@ -9,3 +9,4 @@ shell/bustup2x/,nonar,noupdate
 ghost/master/updates2.dau.bak,nonar,noupdate
 updates2.dau.bak,nonar,noupdate
 shell/kero_cat/,nonar,noupdate
+.gitignore,nonar,noupdate
