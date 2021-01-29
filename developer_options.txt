@@ -2,11 +2,14 @@ ghost/master/satori_savedata.txt,nonar,noupdate
 ghost/master/satori_savebackup.txt,nonar,noupdate
 .git/,nonar,noupdate
 .gitignore,nonar,noupdate
+ghost/master/updates2.dau.bak,nonar,noupdate
+updates2.dau.bak,nonar,noupdate
+.gitignore,nonar,noupdate
 shell/suwari/,nonar,noupdate
 shell/5years_after/,nonar,noupdate
 shell/kisekae_doll/,nonar,noupdate
 shell/bustup2x/,nonar,noupdate
-ghost/master/updates2.dau.bak,nonar,noupdate
-updates2.dau.bak,nonar,noupdate
 shell/kero_cat/,nonar,noupdate
-.gitignore,nonar,noupdate
+shell/bustup/,nonar,noupdate
+shell/tuugakuro/,nonar,noupdate
+shell/tuugakuro+/,nonar,noupdate
