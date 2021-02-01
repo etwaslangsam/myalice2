@@ -1,3 +1,9 @@
+＊OnCacheSuspend
+＞OnSatoriUnload
+＊OnSatoriUnload
+＄現在の服	
+＄あ淫紋	
+＄ア淫紋	
 
 ＃────────
 ＃
@@ -123,8 +129,11 @@
 ＞他のゴーストへ変更
 
 ＃────────
-＃最小化解除
+＃最小化
 ＃────────
+＊OnWindowStateMinimize
+＄手動セーブ	実行
+
 ＊OnWindowStateRestore
 ＄手動セーブ	実行
 ＞最小化解除
