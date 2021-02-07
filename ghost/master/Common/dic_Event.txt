@@ -5,6 +5,51 @@
 ＄あ淫紋	
 ＄ア淫紋	
 
+＊OnDressupChanged		（辞書判定）==0
+（when，（Reference0）==0
+	，（when、（Reference2）==1、
+		（set,ア（Reference3）,（Reference1））、
+		（set,ア（Reference3）,）
+	）
+	，（when、（Reference2）==1、
+		（set,あ（Reference3）,（Reference1））、
+		（set,あ（Reference3）,）
+	）
+）
+＄手動セーブ	実行
+＞着せ替え反応	（着せ替え抑制）==0
+
+＊OnDressupChanged		（count、（辞書フォルダ）、B）
+（when、（Reference2）==1
+	、（set,あ（Reference3）,（Reference1））
+	、（set,あ（Reference3）,）
+）
+（when、（あ衣装）==全裸
+	、（set,全裸状態,1）
+	、（set,全裸状態,）
+）
+（whenlist、（あ衣装）==
+	、ロリータワンピース、（set,今日のパンツ,（パンツ種類））
+	、メイド、（set,今日のパンツ,（パンツ種類））
+	、バニー、（set,今日のパンツ,（パンツ種類））
+	、男の娘、（set,今日のパンツ,（パンツ種類））
+	、くノ一、（set,今日のパンツ,褌）
+	、チャイナ、（set,今日のパンツ,（パンツ種類））
+	、お祭り褌、（set,今日のパンツ,褌）
+	、でかパーカー、（set,今日のパンツ,（パンツ種類））
+	、（set,今日のパンツ,）
+）
+＄手動セーブ	実行
+＞着せ替え反応		（着せ替え抑制）==0
+
+＊OnDressupChanged		（count、（辞書フォルダ）、W）
+（when、（Reference2）==1、
+	（set,ア（Reference3）,（Reference1））、
+	（set,ア（Reference3）,）
+）
+＄手動セーブ	実行
+＞着せ替え反応		（着せ替え抑制）==0
+
 ＃────────
 ＃
 ＃────────
@@ -123,7 +168,8 @@
 ＃切り替え反応
 ＃────────
 ＊OnGhostChanging
-＄着せ替えトーク抑制	1
+＄着せ替え抑制	1
+＄着せ替え復活タイマ	１
 ＞アリスへ変更	（compare,（Reference0）,高千穂アリス）
 ＞（Reference0）へ変更
 ＞他のゴーストへ変更
@@ -179,22 +225,10 @@
 ＞（Reference0）
 ＞NoAnchor
 
-＃＊OnChoiceSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃＞NoAnchor
-
 ＊OnAnchorSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
 ＞NoAnchor
-
-＃＊OnAnchorSelectEx
-＃＄選択ラベル	（Reference0）
-＃＄選択ＩＤ	（Reference1）
-＃＞（Reference1）
-＃＞NoAnchor
 
 ＃────────
 ＃■マウスイベント
