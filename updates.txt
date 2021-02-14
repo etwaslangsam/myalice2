@@ -1,6 +1,6 @@
 file,delete.txt946cae68d2e1f81fe5a8d79bc911130asize=275
 file,developer_options.txt5ac3fc0700da18cbd6629831c3cc44e7size=518
-file,install.txt7f59d2c23631de81dc9d815b6e624592size=147
+file,install.txtc5cf71f7fde0dcc6da8885d7d4ef8e61size=84
 file,readme.txte4e8286dc245a8a53ff2929d4607b70fsize=1506
 file,thumbnail.pnr4a1d817e1a248871b6da669c5ca745f8size=79255
 file,ghost/master/bgm1.png7534a7bea9c7bd6ec5e3a0297519d52bsize=59998
@@ -28,7 +28,7 @@ file,ghost/master/1stBmode/dic08_Commu.txt39e89dd5e95117e3a1eb2460a8cdaa74size
 file,ghost/master/1stBmode/dic12_talk.txte486885d21712de63687e61b7b9e3e7esize=8300
 file,ghost/master/1stBmode/dic_play1.txtd7e579ace41b5cf7e5f0aad88c79be00size=20407
 file,ghost/master/1stBmode/dic_play2.txte57c0f13b060503270209502d1a98a45size=16329
-file,ghost/master/1stWmode/dic01_Base.txtc68598e5dfcb4dbd09800721b62db237size=10640
+file,ghost/master/1stWmode/dic01_Base.txt6e5f389588388072f6fd386b11aeb8a2size=11032
 file,ghost/master/1stWmode/dic02_Event.txtc058b1cbc8dd7e4af1b21a4fcef5ec7asize=4508
 file,ghost/master/1stWmode/dic03_Touch.txt242e7e9284942b925478606bd6ab4ce2size=2251
 file,ghost/master/1stWmode/dic11_Talk.txte0db3ea7165d36d780b8de166feb96c5size=4199
