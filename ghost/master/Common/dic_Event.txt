@@ -2,7 +2,7 @@
 ＞OnSatoriLoad
 ＊OnSatoriLoad
 ＄文「＊」の重複回避	有効、起動中
-＄単語群「＊」の重複回避	有効、トーク中
+＄単語群「＊」の重複回避	有効、起動中
 ＄引数区切り追加	（sprintf,%c,3）
 ＄なでられ反応回数	４５
 ＄興奮度	0
@@ -28,12 +28,16 @@
 ＄さくらスクリプトによるスコープ切り換え時	
 ＄コミュニケートの検索方法	
 ＄自動アンカー	
+
+＊ResetFlags
 ＄選択ＩＤ	
 ＄選択ラベル	
 ＄選択番号	
+（when，（好感度）>120，（set,好感度,120））（when，（好感度B）>120，（set,好感度B,120））（set,着せ替え抑制,１）
+（set,ころころカウンタ,）（set,興奮度,）（set,パンツ残数,）
+（set,ア頭カウンタ,）（set,あ頭カウンタ,）（set,ア胸カウンタ,）（set,あ胸カウンタ,）
+（set,ア抱きしめた,）（set,あ抱きしめた,）（set,ほめてほしい,）（set,なぐさめてほしい,）（set,ぎゅってされたい,）
 
-＃────────
-＃
 ＃────────
 ＊各種設定
 \0\b[2]\c\_q
@@ -46,20 +50,9 @@
 \q[もどる,Menu]　\q[とじる,Cancel]
 \_q\e
 
-＃────────
-＃終了共通
-＃────────
+＃────────終了共通
 ＊OnClose
-（set,今日のパンツ,）（set,今日の給食,）
-（set,ころころカウンタ,）（set,興奮度,）（set,パンツ残数,）（set,着せ替え抑制,１）
-（set,ア頭カウンタ,）（set,あ頭カウンタ,）（set,ア胸カウンタ,）（set,あ胸カウンタ,）
-（set,ア抱きしめた,）（set,あ抱きしめた,）（set,ほめてほしい,）（set,なぐさめてほしい,）（set,ぎゅってされたい,）
-（whenlist，（辞書フォルダ）==
-	，（compare、（辞書フォルダ）、W）（when、（好感度）>120、（set,好感度,120））
-	，（compare、（辞書フォルダ）、B）（when、（好感度B）>120、（set,好感度B,120））
-	，（when、（好感度）>120、（set,好感度,120））（when、（好感度B）>120、（set,好感度B,120））
-）φ
-（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
+（ResetFlags）（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
 ＞全裸深夜終了	（現在時）＜５&&（compare,（あ衣装）,全裸）
 ＞深夜終了	（現在時）＜５
 ＞全裸朝終了	（現在時）＜１１&&（compare,（あ衣装）,全裸）
@@ -68,63 +61,33 @@
 ＞深夜終了
 ＞終了
 
-＃────────
-＃切り替え反応
-＃────────
+＃────────切り替え反応
 ＊OnGhostChanging
-（set,今日のパンツ,）（set,今日の給食,）
-（set,ころころカウンタ,）（set,興奮度,）（set,パンツ残数,）（set,着せ替え抑制,１）
-（set,ア頭カウンタ,）（set,あ頭カウンタ,）（set,ア胸カウンタ,）（set,あ胸カウンタ,）
-（set,ア抱きしめた,）（set,あ抱きしめた,）（set,ほめてほしい,）（set,なぐさめてほしい,）（set,ぎゅってされたい,）
-（whenlist，（辞書フォルダ）==
-	，（compare、（辞書フォルダ）、W）（when、（好感度）>120、（set,好感度,120））
-	，（compare、（辞書フォルダ）、B）（when、（好感度B）>120、（set,好感度B,120））
-	，（when、（好感度）>120、（set,好感度,120））（when、（好感度B）>120、（set,好感度B,120））
-）φ
-（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
+（ResetFlags）（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
 ＞アリスへ変更	（compare,（Reference0）,高千穂アリス）
 ＞（Reference0）へ変更
 ＞他のゴーストへ変更
 
-＃────────
-＃シェル変更共通
-＃────────
+＃────────シェル変更
 ＊OnShellChanging
 ＞「（Reference0）」に変更する
 ＞シェル変更する
 
 ＊OnShellChanged
-＄現在シェル	（Reference0）
-＄手動セーブ	実行
+（set,現在シェル,（Reference0））（set,手動セーブ,実行）
 ＞「（Reference0）」に変更した
 ＞シェル変更した
 
-＃────────
-＃着せ替え共通
-＃────────
+＃────────着せ替え共通
 ＊OnDressupChanged		（辞書判定）==0
 （when，（Reference0）==0
-	，（when、（Reference2）==1、
-		（set,ア（Reference3）,（Reference1））、
-		（set,ア（Reference3）,）
-	）
-	，（when、（Reference2）==1、
-		（set,あ（Reference3）,（Reference1））、
-		（set,あ（Reference3）,）
-	）
-）
-＄手動セーブ	実行
+	，（when、（Reference2）==1、（set,ア（Reference3）,（Reference1））、（set,ア（Reference3）,））
+	，（when、（Reference2）==1、（set,あ（Reference3）,（Reference1））、（set,あ（Reference3）,））
+）（set,手動セーブ,実行）
 ＞着せ替え反応	（着せ替え抑制）==0
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、B）
-（when、（Reference2）==1
-	、（set,あ（Reference3）,（Reference1））
-	、（set,あ（Reference3）,）
-）
-（when、（あ衣装）==全裸
-	、（set,全裸状態,1）
-	、（set,全裸状態,）
-）
+（when，（Reference2）==1，（set,あ（Reference3）,（Reference1）），（set,あ（Reference3）,））（when，（あ衣装）==全裸，（set,全裸状態,1），（set,全裸状態,））
 （whenlist、（あ衣装）==
 	、ロリータワンピース、（set,今日のパンツ,（パンツ種類））
 	、メイド、（set,今日のパンツ,（パンツ種類））
@@ -135,21 +98,14 @@
 	、お祭り褌、（set,今日のパンツ,褌）
 	、でかパーカー、（set,今日のパンツ,（パンツ種類））
 	、（set,今日のパンツ,）
-）
-＄手動セーブ	実行
+）（set,手動セーブ,実行）
 ＞着せ替え反応		（着せ替え抑制）==0
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、W）
-（when、（Reference2）==1、
-	（set,ア（Reference3）,（Reference1））、
-	（set,ア（Reference3）,）
-）
-＄手動セーブ	実行
+（when，（Reference2）==1，（set,ア（Reference3）,（Reference1）），（set,ア（Reference3）,））（set,手動セーブ,実行）
 ＞着せ替え反応		（着せ替え抑制）==0
 
-＃────────
-＃
-＃────────
+＃────────web拍手
 ＊OnWebClap
 \![open,inputbox,拍手送信内容,,--limit=996]
 \0\e
@@ -203,21 +159,14 @@
 ＄拍手送信内容	
 \0φ（中断しますφ）\e
 
-＊OnExecuteHTTPComplete
-＞拍手送信完了	（Reference1）==webclap
-＊拍手送信完了
+＊OnExecuteHTTPComplete	（Reference1）==webclap
 ＞（選択ラベル）が送信された
 \0（送信完了φ。ありがとうございますφ。）\e
 
-＊OnExecuteHTTPFailure
-＞拍手送信失敗	（Reference1）==webclap
-
-＊拍手送信失敗
+＊OnExecuteHTTPFailure	（Reference1）==webclap
 \0φ（（Reference4）φ）\e
 
-＃────────
-＃誕生日設定
-＃────────
+＃────────誕生日設定
 ＊ありす誕生日設定
 \0(誕生月を決定してください)
 \_q
@@ -261,9 +210,7 @@
 （エモ消し）\s[106]（ありす誕生月）月（ありす誕生日）日‥‥これが、私の誕生日‥‥。\w5
 \s[105]ありがとうございます、（ユーザ名B）。\e
 
-＃────────
-＃最小化
-＃────────
+＃────────最小化
 ＊OnWindowStateMinimize
 ＄手動セーブ	実行
 
@@ -271,9 +218,7 @@
 ＄手動セーブ	実行
 ＞最小化解除
 
-＃────────
-＃
-＃────────
+＃────────入力系
 ＊OnCommunicate
 ≫「　（Reference1）	（compare,（Reference0）,user）
 ≫ユーザ「　（Reference1）	（compare,（Reference0）,user）
@@ -289,25 +234,15 @@
 ＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
 ＞入力中止
 
-＃────────
-＃
-＃────────
-＊OnMinuteChange
-＄着せ替え抑制	
-＞二人遊び	（compare,（喋り間隔）,０秒）
-＞無言表情	（compare,（喋り間隔）,０秒）
+＃────────時間イベント
+＊OnMinuteChange	（compare,（喋り間隔）,０秒）==1
+＞二人遊び	（count,（現在分）,５）＞０||（count,（現在分）,０）＞０
+＞無言表情	（count,（現在分）,５）＞０||（count,（現在分）,０）＞０
 
-＊OnHourTimeSignal
+＊OnHourTimeSignal	（TimeSignal）==1
 ＄手動セーブ	実行
-＞時報	（TimeSignal）
+（when，（Sender）==SSP，\![raise,時報B]，\![raise,時報A]）
 
-＊時報
-＞時報B	（compare,（Sender）,ssp）
-＞時報A
-
-＃────────
-＃サーフェスレストア
-＃────────
 ＊OnSurfaceRestore
 ＞戻ってきた	（compare,（Reference0）,-1）
 ＞顔を洗う		（顔射）||（変数「アカルピス」の存在）||（変数「あカルピス」の存在）
@@ -319,9 +254,7 @@
 ＊BmodeRestore
 \0\s[（デフォルトサーフェス0）]（when、（変数「あエモ」の存在）==1、（エモ消し））（when、（compare，（現在シェル），EAT ME!!）==1、\1\s[-1]、\0）\![bind,カットイン,,0]\e
 
-＃────────
-＃■選択肢
-＃────────
+＃────────■選択肢
 ＊OnChoiceSelect
 ＄選択ＩＤ	（Reference0）
 ＞（Reference0）
@@ -332,14 +265,14 @@
 ＞（Reference0）
 ＞NoAnchor
 
-＃────────
-＃■マウスイベント
-＃────────
-＊OnMouseClick
-＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+＃────────■マウスイベント
+＊OnMouseClick	（Reference5）==0
+＞（Reference3）（Reference4）つつかれ	（is_empty,（Reference4））==0
+（）
 
-＊OnMouseDoubleClick
-＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
+＊OnMouseDoubleClick	（Reference5）==0
+＞（Reference3）つつかれ	（is_empty,（Reference4））==1
+
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
@@ -359,26 +292,22 @@
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
-＊OnMouseEnterAll
-＞（Reference3）にフォーカス	（Status）!=talking
+＊OnMouseEnterAll	（Status）!=talking
+＞（Reference3）にフォーカス
 
 ＊OnMouseGesture
 ＞（Reference0）（Reference4）上ころ	（Reference5）==up
 ＞（Reference0）（Reference4）下ころ	（Reference5）==down
 ＞（Reference0）（Reference4）ころころ
 
-＃────────
-＃ネットワーク更新
-＃────────
+＃────────ネットワーク更新
 ＊OnUpdateFailure
 ＄なぐさめてほしい	１
 ＄なぐさめてくれなかったタイマ	３０
 ＞（Reference0）で失敗
 ＞ネットワーク更新失敗
 
-＃────────
-＃RSS
-＃────────
+＃────────RSS
 ＊OnHeadlinesenseBegin
 \0「（Reference0）」のヘッドラインを取得中
 
@@ -431,29 +360,22 @@
 ＊OnSSTPBreak
 \0φ（SSTPがブレイクされたようです。φ）\e
 
-＃────────
-＃キー押下
-＃────────
+＃────────キー押下
 ＊OnKeyPress
 ＞（Reference0）が押された
 
 ＊tが押された
 ＞OnTalk
 
-＊snapshotが押された
-＞写真撮影	（Status）!=talking
-
-＊写真撮影
+＊snapshotが押された	（Status）!=talking
 （whenlist、1==
 	、（count，辞書フォルダ，1stW）\0\s[8]
 	、（count，辞書フォルダ，1stB）\0\s[103]
 	、（count，辞書フォルダ，Bmode）\0\s[124]
 	、（count，辞書フォルダ，Wmode）\0\s[5]
-	、\0\s[26]\1\s[105]
+、\0\s[26]\1\s[105]
 ）\e
 
-＃────────
-＃
 ＃────────
 ＊OnTalk
 ＞（Reference1）	（Reference0）
