@@ -12,3 +12,4 @@ ghost\master\1stBmode\dic02_Event.txt
 ghost\master\Wmode\dic02_Event.txt
 ghost\master\1stWmode\dic02_Event.txt
 ghost\master\Bmode\dic_play2.txt
+ghost\master\dic02_Event.txt
