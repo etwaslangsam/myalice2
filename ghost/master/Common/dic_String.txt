@@ -40,6 +40,16 @@
 ＠シックスナイン判定２
 （when、（前回行動）==秘部を舐める、（set,前回行動,シックスナイン）、（set,前回行動,（選択ラベル）））
 
+＠Rイベント
+（compare,（乱数1～20）,10）
+＃5%
+＠SRイベント
+（compare,（乱数1～40）,20）
+＃2.5%
+＠SSRイベント
+（compare,（乱数1～100）,50）
+＃1.5%
+
 ＃────────■リソース
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
