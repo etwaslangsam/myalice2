@@ -265,13 +265,8 @@
 ＞NoAnchor
 
 ＃────────■マウスイベント
-＊OnMouseClick	（Reference5）==0
-＞（Reference3）（Reference4）つつかれ	（is_empty,（Reference4））==0
-（）
-
 ＊OnMouseDoubleClick	（Reference5）==0
-＞（Reference3）つつかれ	（is_empty,（Reference4））==1
-
+＞（Reference3）（Reference4）つつかれ
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
