@@ -84,15 +84,10 @@ https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 スヌーピー公式サイト
 https://www.snoopy.co.jp/
 
-：\s[5]スヌーピー！\w5
-漫画は読んだことないけどかわいいよね。
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 ムーミン公式サイト
 http://moomin.co.jp/
-
-：\s[5]ムーミンは、ママも、お祖母ちゃんも大好きなの。
-もちろんアタシも！
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
@@ -102,8 +97,6 @@ http://moomin.co.jp/
 サーティーワン アイスクリーム
 http://www.31ice.co.jp/
 
-：\s[5]サーティワンのアイス大好き（はーと）
-\s[26]オススメはもちろんラブポーション！
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 セブンティーンアイス
@@ -114,8 +107,6 @@ https://cp.glico.com/17ice/
 ミスタードーナツ
 http://www.misterdonut.jp/
 
-：\s[5]ミスタードーナツ♪
-ドーナツポップが一口サイズでカラフルでかわいくて好き。
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 ぷっちょ公式
@@ -167,16 +158,21 @@ http://ukask.x.fc2.com/
 
 ＃────────■ポータル
 ＊sakura.portalsites
-配布サイト
-
-＊sakura.portalsites
-ほっとぺっぱぁ団
+配布元
 https://hotpepar.blogspot.com/
 
 
 ＊sakura.portalsites
 連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
+
+＊sakura.portalsites
+-
+
+＊sakura.portalsites
+追加シェル「マイリトルドールズ」
+https://seizonkakuninbasyo.web.fc2.com/
 
 
 ＊sakura.portalsites
