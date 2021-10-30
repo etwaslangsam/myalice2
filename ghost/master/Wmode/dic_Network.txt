@@ -1,0 +1,19 @@
+＃────────ネットワーク更新
+＊OnUpdateBegin
+\0\s[26]SNSの更新チェーック！\w5
+
+＊OnUpdateReady
+\0\s[5]あっ（Reference0）件の更新があった。
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[4]あれ？
+\_q（Reference0）\_qが間違ってる？
+
+＊OnUpdateComplete
+（when，（Reference0）==none，\0\s[24]つまんなーい！\w3 特に更新はないみたい。，\0\s[5]チェックおーわりっ！）（set,手動セーブ,実行）\e
+
+＊ネットワーク更新失敗
+\0\s[2]（Reference0）で失敗だって。\s[24]なんでぇ～？
+
+＊OnNetworkHeavy
+\0\s[4]う～ん重い……\e

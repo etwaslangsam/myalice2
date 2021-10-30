@@ -1,0 +1,31 @@
+＃────────ネットワーク更新
+＊OnUpdateBegin
+\0\s[106]更新の確認をします。\w5
+
+＊OnUpdateReady
+\0\s[100]（Reference0）件の更新があります。
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[100]\_q（Reference0）
+MD5不一致\_q\w3
+
+＊OnUpdateComplete	（Reference0）==changed
+＄手動セーブ	実行
+＄ほめてほしい	１
+＄ほめられなかったタイマ	３０
+\0\s[100]更新が終わりました。\e
+
+＊OnUpdateComplete	（Reference0）==none
+\0\s[103]更新はありませんでした‥‥。\e
+
+＊ネットワーク更新失敗
+\0（whenlist，（Reference0）==
+	，timeout，\s[103]タイムアウト‥‥しました。\w5\n少し時間を空けてから、試してみて下さい。
+	，md5 miss，\s[104]MD5が一致しませんでした‥‥。\w5\n製作者にご連絡ください。
+	，404，\s[102]404 NotFound\nサーバが‥‥見つかりませんでした。
+	，artificial，\s[106]更新を中断します。
+	，\s[104]ネットワーク更新に失敗しました。\w5\n理由は「（Reference0）」、だそうです。
+）\e
+
+＊OnNetworkHeavy
+\0\s[103]‥‥ネットワークが重たいようですね。\e

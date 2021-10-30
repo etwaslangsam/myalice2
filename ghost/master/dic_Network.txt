@@ -1,0 +1,53 @@
+＃────────ネットワーク更新
+＊OnUpdateBegin
+\0（エモ気づき）\s[26]ねっとわーく更新ね！ まっかせときなさい！
+\1\s[105]それでは開始しますね。\w6
+
+＊OnUpdateBegin
+\1（エモ気づき）\s[105]ネットワーク更新ですね。
+\0\s[5]は～い！\w6
+
+＊OnUpdateReady
+\0（エモ音符）\s[5]（Reference0）件の新着ね。\w5
+
+＊OnUpdateReady
+\1（エモ音符）\s[100]今回は（Reference0）件の更新ですね。\w5
+
+＊OnUpdate.OnDownloadBegin
+
+＊OnUpdate.OnMD5CompareBegin
+
+＊OnUpdate.OnMD5CompareComplete
+\0\s[0]\_q（Reference0）\_qは
+\_q（Reference2）\_qであってる？
+\1\s[100]\_q（Reference1）\_q
+だからあってます。\w5
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[0]\_q（Reference0）\_qは
+\_q（Reference2）\_qであってる？
+\1\s[104]\_q（Reference1）\_q
+だから違いますね。\w5
+
+
+＊OnUpdateComplete
+＄手動セーブ	実行
+＞更新（Reference0）
+
+＊ネットワーク更新失敗
+＞更新（Reference0）
+\0\s[4]よくわかんないけど失敗だって。\1\s[103]「（Reference0）」で失敗のようです。\e
+
+＊更新none
+\0\s[25]（エモ汗）ざんね～ん、更新ないって。\1\s[103]（エモ汗）気長に待つしかありませんね。\e
+＊更新changed
+\0（エモ気づき）\s[5]更新おっしま～い！\1\s[105]お疲れ様でしたアリスさん。\e
+
+＊更新timeout
+\0（エモ驚き）\s[2]あっ時間切れだって。\1（エモ汗）\s[103]時間をおいてからもう一度、試してみて下さい。\e
+＊更新md5 miss
+\0（エモ怒り）\s[7]う～っ！\w5 md5が合わないって！\1（エモあせあせ）\s[104]これは作者に報告してください。\e
+＊更新artificial
+\0（エモ？）\s[2]途中だけどやめちゃっていーの？\1\s[103]中止しました。\e
+＊更新404
+\0（エモ怒り）\s[24]404だってぇ～！\1（エモ落ち込み）\s[104]更新サーバが消失したようです。\e

@@ -1,0 +1,26 @@
+＃────────ネットワーク更新
+＊OnUpdateBegin
+\0\s[0]更新のチェックするよ。\w5
+
+＊OnUpdateReady
+\0\s[5]（Reference0）件の更新があるみたい。
+
+＊OnUpdate.OnMD5CompareFailure
+\0\s[4]あれ？
+\_q（Reference0）\_qが間違ってる？
+
+＊OnUpdateComplete
+＞ネットワーク更新なし	（Reference0）==none
+＄手動セーブ	実行
+\0\s[26]ネットワーク更新、終わったよ☆\e
+
+＊ネットワーク更新なし
+\0\s[3]更新なしだって。\e
+
+
+＊ネットワーク更新失敗
+\0\s[8]ざぁんね～ん。
+「（Reference0）」で失敗だってぇ。\e
+
+＊OnNetworkHeavy
+：\s[4]う～ん重い……\e
