@@ -222,26 +222,16 @@
 ＊OnMinuteChange	（compare,（喋り間隔）,０秒）==1
 ＞無言表情	（count,（現在分）,５）＞０||（count,（現在分）,０）＞０
 
-＊OnHourTimeSignal	（TimeSignal）==1
+＊OnHourTimeSignal
 ＄手動セーブ	実行
-（when，（Sender）==SSP，\![raise,時報B]，\![raise,時報A]）
+＞時報B	（Sender）==SSP&&（TimeSignal）==1
+＞時報A	（TimeSignal）==1
 
 ＊OnSurfaceRestore
 ＞戻ってきた	（compare,（Reference0）,-1）
-＞顔を洗う		（顔射）==1
-\1\s[（デフォルトサーフェス1）]（エモ消し）\![bind,カットイン,,0]\0\s[（デフォルトサーフェス0）]（エモ消し）\![bind,カットイン,,0]\e
-
-＊顔を洗う
-＞顔をあらう_B	（count、（辞書フォルダ）、Bmode）＞0
-＄顔射	0
-\1\s[106]ちょっと顔を洗ってきますね。\0\s[5]いってらっしゃ～い！\1\s[-1]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,カルピス,0]\e
-
-＊顔を洗う_B
-＄顔射	0
-\0\s[106]‥‥顔を洗ってきますね。\s[-1]\w9
-\c（times,6,・\n）
-\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,カルピス,0]
-\c（when，（count、（辞書フォルダ）、1st）==1，\s[100]，\s[105]）お待たせしました。\e
+＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
+\1\s[（デフォルトサーフェス1）]（エモ消し）\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]
+\0\s[（デフォルトサーフェス0）]（エモ消し）\![bind,カットイン,,0]\e
 
 ＃────────■選択肢
 ＊OnChoiceSelect
@@ -255,8 +245,8 @@
 ＞NoAnchor
 
 ＃────────■マウスイベント
-＊OnMouseDoubleClick	（Reference5）==0
-＞（Reference3）（Reference4）つつかれ
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
@@ -276,8 +266,8 @@
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
-＊OnMouseEnterAll	（Status）!=talking
-＞（Reference3）にフォーカス
+＊OnMouseEnterAll
+＞（Reference3）にフォーカス	（Status）!=talking
 
 ＊OnMouseGesture
 ＞（Reference0）（Reference4）上ころ	（Reference5）==up
@@ -370,5 +360,6 @@
 ＞ローター動作	（ローターモード）==1||（変数「あおもちゃ」の存在）==1
 ＞おねだり	（興奮度）＞0
 ＞トーク低好感度	（好感度B）＜0
+＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
 ＞（現在月）月	（乱数１～５）==３
 （）
