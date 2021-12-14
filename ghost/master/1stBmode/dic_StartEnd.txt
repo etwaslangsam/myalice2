@@ -115,7 +115,6 @@
 ＊OnGhostChanged
 ＄辞書フォルダ	1stBmode,Common
 ＞リロードした	（compare,（Reference0）,高千穂アリス）
-＄着せ替え抑制	
 ＞OnBoot
 
 ＊リロードした

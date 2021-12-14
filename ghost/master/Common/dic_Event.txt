@@ -267,7 +267,7 @@
 ＄（Reference3）（Reference4）見つめタイマ	
 
 ＊OnMouseEnterAll
-＞（Reference3）にフォーカス	（count，（Status），talking）==0
+＞（Reference3）にフォーカス	（Status）!=talking
 
 ＊OnMouseGesture
 ＞（Reference0）（Reference4）上ころ	（Reference5）==up
@@ -345,7 +345,7 @@
 ＄辞書リロード	実行
 \0\_q※リロードしました\_q\e
 
-＊snapshotが押された	（count，（Status），talking）==0
+＊snapshotが押された	（Status）!=talking
 （whenlist、1==
 	、（count，辞書フォルダ，1stW）\0\s[8]
 	、（count，辞書フォルダ，1stB）\0\s[103]

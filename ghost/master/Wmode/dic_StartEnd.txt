@@ -80,7 +80,6 @@
 ＄辞書フォルダ	Wmode,Common
 ＞アリスから変更	（compare,（Reference0）,高千穂アリス）
 ＞（Reference0）から変更
-＄着せ替え抑制	
 ＞OnBoot
 
 ＊アリスから変更

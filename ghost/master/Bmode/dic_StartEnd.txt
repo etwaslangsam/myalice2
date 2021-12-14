@@ -299,7 +299,6 @@
 ＊OnGhostChanged
 ＄辞書フォルダ	Bmode,Common
 ＞アリスから変更	（compare,（Reference0）,高千穂アリス）
-＄着せ替え抑制	
 ＞OnBoot
 
 ＊アリスから変更
