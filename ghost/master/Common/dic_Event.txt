@@ -86,7 +86,7 @@
 	，（when、（Reference2）==1、（set,ア（Reference3）,（Reference1））、（set,ア（Reference3）,））
 	，（when、（Reference2）==1、（set,あ（Reference3）,（Reference1））、（set,あ（Reference3）,））
 ）（set,手動セーブ,実行）
-＞着せ替え反応	（着せ替え抑制）==0
+＞着せ替え反応	（count，（Status），talking）==0
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、B）
 （when，（Reference2）==1，（set,あ（Reference3）,（Reference1）），（set,あ（Reference3）,））（when，（あ衣装）==全裸，（set,全裸状態,1），（set,全裸状態,））
@@ -101,11 +101,11 @@
 	、でかパーカー、（set,今日のパンツ,（パンツ種類））
 	、（set,今日のパンツ,）
 ）（set,手動セーブ,実行）
-＞着せ替え反応		（着せ替え抑制）==0
+＞着せ替え反応	（count，（Status），talking）==0
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、W）
 （when，（Reference2）==1，（set,ア（Reference3）,（Reference1）），（set,ア（Reference3）,））（set,手動セーブ,実行）
-＞着せ替え反応		（着せ替え抑制）==0
+＞着せ替え反応	（count，（Status），talking）==0
 
 ＃────────web拍手
 ＊OnWebClap
