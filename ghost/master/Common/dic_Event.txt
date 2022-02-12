@@ -91,7 +91,7 @@
 ＊OnDressupChanged		（count、（辞書フォルダ）、B）
 （when，（Reference2）==1，（set,あ（Reference3）,（Reference1）），（set,あ（Reference3）,））
 （when，（あ衣装）==全裸，（set,全裸状態,1），（set,全裸状態,））
-（when，（Reference3）==衣装，（set,今日のパンツ,（パンツ種類）））
+（when，（Reference3）==衣装，（set,今日のパンツ,（パンツの色）（パンツ種類）））
 （whenlist，（あ衣装）==，くノ一，（set,今日のパンツ,褌），お祭り褌，（set,今日のパンツ,褌））
 （when，（パンツ不要判定）＞0，（set,今日のパンツ,））
 （when，（Reference1）_（Reference2）==ローター_1，（set,デフォルトサーフェス0,138）（set,一時保存,（喋り間隔））（set,喋り間隔,１５秒））
