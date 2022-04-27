@@ -36,29 +36,39 @@
 \0\_q‚¢‚ÜƒÓFi’‚èŠÔŠuj\n[half]
  \![*]\q[‚R‚O•b,‚R‚O•b‚²‚Æ]^\q[‚U‚O•b,‚U‚O•b‚²‚Æ]^\q[‚X‚O•b,‚X‚O•b‚²‚Æ]\n[half]
  \![*]\q[‚P‚Q‚O•b,‚P‚Q‚O•b‚²‚Æ]^\q[‚P‚T‚O•b,‚P‚T‚O•b‚²‚Æ]^\q[‚P‚W‚O•b,‚P‚W‚O•b‚²‚Æ]\n[half]
- \![*]\q[Ã‚©‚É,TILevel0]\n
+ \![*]\q[©—R‚É,VariableIntervalChange] \q[Ã‚©‚É,TILevel0]\n
  \q[‚È‚ñ‚Å‚à‚È‚¢‚æ,Cancel]
 \_q\e
 
 –‚R‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚R‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚R‚O•b
+„’‚è•p“xŒˆ’è
 –‚U‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚U‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚U‚O•b
+„’‚è•p“xŒˆ’è
 –‚X‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚X‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚X‚O•b
+„’‚è•p“xŒˆ’è
 –‚P‚Q‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚P‚Q‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚P‚Q‚O•b
+„’‚è•p“xŒˆ’è
 –‚P‚T‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚P‚T‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚P‚T‚O•b
+„’‚è•p“xŒˆ’è
 –‚P‚W‚O•b‚²‚Æ
-iset,’‚èŠÔŠu,‚P‚W‚O•bj\![raise,’‚è•p“xŒˆ’è]
+’‚èŠÔŠu	‚P‚W‚O•b
+„’‚è•p“xŒˆ’è
 
 –’‚è•p“xŒˆ’è
-iset,’‚èŠÔŠuŒë·,‚T“jiset,ˆê•Û‘¶,i’‚èŠÔŠujjiset,è“®ƒZ[ƒu,Àsj
+’‚èŠÔŠuŒë·	‚T“
+ˆê•Û‘¶	i’‚èŠÔŠuj
+è“®ƒZ[ƒu	Às
 \0\s[5]i’‚èŠÔŠuj‚É•ÏX‚µ‚½‚æI\e
 
 –TILevel0
-iset,’‚èŠÔŠu,‚O•bjiset,ˆê•Û‘¶,i’‚èŠÔŠujjiset,è“®ƒZ[ƒu,Àsj
+’‚èŠÔŠu	‚O•b
+ˆê•Û‘¶	i’‚èŠÔŠuj
+è“®ƒZ[ƒu	Às
 \0\s[24]‚¦`A‚¹‚Á‚©‚­“ñl‚«‚è‚È‚Ì‚É‚¡B\e
 
 –VariableIntervalChange
