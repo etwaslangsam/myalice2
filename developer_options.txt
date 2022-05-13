@@ -12,3 +12,4 @@ shell/kero_cat/,nonar,noupdate
 shell/bustup/,nonar,noupdate
 shell/tuugakuro/,nonar,noupdate
 shell/tuugakuro+/,nonar,noupdate
+ghost/master/1stBmode/dic_play2.txt,nonar,noupdate

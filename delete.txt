@@ -1,1 +1,2 @@
 .gitignore
+ghost\master\1stBmode\dic_play2.txt
