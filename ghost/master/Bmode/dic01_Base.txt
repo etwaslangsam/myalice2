@@ -115,7 +115,7 @@
 \0\s[105]\cおまたせしました。\e
 
 ＃────────■マウスイベント
-＊OnMouseEnter	（Status）!=talking
+＊OnMouseEnter	（count，（Status），talking）==0
 （when,（Reference4）==Bust,\0\s[127]\e）
 
 ＃────────■インストール
