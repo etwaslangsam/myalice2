@@ -114,10 +114,6 @@
 ＊戻ってきた
 \0\s[105]\cおまたせしました。\e
 
-＃────────■マウスイベント
-＊OnMouseEnter	（count，（Status），talking）==0
-（when,（Reference4）==Bust,\0\s[127]\e）
-
 ＃────────■インストール
 ＊OnInstallBegin
 \0（エモ！）\s[100]インストールを開始します。

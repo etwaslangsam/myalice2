@@ -284,9 +284,6 @@
 ＊OnMouseLeave
 ＄（Reference3）（Reference4）見つめタイマ	
 
-＊OnMouseEnterAll
-＞（Reference3）にフォーカス	（count，（Status），talking）==0
-
 ＊OnMouseGesture
 ＞（Reference0）（Reference4）上ころ	（Reference5）==up
 ＞（Reference0）（Reference4）下ころ	（Reference5）==down
