@@ -17,6 +17,7 @@
 ＄バッテリ残量	
 ＄充電状況	
 ＄デフォルトサーフェス10	
+＄なでられ時実行イベント	
 
 ＊ResetFlags
 ＄着せ替え抑制	
@@ -48,7 +49,6 @@
 【呼び方】（when，（count、（辞書フォルダ）、Bmode）==1，（ユーザ名B），（ユーザ名C））
 【好感度】（when，（好感度B）＞120，120，（好感度B））
 【パンツ】（今日のパンツ）
-【興奮度】（whenlist，（興奮度）＞，６，パンツがぐっしょり濡れている，４，パンツにシミが出来てきた，平常）
 \n\q[←,Menu]　\q[×,Cancel]
 \_q\e
 
@@ -265,7 +265,6 @@
 ＊OnMouseDoubleClick
 ＞ありすつつかれ	（Reference5）==0&&（count，（辞書フォルダ），Bmode）==1
 ＞（Reference3）（Reference4）つつかれ	（Reference5）==0
-
 
 ＊OnMouseDownEx
 ＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
