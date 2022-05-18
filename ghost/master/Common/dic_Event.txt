@@ -269,7 +269,6 @@
 
 ＃────────■マウスイベント
 ＊OnMouseDoubleClick
-＞ありすつつかれ	（Reference5）==0&&（count，（辞書フォルダ），Bmode）==1
 ＞（Reference3）（Reference4）つつかれ	（Reference5）==0
 
 ＊OnMouseDownEx
