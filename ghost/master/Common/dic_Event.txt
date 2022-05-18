@@ -236,8 +236,8 @@
 ＞入力中止
 
 ＃────────時間イベント
-＊OnMinuteChange	（compare,（喋り間隔）,０秒）==1
-＞無言表情	（count,（現在分）,５）＞０||（count,（現在分）,０）＞０
+＃＊OnMinuteChange
+
 
 ＊OnHourTimeSignal
 ＄手動セーブ	実行
