@@ -36,7 +36,7 @@
 \0\_q‚¢‚ÜƒÓFi’‚èŠÔŠuj\n[half]
  \![*]\q[‚R‚O•b,‚R‚O•b‚²‚Æ]^\q[‚U‚O•b,‚U‚O•b‚²‚Æ]^\q[‚X‚O•b,‚X‚O•b‚²‚Æ]\n[half]
  \![*]\q[‚P‚Q‚O•b,‚P‚Q‚O•b‚²‚Æ]^\q[‚P‚T‚O•b,‚P‚T‚O•b‚²‚Æ]^\q[‚P‚W‚O•b,‚P‚W‚O•b‚²‚Æ]\n[half]
- \![*]\q[©—R‚É,VariableIntervalChange] \q[Ã‚©‚É,TILevel0]\n
+ \![*]\q[©—R‚É,VariableIntervalChange] \![*]\q[Ã‚©‚É,TILevel0]\n
  \q[‚È‚ñ‚Å‚à‚È‚¢‚æ,Cancel]
 \_q\e
 
@@ -69,7 +69,7 @@
 ’‚èŠÔŠu	‚O•b
 ˆê•Û‘¶	i’‚èŠÔŠuj
 è“®ƒZ[ƒu	Às
-\0\s[24]‚¦`A‚¹‚Á‚©‚­“ñl‚«‚è‚È‚Ì‚É‚¡B\e
+\0\s[24]‚¦`A‚¨‚µ‚á‚×‚è‚µ‚È‚¢‚ÌH\e
 
 –VariableIntervalChange
 VariableInterval	
