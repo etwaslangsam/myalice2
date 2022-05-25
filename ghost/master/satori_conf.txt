@@ -30,6 +30,9 @@
 ＄あA経験	0
 ＄あ自慰経験	10
 ＄あ奉仕経験	0
+＄アA経験	0
+＄アB経験	0
+＄アV経験	0
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
