@@ -236,8 +236,8 @@
 ＞入力中止
 
 ＃────────時間イベント
-＃＊OnMinuteChange
-
+＊OnMinuteChange
+＄1B_一緒に寝る	
 
 ＊OnHourTimeSignal
 ＄手動セーブ	実行
