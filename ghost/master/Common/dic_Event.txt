@@ -365,6 +365,9 @@
 ＄辞書リロード	実行
 \0\_q※リロードしました\_q\e
 
+＊aが押された
+＞話しかける
+
 ＊snapshotが押された	（count，（Status），talking）==0
 （whenlist、1==
 	、（count，辞書フォルダ，1stW）\0\s[8]
