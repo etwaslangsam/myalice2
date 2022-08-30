@@ -46,6 +46,13 @@
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 
+＠menu.sidebar.bitmap.filename
+（whenlist，1==
+	，（count、（辞書フォルダ）、B），/Common/sb1_b.png
+	，（count、（辞書フォルダ）、W），/Common/sb1_w.png
+，/Common/sb1.png
+）
+
 ＠menu.background.bitmap.filename
 （when，（count、（辞書フォルダ）、B）==1
 	，bgm1.png
