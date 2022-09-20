@@ -214,7 +214,7 @@
 
 ＃────────入力系
 ＊OnCommunicate
-≫「　（Reference1）	（compare,（Reference0）,user）
+≫「　（Reference1）	（equal,（Reference0）,user）
 ＞（話しかけ）該当なし
 
 ＊OnUserInput
@@ -373,7 +373,7 @@
 ＊OnTalk
 ＞（Reference1）	（Reference0）
 ＞ローター動作	（ローターモード）==1||（変数「あおもちゃ」の存在）==1
-＞おねだり	（興奮度）＞0
+＞おねだり	（興奮度）＞6
 ＞トーク低好感度	（好感度B）＜0
 ＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
 ＞（現在月）月	（乱数１～５）==３
