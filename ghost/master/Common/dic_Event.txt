@@ -91,17 +91,8 @@
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、B）
 （when，（Reference2）==1，（set,あ（Reference3）,（Reference1）），（set,あ（Reference3）,））
-（when，（あ衣装）==全裸，（set,全裸状態,1），（set,全裸状態,））
-（when，（Reference3）==衣装，（set,今日のパンツ,（パンツの色）（パンツ種類）））
-（whenlist，（あ衣装）==，くノ一，（set,今日のパンツ,褌），お祭り褌，（set,今日のパンツ,褌））
-（when，（パンツ不要判定）＞0，（set,今日のパンツ,））
-（when，（Reference1）_（Reference2）==ローター_1，（set,デフォルトサーフェス0,138）（set,一時保存,（喋り間隔））（set,喋り間隔,１５秒））
-（when，（Reference1）_（Reference2）==ローター_0，（set,デフォルトサーフェス0,100）（set,喋り間隔,（一時保存）））
-（set,手動セーブ,実行）
+（set,今日のパンツ,（パンツの色）（パンツ種類））（set,手動セーブ,実行）
 ＞着せ替え反応	（count，（Status），talking）==0
-
-＠パンツ不要判定
-（count，x全裸xスク水x旧スク水x新スク水xヒモ水着x水着xランジェリーxくまちゃんx，x（あ衣装）x）
 
 ＊OnDressupChanged		（count、（辞書フォルダ）、W）
 （when，（Reference2）==1，（set,ア（Reference3）,（Reference1）），（set,ア（Reference3）,））（set,手動セーブ,実行）
