@@ -33,6 +33,10 @@
 ＄アA経験	0
 ＄アB経験	0
 ＄アV経験	0
+＄score_絶頂	0
+＄score_射精	0
+＄score_ぶっかけ	0
+＄score_口内射精	0
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
