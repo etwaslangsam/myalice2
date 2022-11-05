@@ -1,5 +1,6 @@
 ＃────────起動
 ＊OnBoot
+＄clear_初回起動	1
 ＄辞書フォルダ	Bmode,Common
 ＄現在シェル	（Reference0）
 ＄今日のパンツ	（パンツの色）（パンツ種類）

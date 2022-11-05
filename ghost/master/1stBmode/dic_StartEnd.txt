@@ -1,5 +1,6 @@
 ＃────────起動
 ＊OnBoot
+＄clear_初回起動	1
 ＄辞書フォルダ	1stBmode,Common
 ＄現在シェル	（Reference0）
 ＄話しかけ	ありすに
