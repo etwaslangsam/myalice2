@@ -37,6 +37,7 @@
 score_Ë¸	0
 score_‚Ô‚Á‚©‚¯	0
 score_Œû“àË¸	0
+score_ƒpƒ“ƒc‚Ô‚Á‚©‚¯	0
 —SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
