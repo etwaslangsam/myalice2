@@ -14,7 +14,6 @@
 （エモ閃き）	\![bind,エモ,閃き,1]
 （エモ落ち込み）	\![bind,エモ,落ち込み,1]
 （エモ消し）	\![bind,エモ,,0]
-（ぶっかけ）	\![bind,カルピス,カルピス,1]（set,顔射,1）
 （痙攣）	（times、5、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
 （ピク）	（times、1、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
 （ピクピク）	（times、2、\![move,3,fix,30,me]\![move,-3,fix,30,me]）
