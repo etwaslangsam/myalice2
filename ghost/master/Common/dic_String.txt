@@ -80,13 +80,13 @@ https://raw.githubusercontent.com/etwaslangsam/myalice2/master/
 
 ＃────────■おすすめ
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
-スヌーピー公式サイト
-https://www.snoopy.co.jp/
+スヌーピー公式
+https://twitter.com/snoopyjapan
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
-ムーミン公式サイト
-http://moomin.co.jp/
+ムーミン公式
+https://twitter.com/moomin_jp
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
@@ -94,22 +94,22 @@ http://moomin.co.jp/
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 サーティーワン アイスクリーム
-http://www.31ice.co.jp/
+https://twitter.com/BR31_Icecream
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 セブンティーンアイス
-https://cp.glico.com/17ice/
+https://twitter.com/17iceJP
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 ミスタードーナツ
-http://www.misterdonut.jp/
+https://twitter.com/misterdonut_jp
 
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==0
 ぷっちょ公式
-http://puccho.jp/
+https://twitter.com/pucchokun
 
 ＊sakura.recommendsites	（count、（辞書フォルダ）、B）==1
 僕たち男の娘！
