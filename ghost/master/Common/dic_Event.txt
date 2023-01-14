@@ -124,53 +124,62 @@
 
 ＃────────web拍手
 ＊OnWebClap
-\![open,inputbox,拍手送信内容,,--limit=996]
-\0\_q※メッセージを入力してください。\n996文字まで送信可能です。\_q\e
+\![open,inputbox,拍手送信内容,,--limit=800]
+\0\_q※メッセージを入力してください。\n800文字まで送信可能です。\_q\e
 
 ＊拍手送信内容を教えてもらった
+＄送信内容	（Reference1）
 \0\_q（拍手送信内容）\_q
 \1（この内容で送信します）
 \_q
 \![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容が空打ちされた]
 \_q\e
 
+＠WCM_URL
+https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9_wwskSn9l1oAAaN216XusA9siAX/exec
+＠送信元
+アリス
+
 ＊SendClap
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリス＠（拍手送信内容）",--async=webclap]
+＄メモ	手動
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（送信内容）;（メモ）",--async=webclap]
 ＄拍手送信内容	
 
-＊簡易拍手1
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠いいね！",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手2
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠好き",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手3
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（アリスver判定）＠かわいい",--async=webclap]
-＄拍手送信内容	
+＊簡易拍手4
+＄メモ	通常
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;二人とも好き;（メモ）",--async=webclap]
+＊簡易拍手5
+＄メモ	通常
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;二人ともかわいい;（メモ）",--async=webclap]
+
 
 ＠アリスver判定
 （when，（count、（辞書フォルダ）、1stWmode）==1，アリス1，アリス）
 
-＊簡易拍手4
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリスとありす＠二人とも好き",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手5
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="アリスとありす＠二人ともかわいい",--async=webclap]
-＄拍手送信内容	
+＊簡易拍手1
+＄メモ	（アリスver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;いいね！;（メモ）",--async=webclap]
+＊簡易拍手2
+＄メモ	（アリスver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;好き;（メモ）",--async=webclap]
+＊簡易拍手3
+＄メモ	（アリスver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;かわいい;（メモ）",--async=webclap]
 
-
-＊簡易拍手6
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠気持ちよかったよ",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手7
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠好きだ",--async=webclap]
-＄拍手送信内容	
-＊簡易拍手8
-\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="（ありすver判定）＠かわいい",--async=webclap]
-＄拍手送信内容	
 
 ＠ありすver判定
 （when，（count、（辞書フォルダ）、1stBmode）==1，ありす1，ありす）
+
+＊簡易拍手6
+＄メモ	（ありすver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;気持ちよかったよ;（メモ）",--async=webclap]
+＊簡易拍手7
+＄メモ	（ありすver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;好きだ;（メモ）",--async=webclap]
+＊簡易拍手8
+＄メモ	（ありすver判定）
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;かわいい;（メモ）",--async=webclap]
+
 
 ＊拍手送信内容が空打ちされた
 ＄拍手送信内容	
