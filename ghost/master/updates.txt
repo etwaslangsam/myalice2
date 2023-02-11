@@ -43,7 +43,7 @@ file,ghost/master/1stWmode/dic_FirstBoot.txt95db0c692c580810663d939f386356f8si
 file,ghost/master/1stWmode/dic_Kisekae.txtb831bdb0f2861dd085f189098d3a9c3fsize=1387
 file,ghost/master/1stWmode/dic_Menue.txt59b25a3c747d9e649edea9365cb99c3dsize=3970
 file,ghost/master/1stWmode/dic_Network.txt390bae53c942c106204fb65969e5eaa9size=549
-file,ghost/master/1stWmode/dic_Scenario.txt70f12aa0e211cea59f5c91b751a5c6a9size=7947
+file,ghost/master/1stWmode/dic_Scenario.txt4dd06d7466468f28bbba6c94e6cf3b3csize=8147
 file,ghost/master/1stWmode/dic_StartEnd.txta1ed178b9082f3a56b73b1bd0e4c3e35size=2649
 file,ghost/master/Bmode/dic01_Base.txteaf6e8b89be7c8a859722593e2b78948size=8059
 file,ghost/master/Bmode/dic03_Touch.txta6b7828d61d700e0449561b545bcf571size=4228
