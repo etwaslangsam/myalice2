@@ -137,19 +137,21 @@
 
 ＠WCM_URL
 https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9_wwskSn9l1oAAaN216XusA9siAX/exec
-＠送信元
-アリス
+
 
 ＊SendClap
+＄送信元	僕のアリス2nd
 ＄メモ	手動
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（送信内容）;（メモ）",--async=webclap]
 ＄拍手送信内容	
 
 ＊簡易拍手4
-＄メモ	通常
+＄送信元	アリスとありす
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;二人とも好き;（メモ）",--async=webclap]
 ＊簡易拍手5
-＄メモ	通常
+＄送信元	アリスとありす
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;二人ともかわいい;（メモ）",--async=webclap]
 
 
@@ -157,13 +159,16 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 （when，（count、（辞書フォルダ）、1stWmode）==1，アリス1，アリス）
 
 ＊簡易拍手1
-＄メモ	（アリスver判定）
+＄送信元	（アリスver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;いいね！;（メモ）",--async=webclap]
 ＊簡易拍手2
-＄メモ	（アリスver判定）
+＄送信元	（アリスver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;好き;（メモ）",--async=webclap]
 ＊簡易拍手3
-＄メモ	（アリスver判定）
+＄送信元	（アリスver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;かわいい;（メモ）",--async=webclap]
 
 
@@ -171,13 +176,16 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 （when，（count、（辞書フォルダ）、1stBmode）==1，ありす1，ありす）
 
 ＊簡易拍手6
-＄メモ	（ありすver判定）
+＄送信元	（ありすver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;気持ちよかったよ;（メモ）",--async=webclap]
 ＊簡易拍手7
-＄メモ	（ありすver判定）
+＄送信元	（ありすver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;好きだ;（メモ）",--async=webclap]
 ＊簡易拍手8
-＄メモ	（ありすver判定）
+＄送信元	（ありすver判定）
+＄メモ	定型
 \![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;かわいい;（メモ）",--async=webclap]
 
 
