@@ -1,9 +1,19 @@
-
+＃────────コミュニケート
 ＊話しかける
 \![open,communicatebox]
 \0\_q
 ※名前を呼んだり好意を伝える用です
 \_q\e
+
+＊アリスに該当なし
+\0\s[4]（エモ落ち込み）ん～、よくわかんない‥‥。\e
+＊アリスに該当なし
+\0\s[3]（エモ落ち込み）え～‥‥？\e
+＊アリスに該当なし
+\0\s[8]（エモ？）（ユーザ名）はどう思う？\e
+
+＊OnCommunicateInputCancel
+\0\s[5]（エモ気づき）ん！\e
 
 ＊「　アリス
 ＞名前を呼ぶ
@@ -71,6 +81,45 @@
 ＊コミュ_愛してる
 \0\s[36]もっと、もっと言って（はーと）\e
 
+＊「　好きな　は？
+＞好きなアイス	（count，（Reference1），アイス）
+＞好きな食べ物	（count，（Reference1），食べ物）||（count，（Reference1），たべもの）
+\0\s[26]ひ・み・つ（はーと）\e
+
+＊好きなアイス
+\0\s[5]（フレーバー）！\e
+＊好きな食べ物
+\0\s[5]サーティワンのアイスクリームとチュッパチャップスが好き！\e
+
+＊「　したい　しよう
+＞コミュ_ペロペロしたい	（count，（Reference1），ペロペロ）||（count，（Reference1），ぺろぺろ）
+＞コミュ_えっちしたい	（count，（Reference1），えっち）||（count，（Reference1），エッチ）
+＞コミュ_セックスしたい	（count，（Reference1），セックス）||（count，（Reference1），SEX）
+＞コミュ_結婚したい	（count，（Reference1），結婚）
+＞コミュ_イチャイチャしたい	（count，（Reference1），イチャイチャ）
+＞コミュ_お医者さんごっこしたい	（count，（Reference1），お医者さんごっこ）
+＞コミュ_お風呂で洗いっこしたい	（count，（Reference1），お風呂）||（count，（Reference1），洗いっこ）
+＞コミュ_キスしたい	（count，（Reference1），キス）
+＞コミュ_ちゅーしたい	（count，（Reference1），ちゅー）||（count，（Reference1），チュー）
+＞したい_該当なし
+
+＊したい_該当なし
+\0\s[3]アタシはそういう気分じゃないなぁ～。\e
+＊したい_該当なし
+\0\s[0]ん～、また今度ね。\e
+
+＊「　して　してほしい
+＞コミュ_えっちしたい	（count，（Reference1），えっち）||（count，（Reference1），エッチ）
+＞コミュ_セックスしたい	（count，（Reference1），セックス）||（count，（Reference1），SEX）
+＞コミュ_結婚したい	（count，（Reference1），結婚）
+＞コミュ_キスしたい	（count，（Reference1），キス）
+＞コミュ_ちゅーしたい	（count，（Reference1），ちゅー）||（count，（Reference1），チュー）
+＞してほしい_該当なし
+
+＊してほしい_該当なし
+\0\s[3]え～、やり方わかんない。\e
+＊してほしい_該当なし
+\0\s[31]やだ‥‥。\e
 
 ＃────────
 ＊Communication

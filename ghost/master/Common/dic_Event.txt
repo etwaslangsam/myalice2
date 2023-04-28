@@ -291,8 +291,12 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 ＊OnAnchorSelectEx
 ＄選択ＩＤ	（Reference1）
 ＄選択ラベル	（Reference0）
+＞OnAnchorSelect.URL	（compare_head,（Reference1）,http://）||（compare_head,（Reference1）,https://）
 ＞（Reference1）
 ＞NoAnchor
+
+＊OnAnchorSelect.URL
+\0\j[（Reference1）]
 
 ＊OnAnchorSelect
 ＄選択ＩＤ	（Reference0）
