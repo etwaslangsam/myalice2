@@ -293,51 +293,51 @@ surface.append1,9,32-43
 
 surface.append0-9,24-43
 {
-	animation4.interval,bind
+	animation4.interval,never
 	animation4.pattern0,overlay,501,0,0,0
 	animation4.pattern1,overlay,-1,3000,0,0
 
-	animation6.interval,bind
+	animation6.interval,never
 	animation6.pattern0,overlay,503,0,0,0
 	animation6.pattern1,overlay,-1,3000,0,0
 	
-	animation7.interval,bind
+	animation7.interval,never
 	animation7.pattern0,overlay,504,0,0,0
 	animation7.pattern1,overlay,-1,3000,0,0
 
-	animation8.interval,bind
+	animation8.interval,never
 	animation8.pattern0,overlay,505,0,0,0
 	animation8.pattern1,overlay,-1,3000,0,0
 
-	animation9.interval,bind
+	animation9.interval,never
 	animation9.pattern0,overlay,506,0,0,0
 	animation9.pattern1,overlay,-1,3000,0,0
 
-	animation10.interval,bind
+	animation10.interval,never
 	animation10.pattern0,overlay,507,0,0,0
 	animation10.pattern1,overlay,-1,3000,0,0
 
-	animation11.interval,bind
+	animation11.interval,never
 	animation11.pattern0,overlay,508,0,0,0
 	animation11.pattern1,overlay,-1,3000,0,0
 
-	animation12.interval,bind
+	animation12.interval,never
 	animation12.pattern0,overlay,509,0,0,0
 	animation12.pattern1,overlay,-1,3000,0,0
 
-	animation13.interval,bind
+	animation13.interval,never
 	animation13.pattern0,overlay,510,0,0,0
 	animation13.pattern1,overlay,-1,3000,0,0
 
-	animation14.interval,bind
+	animation14.interval,never
 	animation14.pattern0,overlay,511,0,0,0
 	animation14.pattern1,overlay,-1,3000,0,0
 
-	animation15.interval,bind
+	animation15.interval,never
 	animation15.pattern0,overlay,512,0,0,0
 	animation15.pattern1,overlay,-1,3000,0,0
 
-	animation16.interval,bind
+	animation16.interval,never
 	animation16.pattern0,overlay,513,0,0,0
 	animation16.pattern1,overlay,-1,3000,0,0
 
