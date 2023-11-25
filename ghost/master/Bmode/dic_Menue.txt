@@ -123,7 +123,7 @@
 \0\_q\q[©,Menu]@\q[~,Cancel]\n[half]
  \![*]\q[‘½‚ß‚Éi‚U‚O•bj,‚U‚O•b‚²‚Æ]
  \![*]\q[•’Ê‚Éi‚P‚W‚O•bj,‚P‚W‚O•b‚²‚Æ]
- \![*]\q[­‚È‚ß‚Éi‚T‚O‚O•bj,‚T‚O‚O•b‚²‚Æ]\n[half]
+ \![*]\q[­‚È‚ß‚Éi‚R‚O‚O•bj,‚R‚O‚O•b‚²‚Æ]\n[half]
  \![*]\q[•b”Žw’è,•b”Žw’è]\n[half]
  \![*]\q[Ã‚©‚É,TILevel0]
 \_q\e
@@ -144,8 +144,8 @@
 \0\s[100]•’Êdd\w5‚Å‚·‚©H\w5
 \s[124]‚Å‚ÍAŽ„‚ÌŽv‚¤•’Ê‚Å’‚ç‚¹‚Ä‚à‚ç‚¢‚Ü‚·B\e
 
-–‚T‚O‚O•b‚²‚Æ
-’‚èŠÔŠu	‚T‚O‚O•b
+–‚R‚O‚O•b‚²‚Æ
+’‚èŠÔŠu	‚R‚O‚O•b
 ’‚èŠÔŠuŒë·	‚P‚O“
 ˆêŽž•Û‘¶	i’‚èŠÔŠuj
 Žè“®ƒZ[ƒu	ŽÀs

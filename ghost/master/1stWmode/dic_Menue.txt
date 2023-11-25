@@ -80,7 +80,7 @@
 \0\_q\q[©,Menu]@\q[~,Cancel]\n[half]
  \![*]\q[‚½‚­‚³‚ñi‚U‚O•bj,‚U‚O•b‚²‚Æ]
  \![*]\q[‚Ó‚Â‚¤i‚P‚W‚O•bj,‚P‚W‚O•b‚²‚Æ]
- \![*]\q[‚·‚­‚È‚ßi‚T‚O‚O•bj,‚T‚O‚O•b‚²‚Æ]\n[half]
+ \![*]\q[‚·‚­‚È‚ßi‚R‚O‚O•bj,‚R‚O‚O•b‚²‚Æ]\n[half]
  \![*]\q[•b”Žw’è,•b”Žw’è]\n[half]
  \![*]\q[‚µ‚¸‚©‚É‚·‚é,TILevel0]
 \_q\e
@@ -100,8 +100,8 @@
 Žè“®ƒZ[ƒu	ŽÀs
 \0\s[0]‚ñ‚¶‚áA‚Ü‚ ƒeƒLƒg[‚ÉB\e
 
-–‚T‚O‚O•b‚²‚Æ
-’‚èŠÔŠu	‚T‚O‚O•b
+–‚R‚O‚O•b‚²‚Æ
+’‚èŠÔŠu	‚R‚O‚O•b
 ’‚èŠÔŠuŒë·	‚P‚O“
 ˆêŽž•Û‘¶	i’‚èŠÔŠuj
 Žè“®ƒZ[ƒu	ŽÀs

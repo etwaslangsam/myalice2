@@ -8,9 +8,6 @@ version,1
 surface100 
 {
 
-animation1.interval,rarely
-animation1.pattern0,base,106,70,0,0
-animation1.pattern1,base,-1,80,0,0
 }
 
 surface101
@@ -19,7 +16,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye101.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth103.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface102
@@ -80,7 +76,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye101.png,0,0
 element2,overlay,mayu102.png,0,0
 element3,overlay,mouth102.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface124
@@ -103,7 +98,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye103.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth105.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface127
@@ -111,7 +105,6 @@ surface127
 element0,base,surface100.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth105.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface128
@@ -120,7 +113,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye102.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth102.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface129
@@ -129,7 +121,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye104.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth102.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface130
@@ -138,7 +129,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye103.png,0,0
 element2,overlay,mayu102.png,0,0
 element3,overlay,mouth104.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface131
@@ -146,7 +136,6 @@ surface131
 element0,base,surface100.png,0,0
 element1,overlay,eye105.png,0,0
 element2,overlay,mouth105.png,0,0
-element3,overlay,sekimen.png,0,0
 }
 
 surface132
@@ -154,7 +143,6 @@ surface132
 element0,base,surface100.png,0,0
 element1,overlay,eye106.png,0,0
 element2,overlay,mouth105.png,0,0
-element3,overlay,sekimen.png,0,0
 }
 
 surface133
@@ -163,7 +151,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye106.png,0,0
 element3,overlay,mayu101.png,0,0
 element4,overlay,mouth102.png,0,0
-element5,overlay,sekimen.png,0,0
 }
 
 surface134
@@ -172,7 +159,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye103.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth102.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface135
@@ -181,7 +167,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye104.png,0,0
 element2,overlay,mayu102.png,0,0
 element3,overlay,mouth104.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface136
@@ -190,7 +175,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye102.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth105.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 surface137
@@ -199,7 +183,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye106.png,0,0
 element3,overlay,mayu101.png,0,0
 element4,overlay,mouth104.png,0,0
-element5,overlay,sekimen.png,0,0
 }
 
 surface138
@@ -208,7 +191,6 @@ element0,base,surface100.png,0,0
 element1,overlay,eye101.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth101.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
 
@@ -218,77 +200,71 @@ element0,base,surface100.png,0,0
 element1,overlay,eye102.png,0,0
 element2,overlay,mayu101.png,0,0
 element3,overlay,mouth103.png,0,0
-element4,overlay,sekimen.png,0,0
 }
 
-surface500
+//アニメーション//
+うるうる
+surface.append127
 {
-
+	animation99.interval,always
+	animation99.pattern0,overlay,162,100,0,0
+	animation99.pattern1,overlay,-1,100,0,0
 }
 
-surface501
+瞬き1
+surface.append100,103,127
 {
-
+	animation100.interval,rarely
+	animation100.pattern0,overlay,160,70,0,0
+	animation100.pattern1,overlay,161,70,0,0
+	animation100.pattern2,overlay,-1,80,0,0
 }
 
-surface502
+瞬き2
+surface.append107-109,131-133,137-138
 {
-
+	animation100.interval,rarely
+	animation100.pattern0,overlay,160,70,0,0
+	animation100.pattern1,overlay,-1,80,0,0
 }
 
-surface503
+口パク1
+surface.append100,103-104,106,130,135,137-138
 {
-
+	animation101.interval,talk,1
+	animation101.pattern0,overlay,170,70,0,0
+	animation101.pattern1,overlay,-1,80,0,0
 }
 
-surface504
+口パク2
+surface.append101,105,139
 {
-
+	animation101.interval,talk,1
+	animation101.pattern0,overlay,171,70,0,0
+	animation101.pattern1,overlay,-1,80,0,0
 }
 
-surface505
+口パク3
+surface.append102,107,109,125,128-129,133-134
 {
-
+	animation101.interval,talk,1
+	animation101.pattern0,overlay,172,70,0,0
+	animation101.pattern1,overlay,-1,80,0,0
 }
 
-surface506
+口パク4
+surface.append108,124,126,131-132,136
 {
-
+	animation101.interval,talk,1
+	animation101.pattern0,overlay,173,70,0,0
+	animation101.pattern1,overlay,-1,80,0,0
 }
 
-surface507
+赤面
+surface.append101,109,126-139
 {
-
-}
-
-surface508
-{
-
-}
-
-surface509
-{
-
-}
-
-surface510
-{
-
-}
-
-surface511
-{
-
-}
-
-surface512
-{
-
-}
-
-surface513
-{
-
+	animation110.interval,runonce
+	animation110.pattern0,overlay,180,0,0,0
 }
 
 ＃＃＃＃触り反応＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃S
@@ -297,32 +273,57 @@ surface.append100-139
 {
 animation3.interval,bind
 animation3.pattern0,overlay,500,0,0,0
-animation4.interval,bind
-animation4.pattern0,overlay,501,0,0,0
+
 animation5.interval,bind
 animation5.pattern0,overlay,502,0,0,0
-animation6.interval,bind
-animation6.pattern0,overlay,503,0,0,0
-animation7.interval,bind
-animation7.pattern0,overlay,504,0,0,0
-animation8.interval,bind
-animation8.pattern0,overlay,505,0,0,0
-animation9.interval,bind
-animation9.pattern0,overlay,506,0,0,0
-animation10.interval,bind
-animation10.pattern0,overlay,507,0,0,0
-animation11.interval,bind
-animation11.pattern0,overlay,508,0,0,0
-animation12.interval,bind
-animation12.pattern0,overlay,509,0,0,0
-animation13.interval,bind
-animation13.pattern0,overlay,510,0,0,0
-animation14.interval,bind
-animation14.pattern0,overlay,511,0,0,0
-animation15.interval,bind
-animation15.pattern0,overlay,512,0,0,0
-animation16.interval,bind
-animation16.pattern0,overlay,513,0,0,0
+
+	animation4.interval,bind
+	animation4.pattern0,overlay,501,0,0,0
+	animation4.pattern1,overlay,-1,3000,0,0
+
+	animation6.interval,bind
+	animation6.pattern0,overlay,503,0,0,0
+	animation6.pattern1,overlay,-1,3000,0,0
+	
+	animation7.interval,bind
+	animation7.pattern0,overlay,504,0,0,0
+	animation7.pattern1,overlay,-1,3000,0,0
+
+	animation8.interval,bind
+	animation8.pattern0,overlay,505,0,0,0
+	animation8.pattern1,overlay,-1,3000,0,0
+
+	animation9.interval,bind
+	animation9.pattern0,overlay,506,0,0,0
+	animation9.pattern1,overlay,-1,3000,0,0
+
+	animation10.interval,bind
+	animation10.pattern0,overlay,507,0,0,0
+	animation10.pattern1,overlay,-1,3000,0,0
+
+	animation11.interval,bind
+	animation11.pattern0,overlay,508,0,0,0
+	animation11.pattern1,overlay,-1,3000,0,0
+
+	animation12.interval,bind
+	animation12.pattern0,overlay,509,0,0,0
+	animation12.pattern1,overlay,-1,3000,0,0
+
+	animation13.interval,bind
+	animation13.pattern0,overlay,510,0,0,0
+	animation13.pattern1,overlay,-1,3000,0,0
+
+	animation14.interval,bind
+	animation14.pattern0,overlay,511,0,0,0
+	animation14.pattern1,overlay,-1,3000,0,0
+
+	animation15.interval,bind
+	animation15.pattern0,overlay,512,0,0,0
+	animation15.pattern1,overlay,-1,3000,0,0
+
+	animation16.interval,bind
+	animation16.pattern0,overlay,513,0,0,0
+	animation16.pattern1,overlay,-1,3000,0,0
 
 collisionex0,Head,ellipse,63,41,170,84
 collisionex9,Hair,polygon,93,81,60,61,48,83,53,98,38,123,53,141,48,153,33,163,36,191,40,208,53,203,60,173,58,163,65,148,68,131,85,138,100,128,90,113
