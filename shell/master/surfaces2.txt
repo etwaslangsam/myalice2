@@ -203,11 +203,27 @@ element3,overlay,mouth103.png,0,0
 }
 
 //アニメーション//
-うるうる
+うるうる1
 surface.append127
 {
 	animation99.interval,always
 	animation99.pattern0,overlay,162,100,0,0
+	animation99.pattern1,overlay,-1,100,0,0
+}
+
+うるうる2
+surface.append138
+{
+	animation99.interval,always
+	animation99.pattern0,overlay,163,100,0,0
+	animation99.pattern1,overlay,-1,100,0,0
+}
+
+うるうる3
+surface.append129,135
+{
+	animation99.interval,always
+	animation99.pattern0,overlay,164,100,0,0
 	animation99.pattern1,overlay,-1,100,0,0
 }
 
@@ -253,7 +269,7 @@ surface.append102,107,109,125,128-129,133-134
 }
 
 口パク4
-surface.append108,124,126,131-132,136
+surface.append108,124,126-127,131-132,136
 {
 	animation101.interval,talk,1
 	animation101.pattern0,overlay,173,70,0,0
@@ -279,51 +295,51 @@ animation5.pattern0,overlay,502,0,0,0
 
 	animation4.interval,never
 	animation4.pattern0,overlay,501,0,0,0
-	animation4.pattern1,overlay,-1,3000,0,0
+	animation4.pattern1,overlay,-1,5000,0,0
 
 	animation6.interval,never
 	animation6.pattern0,overlay,503,0,0,0
-	animation6.pattern1,overlay,-1,3000,0,0
+	animation6.pattern1,overlay,-1,5000,0,0
 	
 	animation7.interval,never
 	animation7.pattern0,overlay,504,0,0,0
-	animation7.pattern1,overlay,-1,3000,0,0
+	animation7.pattern1,overlay,-1,5000,0,0
 
 	animation8.interval,never
 	animation8.pattern0,overlay,505,0,0,0
-	animation8.pattern1,overlay,-1,3000,0,0
+	animation8.pattern1,overlay,-1,5000,0,0
 
 	animation9.interval,never
 	animation9.pattern0,overlay,506,0,0,0
-	animation9.pattern1,overlay,-1,3000,0,0
+	animation9.pattern1,overlay,-1,5000,0,0
 
 	animation10.interval,never
 	animation10.pattern0,overlay,507,0,0,0
-	animation10.pattern1,overlay,-1,3000,0,0
+	animation10.pattern1,overlay,-1,5000,0,0
 
 	animation11.interval,never
 	animation11.pattern0,overlay,508,0,0,0
-	animation11.pattern1,overlay,-1,3000,0,0
+	animation11.pattern1,overlay,-1,5000,0,0
 
 	animation12.interval,never
 	animation12.pattern0,overlay,509,0,0,0
-	animation12.pattern1,overlay,-1,3000,0,0
+	animation12.pattern1,overlay,-1,5000,0,0
 
 	animation13.interval,never
 	animation13.pattern0,overlay,510,0,0,0
-	animation13.pattern1,overlay,-1,3000,0,0
+	animation13.pattern1,overlay,-1,5000,0,0
 
 	animation14.interval,never
 	animation14.pattern0,overlay,511,0,0,0
-	animation14.pattern1,overlay,-1,3000,0,0
+	animation14.pattern1,overlay,-1,5000,0,0
 
 	animation15.interval,never
 	animation15.pattern0,overlay,512,0,0,0
-	animation15.pattern1,overlay,-1,3000,0,0
+	animation15.pattern1,overlay,-1,5000,0,0
 
 	animation16.interval,never
 	animation16.pattern0,overlay,513,0,0,0
-	animation16.pattern1,overlay,-1,3000,0,0
+	animation16.pattern1,overlay,-1,5000,0,0
 
 collisionex0,Head,ellipse,63,41,170,84
 collisionex9,Hair,polygon,93,81,60,61,48,83,53,98,38,123,53,141,48,153,33,163,36,191,40,208,53,203,60,173,58,163,65,148,68,131,85,138,100,128,90,113

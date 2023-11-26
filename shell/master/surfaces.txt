@@ -233,6 +233,14 @@ surface.append36
 	animation99.pattern1,overlay,-1,100,0,0
 }
 
+Ç§ÇÈÇ§ÇÈ2
+surface.append32,34,38,40
+{
+	animation99.interval,always
+	animation99.pattern0,overlay,63,100,0,0
+	animation99.pattern1,overlay,-1,100,0,0
+}
+
 èuÇ´1
 surface.append0,24,36
 {
@@ -295,51 +303,51 @@ surface.append0-9,24-43
 {
 	animation4.interval,never
 	animation4.pattern0,overlay,501,0,0,0
-	animation4.pattern1,overlay,-1,3000,0,0
+	animation4.pattern1,overlay,-1,5000,0,0
 
 	animation6.interval,never
 	animation6.pattern0,overlay,503,0,0,0
-	animation6.pattern1,overlay,-1,3000,0,0
+	animation6.pattern1,overlay,-1,5000,0,0
 	
 	animation7.interval,never
 	animation7.pattern0,overlay,504,0,0,0
-	animation7.pattern1,overlay,-1,3000,0,0
+	animation7.pattern1,overlay,-1,5000,0,0
 
 	animation8.interval,never
 	animation8.pattern0,overlay,505,0,0,0
-	animation8.pattern1,overlay,-1,3000,0,0
+	animation8.pattern1,overlay,-1,5000,0,0
 
 	animation9.interval,never
 	animation9.pattern0,overlay,506,0,0,0
-	animation9.pattern1,overlay,-1,3000,0,0
+	animation9.pattern1,overlay,-1,5000,0,0
 
 	animation10.interval,never
 	animation10.pattern0,overlay,507,0,0,0
-	animation10.pattern1,overlay,-1,3000,0,0
+	animation10.pattern1,overlay,-1,5000,0,0
 
 	animation11.interval,never
 	animation11.pattern0,overlay,508,0,0,0
-	animation11.pattern1,overlay,-1,3000,0,0
+	animation11.pattern1,overlay,-1,5000,0,0
 
 	animation12.interval,never
 	animation12.pattern0,overlay,509,0,0,0
-	animation12.pattern1,overlay,-1,3000,0,0
+	animation12.pattern1,overlay,-1,5000,0,0
 
 	animation13.interval,never
 	animation13.pattern0,overlay,510,0,0,0
-	animation13.pattern1,overlay,-1,3000,0,0
+	animation13.pattern1,overlay,-1,5000,0,0
 
 	animation14.interval,never
 	animation14.pattern0,overlay,511,0,0,0
-	animation14.pattern1,overlay,-1,3000,0,0
+	animation14.pattern1,overlay,-1,5000,0,0
 
 	animation15.interval,never
 	animation15.pattern0,overlay,512,0,0,0
-	animation15.pattern1,overlay,-1,3000,0,0
+	animation15.pattern1,overlay,-1,5000,0,0
 
 	animation16.interval,never
 	animation16.pattern0,overlay,513,0,0,0
-	animation16.pattern1,overlay,-1,3000,0,0
+	animation16.pattern1,overlay,-1,5000,0,0
 
 collisionex0,Head,polygon,126,41,99,41,74,48,56,81,61,98,131,84,148,81,141,61
 collisionex1,Bust,polygon,103,143,88,156,83,166,83,178,133,181,130,169,130,151
