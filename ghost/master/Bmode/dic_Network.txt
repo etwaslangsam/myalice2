@@ -4,7 +4,7 @@
 \0\s[105]（エモ気づき）ネットワーク更新を確認します。
 
 ＊OnUpdateReady
-\0（エモ消し）\s[100]（Reference0）件の更新があります。
+\0\s[100]（Reference0）件の更新があります。
 
 ＊OnUpdate.OnMD5CompareFailure
 \0\s[103]（エモ汗）（Reference0）のMD5が一致しません。\e

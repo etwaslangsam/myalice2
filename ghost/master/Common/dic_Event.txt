@@ -241,7 +241,7 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 ＄手動セーブ	実行
 \0\s[102]（エモ！）私に誕生日を‥‥？\w9
 
-（エモ消し）\s[106]（ありす誕生月）月（ありす誕生日）日‥‥これが、私の誕生日‥‥。\w5
+\s[106]（ありす誕生月）月（ありす誕生日）日‥‥これが、私の誕生日‥‥。\w5
 \s[105]ありがとうございます、（ユーザ名B）。\e
 
 ＃────────最小化
@@ -279,8 +279,8 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 ＊OnSurfaceRestore
 ＞戻ってきた	（compare,（Reference0）,-1）
 ＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
-\1\s[（デフォルトサーフェス1）]（エモ消し）\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]
-\0\s[（デフォルトサーフェス0）]（エモ消し）\![bind,カットイン,,0]\e
+\1\s[（デフォルトサーフェス1）]\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]
+\0\s[（デフォルトサーフェス0）]\![bind,カットイン,,0]\e
 
 ＃────────■選択肢
 ＊OnChoiceSelect
