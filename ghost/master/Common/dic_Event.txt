@@ -34,6 +34,14 @@
 ＄ぎゅってされたい	
 （when，（好感度）>120，（set,好感度,120））（when，（好感度B）>120，（set,好感度B,120））
 
+＊OnTalk
+＞（Reference1）	（Reference0）
+＞ローター動作	（ローターモード）==1||（変数「あおもちゃ」の存在）==1
+＞おねだり	（興奮度）＞6
+＞トーク低好感度	（好感度B）＜0
+＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
+＞
+
 ＃────────
 ＊ステータス確認
 ＞えっちStatus	（count、（辞書フォルダ）、Bmode）
@@ -94,16 +102,170 @@
 ＞（Reference0）へ変更
 ＞他のゴーストへ変更
 
-＃────────シェル変更
-＊OnShellChanging
-＞changing_（Reference0）
-＞シェル変更する
-
-＊OnShellChanged
-＄現在シェル	（Reference0）
+＃────────最小化
+＊OnWindowStateMinimize
 ＄手動セーブ	実行
-＞chenged_（Reference0）
-＞シェル変更した
+
+＊OnWindowStateRestore
+＄手動セーブ	実行
+＞最小化解除
+
+＃────────入力系
+＊OnCommunicate
+≫「　（Reference1）	（equal,（Reference0）,user）
+＞（話しかけ）該当なし
+
+＊OnUserInput
+（whenlist，1==
+	，（is_empty（バイト値、１）（Reference1）），\![raise,（Reference0）を空打ちされた]
+	，（set（バイト値、１）（Reference0）（バイト値、１）（Reference1））\![raise,（Reference0）を教えてもらった]
+）
+
+＊OnUserInputCancel
+（whenlist，（Reference1）==
+	，timeout，\![raise,（Reference0）をタイムアウト]
+	，close，\![raise,（Reference0）を空打ちされた]
+	，\![raise,入力中止]
+）
+
+＃────────時間イベント
+＊OnMinuteChange
+＄1B_一緒に寝る	
+
+＊OnHourTimeSignal	（TimeSignal）==1
+＄手動セーブ	実行
+（whenlist，（Sender）==
+	，SSP，\![raise,時報B]
+	，\![raise,時報A]
+）
+
+＃────────■選択肢
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＊OnAnchorSelectEx
+＄選択ＩＤ	（Reference1）
+＄選択ラベル	（Reference0）
+＞OnAnchorSelect.URL	（compare_head,（Reference1）,http://）||（compare_head,（Reference1）,https://）
+＞（Reference1）
+＞NoAnchor
+
+＊OnAnchorSelect.URL
+\0\j[（Reference1）]
+
+＊OnAnchorSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+＞NoAnchor
+
+＃────────■マウスイベント
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0
+
+＊OnMouseDownEx
+＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	3
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	０
+
+＊OnMouseHover
+＄（Reference3）（Reference4）見つめタイマ	３
+＊OnMouseLeave
+＄（Reference3）（Reference4）見つめタイマ	
+
+＊OnMouseGesture
+＞（Reference0）（Reference4）上ころ	（Reference5）==up
+＞（Reference0）（Reference4）下ころ	（Reference5）==down
+＞（Reference0）（Reference4）ころころ
+
+＃────────インストール
+＊インスト交代
+\![change,ghost,lastinstalled]
+
+＊インスト呼び出し
+\![call,ghost,lastinstalled]
+
+＊インストシェル変
+\![change,shell,lastinstalled]
+
+＊インストバル変
+\![change,balloon,lastinstalled]
+
+＃────────RSS
+＊OnHeadlinesenseBegin
+\0「（Reference0）」のヘッドラインを取得中
+
+＊OnHeadlinesense.OnFind	（Reference2）==First
+\0\b[2]「（Reference0）」ヘッドライン\n[half]
+（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==First and Last
+\0\b[2]「（Reference0）」ヘッドライン\n[half]
+（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+＊OnHeadlinesense.OnFind	（Reference2）==Last
+\0\b[2]（Reference3）
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊OnHeadlinesense.OnFind	（Reference2）==Next
+\0\b[2]（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+\q[やめる,読み上げ中止]
+
+
+＊サイトを開く
+\![open,browzer,]
+
+＊読み上げ中止
+\0\b[-1]
+
+＊OnHeadlinesenseComplete
+\0φ（更新されていませんでした。φ）\e
+
+＊OnHeadlinesenseFailure
+\0φ（ヘッドラインセンス失敗。φ）
+＞（Reference0）によりヘッドラインセンス失敗
+φ（理由は（Reference0）。φ）\e
+
+＊can't downloadによりヘッドラインセンス失敗
+\0φ（ダウンロードできませんでした。\n重すぎるか、ネットに繋がっていない可能性があります。φ）\e
+
+＊can't analyzeによりヘッドラインセンス失敗
+\0φ（解析失敗。\n最新版のヘッドラインセンサがあれば入れ替えてください。φ）\e
+
+＊OnSSTPBreak
+\0φ（SSTPがブレイクされたようです。φ）\e
+
+＃────────キー押下
+＊OnKeyPress
+＞（Reference0）が押された
+
+＊tが押された
+＞OnTalk
+
+＊rが押された
+＄辞書リロード	実行
+\0\_q※リロードしました\_q\e
+
+＊aが押された
+＞話しかける
 
 ＃────────web拍手
 ＊OnWebClap
@@ -227,178 +389,3 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 \s[106]（ありす誕生月）月（ありす誕生日）日‥‥これが、私の誕生日‥‥。\w5
 \s[105]ありがとうございます、（ユーザ名B）。\e
 
-＃────────最小化
-＊OnWindowStateMinimize
-＄手動セーブ	実行
-
-＊OnWindowStateRestore
-＄手動セーブ	実行
-＞最小化解除
-
-＃────────入力系
-＊OnCommunicate
-≫「　（Reference1）	（equal,（Reference0）,user）
-＞（話しかけ）該当なし
-
-＊OnUserInput
-（whenlist，1==
-	，（is_empty（バイト値、１）（Reference1）），\![raise,（Reference0）を空打ちされた]
-	，（set（バイト値、１）（Reference0）（バイト値、１）（Reference1））\![raise,（Reference0）を教えてもらった]
-）
-
-＊OnUserInputCancel
-（whenlist，（Reference1）==
-	，timeout，\![raise,（Reference0）をタイムアウト]
-	，close，\![raise,（Reference0）を空打ちされた]
-	，\![raise,入力中止]
-）
-
-＃────────時間イベント
-＊OnMinuteChange
-＄1B_一緒に寝る	
-
-＊OnHourTimeSignal	（TimeSignal）==1
-＄手動セーブ	実行
-（whenlist，（Sender）==
-	，SSP，\![raise,時報B]
-	，\![raise,時報A]
-）
-
-＊OnSurfaceRestore
-＞戻ってきた	（compare,（Reference0）,-1）
-＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
-\1\s[（デフォルトサーフェス1）]\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]\0\s[（デフォルトサーフェス0）]\![bind,カットイン,,0]\e
-
-＃────────■選択肢
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-＞NoAnchor
-
-＊OnAnchorSelectEx
-＄選択ＩＤ	（Reference1）
-＄選択ラベル	（Reference0）
-＞OnAnchorSelect.URL	（compare_head,（Reference1）,http://）||（compare_head,（Reference1）,https://）
-＞（Reference1）
-＞NoAnchor
-
-＊OnAnchorSelect.URL
-\0\j[（Reference1）]
-
-＊OnAnchorSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
-＞NoAnchor
-
-＃────────■マウスイベント
-＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ	（Reference5）==0
-
-＊OnMouseDownEx
-＞（Reference3）（Reference4）ころクリ	（Reference5）==middle
-
-＊OnMouseWheel
-＄ころころカウンタ=（ころころカウンタ）+1
-＄ころころカウンタ初期化タイマ	3
-＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
-＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
-
-＊ころころカウンタ初期化
-＄ころころカウンタ	０
-
-＊OnMouseHover
-＄（Reference3）（Reference4）見つめタイマ	３
-＊OnMouseLeave
-＄（Reference3）（Reference4）見つめタイマ	
-
-＊OnMouseGesture
-＞（Reference0）（Reference4）上ころ	（Reference5）==up
-＞（Reference0）（Reference4）下ころ	（Reference5）==down
-＞（Reference0）（Reference4）ころころ
-
-＃────────RSS
-＊OnHeadlinesenseBegin
-\0「（Reference0）」のヘッドラインを取得中
-
-＊OnHeadlinesense.OnFind	（Reference2）==First
-\0\b[2]「（Reference0）」ヘッドライン\n[half]
-（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==First and Last
-\0\b[2]「（Reference0）」ヘッドライン\n[half]
-（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-＊OnHeadlinesense.OnFind	（Reference2）==Last
-\0\b[2]（Reference3）
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊OnHeadlinesense.OnFind	（Reference2）==Next
-\0\b[2]（Reference3）
-＿続きを読む		
-＿サイトを開く		（Reference1）
-\q[やめる,読み上げ中止]
-
-
-＊サイトを開く
-\![open,browzer,]
-
-＊読み上げ中止
-\0\b[-1]
-
-＊OnHeadlinesenseComplete
-\0φ（更新されていませんでした。φ）\e
-
-＊OnHeadlinesenseFailure
-\0φ（ヘッドラインセンス失敗。φ）
-＞（Reference0）によりヘッドラインセンス失敗
-φ（理由は（Reference0）。φ）\e
-
-＊can't downloadによりヘッドラインセンス失敗
-\0φ（ダウンロードできませんでした。\n重すぎるか、ネットに繋がっていない可能性があります。φ）\e
-
-＊can't analyzeによりヘッドラインセンス失敗
-\0φ（解析失敗。\n最新版のヘッドラインセンサがあれば入れ替えてください。φ）\e
-
-＊OnSSTPBreak
-\0φ（SSTPがブレイクされたようです。φ）\e
-
-＃────────キー押下
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊tが押された
-＞OnTalk
-
-＊rが押された
-＄辞書リロード	実行
-\0\_q※リロードしました\_q\e
-
-＊aが押された
-＞話しかける
-
-＊snapshotが押された	（count，（Status），talking）==0
-（whenlist、1==
-	、（count，辞書フォルダ，1stW）\0\s[8]
-	、（count，辞書フォルダ，1stB）\0\s[103]
-	、（count，辞書フォルダ，Bmode）\0\s[124]
-	、（count，辞書フォルダ，Wmode）\0\s[5]
-、\0\s[26]\1\s[105]
-）\e
-
-＃────────
-＊OnTalk
-＞（Reference1）	（Reference0）
-＞ローター動作	（ローターモード）==1||（変数「あおもちゃ」の存在）==1
-＞おねだり	（興奮度）＞6
-＞トーク低好感度	（好感度B）＜0
-＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
-＞（現在月）月	（乱数１～５）==３
-（）
