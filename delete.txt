@@ -1,2 +1,12 @@
 .gitignore
 ghost\master\1stBmode\dic_play2.txt
+ghost\master\dic_Kisekae.txt
+ghost\master\1stBmode\dic_Kisekae.txt
+ghost\master\1stWmode\dic_Kisekae.txt
+ghost\master\Bmode\dic_Kisekae.txt
+ghost\master\Wmode\dic_Kisekae.txt
+ghost\master\dic_Network.txt
+ghost\master\1stBmode\dic_Network.txt
+ghost\master\1stWmode\dic_Network.txt
+ghost\master\Bmode\dic_Network.txt
+ghost\master\Wmode\dic_Network.txt

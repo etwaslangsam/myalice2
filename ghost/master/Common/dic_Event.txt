@@ -96,31 +96,14 @@
 
 ＃────────シェル変更
 ＊OnShellChanging
-＞「（Reference0）」に変更する
+＞changing_（Reference0）
 ＞シェル変更する
 
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
 ＄手動セーブ	実行
-＞「（Reference0）」に変更した
+＞chenged_（Reference0）
 ＞シェル変更した
-
-＃────────着せ替え共通
-＊OnDressupChanged		（辞書判定）==0
-（when，（Reference0）==0
-	，（when、（Reference2）==1、（set,ア（Reference3）,（Reference1））、（set,ア（Reference3）,））
-	，（when、（Reference2）==1、（set,あ（Reference3）,（Reference1））、（set,あ（Reference3）,））
-）（set,手動セーブ,実行）
-＞着せ替え反応	（count，（Status），talking）==0
-
-＊OnDressupChanged		（count、（辞書フォルダ）、B）
-（when，（Reference2）==1，（set,あ（Reference3）,（Reference1）），（set,あ（Reference3）,））
-（set,今日のパンツ,（パンツの色）（パンツ種類））（set,手動セーブ,実行）
-＞着せ替え反応	（count，（Status），talking）==0
-
-＊OnDressupChanged		（count、（辞書フォルダ）、W）
-（when，（Reference2）==1，（set,ア（Reference3）,（Reference1）），（set,ア（Reference3）,））（set,手動セーブ,実行）
-＞着せ替え反応	（count，（Status），talking）==0
 
 ＃────────web拍手
 ＊OnWebClap
@@ -258,29 +241,33 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 ＞（話しかけ）該当なし
 
 ＊OnUserInput
-＞（Reference0）を空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
+（whenlist，1==
+	，（is_empty（バイト値、１）（Reference1）），\![raise,（Reference0）を空打ちされた]
+	，（set（バイト値、１）（Reference0）（バイト値、１）（Reference1））\![raise,（Reference0）を教えてもらった]
+）
 
 ＊OnUserInputCancel
-＞（Reference0）をタイムアウト	（compare,（Reference1）,timeout）
-＞（Reference0）を空打ちされた	（compare,（Reference1）,close）
-＞入力中止
+（whenlist，（Reference1）==
+	，timeout，\![raise,（Reference0）をタイムアウト]
+	，close，\![raise,（Reference0）を空打ちされた]
+	，\![raise,入力中止]
+）
 
 ＃────────時間イベント
 ＊OnMinuteChange
 ＄1B_一緒に寝る	
 
-＊OnHourTimeSignal
+＊OnHourTimeSignal	（TimeSignal）==1
 ＄手動セーブ	実行
-＞時報B	（Sender）==SSP&&（TimeSignal）==1
-＞時報A	（TimeSignal）==1
+（whenlist，（Sender）==
+	，SSP，\![raise,時報B]
+	，\![raise,時報A]
+）
 
 ＊OnSurfaceRestore
 ＞戻ってきた	（compare,（Reference0）,-1）
 ＞顔を洗う	（顔射）==1||（変数「あカルピス」の存在）==1
-\1\s[（デフォルトサーフェス1）]\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]
-\0\s[（デフォルトサーフェス0）]\![bind,カットイン,,0]\e
+\1\s[（デフォルトサーフェス1）]\![bind,カットイン,,0]\![bind,身体,精液,0]\![bind,エモ,,0]\![bind,身体,おもらし,0]\![bind,カルピス,,0]\0\s[（デフォルトサーフェス0）]\![bind,カットイン,,0]\e
 
 ＃────────■選択肢
 ＊OnChoiceSelect
@@ -329,13 +316,6 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 ＞（Reference0）（Reference4）上ころ	（Reference5）==up
 ＞（Reference0）（Reference4）下ころ	（Reference5）==down
 ＞（Reference0）（Reference4）ころころ
-
-＃────────ネットワーク更新
-＊OnUpdateFailure
-＄なぐさめてほしい	１
-＄なぐさめてくれなかったタイマ	３０
-＞（Reference0）で失敗
-＞ネットワーク更新失敗
 
 ＃────────RSS
 ＊OnHeadlinesenseBegin
