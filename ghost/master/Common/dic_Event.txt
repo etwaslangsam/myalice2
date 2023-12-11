@@ -309,7 +309,7 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 \![*]トーク頻度　【\_a[喋る頻度変更]（喋り間隔）\_a】
 \![*]誕生日設定　【\_a[ユーザ誕生日設定]（when，（ユーザ誕生月日）==0，未登録，（ユーザ誕生月日））\_a】
 \![*]時報の設定　【\_a[時報設定]（when，（TimeSignal）==1，オン，オフ）\_a】
-\![*]トーク設定　【\_a[TalkSafe]（when，（Ca）==1，自分だけのもの，他の男にも狙われる）\_a】
+\![*]トーク設定　【\_a[TalkSafe]（when，（Ca）==0，自分だけのもの，他の男にも狙われる）\_a】
 \_q\e
 
 ＃────────時報設定
