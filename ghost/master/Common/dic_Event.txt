@@ -45,21 +45,6 @@
 ＃────────
 ＊ステータス確認
 ＞えっちStatus	（count、（辞書フォルダ）、Bmode）
-\0\b[2]\_q\q[←,Menu]　\q[×,Cancel]\n
-【起動回数】（起動した回数）
-【総トーク数】（countNoNameTalk）
-【トーク頻度】（喋り間隔）
-【現在のシェル】（現在シェル）
-【現在のモード】（whenlist，1==，（count、（辞書フォルダ）、1stBmode），1st黒ありすソロ，（count、（辞書フォルダ）、1stWmode），1st白アリスソロ，
-（count、（辞書フォルダ）、Bmode），2nd黒ありすソロ，（count、（辞書フォルダ）、Wmode），2nd白アリスソロ，2nd通常モード）
-\n\![*]アリス
-【呼び方】（ユーザ名）
-【好感度】（when，（好感度）＞120，120，（好感度））
-\n\![*]ありす
-【呼び方】（when，（count、（辞書フォルダ）、Bmode）==1，（ユーザ名B），（ユーザ名C））
-【好感度】（when，（好感度B）＞120，120，（好感度B））
-【パンツ】（今日のパンツ）
-\_q\e
 
 ＊えっちStatus
 \0\b[2]\_q\q[←,Menu]　\q[×,Cancel]\n
@@ -80,18 +65,6 @@
 【口内射精】（zen2han，（score_口内射精））回
 【ご奉仕】（zen2han，（あ奉仕経験））回
 【ぶっかけ】（zen2han，（score_ぶっかけ））回
-\_q\e
-
-＊各種設定
-\0\b[2]\c\_q
-時報の設定\n[half]
- \![*]\q[お知らせする,時報オン] ／ \q[しない,時報オフ]\n
-（when，（count、（辞書フォルダ）、1st）==0，トークの設定\n\n[half]
- \![*]\q[フィルタリングする,TalkSafe] ／ \q[しない,TalkSafe]\n）
-表示 ※ゴースト終了まで有効\n[half]
- \![*]\q[常に手前に,常に手前に表示] ／ \q[奥に沈む,奥に沈む]\n
-
-\q[←,Menu]　\q[×,Cancel]
 \_q\e
 
 ＃────────切り替え反応
@@ -116,17 +89,14 @@
 ＞（話しかけ）該当なし
 
 ＊OnUserInput
-（whenlist，1==
-	，（is_empty（バイト値、１）（Reference1）），\![raise,（Reference0）を空打ちされた]
-	，（set（バイト値、１）（Reference0）（バイト値、１）（Reference1））\![raise,（Reference0）を教えてもらった]
-）
+＞（Reference0）を空打ちされた	（is_empty（バイト値、１）（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
 
 ＊OnUserInputCancel
-（whenlist，（Reference1）==
-	，timeout，\![raise,（Reference0）をタイムアウト]
-	，close，\![raise,（Reference0）を空打ちされた]
-	，\![raise,入力中止]
-）
+＞（Reference0）をタイムアウト	（Reference1）==timeout
+＞（Reference0）を空打ちされた	（Reference1）==close
+＞入力中止
 
 ＃────────時間イベント
 ＊OnMinuteChange
@@ -134,10 +104,8 @@
 
 ＊OnHourTimeSignal	（TimeSignal）==1
 ＄手動セーブ	実行
-（whenlist，（Sender）==
-	，SSP，\![raise,時報B]
-	，\![raise,時報A]
-）
+＞時報B	（Sender）==SSP
+＞時報A
 
 ＃────────■選択肢
 ＊OnChoiceSelect
@@ -344,6 +312,28 @@ https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9
 
 ＊OnExecuteHTTPFailure	（Reference1）==webclap
 \0φ（（Reference4）φ）\e
+
+＃────────オプション
+＊Option	（count，（辞書フォルダ），Bmode）==0
+\0\c\_q\q[←,Menu]　\q[×,Cancel]\n
+\![*]トーク頻度　【\_a[喋る頻度変更]（喋り間隔）\_a】
+\![*]誕生日設定　【\_a[ユーザ誕生日設定]（when，（ユーザ誕生月日）==0，未登録，（ユーザ誕生月日））\_a】
+\![*]時報の設定　【\_a[時報設定]（when，（TimeSignal）==1，オン，オフ）\_a】
+\![*]トーク設定　【\_a[TalkSafe]（when，（Ca）==1，自分だけのもの，他の男にも狙われる）\_a】
+\_q\e
+
+＃────────時報設定
+＊時報設定
+（whenlist，（TimeSignal）==
+	，1，（set,TimeSignal,0）
+	，0，（set,TimeSignal,1）
+）
+＞Option
+
+＃────────トーク設定
+＊TalkSafe
+（when，（Ca）==1，（set,Ca,0），（set,Ca,1））
+＞Option
 
 ＃────────ユーザ誕生日設定
 ＊ユーザ誕生日設定
