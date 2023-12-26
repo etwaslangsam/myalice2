@@ -16,7 +16,7 @@
  \![*]\q[話しかける,アリスに話しかける]
  \![*]\q[プロフィールを見る,アリスプロフィール]\n
 イベント\n[half]
- \![*]\q[イベント回想,EventArchives]\n
+ \![*]\q[シナリオ回想,EventArchives]\n
 設定\n[half]
  \![*]\q[呼び方を変えて,UserNameChange]
  \![*]\q[その他設定とか,Option]\n
