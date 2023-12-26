@@ -22,7 +22,7 @@
 ＞（Reference1）_OFF	（Reference2）==0
 ＞（Reference0）_ON	（Reference2）==1
 
-＊0_ON	（Reference2）==1	（count，（Status），talking）==0
+＊0_ON	（count，（Status），talking）==0
 \0（whenlist，（Reference1）==
 	，お嫁さん，\s[101]素敵なドレス‥‥。（set,今日のパンツ,）
 	，猫娘，\s[100]ネコ‥‥。

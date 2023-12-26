@@ -1,7 +1,7 @@
 ＃────────えっちなお願い
 ＊えっちなお願い
-\![leave,passivemode]
-\0\s[100]\b[2]\_q\c
+\![enter,passivemode]
+\0\s[100]\b[2]\_q\c\q[←,MenueBack_EA] \q[×,Cancel_EA]\n
  \![*]\q[パンツ見せて,PantsCheck]
  \![*]\q[お目覚めフェラ,起床]
  \![*]\q[食ザー,食精]
@@ -15,14 +15,71 @@
  \![*]\q[おしっこ見せて,排尿]
  \![*]\q[野外露出,露出遊戯]\n
  \![*]\q[ありすがアイスを好きになった時の話,B_i_1]
-\n\![*]\q[なんでもない,Cancel]
+ \![*]\q[初めてクリスマスケーキを食べた話,B1_X_a_1]
 \_q\e
+
+＊Cancel_EA
+\![leave,passivemode]
+＞Cancel
+＊MenueBack_EA
+\![leave,passivemode]
+＞Menu
 
 ＃ \f[color,red]New!\f[default]
 
+＃────────クリスマス
+＊B1_X_a_1
+\0\s[106]\c\tおかえりなさいませ、（ユーザ名B）。\_w[1200]\n
+\s[100]\![lock,repaint]‥‥\w5\![unlock,repaint]どうかされましたか？\w9
+\s[103]今日がなんの日か\![lock,repaint]‥‥？\![unlock,repaint]\w5 １２月２５日がなにか？\_w[1200]\n
+\s[100]クリスマス\![lock,repaint]‥‥\w5\![unlock,repaint]ああ、聞いたことはあります。\w9
+\s[106]私には縁がありませんでしたから。
+\_q
+\![*]\_a[B1_X_a_2]ケーキを買ってきたから一緒に食べよう\_a
+\_q\x
+＞B1_X_a_2
+＊B1_X_a_2
+\0\s[102]\c\tえっ\![lock,repaint]‥‥？\w9
+\![unlock,repaint]ケーキを\![lock,repaint]‥‥？\w5 \![unlock,repaint]私が、食べてもいいんですか？\_w[1200]\n
+\s[109]あ、いえ\![lock,repaint]‥‥\w5\![unlock,repaint]わ、わかりました。\w9
+\s[106]（ユーザ名B）の命令なら、食べさせていただきます。\_w[1200]\n
+\s[100]\![lock,repaint]‥‥\w5\![unlock,repaint]あの、それでこれはどういうプレイなんですか？\w9
+いつも通り（ユーザ名B）の精液を掛けたものを\![lock,repaint]‥‥？\![unlock,repaint]
+\_q
+\![*]\_a[B1_X_a_3]食べさせてくれればそれでいい\_a
+\_q\x
+＞B1_X_a_3
+＊B1_X_a_3
+\0\s[102]\c\tそれだけでいいんですか\![lock,repaint]‥‥？\w9\![unlock,repaint]
+\s[100]では\![lock,repaint]‥‥\w5\![unlock,repaint]どうぞ\![lock,repaint]‥‥。\![unlock,repaint]\_w[1200]\n
+\s[103]え？\w5 これじゃダメ、ですか？\w9
+\s[109]アーンして食べさせてほしい\![lock,repaint]‥‥？\![unlock,repaint]\_w[1200]\n
+では改めて\![lock,repaint]‥‥\w5\s[127]\![unlock,repaint]はい、（ユーザ名B）。\w9
+\s[126]アー\![lock,repaint]‥‥\![unlock,repaint]ン（はーと）\w9
+\_q
+\![*]\_a[B1_X_a_4]ウマい。お返しにありすもφ、アーン\_a
+\_q\x
+＞B1_X_a_4
+＊B1_X_a_4
+\0\s[102]\c\tわ、私もですか？！\w9
+\s[109]はい、わかりました\![lock,repaint]‥‥。\![unlock,repaint]\_w[1200]\n
+\s[126]あ\![lock,repaint]‥‥\w5\s[139]\![unlock,repaint]ん‥‥。\w9
+\s[106]んっ\![lock,repaint]‥‥\w5\![unlock,repaint]んん\![lock,repaint]‥‥\w5\s[101]\![unlock,repaint]甘くて、とっても美味しいです。\_w[1200]\n
+\s[102]あ、はい。次ですね。\w9
+\s[105]今お口にお運びします。\x
+＞B1_X_a_5
+＊B1_X_a_5
+\0\s[-1]\c\tこうして、子供と恋人のようにイチャイチャしながら\n[half]
+クリスマスを堪能することができた\w9\n[half]
+その後、深夜にプレゼントを置きに\n[half]
+ありすの部屋へ入ると夜這いと思ったのか\n[half]
+受け入れる準備をし始めたので、そのまま抱いた\w9\n[half]
+気絶した隙に置いたプレゼントのぬいぐるみは\n[half]
+どうやら気に入ってもらえたようだ\x
+＞えっちなお願い
+
 ＃────────ありすがアイスを好きになった時の話
 ＊B_i_1
-\![enter,passivemode]
 \0\s[-1]──これは、ありすが家族になって間もない頃のある日の話\x
 \0\s[106]\cお帰りなさいませ、（ユーザ名B）。
 \_q
