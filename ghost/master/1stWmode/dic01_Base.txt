@@ -70,6 +70,7 @@
 \0\s[4]選択肢「（Reference0）」は存在しないみたい……\e
 
 ＊OnChoiceTimeout
+\![leave,passivemode]
 \0\s[24]ちょっと（ユーザ名）聞いてる？\e
 
 ＃────────■インストール

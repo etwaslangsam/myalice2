@@ -127,8 +127,10 @@
 
 ＃────────選択肢
 ＊OnChoiceTimeout
+\![leave,passivemode]
 \0\s[24]（エモ怒り）（ユーザ名）聞いてる～？\e
 ＊OnChoiceTimeout
+\![leave,passivemode]
 \1\s[103]（エモ落ち込み）（ユーザ名C）？\w3 聞いてますか？\e
 
 ＊NoAnchor
