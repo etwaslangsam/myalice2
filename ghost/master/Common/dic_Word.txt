@@ -121,8 +121,8 @@
 
 
 ＠射精音
-\![lock,repaint](ﾋﾞｭﾙｯ（はーと）　ﾋﾞｭﾙﾙﾙ（はーと）（はーと）（はーと）　ﾋﾞｭﾙ（はーと）)\![unlock,repaint]
-\![lock,repaint](ﾋﾞｭ（はーと）　ﾋﾞｭﾋﾞｭ～～～（はーと）（はーと）（はーと）　ﾋﾞｭｰｯ（はーと）　ﾋﾞｭｰｯ（はーと）)\![unlock,repaint]
+\![lock,repaint](ﾋﾞｭﾙｯ（はーと）　ﾋﾞｭﾙﾙﾙ（はーと）（はーと）（はーと） ﾋﾞｭﾙ（はーと）)\![unlock,repaint]
+\![lock,repaint](ﾋﾞｭ（はーと）　ﾋﾞｭﾋﾞｭ～～～（はーと）（はーと）（はーと） ﾋﾞｭｰｯ（はーと） ﾋﾞｭｰｯ（はーと）)\![unlock,repaint]
 \![lock,repaint](……っ！ﾄﾞｸ……ﾄﾞｸ……)\![unlock,repaint]
 \![lock,repaint](ﾋﾞｭﾙｯ……ﾋﾞｭﾙﾙﾙ……ﾋﾟｭｯ)\![unlock,repaint]
 \![lock,repaint](ﾄﾞﾋﾟｭｯ…ﾋﾟｭｯﾋﾟｭｯ…ﾋﾟｸﾝ…)\![unlock,repaint]
