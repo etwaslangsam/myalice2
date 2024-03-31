@@ -1,4 +1,3 @@
-charset,Shift_JIS
 file,delete.txt58d95094227c3be583c90f865a961e78size=409
 file,developer_options.txt93fd723107b0e348e8392074f84b0ae9size=543
 file,install.txt546f4959cf80e048d90f5ae438296a60size=147
