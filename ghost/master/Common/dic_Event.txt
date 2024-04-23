@@ -59,9 +59,10 @@
 
 ＃────────切り替え反応
 ＊OnGhostChanging
-＄興奮度	0
-（ResetFlags）（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
 ＞アリスへ変更	（compare,（Reference0）,高千穂アリス）
+（ResetFlags）（when，（compare、辞書フォルダ、B），\0\![bind,おもちゃ,ローター,0]）
+＄興奮度	0
+＄回数_お口	
 ＞（Reference0）へ変更
 ＞他のゴーストへ変更
 
